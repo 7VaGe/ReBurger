@@ -95,16 +95,16 @@
 
 
     <!-- footer qui -->
-    <div class="container col-12 text-white">
+    <div class="container3 col-12 text-white">
   <footer class="py-5">
     <div class="row">
-      <div class="col-12">
+      <div class="col-2">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
         </ul>
       </div>
 
-      <div class="col-12">
+      <div class="col-2">
         <h5>Uno sguardo al ristorante</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Prodotti</a></li>
@@ -114,7 +114,7 @@
         </ul>
       </div>
 
-      <div class="col-12">
+      <div class="col-2">
         <h5>Di più sul nostro conto</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chi siamo</a></li>
@@ -123,7 +123,7 @@
         </ul>
       </div>
 
-      <div class="col-12">
+      <div class="col-6">
         <form>
           <h5>Iscriviti alla nostra newsletter</h5>
           <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>

@@ -31,12 +31,12 @@ div.col-lg-4>img{
     height: 100%;
     width: 100%;
 }
-footer div.row{
+footer{
   display:block;
   text-align: center;
 
 }
-footer div.row:last-child{
+footer.py-5 div.row:last-child{
     display:block;
     text-align: center;
   }
@@ -64,7 +64,10 @@ footer div.row:last-child{
     div.container1{
         display: inline;
     }
-
+   
+    footer.py-5>div.row{
+        display:inline-flex;
+      }
 }
 
 
@@ -83,6 +86,10 @@ footer div.row:last-child{
         height: 300px;
     }
 
+    footer.py-5>div.row{
+        display:inline-flex;
+        text-align: center;
+      }
 
     div.container1{
         display: inline;
@@ -107,6 +114,10 @@ footer div.row:last-child{
         font-size: 1rem;
         text-align: end;
     }
+
+    footer.py-5>div.row{
+        display:inline-flex;
+      }
     /*
     nav{
         margin: 0 10%;
