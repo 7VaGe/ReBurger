@@ -1,8 +1,10 @@
 /************** MOBILE FRIST ***************/
 body> header > div img{
-    height: 197px;
+    height: 100%;
 }
-
+div.text-end{
+    display: inline;
+}
 div.container1{
     display: none;
 }
@@ -31,15 +33,9 @@ div.col-lg-4>img{
     height: 100%;
     width: 100%;
 }
-footer{
-  display:block;
-  text-align: center;
 
-}
-footer.py-5 div.row:last-child{
-    display:block;
-    text-align: center;
-  }
+
+
 
 
 @media only screen and (min-width:768px) and (max-width: 992px){
@@ -65,7 +61,7 @@ footer.py-5 div.row:last-child{
         display: inline;
     }
    
-    footer.py-5>div.row{
+    footer, footer.py-5>div.row{
         display:inline-flex;
       }
 }
@@ -86,7 +82,7 @@ footer.py-5 div.row:last-child{
         height: 300px;
     }
 
-    footer.py-5>div.row{
+    footer , footer.py-5>div.row{
         display:inline-flex;
         text-align: center;
       }
@@ -115,45 +111,8 @@ footer.py-5 div.row:last-child{
         text-align: end;
     }
 
-    footer.py-5>div.row{
+    footer, footer.py-5>div.row{
         display:inline-flex;
       }
-    /*
-    nav{
-        margin: 0 10%;
-    }
-    
-    nav ul li{
-        width: 19%;
-    }
-
-    nav ul li:not(:last-child){
-       margin-right: 8%; 
-    }
-
-    main, aside{
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    main{
-        width: 50%;
-        margin: 20px 5% 0 10%;
-    }
-
-    aside{
-        width: 25%;
-        margin: 20px 10% 0 0;
-
-    }
-
-    form ul{
-        width: 50%;
-        margin: 0 25%;
-    }
-
-    table{
-        width: 80%;
-        margin: 0 10%;    
-    }*/
+   
 }

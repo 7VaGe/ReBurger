@@ -11,10 +11,10 @@
         <header class="p-3 bg-dark text-white">
         <div class="container col-12">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <img src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
+            <img class="col-6" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
             <!--<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
             </a>-->
-            <div class="container1 col-6">        
+            <div class="container1 col-4">        
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
@@ -26,10 +26,8 @@
 
             <div class="text-end">   <!-- inserisco navbar -->
 
-
-
             <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
-                    <div class="container-fluid">
+                    <div class="col-6 container-fluid">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -48,16 +46,15 @@
                     </div>
                     </div>
             </nav>
-
-             <button type="button" class="btn btn-outline-light ">Login</button>
-            <button type="button" class="btn btn-warning">Sign-up</button>
+            <div class="col-2">
+              <button type="button" class="btn btn-outline-light ">Login</button>
+            <button type="button" class="btn btn-warning">Sign-up</button></div>
+             
             </div>
         </div>
         </div>
   </header>
             <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
-
-
             <script src="../script/script.js"></script> 
   <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
@@ -85,7 +82,6 @@
             <button type="button" class="btn btn-warning">About us</button> 
          </div>
      </div>
-
          <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
           <img  src="../img/hamburger.png" alt=""/>
 </div>
@@ -96,15 +92,15 @@
 
     <!-- footer qui -->
     <div class="container3 col-12 text-white">
-  <footer class="py-5">
+  <footer class="py-5 m-4 text-center">
     <div class="row">
-      <div class="col-2">
+      <div class="col-12">
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
         </ul>
       </div>
 
-      <div class="col-2">
+      <div class="col-12">
         <h5>Uno sguardo al ristorante</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Prodotti</a></li>
@@ -114,7 +110,7 @@
         </ul>
       </div>
 
-      <div class="col-2">
+      <div class="col-12">
         <h5>Di più sul nostro conto</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chi siamo</a></li>
@@ -123,8 +119,8 @@
         </ul>
       </div>
 
-      <div class="col-6">
-        <form>
+      <div class="col-12">
+        <form class="justify-content-center">
           <h5>Iscriviti alla nostra newsletter</h5>
           <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
           <div class="d-flex w-100 gap-2">
@@ -136,13 +132,15 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-between py-4 my-4 border-top">
-      <p>© 2022 Società, Inc. Tutti i diritti riservati.</p>
-      <ul class="list-unstyled d-flex text-white">
+    <div class="justify-content-center py-5 px-2 my-2 border-top">
+      <p class="text-center">© 2022 Società, Inc. Tutti i diritti riservati.</p>
+    <div class="d-flex justify-content-center py-1 px-2 my-3">
+       <ul class="list-unstyled d-flex text-white">
         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
       </ul>
+    </div>
     </div>
   </footer>
 </div>
