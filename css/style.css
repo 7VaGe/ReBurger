@@ -1,5 +1,27 @@
 /************** MOBILE FRIST ***************/
 
+  body::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0  rgba(0,0,0,0.1s);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: var(--dark-background);
+  }
+  
+  body::-webkit-scrollbar
+  {
+      width: 10px;
+      border-radius: 10px;
+      background-color: var(--dark-background);
+  }
+  
+  body::-webkit-scrollbar-thumb /*colore barra scorrimento*/
+  {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1s);
+      box-shadow: inset 0 0 6px  rgb(0, 0, 0);
+      background-color: var(--note);
+  }
 body> header > div img{
     height: 100%;
 }
@@ -12,18 +34,20 @@ button>.me-2{
 }
 
 body:nth-child(2){
-background-color: rgb(34, 37, 41);
+ background-color: rgb(34, 37, 41);  
 }
 
-body>div.container.my-5>div{
-    background-color: rgb(255, 255, 255);
-    margin: 10px;
+body>div.container-md.my-5>div{
+   background-color: rgb(255, 255, 255);
 }
-
-header div.col-3.p-l-5:last-child{
+header div.col-12.d-flex div.col-3.p-l-5 div.container.col-12{
     display: none;
 }
-header div.container-col-4 {
+header div.col-12.d-flex div.col-3.p-l-5 div.col-12{
+    margin: 100px;
+    display: inline;
+}
+header div.container.col-4{
     display: none;
 }
 
@@ -31,84 +55,83 @@ div.col-lg-4>img{
     height: 100%;
     width: 100%;
 }
+footer, footer.py-5>div.row{
+    display:inline-flex;
+  }
 
 
 
 
 
-@media only screen and (min-width:768px) and (max-width: 992px){
+@media only screen and (min-width: 768px) and (max-width: 992px){
 
     header nav.navbar{
         display: none;
     }
-    
-    div.container.col-12{
-        display: none;
-        font-size: 125%;
-    }
-    
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+        font-size: medium;
+    }  
     body>header ul{
         font-size: 0.7rem;
     }
-
     body> header > div img{
         height: 220px;
     }
-
-
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+    }
     div.container{
         display: inline;
     }
    
     footer, footer.py-5>div.row{
         display:inline-flex;
-      }
+    }
 }
 
 
 /********** MEDIA QUERY **************/
-@media only screen and (min-width:993px) and (max-width: 1199px) {
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
     /************ SCHERMO TABLET NON CONSIDERO L'ORENTATION LANDSCAPE *************/
     header nav.navbar{
         display: none;
     }
-    div.container.col-12{
-        display: none;
-        font-size: 145%;
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+        font-size: medium;
     }
     body> header > div img{
         height: 300px;
     }
 
-    footer , footer.py-5>div.row{
+    footer, footer.py-5>div.row{
         display:inline-flex;
-        text-align: center;
-      }
-
-    div.container{
+      } 
+    /* div.container{  errore esterno dato dall'inline
         display: inline;
-    }
+    } */
 }
-@media screen and (min-width:1200px){
+
+
+
+
+
+@media screen and (min-width: 1200px){
 
     body> header > div img{
         height: 400px;
     }
-
-
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+        font-size: medium;
+    }
     div.container{
         display: inline;
     }
     header nav.navbar{
         display: none;
     }
-
-    div.container.col-12{
-        display: none;
-        font-size: 145%;
-    }
-    
-
     footer, footer.py-5>div.row{
         display:inline-flex;
       }

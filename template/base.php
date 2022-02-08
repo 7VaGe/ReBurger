@@ -4,12 +4,16 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href="../css/style.css" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <script src="http://code.jquery.com/jquery-plugins.js"></script>  
+            <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+            
+
         <title>ReBurger</title>
     </head>
-
+    
         <body>
-            <header class="p-3 bg-dark text-white">
-         
+        <script src="../script/script.js"></script> 
+            <header class="bg-dark text-white">
                 <div class="col-12 d-flex flex-wrap align-items-center justify-content-lg-start">
                     <img class="col-5" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
                     <!--<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
@@ -23,9 +27,8 @@
                             <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                             </ul>
                         </div>
-
                         <div class="col-3 p-l-5 ">   <!-- inserisco navbar -->
-                            <nav class="navbar navbar-dark bg-dark  text-end">
+                            <nav class="d-lg-none navbar navbar-dark bg-dark  text-end">
                                     <div class="col-12 ">
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                                                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +48,6 @@
                                     </div>
                                     </div>
                             </nav>
-
                         <div class="container col-12">
                           <button type="button" class="btn btn-outline-light ">Login</button>
                           <button type="button" class="btn btn-warning">Sign-up</button></div>
@@ -55,8 +57,8 @@
         </header>
             <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
   
-  <div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+  <div class="container-md my-5">
+    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">Scopri il nostro menu e ordina ora!</h1>
         <p class="lead"> 
@@ -70,8 +72,8 @@
     </div> <!-- fine contenitore card -->
 
 
- <div class="container my-5">
-    <div class="row p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+ <div class="container-md my-5">
+    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">Card numero 2</h1>
         <p class="lead"> 
@@ -90,7 +92,7 @@
 
 
     <!-- footer qui -->
-    <div class="container col-12 text-white">
+<div class="container col-12 text-white">
   <footer class="py-5 m-4 text-center">
     <div class="row">
       <div class="col-12">
