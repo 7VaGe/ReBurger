@@ -8,54 +8,53 @@
     </head>
 
         <body>
-        <header class="p-3 bg-dark text-white">
-        <div class="container col-12">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <img class="col-6" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
-            <!--<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
-            </a>-->
-            <div class="container1 col-4">        
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-                </ul>
-          </div>
+            <header class="p-3 bg-dark text-white">
+         
+                <div class="col-12 d-flex flex-wrap align-items-center justify-content-lg-start">
+                    <img class="col-5" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
+                    <!--<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
+                    </a>-->
+                        <div class="container col-4">        
+                            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                            </ul>
+                        </div>
 
-            <div class="text-end">   <!-- inserisco navbar -->
+                        <div class="col-3 p-l-5 ">   <!-- inserisco navbar -->
+                            <nav class="navbar navbar-dark bg-dark  text-end">
+                                    <div class="col-12 ">
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+                                    <div class="collapse navbar-collapse" id="navbarsExample01">
+                                        <ul class="navbar-nav me-auto mb-2">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Link</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled">Disabled</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                    </div>
+                            </nav>
 
-            <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
-                    <div class="col-6 container-fluid">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                    <div class="collapse navbar-collapse" id="navbarsExample01">
-                        <ul class="navbar-nav me-auto mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                        </li>
-                        </ul>
+                        <div class="container col-12">
+                          <button type="button" class="btn btn-outline-light ">Login</button>
+                          <button type="button" class="btn btn-warning">Sign-up</button></div>
+                        </div>
                     </div>
-                    </div>
-            </nav>
-            <div class="col-2">
-              <button type="button" class="btn btn-outline-light ">Login</button>
-            <button type="button" class="btn btn-warning">Sign-up</button></div>
-             
-            </div>
-        </div>
-        </div>
-  </header>
+         
+        </header>
             <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
-            <script src="../script/script.js"></script> 
+  
   <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">

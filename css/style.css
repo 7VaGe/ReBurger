@@ -1,11 +1,12 @@
 /************** MOBILE FRIST ***************/
+
 body> header > div img{
     height: 100%;
 }
 div.text-end{
-    display: inline;
+    display: inline-flex;
 }
-div.container1{
+header div.container.col-4{
     display: none;
 }
 
@@ -22,10 +23,8 @@ body>div.container.my-5>div{
     margin: 10px;
 
 }
-div.container-fluid{
-    margin-left: 3.5rem;
-}
-button.btn.btn-outline-light,header button.btn.btn-warning {
+
+div.container.col-12{
     display: none;
 }
 
@@ -43,11 +42,12 @@ div.col-lg-4>img{
     header nav.navbar{
         display: none;
     }
-    button.btn.btn-outline-light, header button.btn.btn-warning {
-        font-size: 0.7rem;
-        display: inline;
-        text-align: end;
+    
+    div.container.col-12{
+        display: none;
+        font-size: 125%;
     }
+    
     body>header ul{
         font-size: 0.7rem;
     }
@@ -57,7 +57,7 @@ div.col-lg-4>img{
     }
 
 
-    div.container1{
+    div.container{
         display: inline;
     }
    
@@ -73,10 +73,9 @@ div.col-lg-4>img{
     header nav.navbar{
         display: none;
     }
-    button.btn.btn-outline-light, header button.btn.btn-warning {
-        font-size: 1rem;
-        display: inline;
-        text-align: end;
+    div.container.col-12{
+        display: none;
+        font-size: 145%;
     }
     body> header > div img{
         height: 300px;
