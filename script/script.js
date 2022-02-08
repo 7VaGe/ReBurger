@@ -1,16 +1,17 @@
-var today = new Date();
-var hour = today.getHours();
-var greeting;
 
-if( hour >18){
-    greeting= "Buonasera!";
-}else if( hour > 12){
-    greeting = "Buon pomeriggio!";
-}else if( hour > 0){
-    greeting ="Good Morning!";
-}else {
-    greeting = "Benvenuto!"
+
+
+$(document).ready( function () {
+   function screenOver768px(screenWidth){
+     if(screenWidth.matches){ //se lo schermo è più grande 
+        //cambi alcune proprietà del codice in base.html per prova cambio il bg-color
+        document.body.style.backgroundColor= "red";
+    }
 }
+    var _screenOver768px = window.matchMedia("(min-width: 768px)")
+    var _screenOver993px = window.matchMedia("(min-width: 993px)")//fai qualcosa e crea la funzione adeguata
+    var _screenOver1200px = window.matchMedia("(min-width: 1200px)")//fai qualcosa e crea la funzione adeguata
 
-document.write(`<div class="col-12 text-white text-center rounded border shadow-lg" ><h3>` + greeting + `</h3></div>`);
-
+    screenOver768px(_screenOver768px)
+    _screenOver768px.addEventListener(myfunction);
+    })
