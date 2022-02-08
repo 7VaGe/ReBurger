@@ -90,7 +90,7 @@
 
 
     <!-- footer qui -->
-    <div class="container3 col-12 text-white">
+    <div class="container col-12 text-white">
   <footer class="py-5 m-4 text-center">
     <div class="row">
       <div class="col-12">

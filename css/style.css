@@ -6,9 +6,6 @@ body> header > div img{
 div.text-end{
     display: inline-flex;
 }
-header div.container.col-4{
-    display: none;
-}
 
 button>.me-2{
     margin-right: none !important;
@@ -21,10 +18,12 @@ background-color: rgb(34, 37, 41);
 body>div.container.my-5>div{
     background-color: rgb(255, 255, 255);
     margin: 10px;
-
 }
 
-div.container.col-12{
+header div.col-3.p-l-5:last-child{
+    display: none;
+}
+header div.container-col-4 {
     display: none;
 }
 
@@ -86,7 +85,7 @@ div.col-lg-4>img{
         text-align: center;
       }
 
-    div.container1{
+    div.container{
         display: inline;
     }
 }
@@ -97,18 +96,18 @@ div.col-lg-4>img{
     }
 
 
-    div.container1{
+    div.container{
         display: inline;
     }
     header nav.navbar{
         display: none;
     }
-    
-    button.btn.btn-outline-light, header button.btn.btn-warning {
-        display: inline;
-        font-size: 1rem;
-        text-align: end;
+
+    div.container.col-12{
+        display: none;
+        font-size: 145%;
     }
+    
 
     footer, footer.py-5>div.row{
         display:inline-flex;
