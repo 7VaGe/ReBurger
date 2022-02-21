@@ -1,0 +1,26 @@
+@media only screen and (min-width: 768px) and (max-width: 992px){
+
+    header nav.navbar{
+        display: none;
+    }
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+        font-size: medium;
+    }  
+    body>header ul{
+        font-size: 0.7rem;
+    }
+    body> header > div img{
+        height: 220px;
+    }
+    header div.col-3.p-l-5:last-child{
+        display: inline;
+    }
+    div.container{
+        display: inline;
+    }
+   
+    footer, footer.py-5>div.row{
+        display:inline-flex;
+    }
+}

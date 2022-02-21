@@ -1,17 +1,36 @@
 
-
-
 $(document).ready( function () {
-   function screenOver768px(screenWidth){
-     if(screenWidth.matches){ //se lo schermo è più grande 
-        //cambi alcune proprietà del codice in base.html per prova cambio il bg-color
-        document.body.style.backgroundColor= "red";
+   
+    const screenWidth = ["(min-width: 768px)", "(min-width: 993px)","(min-width: 1200px)"];
+    var cssFiles = ["../css/styleSmartphone.css","../css/styleTablet.css", "../css/styleNotebook.css","../css/stylePc.css"];
+    
+    if(window.matchMedia(screenWidth[0]).matches){
+        var cssLink = document.getElementById("css_link");
+        cssLink.setAttribute("href")=cssFiles[0];
+    } else if(window.matchMedia(screenWidth[1]).matches){
+        var cssLink = document.getElementById("css_link");
+        cssLink.setAttribute("href")=cssFiles[1];
+    } else if(window.matchMedia(screenWidth[2]).matches){
+        var cssLink = document.getElementById("css_link");
+        cssLink.setAttribute("href")=cssFiles[2];
+    } else if(window.matchMedia(screenWidth[3]).matches){
+        var cssLink = document.getElementById("css_link");
+        cssLink.setAttribute("href")=cssFiles[3];
     }
-}
-    var _screenOver768px = window.matchMedia("(min-width: 768px)")
-    var _screenOver993px = window.matchMedia("(min-width: 993px)")//fai qualcosa e crea la funzione adeguata
-    var _screenOver1200px = window.matchMedia("(min-width: 1200px)")//fai qualcosa e crea la funzione adeguata
+   /*
+    function getScreenWidth(){
+      return screenWidth = document.getElementById("width");
+    }
+    TODO: controlla meglio il meccanismo per l'iindividuazione automatica del file css adatto
+    occorre cambiare il css a seconda del matchmedia che viene triggerato, pensavo di inserirci un foreach o un for, ma 
+    non è la strada migliore, quindi per snellire il codice pensavo di  richiamare una funzione generica con le operazione
+    da effettuare ogni volta che viene matchato un css adeguato.
 
-    screenOver768px(_screenOver768px)
+    Ricordati che il matchmedia sembrerebbe funzionare solo quando viene caricato il documento, quindi per funzionare nuovamente
+    deve essere ricaricato, non so se è il document.ready che da questo blocco.
+
+
+   screenOver768px(_screenOver768px);
     _screenOver768px.addEventListener(myfunction);
+*/
     })
