@@ -1,22 +1,37 @@
 
 $(document).ready( function () {
-   
-    const screenWidth = ["(min-width: 768px)", "(min-width: 993px)","(min-width: 1200px)"];
-    var cssFiles = ["../css/styleSmartphone.css","../css/styleTablet.css", "../css/styleNotebook.css","../css/stylePc.css"];
+
+    function myFunction(x) {
+  if (x.matches) { // If media query matches
+    document.body.style.backgroundColor = "yellow";
+  } else {
+   document.body.style.backgroundColor = "pink";
+  }
+}
+        var x = window.matchMedia("(min-width: 768px)")
+        myFunction(x) // Call listener function at run time
+        x.addEventListenerstener(myFunction)// Attach listener function on state changes
+
+
+
+    // const screenWidth = ["(min-width: 768px)", "(min-width: 993px)","(min-width: 1200px)"];
+    // var cssFiles = ["../css/styleSmartphone.css", "../css/styleSmartphone.css","../css/styleTablet.css", "../css/styleNotebook.css","../css/stylePc.css"];
     
-    if(window.matchMedia(screenWidth[0]).matches){
-        var cssLink = document.getElementById("css_link");
-        cssLink.setAttribute("href")=cssFiles[0];
-    } else if(window.matchMedia(screenWidth[1]).matches){
-        var cssLink = document.getElementById("css_link");
-        cssLink.setAttribute("href")=cssFiles[1];
-    } else if(window.matchMedia(screenWidth[2]).matches){
-        var cssLink = document.getElementById("css_link");
-        cssLink.setAttribute("href")=cssFiles[2];
-    } else if(window.matchMedia(screenWidth[3]).matches){
-        var cssLink = document.getElementById("css_link");
-        cssLink.setAttribute("href")=cssFiles[3];
-    }
+    // if(window.matchMedia(screenWidth[0]).matches){
+    //     var cssLink = document.getElementById("css_link");
+    //     cssLink.setAttribute("href",cssFiles[0]);
+    // } else if(window.matchMedia(screenWidth[0]).matches){
+    //     var cssLink = document.getElementById("css_link");
+    //     cssLink.setAttribute("href",cssFiles[0]);
+    // } else if(window.matchMedia(screenWidth[1]).matches){
+    //     var cssLink = document.getElementById("css_link");
+    //     cssLink.setAttribute("href",cssFiles[3])
+    // } else if(window.matchMedia(screenWidth[3]).matches){
+    //     var cssLink = document.getElementById("css_link");
+    //     cssLink.setAttribute("href",cssFiles[3]);
+    // }
+
+
    /*
     function getScreenWidth(){
       return screenWidth = document.getElementById("width");

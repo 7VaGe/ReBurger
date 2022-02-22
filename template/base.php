@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
+           
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <link id="css_link" rel="stylesheet" type="text/css" href="../css/style.css" />
+            <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <script src="http://code.jquery.com/jquery-plugins.js"></script>  
-            <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script
+              src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             
 
         <title>ReBurger</title>
     </head>
     
         <body>
-        <!--<script src="../script/script.js"></script> -->
+        <script src="../script/script.js"></script> 
             <header class="bg-dark text-white">
                 <div class="col-12 d-flex flex-wrap align-items-center justify-content-lg-start">
                     <img class="col-5" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
