@@ -1,5 +1,6 @@
 @media screen and (min-width: 1200px){
 
+    
     body> header > div img{
         height: 400px;
     }
@@ -14,7 +15,7 @@
         display: none;
     }
     footer, footer.py-5>div.row{
-        display:inline-flex;
+        display:none;
       }
    
 }

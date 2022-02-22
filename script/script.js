@@ -1,21 +1,40 @@
 
-$(document).ready( function () {
+ $(document).ready( function () {
 
     function myFunction(x) {
-  if (x.matches) { // If media query matches
-    document.body.style.backgroundColor = "yellow";
-  } else {
-   document.body.style.backgroundColor = "pink";
+    if (screenWidth[0].matches) { // If media query matches
+      var cssLink = document.getElementById("css_link")[0];
+      cssLink.setAttribute("href",cssFiles[1]); 
+    } else if ((screenWidth[1].matches)){
+    var cssLink = document.getElementById("css_link")[0];
+      cssLink.setAttribute("href",cssFiles[2]); 
+    } else if ((screenWidth[2].matches)) {
+      var cssLink = document.getElementById("css_link")[0];
+      cssLink.setAttribute("href",cssFiles[3]); 
+    }else{ 
+      //anche come default, ha senso uno switch con i vari case?
+      var cssLink = document.getElementById("css_link")[0];
+      cssLink.setAttribute("href",cssFiles[0]); 
+    }
   }
-}
-        var x = window.matchMedia("(min-width: 768px)")
-        myFunction(x) // Call listener function at run time
-        x.addEventListenerstener(myFunction)// Attach listener function on state changes
+        var x;
+        const screenWidth = ['window.matchMedia("(min-width: 768px)")', 'window.matchMedia("(min-width: 993px)")','window.matchMedia("(min-width: 1200px)")'];
+            var cssFiles = ["../css/styleSmartphone.css","../css/styleTablet.css", "../css/styleNotebook.css","../css/stylePc.css"];      
+            for(i=0; i<= screenWidth.length; i++){
+              x=screenWidth[i];
+              x.addEventListener("change", () => {
+              this.myFunction(x);
+              }); 
+          }
+      console.log(x);
+      console.log(window.matchMedia);
+
+  });
+    
 
 
 
-    // const screenWidth = ["(min-width: 768px)", "(min-width: 993px)","(min-width: 1200px)"];
-    // var cssFiles = ["../css/styleSmartphone.css", "../css/styleSmartphone.css","../css/styleTablet.css", "../css/styleNotebook.css","../css/stylePc.css"];
+    
     
     // if(window.matchMedia(screenWidth[0]).matches){
     //     var cssLink = document.getElementById("css_link");
@@ -48,4 +67,4 @@ $(document).ready( function () {
    screenOver768px(_screenOver768px);
     _screenOver768px.addEventListener(myfunction);
 */
-    })
+    
