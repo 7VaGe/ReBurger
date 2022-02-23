@@ -5,25 +5,37 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
             <script
               src="https://code.jquery.com/jquery-3.4.1.min.js"
               integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
               crossorigin="anonymous"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
-            
 
         <title>ReBurger</title>
     </head>
     
         <body>
-        <script src="../script/script.js"></script> 
+        
+<div id="cb-cookie-banner" class=" alert alert-warning fade  show  text-center mb-0" role="alert" >
+          🍪  Questo sito web utilizza i cookie per assicurarti di ottenere la migliore esperienza sul nostro sito web. <br>
+          <a href="https://www.garanteprivacy.it/faq/cookie" target="blank">Ulteriori informazioni</a>
+          <button type="button" class="btn btn-primary btn-sm ms-3" onclick="window.cb_hideCookieAlert()"> Accetto! </button>
+
+         <div class=" d-flex justify-content-end">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        
+         </div>
+           
+</div>
+     
+        
             <header class="bg-dark text-white">
-                <div class="col-12 d-flex flex-wrap align-items-center justify-content-lg-start">
-                    <img class="col-5" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
+                <!-- <div class="col-12 d-flex flex-wrap align-items-center "> -->
+                    <!-- <img class="col-5" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/> -->
                     <!--<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
                     </a>-->
-                        <div class="container col-4">        
+                        <!-- <div class="container col-4">        
                             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
                             <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
@@ -31,8 +43,43 @@
                             <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
                             <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                             </ul>
+                        </div> -->
+                       <!--  inserisco navbar  -->
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="col-12 container-fluid">
+    <img class="col-5 justify-content-lg-start" src="../img/Logo_ReBurger.png" alt="ReBurger Logo"/>
+    <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="col-4 collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="#">FAQs</a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>  
+      </ul>
+    </div>
+    <div class="col-3 container d-none d-md-block d-lg-inline-block ">
+                          <button type="button" class="btn btn-outline-light ">Login</button>
+                          <button type="button" class="btn btn-warning">Sign-up</button></div>
                         </div>
-                        <div class="col-3 p-l-5 ">   <!-- inserisco navbar -->
+                    </div>
+  </div>
+</nav>
+<!-- 
                             <nav class="d-lg-none navbar navbar-dark bg-dark  text-end">
                                     <div class="col-12 ">
                                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,23 +88,19 @@
                                     <div class="collapse navbar-collapse" id="navbarsExample01">
                                         <ul class="navbar-nav me-auto mb-2">
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                            <a class="nav-link active" aria-current="page" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" href="#">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Link</a>
+                                            <a class="nav-link"data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" href="#">Link</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link disabled">Disabled</a>
+                                            <a class="nav-link disabled" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Disabled</a>
                                         </li>
                                         </ul>
                                     </div>
                                     </div>
-                            </nav>
-                        <div class="container col-12">
-                          <button type="button" class="btn btn-outline-light ">Login</button>
-                          <button type="button" class="btn btn-warning">Sign-up</button></div>
-                        </div>
-                    </div>
+                            </nav> -->
+                       
          
         </header>
             <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
@@ -77,6 +120,9 @@
     </div> <!-- fine contenitore card -->
 
 
+
+
+
  <div class="container-md my-5">
     <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -93,6 +139,11 @@
 </div>
 </div>
 </div>
+
+<!-- Javascript-->
+        <script src="../script/cookies.js"></script>
+        <script src="../script/buttons.js"></script> 
+        <!-- <script src="../script/script.js"></script>  --> 
     </body>
 
 

@@ -30,11 +30,7 @@
       console.log(window.matchMedia);
 
   });
-    
-
-
-
-    
+      
     
     // if(window.matchMedia(screenWidth[0]).matches){
     //     var cssLink = document.getElementById("css_link");
