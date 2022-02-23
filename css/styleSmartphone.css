@@ -22,9 +22,10 @@
       box-shadow: inset 0 0 6px  rgb(0, 0, 0);
       background-color: var(--note);
   }
-body> header > div img{
+body> header img{
     height: 100%;
 }
+
 div.text-end{
     display: inline-flex;
 }
@@ -59,15 +60,22 @@ footer, footer.py-5>div.row{
     display:inline-flex;
   }
 
+#cb-cookie-banner { 
+    position:fixed;
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 999; 
+    border-radius: 0;
+ }
 
 
 
+ @media only screen and (min-width: 768px) and (max-width: 992px){
 
-/* @media only screen and (min-width: 768px) and (max-width: 992px){
-
-    header nav.navbar{
+    /* header nav.navbar{
         display: none;
-    }
+    } */
     header div.col-3.p-l-5:last-child{
         display: inline;
         font-size: medium;
@@ -76,7 +84,7 @@ footer, footer.py-5>div.row{
         font-size: 0.7rem;
     }
     body> header > div img{
-        height: 220px;
+        height: 100%;
     }
     header div.col-3.p-l-5:last-child{
         display: inline;
@@ -91,25 +99,25 @@ footer, footer.py-5>div.row{
 }
 
 
-/********** MEDIA QUERY ************
+/********** MEDIA QUERY ************/
 @media only screen and (min-width: 993px) and (max-width: 1199px) {
-    /************ SCHERMO TABLET NON CONSIDERO L'ORENTATION LANDSCAPE ***********
-    header nav.navbar{
+    /************ SCHERMO TABLET NON CONSIDERO L'ORENTATION LANDSCAPE ***********/
+    /* header nav.navbar{
         display: none;
-    }
+    } */
     header div.col-3.p-l-5:last-child{
         display: inline;
         font-size: medium;
     }
     body> header > div img{
-        height: 300px;
+        height: 100%;
     }
 
     footer, footer.py-5>div.row{
         display:inline-flex;
       } 
      /* div.container{  errore esterno dato dall'inline
-        display: inline;
+        display: inline; */
     }  
 
 }
@@ -118,7 +126,7 @@ footer, footer.py-5>div.row{
 @media screen and (min-width: 1200px){
 
     body> header > div img{
-        height: 400px;
+        height: 100%;
     }
     header div.col-3.p-l-5:last-child{
         display: inline;
@@ -134,4 +142,4 @@ footer, footer.py-5>div.row{
         display:inline-flex;
       }
    
-} */
+} 
