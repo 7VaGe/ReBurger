@@ -1,7 +1,5 @@
 $(document).ready( function( ){
 
-
-
 /* Visualiizza il banner dei cookie */
 function showCookieBanner(){
     let cookieBanner = document.getElementById("cb-cookie-banner");
@@ -25,5 +23,5 @@ function showCookieBanner(){
 }
 
    window.onload = initializeCookieBanner();
-   window.cb_hideCookieBanner = hideCookieBanner;
+   window.cb_hideCookieBanner = hideCookieBanner();
    });
