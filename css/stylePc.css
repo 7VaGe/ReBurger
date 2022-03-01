@@ -11,9 +11,7 @@
     div.container{
         display: inline;
     }
-    header nav.navbar{
-        display: none;
-    }
+    
     footer, footer.py-5>div.row{
         display:none;
       }
