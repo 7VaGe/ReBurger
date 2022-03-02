@@ -59,7 +59,7 @@
               <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
                     <button type="button" class="btn btn-warning">Ordina ora</button>
               </div> -->
-          <div class="text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
+          <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button></div>
         </div>

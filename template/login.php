@@ -45,7 +45,6 @@
         </li>  
       </ul>
     </div>
-    
                  </div>
             </div>
       </div>
@@ -53,14 +52,14 @@
 </header>
 <main class="text-center form-signin">
   <form>
-    <img class="mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="200" height="100"/>
-    <h1 class="h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
+    <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
+    <h1 class=" my-4 h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
 
-    <div class="form-floating">
+    <div class=" form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Indirizzo email</label>
     </div>
-    <div class="form-floating">
+    <div class=" form-floating">
       <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
