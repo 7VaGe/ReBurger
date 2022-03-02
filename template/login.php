@@ -22,43 +22,38 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
 </div>                 
- <header class="bg-dark text-white">
+<header class="bg-dark text-white d-md-none d-lg-none d-xl-block d-s-none">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid">
-    <img class="col-5 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
+    <img class="col-4 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
     <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="container-mb justify-content-center col-4 collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav text-center">
-        <li class="nav-item ">
+    <div class="container-mb justify-content-center col-5 collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class=" col-12 navbar-nav text-center display-5">
+        <li class="nav-item col-3">
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#">Prodotti</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">FAQs</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#">Carrello</a>
+        </li>   
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#">About us</a>
         </li>  
       </ul>
     </div>
-  <!--  <div class="container text-center col-3  d-none d-md-block d-lg-inline-block ">
-          <button type="button" class="btn btn-outline-light ">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button></div>
-                 </div>-->
+    
+                 </div>
             </div>
       </div>
     </nav>   
 </header>
-<main class="container-mb text-center form-signin">
+<main class="text-center form-signin">
   <form>
-   <!-- <img class="mb-4" src="../img/Logo2.png" alt="" width="200" height="100"/>-->
+    <img class="mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="200" height="100"/>
     <h1 class="h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
 
     <div class="form-floating">
@@ -84,7 +79,7 @@
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
-        <script src="../script/buttons.js"></script> 
+        <script src="../script/formLoginAnimation.js"></script> 
         <script src="../script/script.js"></script> 
     </body>
 <!-- footer qui -->
