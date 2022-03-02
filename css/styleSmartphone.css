@@ -34,10 +34,6 @@ button>.me-2{
     margin-right: none !important;
 }
 
-body:nth-child(2){
- background-color: rgb(34, 37, 41);
-}
-
 body>div.container-md.my-5>div{
    background-color: rgb(255, 255, 255);
 }
@@ -77,7 +73,7 @@ footer, footer.py-5>div.row{
   }
 
 .form-signin {
-    max-width: 330px;
+    max-width: 450px;
     padding: 15px;
     margin: auto;
 } 

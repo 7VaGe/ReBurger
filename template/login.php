@@ -13,7 +13,7 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <title>ReBurger</title>
     </head>
-<body>      
+<body class="bg-dark">      
 <div id="cb-cookie-banner" class=" alert alert-warning fade show  text-center mb-0" role="alert" >
           🍪  Questo sito web utilizza i cookie per assicurarti di ottenere la migliore esperienza sul nostro sito web. <br>
           <a href="https://www.garanteprivacy.it/faq/cookie" target="blank">Ulteriori informazioni</a>
