@@ -34,7 +34,7 @@ button>.me-2{
     margin-right: none !important;
 }
 
-body>div.container-md.my-5>div{
+body>div.container-lg.my-5>div{
    background-color: rgb(255, 255, 255);
 }
 header div.col-12.d-flex div.col-3.p-l-5 div.container.col-12{
@@ -44,7 +44,7 @@ header div.col-12.d-flex div.col-3.p-l-5 div.col-12{
     margin: 100px;
     display: inline;
 }
-header div.container.col-4{
+header{
     display: none;
 }
 
@@ -126,6 +126,7 @@ footer, footer.py-5>div.row{
 /********** MEDIA QUERY ************/
 @media only screen and (min-width: 993px) and (max-width: 1199px) {
     /************ SCHERMO TABLET NON CONSIDERO L'ORENTATION LANDSCAPE ***********/
+
    
     header div.col-3.p-l-5:last-child{
         display: inline;

@@ -22,33 +22,30 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
 </div>                 
- <header class="bg-dark text-white">
+ <header class="bg-dark text-white d-block">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid">
     <img class="col-5 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
     <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="container-mb justify-content-center col-4 collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav text-center">
-        <li class="nav-item ">
-          <a class="nav-link" href="../template/base.php">Home</a>
+    <div class="container-mb  col-4 collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="col-12 navbar-nav text-center display-6">
+        <li class="nav-item col-3">
+          <a class="nav-link" href="../template/base.php" style="font-size: 2vw;" >Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#" style="font-size: 2vw;">Prodotti</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">FAQs</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#" style="font-size: 2vw;">Carrello</a>
+        </li>   
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#" style="font-size: 2vw;">About</a>
         </li>  
       </ul>
     </div>
-    <div class="container text-center col-3  d-none d-md-block d-lg-inline-block ">
+    <div class="container text-center col-3  d-none d-md-block">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button></div>
                  </div>
@@ -56,9 +53,21 @@
       </div>
     </nav>   
 </header>
+<div class="container-lg col-12 my-2 d-lg-none d-sm-block bg-dark">
+    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+                    <button type="button" class="btn btn-warning">Ordina ora</button>
+              </div> -->
+          <div class="text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
+          <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
+          <button type="button" class="btn btn-warning">Sign-up</button></div>
+        </div>
+     </div>
+</div>
 <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
-  <div class="container-md my-5">
-    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+  <div class="container-lg my-5">
+    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">Scopri il nostro menu e ordina ora!</h1>
         <p class="lead"> 
@@ -70,15 +79,15 @@
         </div>
      </div>
 </div> <!-- fine contenitore card -->
- <div class="container-md my-5">
-    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+ <div class="container-lg my-5">
+    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">Card numero 2</h1>
         <p class="lead"> 
             <cite>Descrizione card numero 2<br></cite>
                 <b> autore</b></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button type="button" class="btn btn-warning">About us</button> 
+            <button type="button" class="btn btn-warning">About-us</button> 
          </div>
      </div>
          <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
