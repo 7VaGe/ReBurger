@@ -48,42 +48,37 @@
         </li>  
       </ul>
     </div>
-    <div class="container text-center col-3  d-none d-md-block d-lg-inline-block ">
-          <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
+  <!--  <div class="container text-center col-3  d-none d-md-block d-lg-inline-block ">
+          <button type="button" class="btn btn-outline-light ">Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button></div>
-                 </div>
+                 </div>-->
             </div>
       </div>
     </nav>   
 </header>
-<!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
-  <div class="container-md my-5">
-    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Scopri il nostro menu e ordina ora!</h1>
-        <p class="lead"> 
-            <cite>L’innovazione deve essere parte della nostra cultura. <br> I consumatori si stanno trasformando più velocemente di noi, e se non teniamo il passo siamo nei guai.<br></cite>
-                <b> Ian Schafer</b></p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-                    <button type="button" class="btn btn-warning">Ordina ora</button>
-              </div>
-        </div>
-     </div>
-</div> <!-- fine contenitore card -->
- <div class="container-md my-5">
-    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Card numero 2</h1>
-        <p class="lead"> 
-            <cite>Descrizione card numero 2<br></cite>
-                <b> autore</b></p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button type="button" class="btn btn-warning">About us</button> 
-         </div>
-     </div>
-         <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
-          <img  src="../img/hamburger.png" alt=""/>
-</div>
+<main class="container-mb text-center form-signin">
+  <form>
+   <!-- <img class="mb-4" src="../img/Logo2.png" alt="" width="200" height="100"/>-->
+    <h1 class="h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Indirizzo email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label class="text-white">
+        <input type="checkbox" value="remember-me"> Ricordami
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
+    <p class="mt-5 mb-3 text-muted">© 2022</p>
+  </form>
+</main>
 </div>
 </div>
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
