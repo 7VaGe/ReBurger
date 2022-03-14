@@ -63,29 +63,16 @@
       <div class="form-floating">
           <input type="password" class="form-control" placeholder="Password" required/>
           <label for="floatingInput">Password</label>
-          <!-- <button id="toggle-password" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen."><i class="bi bi-eye"></i></button> -->
     </div>
 
-    <!-- <div class="form-floating input-group">
-      <input type="password" id="floatingPassword" class="form-control" required>
-      
-      </button>
-
-      <label for="floatingPassword">Password</label>
-    </div> -->
-    <!-- <div class="input-group">
-      <input type="password" class="form-control rounded-right input-password" id="floatingPassword" placeholder="Password" required="" autocomplete="current-password" spellcheck="false"
-      autocorrect="false" autocapitalize="off">
-      <button id="toggle-password" type="button" class="d-none" aria-label="Mostra la password. Attenzione: Visualizzerai la tua password nello schemo!">
-     </button>
-    </div> -->
-    <div class="container d-flex justify-content-center">
+  
+    <div class="container d-flex justify-content-center my-3 py-3">
        <div class="checkbox mb-3">
       <label class="text-white">
         <input type="checkbox" value="remember-me"> Ricordami
       </label>
 
-      <button id="toggle-password" type="button" class="btn-sm btn-warning d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+      <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
     </div>
     </div>
    
@@ -96,7 +83,10 @@
   </main>
   </div>
 </div>
-<button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
+
+  <button class="btn position-fixed btn-outline-warning" onclick="goTop()" id="topBtn" title="Go top">↑</button>
+
+
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
         <script src="../script/formLoginAnimation.js"></script> 
