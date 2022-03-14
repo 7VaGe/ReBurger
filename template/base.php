@@ -11,6 +11,8 @@
               crossorigin="anonymous"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
+            
         <title>ReBurger</title>
     </head>
 <body class="bg-dark">      
@@ -24,47 +26,48 @@
 </div>                 
  <header class="bg-dark text-white d-block">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="col-12 container-fluid">
-    <img class="col-5 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
-    <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+  <div class="col-12 container-fluid justify-content-sm-center">
+    <img class="col justify-content-lg-start overflow-hidden" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
+    <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="container-mb  col-4 collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="col-12 navbar-nav text-center display-6">
-        <li class="nav-item col-3">
-          <a class="nav-link" href="../template/base.php" style="font-size: 2vw;" >Home</a>
+    <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="col-12 navbar-nav text-center"style="font-size:4vw;">
+        <li class="nav-item col-sm-3">
+          <a class="nav-link" href="../template/base.php">Home</a>
         </li>
-        <li class="nav-item col-3">
-          <a class="nav-link" href="#" style="font-size: 2vw;">Prodotti</a>
+        <li class="nav-item col-sm-3 ">
+          <a class="nav-link" href="#">Prodotti</a>
         </li>
-        <li class="nav-item col-3">
-          <a class="nav-link" href="#" style="font-size: 2vw;">Carrello</a>
+        <li class="nav-item col-sm-3">
+          <a class="nav-link" href="#">Carrello</a>
         </li>   
-        <li class="nav-item col-3">
-          <a class="nav-link" href="#" style="font-size: 2vw;">About</a>
+        <li class="nav-item col-sm-3">
+          <a class="nav-link" href="#">About</a>
         </li>  
       </ul>
     </div>
-    <div class="container text-center col-3  d-none d-md-block">
+    <div class="container text-lg-center text-sm-end col  d-none d-md-block">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button></div>
+          <button type="button" class="btn btn-warning my-2">Sign-up</button></div>
                  </div>
             </div>
       </div>
     </nav>   
 </header>
 <div class="container-lg col-12 my-2 d-lg-none d-sm-block bg-dark">
-    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+    <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
+      <div class="col-lg-7 p-1 p-lg-5 pt-lg-3">
               <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
                     <button type="button" class="btn btn-warning">Ordina ora</button>
               </div> -->
           <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button></div>
+          <button type="button" class="btn btn-warning" onclick='window.location="signup.php"'>Sign-up</button></div>
         </div>
      </div>
 </div>
+
 <!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
   <div class="container-lg my-5">
     <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
@@ -78,7 +81,10 @@
               </div>
         </div>
      </div>
-</div> <!-- fine contenitore card -->
+</div> 
+<!-- fine contenitore hero1 -->
+
+
  <div class="container-lg my-5">
     <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -93,15 +99,93 @@
          <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
           <img  src="../img/hamburger.png" alt=""/>
 </div>
+
+<!-- fine contenitore hero2 -->
 </div>
 </div>
+
+<!-- Cards che contengono qualche nostra iniziativa -->
+<!-- <div class="container text-white px-4 py-5" id="custom-cards"> 
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">I nostri Panini!</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                 aggiungi icona o immagine  
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Earth</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Le nostre Bibite</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              aggiungi immagine  
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Finger Food</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              <i class="fa-duotone fa-french-fries"></i>
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href=""></use></svg>
+                <small>Cesena</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
+
+
+
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
-        <script src="../script/buttons.js"></script> 
+        <!-- <script src="../script/formLoginAnimation.js"></script>  -->
         <script src="../script/script.js"></script> 
     </body>
 <!-- footer qui -->
+
+
+
 <div class="container-md justify-content-center">
   <footer class="py-5 m-4 text-center text-white">
         <div class="row">    
