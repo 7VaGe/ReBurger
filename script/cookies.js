@@ -23,5 +23,5 @@ function showCookieBanner(){
 }
 
    window.onload = initializeCookieBanner();
-   window.cb_hideCookieBanner = hideCookieBanner();
+   window.cb_hideCookieBanner = hideCookieBanner;
    });
