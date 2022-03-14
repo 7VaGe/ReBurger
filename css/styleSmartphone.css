@@ -91,19 +91,18 @@ footer, footer.py-5>div.row{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
-  
-  /* .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-} */
+
+.checkbox:checked{
+    background-color: rgb(253, 193, 64);
+}
+
 /** Css per il login**/
 ::-ms-reveal {
     display: none;
   }
   
   button#toggle-password {
-      
+
   }
   
   button#toggle-password:active,
@@ -116,12 +115,12 @@ footer, footer.py-5>div.row{
     outline: none !important;
   }
   
-  /* .input-password {
+   .input-password {
     padding-right: calc(1.5em + 0.75rem);
     background-repeat: no-repeat;
     background-position: right calc(0.375em + 0.1875rem) center;
     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
-  } */
+  } 
 
  @media only screen and (min-width: 768px) and (max-width: 992px){
 

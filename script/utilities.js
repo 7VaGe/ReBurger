@@ -16,4 +16,3 @@ function addEvent(el,event,callback){
         el.attachEvent('on' + event, el[event + callback]); // quando si verifica l'evento sull'elemento el tramite attachEvent richiamo i metodi aggiunti sopra.
     }
 }
-
