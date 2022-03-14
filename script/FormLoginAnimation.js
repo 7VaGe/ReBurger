@@ -1,10 +1,10 @@
 $(document).ready(function (){
 
-    window.onload() = function (){  
-    slideDownForm()
-    };
+    // window.onload() = function (){  
+    // slideDownForm()
+    // };
 
-    function slideDownForm(){
-        $("main").slideDown();
-    }
+    // function slideDownForm(){
+    //     $("main").slideDown();
+    // }
 })
