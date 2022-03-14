@@ -3,6 +3,7 @@
     <head>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
             <script
@@ -55,31 +56,53 @@
     <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
     <h1 class=" my-4 h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
 
-    <div class=" form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Indirizzo email</label>
-    </div>
-    <div class=" form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+  <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInput" placeholder="nameExample" required/>
+          <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+          <input type="password" class="form-control" placeholder="Password" required/>
+          <label for="floatingInput">Password</label>
+          <!-- <button id="toggle-password" type="button" class="" aria-label="Show password as plain text. Warning: this will display your password on the screen."><i class="bi bi-eye"></i></button> -->
     </div>
 
-    <div class="checkbox mb-3">
+    <!-- <div class="form-floating input-group">
+      <input type="password" id="floatingPassword" class="form-control" required>
+      
+      </button>
+
+      <label for="floatingPassword">Password</label>
+    </div> -->
+    <!-- <div class="input-group">
+      <input type="password" class="form-control rounded-right input-password" id="floatingPassword" placeholder="Password" required="" autocomplete="current-password" spellcheck="false"
+      autocorrect="false" autocapitalize="off">
+      <button id="toggle-password" type="button" class="d-none" aria-label="Mostra la password. Attenzione: Visualizzerai la tua password nello schemo!">
+     </button>
+    </div> -->
+    <div class="container d-flex justify-content-center">
+       <div class="checkbox mb-3">
       <label class="text-white">
         <input type="checkbox" value="remember-me"> Ricordami
       </label>
+
+      <button id="toggle-password" type="button" class="btn-sm btn-warning d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
     </div>
+    </div>
+   
     <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
-    <p class="mt-5 mb-3 text-muted">© 2022</p>
-  </form>
-</main>
-</div>
+    <p class="mt-5 mb-3 text-muted">© 2022</p> 
+    
+    </form>
+  </main>
+  </div>
 </div>
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
         <script src="../script/formLoginAnimation.js"></script> 
         <script src="../script/script.js"></script> 
+        <script src="../script/utilities.js"></script> 
+        <script src="../script/showpwd.js"></script>
     </body>
 <!-- footer qui -->
 <div class="container-md justify-content-center">
