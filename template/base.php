@@ -49,7 +49,7 @@
     </div>
     <div class="container text-lg-center text-sm-end col  d-none d-md-block">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
-          <button type="button" class="btn btn-warning my-2">Sign-up</button></div>
+          <button type="button" class="btn btn-warning my-2" onclick='window.location="signup.php"'>Sign-up</button></div>
                  </div>
             </div>
       </div>
