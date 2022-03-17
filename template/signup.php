@@ -1,8 +1,11 @@
+<?php require_once 'utilityFunctions.php'?>
+
 <!DOCTYPE html>
 <html lang="it">
     <head>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
             <script
@@ -11,8 +14,6 @@
               crossorigin="anonymous"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
-            
         <title>ReBurger</title>
     </head>
 <body class="bg-dark">      
@@ -24,83 +25,78 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
 </div>                 
- <header class="bg-dark text-white d-md-none d-lg-none d-xl-block d-s-none">
+<header class="bg-dark text-white d-md-none d-lg-none d-xl-block d-s-none">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="col-12 container-fluid justify-content-sm-center">
-    <img class="col justify-content-lg-start overflow-hidden" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
-    <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+  <div class="col-12 container-fluid">
+    <img class="col-4 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
+    <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="col-12 navbar-nav text-center"style="font-size:4vw;">
-        <li class="nav-item col-sm-3">
+    <div class="container-mb justify-content-center col-5 collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class=" col-12 navbar-nav text-center display-5">
+        <li class="nav-item col-3">
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
-        <li class="nav-item col-sm-3 ">
+        <li class="nav-item col-3">
           <a class="nav-link" href="#">Prodotti</a>
         </li>
-        <li class="nav-item col-sm-3">
+        <li class="nav-item col-3">
           <a class="nav-link" href="#">Carrello</a>
         </li>   
-        <li class="nav-item col-sm-3">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item col-3">
+          <a class="nav-link" href="#">About us</a>
         </li>  
       </ul>
     </div>
-    <div class="container text-lg-center text-sm-end col  d-none d-md-block">
-          <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
-          <button type="button" class="btn btn-warning my-2">Sign-up</button></div>
                  </div>
             </div>
       </div>
     </nav>   
 </header>
-<main class="text-center form-singin">
-<form>
-    <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
+<main class="text-center form-signin">
+  <form>
+  <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
-<?php 
- $userDataRegistration = ["Username"  => "text", "Password"=> "password", "Conferma Password"=> "password", "Email" => "email", "Telefono" => "tel", "Immagine"=> "file"]; 
-    foreach ($userDataRegistration as $data => $type):
-  ?>
+    <div class="container-lg">
+      <?php 
+            $userDataRegistration = ["Username"  => "text", "Password"=> "password", "Conferma Password"=> "password", "Email" => "email", "Telefono" => "tel", "Immagine"=> "file"]; 
+            $msgDataInvalid =["testo" => "Riempi questo campo", "password" => "Inserisci almeno 8 caratteri, tra cui un carattere speciale, un numero e una lettera maiuscola", "tel"=> "Inserisci un numero valido di 10 cifre"];
+            foreach ($userDataRegistration as $data => $type):
+     ?>
   <div class="form-floating d-flex">
-          <input type="<?=$type?>" class="form-control my-2" id="floatingInput" placeholder="nameExample" required/>
+          <input type="<?=$type?>" class="form-control my-2" id="floatingInput<?= $data?>" placeholder="nameExample" required/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput"><?= $data?></label>
-      </div>
-<?php endforeach;?>
+  </div>
+<?php endforeach;?>  
     <div class="container d-flex justify-content-center my-3 py-3">
        <div class="checkbox mb-3">
       <label class="text-white">
-        <input type="checkbox" value="newsletter"/> Iscrivimi alla Newsletter!
+        <input type="checkbox" value="remember-me"> Ricordami
       </label>
 
       <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
     </div>
     </div>
    
-    <button class="w-100 btn btn-lg btn-warning" type="submit">Registrati</button>
-    <p class="mt-5 mb-3 text-muted"><?= createCopyright() ?></p> 
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
+    <p class="mt-5 mb-3 text-muted"><?=createCopyright()?></p>  <!-- includendo il file dove ho le mie funzioni, riesco ad usarle. -->
     
     </form>
-</main>
+  </main>
+  </div>
+</div>
 
-
-
-<button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
-
+  <button class="btn position-fixed btn-outline-warning" onclick="goTop()" id="topBtn" title="Go top">↑</button>
 
 
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
-        <!-- <script src="../script/formLoginAnimation.js"></script>  -->
+
         <script src="../script/script.js"></script> 
         <script src="../script/utilities.js"></script> 
         <script src="../script/showpwd.js"></script>
     </body>
 <!-- footer qui -->
-
-
-
 <div class="container-md justify-content-center">
   <footer class="py-5 m-4 text-center text-white">
         <div class="row">    
