@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
     <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,31 +62,30 @@
 </main>
 
 <!-- Cards che contengono qualche nostra iniziativa -->
-
-<div class="container text-white text-center px-4 py-5" id="custom-cards"> 
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+ <div class="container text-white px-4 py-5" id="custom-cards"> 
+    <div class="row row-cols-1  align-items-stretch g-4 py-5"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.-->
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-          <div class="d-flex flex-column text-white text-shadow-1"> <!--  h-100 p-5 pb-3 -->
-           <div class="display-1 pt-5">
-              <i class="bi bi-shop">
-          </div> 
-               <h2 class="mt-5 mb-4 display-6 lh-1 fw-bold">Nome Venditore</i></h2>
-                <ul class="d-flex text-center list-unstyled mt-auto">
-               <li class="me-auto">
-                  <!-- Prendere il nome dell'utente venditore,
-                visualizzarlo a video e inserici una breve didascalia -->
-              </li> 
-                <li class="d-flex me-3">
-                <cite> Descrizione </cite>
-              </li>
-            </ul>
+        <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+
+          <div class="d-flex flex-column text-center pb-3 text-white">
+            <h2 class="pt-5 mb-4 display-1 text-center lh-1 fw-bold"><i class="bi bi-shop"></i></h2>
+            <div class="d-flex flex-column display-5 fw-bold text-white text-shadow-1" >
+             <p>Nome Venditore</p> 
+            </div>
+          <div class="text-white">
+          <cite> Descrizione </cite>
+          <!--  Prendere il nome dell'utente venditore,
+                visualizzarlo a video e inserici una breve didascalia-->
+          </div>
+                  
+             
            
           </div>
         </div>
       </div>
+
       <!-- <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" "> <!-- style="background-image: url('fotoacaso.jpg'); 
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" ">  style="background-image: url('fotoacaso.jpg'); 
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Le nostre Bibite</h2>
             <ul class="d-flex list-unstyled mt-auto">
@@ -105,15 +104,44 @@
           </div>
         </div>
       </div> -->
+
+      <!-- <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Finger Food</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              <i class="fa-duotone fa-french-fries"></i>
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href=""></use></svg>
+                <small>Cesena</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
     </div>
   </div> 
+
+
+
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
+
+
+
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
         <!-- <script src="../script/formLoginAnimation.js"></script>  -->
         <script src="../script/script.js"></script> 
     </body>
 <!-- footer qui -->
+
+
+
 <div class="container-md justify-content-center">
   <?php include 'footer.php'; ?>
 </div>
