@@ -42,7 +42,7 @@
           <a class="nav-link" href="#">Carrello</a>
         </li>   
         <li class="nav-item col-3">
-          <a class="nav-link" href="#">About us</a>
+        <a class="nav-link" href="../template/contatti.php">About</a>
         </li>  
       </ul>
     </div>

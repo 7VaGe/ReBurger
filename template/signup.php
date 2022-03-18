@@ -1,4 +1,4 @@
-<?php require_once 'utilityFunctions.php'?>
+
 
 <!DOCTYPE html>
 <html lang="it">
@@ -44,7 +44,7 @@
           <a class="nav-link" href="#">Carrello</a>
         </li>   
         <li class="nav-item col-3">
-          <a class="nav-link" href="#">About us</a>
+        <a class="nav-link" href="../template/contatti.php">About</a>
         </li>  
       </ul>
     </div>
@@ -53,6 +53,7 @@
       </div>
     </nav>   
 </header>
+
 <main class="text-center form-signin">
   <form>
   <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
@@ -79,9 +80,9 @@
     </div>
    
     <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
-    <p class="mt-5 mb-3 text-muted"><?=createCopyright()?></p>  <!-- includendo il file dove ho le mie funzioni, riesco ad usarle. -->
+   
     
-    </form>
+    </form> 
   </main>
   </div>
 </div>
@@ -98,7 +99,9 @@
     </body>
 <!-- footer qui -->
 <div class="container-md justify-content-center">
-  <footer class="py-5 m-4 text-center text-white">
+
+<?php include 'footer.php';?>
+   <!-- <footer class="py-5 m-4 text-center text-white">
         <div class="row">    
           <div class="col-6">
             <h5>Uno sguardo al ristorante</h5>
@@ -137,6 +140,6 @@
             <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
           </ul>
     </div>
-  </footer>
+  </footer>  -->
 </div>
 </html>
