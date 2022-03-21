@@ -102,45 +102,6 @@
 <div class="container-md justify-content-center">
 
 <?php include 'footer.php';?>
-   <!-- <footer class="py-5 m-4 text-center text-white">
-        <div class="row">    
-          <div class="col-6">
-            <h5>Uno sguardo al ristorante</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Categorie</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Prodotti</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Carrello</a></li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <h5>Di più sul nostro conto</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Chi siamo</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contatti</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            </ul>
-          </div>
-          <div class="col-12 py-4">
-            <form class="justify-content-center">
-              <h5>Iscriviti alla nostra newsletter</h5>
-              <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
-              <div class="d-flex w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Indirizzo email</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Indirizzo Email ">
-                <button class="btn btn-warning" type="button">Iscriviti</button>
-              </div>
-            </form>
-          </div>
-        <div class="col-12 d-block py-1 my-4 border-top">
-          <p class="text-center">© 2022 Società, Inc. Tutti i diritti riservati.</p>
-    </div>
-        <div class="d-flex justify-content-center py-1 px-2 my-3">
-          <ul class="list-unstyled d-flex text-white">
-            <li class="ms-3"><a class="link-warning" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="link-warning" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-          </ul>
-    </div>
-  </footer>  -->
+
 </div>
 </html>

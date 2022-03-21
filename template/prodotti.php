@@ -188,21 +188,13 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
       </div> -->
     </div>
   </div> 
-
-
-
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
-
-
-
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
         <!-- <script src="../script/formLoginAnimation.js"></script>  -->
         <script src="../script/script.js"></script> 
     </body>
 <!-- footer qui -->
-
-
 
 <div class="container-md justify-content-center">
   <?php include 'footer.php'; ?>

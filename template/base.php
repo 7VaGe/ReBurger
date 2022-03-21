@@ -85,7 +85,6 @@
 </div> 
 <!-- fine contenitore hero1 -->
 
-
  <div class="container-lg my-5">
     <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">

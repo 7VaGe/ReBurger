@@ -97,6 +97,6 @@
     </body>
 <!-- footer qui -->
 <div class="container-md justify-content-center">
-<?php include 'footer.php' ?>
+<?php include 'footer.php' ;?>
 </div>
 </html>
