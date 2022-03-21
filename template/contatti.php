@@ -12,6 +12,7 @@
               crossorigin="anonymous"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
             
         <title>ReBurger</title>
     </head>
@@ -37,7 +38,7 @@
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="#">Prodotti</a>
+          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="#">Carrello</a>
@@ -104,7 +105,6 @@
           </div>
         </div>
       </div> -->
-
       <!-- <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" ">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">

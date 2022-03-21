@@ -14,6 +14,7 @@
               crossorigin="anonymous"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
         <title>ReBurger</title>
     </head>
 <body class="bg-dark">      
@@ -38,7 +39,7 @@
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
         <li class="nav-item col-3">
-          <a class="nav-link" href="#">Prodotti</a>
+          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
         </li>
         <li class="nav-item col-3">
           <a class="nav-link" href="#">Carrello</a>
@@ -80,7 +81,7 @@
     </div>
    
     <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
-   
+    <button class="w-100 my-2 btn-lg btn-outline-primary" type="submit" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
     
     </form> 
   </main>

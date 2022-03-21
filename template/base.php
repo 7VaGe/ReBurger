@@ -38,7 +38,7 @@
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="#">Prodotti</a>
+          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="#">Carrello</a>
