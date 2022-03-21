@@ -44,17 +44,12 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ReBurgher`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
-  `cliente` INT NOT NULL UNIQUE,
-  `data_ordine` DATE NOT NULL,
-  `ora_ordine` TIME NOT NULL,
+  `cliente` INT NOT NULL,
+  `data_ordine` DATE DEFAULT current_timestamp(),
+  `ora_ordine` TIME DEFAULT current_timestamp(),
   `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
   `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.GO
-  PRIMARY KEY (`idordine`),
-  CONSTRAINT `fk_cliente_ordine`
-    FOREIGN KEY (`cliente`)
-    REFERENCES `ReBurgher`.`cliente` (`idcliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idordine`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -89,24 +84,14 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ReBurgher`.`prodotto` (
   `idprodotto` INT NOT NULL AUTO_INCREMENT UNIQUE,
-  `venditore` INT NOT NULL UNIQUE,
+  `venditore` INT NOT NULL,
   `nome` VARCHAR(20) NOT NULL UNIQUE,
   `descrizione` VARCHAR(512) NOT NULL,
   `categoria` INT NOT NULL,
   `allergeni` VARCHAR(4) NOT NULL,
   `prezzo` INT(3) NOT NULL DEFAULT 0,
 	`img` VARCHAR(100),
-  PRIMARY KEY (`idprodotto`),
-  CONSTRAINT `fk_categoria_prodotto`
-    FOREIGN KEY (`categoria`)
-    REFERENCES `ReBurgher`.`categoria` (`idcategoria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_venditore_prodotto`
-    FOREIGN KEY (`venditore`)
-    REFERENCES `ReBurgher`.`venditore` (`idvenditore`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idprodotto`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -120,11 +105,6 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`carrello` (
   CONSTRAINT `fk_prodotto_carrello`
     FOREIGN KEY (`prodotto`)
     REFERENCES `ReBurgher`.`prodotto` (`idprodotto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ordine_carrello`
-    FOREIGN KEY (`ordine`)
-    REFERENCES `ReBurgher`.`ordine` (`idordine`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -141,11 +121,6 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`venditore_crea_prodotto` (
     FOREIGN KEY (`prodotto`)
     REFERENCES `ReBurgher`.`prodotto` (`idprodotto`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_venditore`
-    FOREIGN KEY (`venditore`)
-    REFERENCES `ReBurgher`.`venditore` (`idvenditore`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -160,10 +135,7 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`rider` (
   PRIMARY KEY (`idrider`),
   CONSTRAINT `fk_utente_rider`
     FOREIGN KEY (`utente`)
-    REFERENCES `ReBurgher`.`utente` (`idutente`),
-  CONSTRAINT `fk_venditore_rider`
-    FOREIGN KEY (`venditore`)
-    REFERENCES `ReBurgher`.`venditore` (`idvenditore`)
+    REFERENCES `ReBurgher`.`utente` (`idutente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -178,16 +150,21 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`spedizione` (
   `ordine` INT NOT NULL,
   `venditore` INT NOT NULL,
   `stato` INT(1) NOT NULL,
-  PRIMARY KEY (`idspedizione`),
-  CONSTRAINT `fk_rider_spedizione`
-    FOREIGN KEY (`cliente`)
-    REFERENCES `ReBurgher`.`cliente` (`idcliente`),
-  CONSTRAINT `fk_ordine_spedizione`
-    FOREIGN KEY (`ordine`)
-    REFERENCES `ReBurgher`.`ordine` (`idordine`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idspedizione`))
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `ReBurgher`.`referral`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ReBurgher`.`referral` (
+  `idreferral` INT NOT NULL AUTO_INCREMENT,
+  `idinvitato` INT NOT NULL,
+  `idinvitante` INT NOT NULL,
+  `matinvitato` INT NOT NULL,
+  `matinvitante` INT NOT NULL,
+  PRIMARY KEY (`idreferral`))
+ENGINE = InnoDB;
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

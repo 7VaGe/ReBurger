@@ -24,7 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
 </div>
- <header class="bg-dark text-white d-block">
+<header class="bg-dark text-white d-block">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid justify-content-sm-center">
     <img class="col justify-content-lg-start overflow-hidden" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
@@ -37,7 +37,7 @@
           <a class="nav-link" href="../template/base.php">Home</a>
         </li>
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
+          <a class="nav-link" href="#">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="#">Carrello</a>
@@ -51,7 +51,7 @@
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
           <button type="button" class="btn btn-warning my-2" onclick='window.location="signup.php"'>Sign-up</button></div>
     </div>
-    </nav>
+  </nav>
 </header>
 <div class="container-lg col-12 my-2 d-lg-none d-sm-block bg-dark">
     <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
@@ -65,109 +65,27 @@
         </div>
      </div>
 </div>
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-<!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
-  <div class="container-lg my-5">
-    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Scopri il nostro menu e ordina ora!</h1>
-        <p class="lead">
-            <cite>L’innovazione deve essere parte della nostra cultura. <br> I consumatori si stanno trasformando più velocemente di noi, e se non teniamo il passo siamo nei guai.<br></cite>
-                <b> Ian Schafer</b></p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-                    <button type="button" class="btn btn-warning">Ordina ora</button>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  src="../img/ham.png"  width="100%" height="225" alt=""/><title>Prodotto</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ordina</button>
+                </div>
               </div>
-        </div>
-     </div>
-</div>
-<!-- fine contenitore hero1 -->
-
-
- <div class="container-lg my-5">
-    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Card numero 2</h1>
-        <p class="lead">
-            <cite>Descrizione card numero 2<br></cite>
-                <b> autore</b></p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button type="button" class="btn btn-warning">About-us</button>
-         </div>
-     </div>
-         <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
-          <img  src="../img/hamburger.png" alt=""/>
-</div>
-
-<!-- fine contenitore hero2 -->
-</div>
-</div>
-
-<!-- Cards che contengono qualche nostra iniziativa -->
-<!-- <div class="container text-white px-4 py-5" id="custom-cards">
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">I nostri Panini!</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                 aggiungi icona o immagine
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Earth</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>3d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Le nostre Bibite</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-              aggiungi immagine
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Pakistan</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>4d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Finger Food</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-              <i class="fa-duotone fa-french-fries"></i>
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href=""></use></svg>
-                <small>Cesena</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-              </li>
-            </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
 
@@ -179,6 +97,7 @@
         <script src="../script/cookies.js"></script>
         <!-- <script src="../script/formLoginAnimation.js"></script>  -->
         <script src="../script/script.js"></script>
+
 <!-- footer qui -->
 
 
