@@ -39,7 +39,7 @@ $footerLink = [
           <!-- includendo il file dove ho le mie funzioni, riesco ad usarle. -->
           <p class="text-center text-muted"><?=createCopyright()?> Società, Inc. Tutti i diritti riservati.</p>
     </div>
-        <div class="d-flex justify-content-center py-1 px-2 my-3">
+        <div class="d-flex justify-content-center px-2 ">
           <ul class="list-unstyled d-flex text-white">
               <?php $social = [ "Meta" => '"bi bi-meta"', "Instagram" =>'"bi bi-instagram"', "Twitter" => '"bi bi-twitter"'];
               foreach($social as $nomeSocial => $icona): ?>
