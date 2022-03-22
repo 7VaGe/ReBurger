@@ -1,4 +1,3 @@
-<?php
 INSERT INTO `utente` (`username`, `password`, `email`, `telefono`, `img`, `pagamento`)VALUES
 ('propriolui', 'password', 'paicheo@email.it', '0000000073789', '0', '1'),
 ('pippo', 'password', 'pera12@live.it', '0000000023456', '0', '1'),
@@ -37,5 +36,3 @@ INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `allerg
 
 //INSERT INTO `venditore_crea_prodotto` (`prodotto`, `venditore`, `quantita`)
 //VALUES ('prodotto', 'venditore', 'quantita');
-
-?>
