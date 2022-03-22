@@ -64,6 +64,10 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+//  Useremo questa funzione per prendere le categorie da far visualizzare e i relativi prodotti, devo capire se 
+//  la query restituisce i risultati in un array oppure usa altre strutture, così posso capire dove accedere per prendere
+//  i dati che ci servono.
+
     public function getProdottoByVenditore($venditore){
         $query = "SELECT idprodotto, nome, descrizione, categoria, allergene, prezzo, img FROM prodotto WHERE venditore=?";
         $stmt = $this->db->prepare($query);
@@ -215,6 +219,7 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    
     
 }
 
