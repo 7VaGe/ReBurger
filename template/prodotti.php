@@ -79,7 +79,6 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
       <span class="badge"><i class='mt-3 fas fa-hamburger fa-bounce' style='font-size:48px;color:rgb(247,193,68)'></i></span>
     </li>
 
-
     <li class="mt-3 rounded-5 shadow-lg bg-dark text-white list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Categoria 2</div>
