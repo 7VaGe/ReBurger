@@ -2,14 +2,14 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS `ReBurgher` DEFAULT CHARACTER SET utf8 ;
-USE `ReBurgher` ;
+CREATE SCHEMA IF NOT EXISTS `ReBurger` DEFAULT CHARACTER SET utf8 ;
+USE `ReBurger` ;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`utente`
+-- Table `ReBurger`.`utente`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`utente` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `idutente` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `username` VARCHAR(15) NOT NULL UNIQUE,
   `password` VARCHAR(24) NOT NULL,
@@ -24,25 +24,25 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`utente` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`cliente`
+-- Table `ReBurger`.`cliente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`cliente` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`cliente` (
   `idcliente` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `matricola` VARCHAR(10) NOT NULL UNIQUE,
   `utente` INT NOT NULL UNIQUE,
   PRIMARY KEY (`idcliente`),
   CONSTRAINT `fk_utente_cliente`
     FOREIGN KEY (`utente`)
-    REFERENCES `ReBurgher`.`utente` (`idutente`)
+    REFERENCES `ReBurger`.`utente` (`idutente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`ordine`
+-- Table `ReBurger`.`ordine`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`ordine` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `cliente` INT NOT NULL,
   `data_ordine` DATE DEFAULT current_timestamp(),
@@ -53,10 +53,10 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`ordine` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`venditore`
+-- Table `ReBurger`.`venditore`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`venditore` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`venditore` (
   `idvenditore` INT NOT NULL AUTO_INCREMENT UNIQUE, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
   `utente` INT NOT NULL UNIQUE,
   `indirizzo` VARCHAR(54) NOT NULL,
@@ -66,23 +66,23 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`venditore` (
   PRIMARY KEY (`idvenditore`),
   CONSTRAINT `fk_utente_venditore`
     FOREIGN KEY (`utente`)
-    REFERENCES `ReBurgher`.`utente` (`idutente`))
+    REFERENCES `ReBurger`.`utente` (`idutente`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`categoria`
+-- Table `ReBurger`.`categoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`categoria` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`categoria` (
   `idcategoria` INT NOT NULL AUTO_INCREMENT,
   `nomecategoria` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idcategoria`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`prodotto`
+-- Table `ReBurger`.`prodotto`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`prodotto` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`prodotto` (
   `idprodotto` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `venditore` INT NOT NULL,
   `nome` VARCHAR(20) NOT NULL UNIQUE,
@@ -95,39 +95,39 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`prodotto` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`carrello`
+-- Table `ReBurger`.`carrello`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`carrello` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
   `prodotto` INT NOT NULL, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
   `ordine` INT  NOT NULL ,
   `quantita` INT(2) NOT NULL DEFAULT 0,
   CONSTRAINT `fk_prodotto_carrello`
     FOREIGN KEY (`prodotto`)
-    REFERENCES `ReBurgher`.`prodotto` (`idprodotto`)
+    REFERENCES `ReBurger`.`prodotto` (`idprodotto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`item_nel_menu`
+-- Table `ReBurger`.`item_nel_menu`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`venditore_crea_prodotto` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`venditore_crea_prodotto` (
   `prodotto` INT NOT NULL  UNIQUE, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
   `venditore`INT NOT NULL,
   `quantita` INT(2) NOT NULL DEFAULT 0,
   CONSTRAINT `fk_prodotto`
     FOREIGN KEY (`prodotto`)
-    REFERENCES `ReBurgher`.`prodotto` (`idprodotto`)
+    REFERENCES `ReBurger`.`prodotto` (`idprodotto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`rider`
+-- Table `ReBurger`.`rider`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`rider` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`rider` (
   `idrider` INT NOT NULL AUTO_INCREMENT,
   `utente` INT NOT NULL ,
   `venditore` INT NOT NULL,
@@ -135,15 +135,15 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`rider` (
   PRIMARY KEY (`idrider`),
   CONSTRAINT `fk_utente_rider`
     FOREIGN KEY (`utente`)
-    REFERENCES `ReBurgher`.`utente` (`idutente`)
+    REFERENCES `ReBurger`.`utente` (`idutente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`spedizione`
+-- Table `ReBurger`.`spedizione`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`spedizione` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`spedizione` (
   `idspedizione` INT NOT NULL AUTO_INCREMENT,
   `rider` INT NOT NULL,
   `cliente` INT NOT NULL,
@@ -154,9 +154,9 @@ CREATE TABLE IF NOT EXISTS `ReBurgher`.`spedizione` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurgher`.`referral`
+-- Table `ReBurger`.`referral`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurgher`.`referral` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`referral` (
   `idreferral` INT NOT NULL AUTO_INCREMENT,
   `idinvitato` INT NOT NULL,
   `idinvitante` INT NOT NULL,

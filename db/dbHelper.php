@@ -64,7 +64,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-//  Useremo questa funzione per prendere le categorie da far visualizzare e i relativi prodotti, devo capire se 
+//  Useremo questa funzione per prendere le categorie da far visualizzare e i relativi prodotti, devo capire se
 //  la query restituisce i risultati in un array oppure usa altre strutture, così posso capire dove accedere per prendere
 //  i dati che ci servono.
 
@@ -149,7 +149,7 @@ class DatabaseHelper{
         $stmt->execute();
         return true;
     }
-
+/*
     public function referral($invitato, $invitante){
         $query = "SELECT email FROM utente WHERE matricola=?";
         $stmt = $this->db->prepare($query);
@@ -219,8 +219,8 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    
-    
+    */
+
 }
 
 ?>
