@@ -24,7 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
 </div>
- <header class="bg-dark text-white d-block">
+<header class="bg-dark text-white d-block">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid justify-content-sm-center">
     <img class="col justify-content-lg-start overflow-hidden" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>

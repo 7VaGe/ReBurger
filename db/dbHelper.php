@@ -54,10 +54,10 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getProdottoByCategoria($categoria){
-        $query = "SELECT idprodotto, nome, descrizione, allergene, prezzo, img FROM prodotto WHERE categoria=?";
+    public function getProdottoByCategoria($idcategoria){
+        $query = "SELECT nome, descrizione, allergene, prezzo, img FROM prodotto WHERE categoria=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$categoria);
+        $stmt->bind_param('i',$idcategoria);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -148,6 +148,14 @@ class DatabaseHelper{
         $stmt->bind_param('ii',$idordine, $stato);
         $stmt->execute();
         return true;
+    }
+
+    public function getCategories(){
+        $stmt = $this->db->prepare("SELECT * FROM categoria");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 /*
     public function referral($invitato, $invitante){
