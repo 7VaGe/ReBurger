@@ -58,14 +58,14 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT * FROM prodotto");
         $stmt->execute();
         $result = $stmt->get_result();
-    
+
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getProdottoByCategoria($idcategoria){
-        $query = "SELECT nome, descrizione, allergene, prezzo, img FROM prodotto WHERE categoria=?";
+    public function getProdottoByCategoria($idcategory){
+        $query = "SELECT * FROM prodotto WHERE categoria=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idcategoria);
+        $stmt->bind_param('i',$idcategory);
         $stmt->execute();
         $result = $stmt->get_result();
 

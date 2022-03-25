@@ -12,10 +12,11 @@
   </ol>
 </div>
 
-<?php foreach($templateParams["catego"] as $category):?>
-  <?php foreach($templateParams["prod"] as $prodotto):?>
+<?php foreach($templateParams["catego"] as $category):
+  $parametro =$dbh->getProdottoByCategoria($category["idcategoria"]);
+   foreach($parametro as $prodotto):?>
     <div class="col-12 col-sm-4 text-white px-4 py-5 collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>" >
-      <div class="row row-cols-1 align-items-center g-4 py-5"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card. -->
+      <div class="row row-cols-1 align-items-center g-4 py-5">
         <div class="col">
           <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="width:250px">
             <div class="d-flex flex-column text-center pb-3 text-white">

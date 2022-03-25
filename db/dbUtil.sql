@@ -26,7 +26,9 @@ INSERT INTO `categoria` (`nomecategoria`) VALUES
 INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `allergeni`, `prezzo`, `img`) VALUES
 ('1', 'hamburger', 'non fa schifo', '1', '1000', '10', ' '),
 ('1', 'cheeseburger', 'na roba giusta', '1', '1200', '11', ' '),
-('1', 'baconcheeseburger', 'spacca', '1', '1200', '13', ' ');
+('1', 'baconcheeseburger', 'spacca', '1', '1200', '13', ' '),
+('1', 'patatine', 'na roba giusta', '2', '1200', '11', ' '),
+('1', 'acqua', 'na roba giusta', '3', '1200', '11', ' ');
 
 //INSERT INTO `carrello` (`prodotto`, `ordine`, `quantita`)
 //VALUES ('prodotto', 'ordine', 'quantita');
