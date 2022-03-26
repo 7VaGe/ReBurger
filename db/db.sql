@@ -165,7 +165,16 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`referral` (
   PRIMARY KEY (`idreferral`))
 ENGINE = InnoDB;
 
-
+-- -----------------------------------------------------
+-- Table `ReBurger`.`notizie`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ReBurger`.`notizie` (
+  `idnews` INT NOT NULL AUTO_INCREMENT,
+  `titolo` VARCHAR(20) NOT NULL,
+  `contenuto` VARCHAR(100) NOT NULL,
+  `immagine` VARCHAR(20),
+  PRIMARY KEY (`idnews`))
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

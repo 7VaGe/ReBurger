@@ -30,6 +30,10 @@ INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `allerg
 ('1', 'patatine', 'na roba giusta', '2', '1200', '11', ' '),
 ('1', 'acqua', 'na roba giusta', '3', '1200', '11', ' ');
 
+INSERT INTO `notizie` (`titolo`, `contenuto`, `immagine`)VALUES
+('nuovo', 'prova qualcosa di nuovo', 'img/hamburger.png'),
+('non troppo', 'mangiare fa diventare ciccione', 'img/hamburger.png');
+
 //INSERT INTO `carrello` (`prodotto`, `ordine`, `quantita`)
 //VALUES ('prodotto', 'ordine', 'quantita');
 
