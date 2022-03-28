@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
+            <link id="css_link" rel="stylesheet" type="text/css" href="css/styleSmartphone.css" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -10,13 +10,12 @@
               src="https://code.jquery.com/jquery-3.4.1.min.js"
               integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
               crossorigin="anonymous"></script>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
-            
+
         <title>ReBurger</title>
     </head>
-<body class="bg-dark">      
+<body class="bg-dark">
 <div id="cb-cookie-banner" class=" alert alert-warning fade show  text-center mb-0" role="alert" >
           🍪  Questo sito web utilizza i cookie per assicurarti di ottenere la migliore esperienza sul nostro sito web. <br>
           <a href="https://www.garanteprivacy.it/faq/cookie" target="blank">Ulteriori informazioni</a>
@@ -24,137 +23,115 @@
          <div class=" d-flex justify-content-end">
             <button type="button" class="btn-close" data-bs-dismiss="alert"  aria-label="Close"></button>
          </div>
-</div>                 
- <header class="bg-dark text-white d-block">
+</div>
+<header class="bg-dark text-white d-block">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid justify-content-sm-center">
     <img class="col justify-content-lg-start overflow-hidden" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
     <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- ricreare tutto con php  -->
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="col-12 navbar-nav text-center"style="font-size:4vw;">
+    <ul class="col-12 navbar-nav text-center" style="font-size:4vw;">
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="../template/base.php">Home</a>
-        </li>
+        </li>jhawalsf
         <li class="nav-item col-sm-3 ">
           <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="#">Carrello</a>
-        </li>   
+        </li>
         <li class="nav-item col-sm-3">
           <a class="nav-link" href="../template/contatti.php">About</a>
-        </li>  
+        </li>
       </ul>
     </div>
     <div class="container text-lg-center text-sm-end col  d-none d-md-block">
           <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
           <button type="button" class="btn btn-warning my-2" onclick='window.location="signup.php"'>Sign-up</button></div>
-                 </div>
-            </div>
-      </div>
-    </nav>   
+    </div>
+  </nav>
 </header>
-
-<!-- fine contenitore hero2 -->
-<main> 
-
-</main>
-
-<!-- Va creato un array associativo con tutti i nomi delle categorie, e tramite un foreach faccio creare il titolo categoria preciso.
-nel mentre che non ho la funziona per visualizzare niente, posso modificare alcune informazioni.--> 
-
-<div class="container-lg"> 
-
-
-  <ol class="list-group">
-  <!-- va inserito qui dentro il foreach con la creazione dinamica dei contenitori per le categorie--> 
-  <li class="mt-3 bg-dark rounded-3 shadow-lg text-white list-group-item d-flex justify-content-center align-items-start">
-      <div class="ms-2 me-auto" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" 
-      aria-expanded="false" aria-controls="collapseWidthExample">
-        <div class="fw-bold">Categoria 1</div>
-       <p>Dettagli categoria</p> 
-      </div>
-      <span class="badge"><i class='mt-3 fas fa-hamburger fa-bounce' style='font-size:48px;color:rgb(247,193,68)'></i></span>
-    </li>
-
-    <li class="mt-3 rounded-5 shadow-lg bg-dark text-white list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
-        <div class="fw-bold">Categoria 2</div>
-        <p>Dettagli categoria</p> 
-      </div>
-      <span class="badge bg-primary ">14</span>
-    </li>
-    <li class="mt-3 rounded-5 shadow-lg bg-dark text-white list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
-        <div class="fw-bold">Categoria 3</div>
-        <p>Dettagli categoria</p> 
-      </div>
-      <span class="badge ">14</span>
-    </li>
-  </ol>
+<div class="container-lg col-12 my-2 d-lg-none d-sm-block bg-dark">
+    <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
+      <div class="col-lg-7 p-1 p-lg-5 pt-lg-3">
+              <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+                    <button type="button" class="btn btn-warning">Ordina ora</button>
+              </div> -->
+          <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
+          <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
+          <button type="button" class="btn btn-warning" onclick='window.location="signup.php"'>Sign-up</button></div>
+        </div>
+     </div>
 </div>
 
-<!-- <div  id="card1">
-  <div class="collapse collapse-horizontal" id="collapseWidthExample">
-    <div class="card card-body" style="width: 300px;">
-      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
-    </div>
-  </div>
-</div> -->
-<div class="col-12 col-sm-4 text-white px-4 py-5 collapse collapse-horizontal" id="collapseWidthExample" > 
-    <div class="row row-cols-1 align-items-center g-4 py-5"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card. -->
+<!-- con il php facciamo ggenerare vari pannelli in automatico in base agli articoli che vogliamo fare visualizzare presi dal db -->
+  <div class="container-lg my-5">
+    <div class="row mx-4 p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Scopri il nostro menu e ordina ora!</h1>
+        <p class="lead">
+            <cite>L’innovazione deve essere parte della nostra cultura. <br> I consumatori si stanno trasformando più velocemente di noi, e se non teniamo il passo siamo nei guai.<br></cite>
+                <b> Ian Schafer</b></p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+                    <button type="button" class="btn btn-warning">Ordina ora</button>
+              </div>
+        </div>
+     </div>
+</div>
+<!-- fine contenitore hero1 -->
+
+ <div class="container-lg my-5">
+    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1">Card numero 2</h1>
+        <p class="lead">
+            <cite>Descrizione card numero 2<br></cite>
+                <b> autore</b></p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+            <button type="button" class="btn btn-warning">About-us</button>
+         </div>
+     </div>
+         <div class="col-lg-4 p-2 text-center overflow-hidden shadow-lg">
+          <img  src="../img/hamburger.png" alt=""/>
+</div>
+
+<!-- fine contenitore hero2 -->
+</div>
+</div>
+
+<!-- Cards che contengono qualche nostra iniziativa -->
+<!-- <div class="container text-white px-4 py-5" id="custom-cards">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
-        <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="width:250px">
-          <div class="d-flex flex-column text-center pb-3 text-white">
-            <h2 class="pt-5 mb-4 display-1 text-center lh-1 fw-bold"><i class="fas fa-hamburger" style='font-size:48px;color:rgb(247,193,68)'></i></h2>
-            <div class="d-flex flex-column display-5 fw-bold text-white text-shadow-1" >
-             <p>CATEGORIA</p> 
-            </div>
-          <div class="text-white">
-          <cite> Descrizione categoria </cite>
-          <!--  Prendere il nome dell'utente venditore,
-                visualizzarlo a video e inserici una breve didascalia-->
-          </div>
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">I nostri Panini!</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                 aggiungi icona o immagine
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Earth</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>3d</small>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </div> 
 
-<!-- Cards che contengono qualche nostra iniziativa -->
- <!-- <div class="container text-white px-4 py-5" id="custom-cards"> 
-    <div class="row row-cols-1  align-items-stretch g-4 py-5">  ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.
       <div class="col">
-        <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-
-          <div class="d-flex flex-column text-center pb-3 text-white">
-            <h2 class="pt-5 mb-4 display-1 text-center lh-1 fw-bold"><i class="bi bi-shop"></i></h2>
-            <div class="d-flex flex-column display-5 fw-bold text-white text-shadow-1" >
-             <p>Nome Venditore</p> 
-            </div>
-          <div class="text-white">
-          <cite> Descrizione </cite>
-            Prendere il nome dell'utente venditore,
-                visualizzarlo a video e inserici una breve didascalia
-          </div>
-                  
-             
-           
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" ">  style="background-image: url('fotoacaso.jpg'); 
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Le nostre Bibite</h2>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
-              aggiungi immagine  
+              aggiungi immagine
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
@@ -167,9 +144,10 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
             </ul>
           </div>
         </div>
-      </div> -->
-      <!-- <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" ">
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Finger Food</h2>
             <ul class="d-flex list-unstyled mt-auto">
@@ -186,18 +164,28 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
             </ul>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-  </div> 
+  </div> -->
+
+
+
 <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top">↑</button>
+
+
+
 <!-- Javascript-->
         <script src="../script/cookies.js"></script>
         <!-- <script src="../script/formLoginAnimation.js"></script>  -->
-        <script src="../script/script.js"></script> 
-    </body>
+        <script src="../script/script.js"></script>
+
 <!-- footer qui -->
 
+
+
 <div class="container-md justify-content-center">
-  <?php include 'footer.php'; ?>
+
+<?php include 'footer.php' ?>
 </div>
+</body>
 </html>
