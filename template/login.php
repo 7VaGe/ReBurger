@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-            <link id="css_link" rel="stylesheet" type="text/css" href="../css/styleSmartphone.css" />
+            <link id="css_link" rel="stylesheet" type="text/css" href="css/styleSmartphone.css" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -27,23 +27,23 @@
 <header class="bg-dark text-white d-md-none d-lg-none d-xl-block d-s-none">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid">
-    <img class="col-4 justify-content-lg-start" src="../img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
+    <img class="col-4 justify-content-lg-start" src="img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
     <button class="col-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="container-mb justify-content-center col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class=" col-12 navbar-nav text-center display-5">
         <li class="nav-item col-3">
-          <a class="nav-link" href="../template/base.php">Home</a>
+          <a class="nav-link" href="template/base.php">Home</a>
         </li>
         <li class="nav-item col-3">
-          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
+          <a class="nav-link" href="template/prodotti.php">Prodotti</a>
         </li>
         <li class="nav-item col-3">
           <a class="nav-link" href="#">Carrello</a>
         </li>   
         <li class="nav-item col-3">
-        <a class="nav-link" href="../template/contatti.php">About</a>
+        <a class="nav-link" href="template/contatti.php">About</a>
         </li>  
       </ul>
     </div>
@@ -54,7 +54,7 @@
 </header>
 <main class="text-center form-signin">
   <form>
-    <img class="my-5 mb-4 d-xl-none" src="../img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
+    <img class="my-5 mb-4 d-xl-none" src="img/Logo2.png" onclick='window.location="base.php"' alt="" width="280" height="150"/>
     <h1 class=" my-4 h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
 
   <div class="form-floating">
@@ -89,11 +89,10 @@
 
 
 <!-- Javascript-->
-        <script src="../script/cookies.js"></script>
-        <script src="../script/formLoginAnimation.js"></script> 
-        <script src="../script/script.js"></script> 
-        <script src="../script/utilities.js"></script> 
-        <script src="../script/showpwd.js"></script>
+        <script src="script/cookies.js"></script>
+        <script src="script/script.js"></script> 
+        <script src="script/utilities.js"></script> 
+        <script src="script/showpwd.js"></script>
     </body>
 <!-- footer qui -->
 <div class="container-md justify-content-center">
