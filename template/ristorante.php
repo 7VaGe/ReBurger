@@ -17,7 +17,7 @@
     <div class="mt-4 text-white collapse collapse-horizontal" id="<?= $category["nomecategoria"]?>">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
-            <img src="<?php echo $prodotto["img"]?>" class="card-img-top" alt="...">
+            <img src="img/<?=$prodotto["img"]?>.png" class="card-img-top" alt="...">
               <div class="card-body">
                  <h5 class="card-title"><?= $prodotto["nome"]?></h5>
                   <p class="card-text"><?= $prodotto["descrizione"]?></p>

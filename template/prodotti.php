@@ -86,7 +86,7 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
         <div class="fw-bold">Categoria 2</div>
         <p>Dettagli categoria</p> 
       </div>
-      <span class="badge "><i class='mt-3 fa-soli fa-french-fries fa-bounce'  style='font-size:48px;color:rgb(247,193,68)'></i></span>
+      <span class="badge"><i class='mt-3 fa-soli fa-french-fries fa-bounce'  style='font-size:48px;color:rgb(247,193,68)'></i></span>
     </li></span>
     </li>
     <li class="mt-3 rounded-5 shadow-lg bg-dark text-white list-group-item d-flex justify-content-between align-items-start">
