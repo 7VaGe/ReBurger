@@ -4,9 +4,8 @@
     <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start">
       <div class="ms-2 me-auto" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample">
         <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
-        <p><?php echo $category["nomecategoria"]?></p>
       </div>
-      <span class="badge"><i class='mt-3 fas fa-hamburger fa-bounce'  style='font-size:48px;color:rgb(247,193,68)'></i></span>
+      <span class="badge"><i class='<?= $category["icona"] ?>' style='font-size:48px;color:rgb(247,193,68)'></i></span>
     </li>
   <?php endforeach; ?>
   </ol>

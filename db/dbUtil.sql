@@ -19,16 +19,26 @@ INSERT INTO `ordine` (`cliente`, `ora_ordine`, `stato`, `pagamento`)VALUES
 ('1', '16:00:00', '2', '1');
 
 INSERT INTO `categoria` (`nomecategoria`) VALUES
-('panini'),
-('fritti'),
-('bevande');
+('Panini'),
+('Fritti'),
+('Bevande'),
+('Dolci');
 
 INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `allergeni`, `prezzo`, `img`) VALUES
-('1', 'hamburger', 'non fa schifo', '1', '1000', '10', ' '),
-('1', 'cheeseburger', 'na roba giusta', '1', '1200', '11', ' '),
-('1', 'baconcheeseburger', 'spacca', '1', '1200', '13', ' '),
-('1', 'patatine', 'na roba giusta', '2', '1200', '11', ' '),
-('1', 'acqua', 'na roba giusta', '3', '1200', '11', ' ');
+('1', 'Hamburger', 'Soffici fette di pane farcite con delle svizzere di manzo, lattuga, salse, e pomodorini.', '1', '1000', '7.50', ' '),
+('1', 'Cheeseburger', 'Soffici fette di pane farcite con delle svizzere di manzo,formaggio americano lattuga, salse, e pomodorini.', '1', '1200', '9.00', ' '),
+('1', 'Baconcheeseburger', 'Soffici fette di pane farcite con delle svizzere di manzo, croccante bacon, formaggio americano lattuga, salse, e pomodorini.', '1', '1200', '12.50', ' '),
+('1', 'Patatine M', 'Patatine fritte, grandezza media', '2', '1200', '3.50', ' '),
+('1', 'Patatine L', 'Patatine fritte, grandezza grnde', '2', '1200', '4.50', ' '),
+('1', 'Zeppole S.Giuseppe', 'Ciambelle di pasta choux, farcite di crema pasticcera e dolci amarene sciroppate, coperte da una pioggia di zucchero a velo', '2', '1200', '3.50', ' '),
+('1', 'Acqua Naturale 0.5L', 'Acqua minerale naturale in bottiglia di vetro da 0.5 litri', '3', '1200', '1.50', ' '),
+('1', 'Acqua Naturale 1L', 'Acqua minerale naturale in bottiglia di vetro da 1 litro', '3', '1200', '2.50', ' '),
+('1', 'Acqua Frizzante 0.5L', 'Acqua minerale frizzante in bottiglia di vetro da 0.5 litri', '3', '1200', '1.50', ' '),
+('1', 'Acqua Naturale 1L', 'Acqua minerale frizzante in bottiglia di vetro da 1 litro', '3', '1200', '2.50', ' '),
+('1', 'Coca-Cola', 'Bevanda dissetante analcolica frizzante', '3', '1200', '2.50', ' '),
+('1', 'Fanta', 'Bevanda dissetante analcolica frizzante', '3', '1200', '2.50', ' '),
+('1', 'Sprite', 'Bevanda dissetante analcolica frizzante', '3', '1200', '2.50', ' '),
+
 
 INSERT INTO `notizie` (`titolo`, `contenuto`, `immagine`)VALUES
 ('nuovo', 'prova qualcosa di nuovo', 'img/hamburger.png'),
