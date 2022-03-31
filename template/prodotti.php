@@ -124,24 +124,10 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
       </div>
     </div>
   </div> -->
-<div class="container-xxl "> 
-  <div class="row row-cols-1 row-cols-md-2 g-4 collapse collapse-horizontal" id="collapseWidthExample">
-  <div class="col">
-    <div class="card bg-dark mt-2 text-white">
-      <img src="<?php echo $prodotto["img"]?>" class="card-img-top" alt="alt immagine">
-      <div class="card-body">
-        <h5 class="card-title"><?php echo $prodotto["nome"]?></h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
- <div class="col">
-    <div class="card bg-dark mt-2 text-white">
+<div class="container-xxl"> 
+  <div class="row mt-2 text-white row-cols-1 row-cols-md-2 g-4 collapse collapse-horizontal" id="collapseWidthExample">
+  <div class="col ">
+    <div class="card bg-dark">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -150,7 +136,16 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
     </div>
   </div>
   <div class="col">
-    <div class="card bg-dark mt-2 text-white">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -159,7 +154,7 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
     </div>
   </div>
   <div class="col">
-    <div class="card bg-dark mt-2 text-white">
+    <div class="card">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -169,7 +164,6 @@ nel mentre che non ho la funziona per visualizzare niente, posso modificare alcu
   </div>
 </div>
 </div>
-
 <!-- Cards che contengono qualche nostra iniziativa -->
  <!-- <div class="container text-white px-4 py-5" id="custom-cards"> 
     <div class="row row-cols-1  align-items-stretch g-4 py-5">  ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.
