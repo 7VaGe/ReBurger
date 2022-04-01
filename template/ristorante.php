@@ -1,4 +1,5 @@
 <div class="container-lg">
+  <?=var_dump($prodotto["img"]);?>
   <ol class="list-group">
   <?php foreach($templateParams["catego"] as $category):?>
     <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start">
@@ -17,7 +18,9 @@
     <div class="mt-4 text-white collapse collapse-horizontal" id="<?= $category["nomecategoria"]?>">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
-            <img src="img/<?=$prodotto["img"]?>.png" class="card-img-top" alt="...">
+            <img src="img/<?php
+                              $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
+                              echo $imgNoSpace?>.png" class="card-img-top" alt="...">
               <div class="card-body">
                  <h5 class="card-title"><?= $prodotto["nome"]?></h5>
                   <p class="card-text"><?= $prodotto["descrizione"]?></p>
