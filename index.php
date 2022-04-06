@@ -3,9 +3,8 @@
 require_once 'bootstrap.php';
 
 $templateParams["titolo"] = "ReBurger - Home";
-$templateParams["nome"] = "ristorante.php";
-
-$templateParams["catego"] =$dbh->getCategories();
+$templateParams["nome"] = "home.php";
+$templateParams["notizia"] = $dbh->getNews();
 
 require_once 'template/base.php';
 ?>
