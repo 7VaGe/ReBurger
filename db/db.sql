@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `ora_ordine` TIME DEFAULT current_timestamp(),
   `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
   `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.GO
+  `descrizione` INT(1) DEFAULT 1,
   PRIMARY KEY (`idordine`))
 ENGINE = InnoDB;
 
@@ -100,7 +101,7 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
   `prodotto` INT NOT NULL, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
-  `ordine` INT  NOT NULL ,
+  `utente` INT  NOT NULL ,
   `quantita` INT(2) NOT NULL DEFAULT 0,
   CONSTRAINT `fk_prodotto_carrello`
     FOREIGN KEY (`prodotto`)

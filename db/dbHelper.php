@@ -76,10 +76,10 @@ class DatabaseHelper{
 //  la query restituisce i risultati in un array oppure usa altre strutture, così posso capire dove accedere per prendere
 //  i dati che ci servono.
 
-    public function getProdottoByVenditore($venditore){
-        $query = "SELECT idprodotto, nome, descrizione, categoria, allergene, prezzo, img FROM prodotto WHERE venditore=?";
+    public function getProdottoById($idprodotto){
+        $query = "SELECT * FROM prodotto WHERE idprodotto=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$venditore);
+        $stmt->bind_param('i',$idprodotto);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -105,24 +105,25 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function checkCarrello($nome){
-        $query = "SELECT nome FROM carrello WHERE nome = ?";
+    public function checkCarrello($prodotto, $utente){
+        $query = "SELECT nome FROM carrello WHERE prodotto = ? AND utente = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s',$nome);
+        $stmt->bind_param('ii',$prodotto, $utente);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function insertProdottoCarrello($nome, $prezzo){
-        if(checkCarrello($nome)){
-          $query = "UPDATE carrello SET quantita+1 WHERE nome = ?";
+    public function updateCarrello($nome){
+      $parames=$this->db->checkCarrello($nome);
+        if($parames["prodotto"]==$nome){
+          $query = "UPDATE carrello SET quantita = quantita+1 WHERE utente = ?";
         }else{
-          $query = "INSERT INTO prodotto (nome, prezzo) VALUES (?, ?)";
+          $query = "INSERT INTO carrello VALUES (?)";
         }
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si',$nome, $prezzo);
+        $stmt->bind_param('s',$nome);
         $stmt->execute();
         return true;
     }
@@ -134,17 +135,26 @@ class DatabaseHelper{
         return true;
     }
 
-    public function deleteCarrello($idprodotto, $img){
-        $query = "TRUNCATE TABLE carrello";
+    public function getCarrello($idutente){
+        $stmt = $this->db->prepare("SELECT * FROM carrello WHERE utente=?");
+        $stmt->bind_param('i',$idutente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function deleteCarrello($idutente){
+        $query = "DELETE FROM carrello WHERE utente=?";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return true;
     }
 
-    public function insertOrdine($cliente, $data, $stato, $prezzo){
-        $query = "INSERT INTO ordine (cliente, data, stato, pagamento) VALUES (?, ?, ?, ?)";
+    public function insertOrdine($cliente, $stato, $prezzo, $descrizione){
+        $query = "INSERT INTO ordine (cliente, stato, pagamento, descrizione) VALUES (?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('isii',$cliente, $data, $stato, $prezzo);
+        $stmt->bind_param('isiis',$cliente, $data, $stato, $prezzo, $descrizione);
         $stmt->execute();
 
         return $stmt->insert_id;
@@ -171,6 +181,33 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getReferal($invitante){
+        $stmt = $this->db->prepare("SELECT * FROM referral WHERE idinvitante=?");
+        $stmt->bind_param('i',$invitante);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getOrdiniByCliente($idcliente){
+        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE cliente=?");
+        $stmt->bind_param('i',$idcliente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUtente($idutente){
+        $stmt = $this->db->prepare("SELECT * FROM utente WHERE idutente=?");
+        $stmt->bind_param('i',$idutente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        var_dump($result);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 /*

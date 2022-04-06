@@ -15,8 +15,8 @@ INSERT INTO `rider` (`utente`,`venditore`,`mezzo`)VALUES
 ('3', '1', 'mezzo');
 
 
-INSERT INTO `ordine` (`cliente`, `ora_ordine`, `stato`, `pagamento`)VALUES
-('1', '16:00:00', '2', '1');
+INSERT INTO `ordine` (`cliente`, `stato`, `pagamento`)VALUES
+('3', '3', '1');
 
 INSERT INTO `categoria` (`nomecategoria`) VALUES
 ('Panini'),
@@ -44,11 +44,24 @@ INSERT INTO `notizie` (`titolo`, `contenuto`, `immagine`)VALUES
 ('nuovo', 'prova qualcosa di nuovo', 'img/hamburger.png'),
 ('non troppo', 'mangiare fa diventare ciccione', 'img/hamburger.png');
 
-//INSERT INTO `carrello` (`prodotto`, `ordine`, `quantita`)
-//VALUES ('prodotto', 'ordine', 'quantita');
+INSERT INTO `carrello` (`prodotto`, `utente`, `quantita`)VALUES
+('1', '1', '1'),
+('2', '2', '1');
+
+INSERT INTO `ordine` (`cliente`, `stato`, `pagamento`, `descrizione`)VALUES
+('1', '2', '3', 'descrizione'),
+('1', '2', '1', 'descrizione');
 
 //INSERT INTO `spedizione` (`rider`, `cliente`, `ordine`, `venditore`, `stato`)
 //VALUES ('rider', 'cliente', 'ordine', 'venditore', 'stato');
 
 //INSERT INTO `venditore_crea_prodotto` (`prodotto`, `venditore`, `quantita`)
 //VALUES ('prodotto', 'venditore', 'quantita');
+
+INSERT INTO `utente` (`idutente`, `username`, `password`, `email`, `telefono`, `img`, `pagamento`) VALUES
+('5', 'jd678', 'password', 'lord@sir.it', '333444', NULL, '1'),
+('6', 'fg1234', 'password', 'lord@gmail.it', '333445', NULL, '1');
+
+INSERT INTO `referral` (`idreferral`, `idinvitato`, `idinvitante`, `matinvitato`, `matinvitante`) VALUES
+(NULL, '4', '1', '0000756333', '0000756576'),
+(NULL, '3', '1', '0000750000', '0000756576');
