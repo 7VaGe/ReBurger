@@ -202,14 +202,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getUtente($idutente){
-        $stmt = $this->db->prepare("SELECT * FROM utente WHERE idutente=?");
-        $stmt->bind_param('i',$idutente);
+    public function getUtenteById($idcliente){
+        $query = "SELECT * FROM utente WHERE idutente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idcliente);
         $stmt->execute();
         $result = $stmt->get_result();
-        var_dump($result);
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
+
+      return $result->fetch_all(MYSQLI_ASSOC);
+  }
+
+
 /*
     public function referral($invitato, $invitante){
         $query = "SELECT email FROM utente WHERE matricola=?";
