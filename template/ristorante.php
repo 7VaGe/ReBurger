@@ -1,12 +1,11 @@
 <div class="container-lg">
-  <?=var_dump($prodotto["img"]);?>
   <ol class="list-group">
   <?php foreach($templateParams["catego"] as $category):?>
     <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start">
       <div class="ms-2 me-auto" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample">
         <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
       </div>
-      <span class="badge"><i class='<?= $category["icona"] ?>' style='font-size:48px;color:rgb(247,193,68)'></i></span>
+      <span class="badge"><i class='<?php echo $category["icona"] ?>' style='font-size:48px;color:rgb(247,193,68)'></i></span>
     </li>
   <?php endforeach; ?>
   </ol>
@@ -14,25 +13,23 @@
 <?php foreach($templateParams["catego"] as $category):
   $parametro =$dbh->getProdottoByCategoria($category["idcategoria"]);
    foreach($parametro as $prodotto):?>
-  <div class="container-xxl"> 
-    <div class="mt-4 text-white collapse collapse-horizontal" id="<?= $category["nomecategoria"]?>">
+  <div class="container-xxl">
+    <div class="mt-4 text-white collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
-            <img src="img/<?php
-                              $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
-                              echo $imgNoSpace?>.png" class="card-img-top" alt="...">
+            <img src="img/<?php echo $prodotto["img"]?>.png" class="card-img-top" alt="...">
               <div class="card-body">
-                 <h5 class="card-title"><?= $prodotto["nome"]?></h5>
-                  <p class="card-text"><?= $prodotto["descrizione"]?></p>
-                  <p class="text-end">Prezzo: € <?= $prodotto["prezzo"] ?></p>
+                 <h5 class="card-title"><?php echo $prodotto["nome"]?></h5>
+                  <p class="card-text"><?php echo $prodotto["descrizione"]?></p>
+                  <p class="text-end">Prezzo: € <?php echo $prodotto["prezzo"] ?></p>
               </div>
         </div>
       </div>
     </div>
    </div>
   </div>
-        
-    
+
+
    <!-- <div class="col-sm-4 text-white px-4 py-5 collapse collapse-horizontal" id="" >
       <div class="align-items-center g-4 py-5">
         <div class="col">
