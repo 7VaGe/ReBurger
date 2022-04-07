@@ -3,8 +3,7 @@
 require_once 'bootstrap.php';
 
 $templateParams["titolo"] = "ReBurger - Home";
-$templateParams["nome"] = "carrello.php";
-$templateParams["carrello"] = $dbh->getCarrello(2);
+$templateParams["nome"] = "signup-form.php";
 
 require_once 'template/base.php';
 ?>

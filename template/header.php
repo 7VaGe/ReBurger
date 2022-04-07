@@ -1,22 +1,22 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid justify-content-sm-center">
-    <img class="col justify-content-lg-start overflow-hidden" src="img/Logo2.png" alt="ReBurger Logo" onclick='window.location="base.php"'/>
+    <img class="col justify-content-lg-start overflow-hidden" src="img/Logo2.png" alt="ReBurger Logo" onclick='window.location="index.php"'/>
     <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="col-12 navbar-nav text-center" style="font-size:4vw;">
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="../template/base.php">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="../template/prodotti.php">Prodotti</a>
+          <a class="nav-link" href="menu.php">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="#">Carrello</a>
+          <a class="nav-link" href="carrello.php">Carrello</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="../template/contatti.php">About</a>
+          <a class="nav-link" href="contatti.php">About</a>
         </li>
       </ul>
     </div>
