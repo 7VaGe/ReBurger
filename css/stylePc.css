@@ -1,19 +1,24 @@
 @media screen and (min-width: 1200px){
 
-    
     body> header > div img{
         height: 400px;
     }
+
     header div.col-3.p-l-5:last-child{
         display: inline;
         font-size: medium;
     }
+
     div.container{
         display: inline;
     }
-    
+
+    #form-control{
+      width:50%;
+      text-align:center;
+    }  
+
     footer, footer.py-5>div.row{
         display:none;
-      }
-   
+    }
 }
