@@ -1,3 +1,4 @@
+ 
 <div class="text-center form-signin">
   <form>
     <h1 class=" my-4 h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
@@ -21,6 +22,6 @@
     </div>
 
     <button class="w-100 btn btn-lg btn-warning" type="submit">Accedi</button>
-    <p class="mt-5 mb-3 text-muted">© 2022</p>
   </form>
+  <script src="script/showpwd.js"></script>
 </div>
