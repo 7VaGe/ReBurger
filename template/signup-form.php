@@ -1,4 +1,4 @@
-<main class="text-center form-signin">
+<div class="text-center form-signin">
   <form>
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
     <div class="container-lg">
@@ -21,4 +21,4 @@
     <button class="w-100 my-2 btn-lg btn-outline-primary" type="submit" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
     </div>
   </form>
-</main>
+</div>

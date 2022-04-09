@@ -5,9 +5,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="col-12 navbar-nav text-center" style="font-size:4vw;">
+    <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="index.php">Home</a>
+          <a class="nav-link" href="profile.php">Profilo</a>
         </li>
         <li class="nav-item col-sm-3 ">
           <a class="nav-link" href="menu.php">Prodotti</a>

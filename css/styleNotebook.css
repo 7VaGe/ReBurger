@@ -13,7 +13,9 @@
 
     footer, footer.py-5>div.row{
         display:inline-flex;
-      } 
+    }
+
+    
     /* div.container{  errore esterno dato dall'inline
         display: inline;
     } */
