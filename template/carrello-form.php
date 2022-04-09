@@ -1,10 +1,10 @@
+<div class="list-group">
 <?php
 foreach ($templateParams["carrello"] as $carrello):
   $parametro =$dbh->getProdottoById($carrello["prodotto"]);
   foreach($parametro as $prodotto):?>
-     <div class="list-group">
 
-       <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+       <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
           <img src="<?php echo $prodotto["img"] ?>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
          <div class="d-flex gap-2 w-100 justify-content-between">
            <div>
@@ -13,7 +13,7 @@ foreach ($templateParams["carrello"] as $carrello):
            </div>
            <small class="opacity-50 text-nowrap"><?php echo $prodotto["prezzo"] ?></small>
          </div>
-       </a>
+       </div>
 <?php endforeach;
       endforeach;?>
      </div>
