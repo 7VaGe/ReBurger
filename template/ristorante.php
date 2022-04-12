@@ -31,7 +31,6 @@
    </div>
   </div>
 
-
    <!-- <div class="col-sm-4 text-white px-4 py-5 collapse collapse-horizontal" id="" >
       <div class="align-items-center g-4 py-5">
         <div class="col">
