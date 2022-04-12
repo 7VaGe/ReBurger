@@ -1,4 +1,4 @@
-<?php foreach ($templateParams["utente"] as $profilo):?>
+<?php /* foreach ($templateParams["utente"] as $profilo):?>
 <div class="container">
     <div class="main-body">
           <div class="row gutters-sm">
@@ -75,6 +75,27 @@
                     </div>
                   </div>
               </div>
-<?php endforeach; ?>
-            </div>
-          </div>
+<?php endforeach; */?>
+         <!--   </div>
+          </div> 
+
+          <section >
+            <h2 class="text-white"> Utente <?php /*echo $_SESSION["username"]; */?> Loggato! </h2>
+          </section>-->
+
+
+  <div class="container-xxl">
+    <div class="mt-4 text-white">
+      <div class="row col row-cols-1 row-cols-md-1 g-4">
+        <div class="card bg-dark rounded-6 shadow">
+        <img class="rounded-circle" src="img/<?php echo $_SESSION["img"];?>">
+              <div class="card-body">
+                 <h5 class="card-title"><?php echo $_SESSION["username"]; ?></h5>
+                  <p class="card-text"><?php echo $_SESSION["idutente"]; ?></p>
+                  <!--<p class="text-end">Prezzo: € <?php/* echo $prodotto["prezzo"] */?></p>-->
+              </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>

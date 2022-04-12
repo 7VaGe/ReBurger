@@ -2,7 +2,7 @@
 
 require_once 'bootstrap.php';
 
-$templateParams["titolo"] = "ReBurger - Home";
+$templateParams["titolo"] = "ReBurger - Profilo";
 $templateParams["nome"] = "profile-form.php";
 $templateParams["ordine"] = $dbh->getOrdiniByCliente(3);
 $templateParams["referral"] = $dbh->getReferal(3);
