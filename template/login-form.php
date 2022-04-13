@@ -1,6 +1,6 @@
- 
+
 <div class="text-center form-signin">
-  <form action="" method="POST">
+  <form action="" method="post">
     <h1 class=" my-4 h3 mb-3 text-white fw-normal">Inserisci i tuoi dati per accedere</h1>
     <?php if(isset($templateParams["errorelogin"])):?>
       <p class="text-white"> <?php echo $templateParams["errorelogin"];?> </p>
@@ -19,11 +19,9 @@
          <label class="text-white">
            <input type="checkbox" value="remember-me"> Ricordami
          </label>
-
          <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
        </div>
     </div>
-  
     <button class="w-100 btn btn-lg btn-warning" type="submit" name="submit">Accedi</button>
   </form>
   <script src="script/showpwd.js"></script>

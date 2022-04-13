@@ -18,8 +18,8 @@
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
         <img src="img/<?php
-                              $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
-                              echo $imgNoSpace?>.png" class="card-img-top" alt="...">
+                              $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
+                              echo $imgNoSpace?>.png" class="img" alt="...">
               <div class="card-body">
                  <h5 class="card-title"><?php echo $prodotto["nome"]?></h5>
                   <p class="card-text"><?php echo $prodotto["descrizione"]?></p>
