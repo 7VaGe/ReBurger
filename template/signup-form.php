@@ -1,15 +1,15 @@
-<?php if (isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Email"]) && isset($_GET["Telefono"])) {
-    $dbh->insertUtente($_GET["Username"], $_GET["Password"], $_GET["Email"], $_GET["Telefono"]);
+<?php if (isset($_GET["username"]) && isset($_GET["password"]) && isset($_GET["email"]) && isset($_GET["tel"])) {
+    $dbh->insertUtente($_GET["username"], $_GET["password"], $_GET["email"], $_GET["tel"]);
      ?>
     <div class="container-lg my-5">
       <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1"><?php echo $_GET["Username"] ?></h1>
+          <h1 class="display-4 fw-bold lh-1"><?php echo $_GET["username"] ?></h1>
           <p class="lead">
             <cite>Hai effettuato la registrazione con successo</cite>
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button href="login" type="button" class="btn btn-warning">Accedi per la prima volta</button>
+            <button href="login.php" type="button" class="btn btn-warning">Accedi per la prima volta</button>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
             foreach ($userDataRegistration as $data => $type):
      ?>
       <div class="form-floating d-flex">
-          <input type="<?php echo $type?>" class="form-control my-2" id="<?php echo $data?>" placeholder="nameExample" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="<?php echo $type?>" placeholder="nameExample" name="<?php echo $type?>" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput"><?php echo $data?></label>
       </div>
 <?php endforeach;?>

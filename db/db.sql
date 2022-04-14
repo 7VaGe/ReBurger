@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `username` VARCHAR(15) NOT NULL UNIQUE,
   `password` VARCHAR(24) NOT NULL,
   `email` VARCHAR(30) NOT NULL UNIQUE,
-  `telefono` INT(13) NULL UNIQUE,
+  `telefono` VARCHAR(13) NULL UNIQUE,
   `img` VARCHAR(100),
   `pagamento` INT(1) DEFAULT 1, -- 1 = pagamento in loco, 2= pagamento online, 3 = coupon ERGO
   UNIQUE INDEX `uc_username` (`username` ASC),

@@ -23,9 +23,9 @@ class DatabaseHelper{
     public function insertUtente($name, $password, $email, $telefono){
         $query = "INSERT INTO utente (username, password, email, telefono) VALUES (?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssi',$name, $password, $email, $telefono);
+        $stmt->bind_param('ssss',$name, $password, $email, $telefono);
         $stmt->execute();
-        return true;
+        return $stmt->insert_id;;
     }
 
     public function insertCliente($matricola, $pagamento){
