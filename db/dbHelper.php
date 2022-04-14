@@ -20,12 +20,12 @@ class DatabaseHelper{
         return true;
     }
 
-    public function insertUtente($username, $password, $email, $telefono, $img){
-        $query = "INSERT INTO utente (username, password, email, telefono, img) VALUES (?, ?, ?, ?, ?)";
+    public function insertUtente($name, $password, $email, $telefono){
+        $query = "INSERT INTO utente (username, password, email, telefono) VALUES (?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssis',$username, $password, $email, $telefono, $img);
+        $stmt->bind_param('sssi',$name, $password, $email, $telefono);
         $stmt->execute();
-        return $stmt->insert_id;
+        return true;
     }
 
     public function insertCliente($matricola, $pagamento){
