@@ -4,7 +4,7 @@ require_once 'bootstrap.php';
 
 if(isset($_POST["username"]) && isset($_POST["password"])){
     //check del db con le funzioni in dbHelper.
- 
+
   $login_result = $dbh->checkLogin($_POST["username"], $_POST["password"]);
   if(count($login_result)==0){
       //login fallito
@@ -28,4 +28,3 @@ $templateParams["nome"] = "login-form.php";
 
 require_once 'template/base.php';
 ?>
-
