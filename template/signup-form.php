@@ -1,4 +1,4 @@
-<?php if (isset($_GET["username"]) && isset($_GET["password"]) && isset($_GET["email"]) && isset($_GET["tel"])) {
+<?php if (isset($_GET["username"]) and isset($_GET["password"]) and isset($_GET["email"]) and isset($_GET["tel"])) {
     $dbh->insertUtente($_GET["username"], $_GET["password"], $_GET["email"], $_GET["tel"]);
      ?>
     <div class="container-lg my-5">
@@ -9,7 +9,7 @@
             <cite>Hai effettuato la registrazione con successo</cite>
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button href="login.php" type="button" class="btn btn-warning">Accedi per la prima volta</button>
+            <button type="button" class="btn btn-warning" onclick='window.location="login.php"'>Accedi per la prima volta</button>
           </div>
         </div>
       </div>
