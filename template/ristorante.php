@@ -13,13 +13,13 @@
 <?php foreach($templateParams["catego"] as $category):
   $parametro =$dbh->getProdottoByCategoria($category["idcategoria"]);
    foreach($parametro as $prodotto):?>
-  <div class="container-xxl">
+  <div class="container-md">
     <div class="mt-4 text-white collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
         <img src="img/<?php
                               $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
-                              echo $imgNoSpace?>.png" class="img" alt="...">
+                              echo $imgNoSpace?>.png" class="figure img-fluid" alt="...">
               <div class="card-body">
                  <h5 class="card-title"><?php echo $prodotto["nome"]?></h5>
                   <p class="card-text"><?php echo $prodotto["descrizione"]?></p>

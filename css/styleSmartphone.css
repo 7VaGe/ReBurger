@@ -101,10 +101,6 @@ footer, footer.py-5>div.row{
     display: none;
   }
 
-  button#toggle-password {
-
-  }
-
   button#toggle-password:active,
   button#toggle-password:focus,
   button#toggle-password:hover {
