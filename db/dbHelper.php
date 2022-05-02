@@ -36,10 +36,10 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
-    public function insertProdotto($venditore, $nome, $descrizione, $categoria, $allergene, $prezzo, $img){
-        $query = "INSERT INTO prodotto (venditore, nome, descrizione, categoria, allergene, prezzo, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public function insertProdotto($venditore, $nome, $descrizione, $categoria, $prezzo){
+        $query = "INSERT INTO prodotto (venditore, nome, descrizione, categoria, prezzo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssiis',$venditore, $nome, $descrizione, $categoria, $allergene, $prezzo, $img);
+        $stmt->bind_param('issii',$venditore, $nome, $descrizione, $categoria, $prezzo);
         $stmt->execute();
 
         return $stmt->insert_id;
@@ -202,6 +202,32 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getOrdini(){
+        $stmt = $this->db->prepare("SELECT * FROM ordine");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+  /*  public function getOrdiniByDate($data){
+        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
+        $stmt->bind_param('i',$data);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getOrdiniByPrezzo($prezzo){
+          $stmt = $this->db->prepare("SELECT * FROM ordine WHERE costo=?");
+          $stmt->bind_param('i',$prezzo);
+          $stmt->execute();
+          $result = $stmt->get_result();
+
+          return $result->fetch_all(MYSQLI_ASSOC);
+      }
+*/
     public function getUtenteById($idcliente){
         $query = "SELECT * FROM utente WHERE idutente=?";
         $stmt = $this->db->prepare($query);
@@ -212,7 +238,15 @@ class DatabaseHelper{
       return $result->fetch_all(MYSQLI_ASSOC);
   }
 
+  public function utenteIsVenditore($idutente){
+      $query = "SELECT idutente FROM utente WHERE username=?";
+      $stmt = $this->db->prepare($query);
+      $stmt->bind_param('s',$idutente);
+      $stmt->execute();
+      $result = $stmt->get_result();
 
+    return $result->fetch_all(MYSQLI_ASSOC);
+  }
 /*
     public function referral($invitato, $invitante){
         $query = "SELECT email FROM utente WHERE matricola=?";
