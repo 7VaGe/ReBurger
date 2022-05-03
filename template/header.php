@@ -20,7 +20,7 @@
             <a class="nav-link" href="contatti.php">About</a>
           </li>
           <li class="nav-item col-sm-3">
-            <a class="nav-link" href="contatti.php">Ordini</a>
+            <a class="nav-link" href="ordini.php">Ordini</a>
           </li>
           <li class="nav-item col-sm-3">
             <a class="nav-link" href="login.php"><?php echo $_SESSION["username"] ?></a>

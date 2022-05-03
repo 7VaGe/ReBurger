@@ -1,57 +1,34 @@
-<div class="bg-white" id="wrapper">
-  <div class="row">
-    <div class="col-xs-5">
-      <div id="cards">
-        <img src="http://icons.iconarchive.com/icons/designbolts/credit-card-payment/256/Visa-icon.png" width="100" height="100">
-        <img src="http://icons.iconarchive.com/icons/designbolts/credit-card-payment/256/Master-Card-icon.png" width="100" height="100">
-      </div>
-      <div id="cards">
-        <img src="" alt="Fattorino" width="100" height="100">
-      </div><!--#cards end-->
-      <div class="form-check">
-  <label class="form-check-label" for='card'>
-    <input id="card" class="form-check-input" type="checkbox" value="">
-    Pay $150.00 with credit card
-  </label>
+<div class="container-lg my-5">
+  <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+    <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+      <h1 class="display-4 fw-bold lh-1">Dettagli carta</h1>
+      <div class="card-details">
+            <div class="row centered">
+              <div class="form-group col-sm-7">
+                <label for="card-holder">Titolare della carta</label>
+                <input id="card-holder" type="text" class="form-control" placeholder="Titolare della carta" aria-label="Titolare della carta" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-5">
+                <label for="">Data di scadenza</label>
+                <div class="input-group expiration-date">
+                  <input type="text" class="form-control" placeholder="MM" aria-label="MM" aria-describedby="basic-addon1">
+                  <span class="date-separator">/</span>
+                  <input type="text" class="form-control" placeholder="AA" aria-label="AA" aria-describedby="basic-addon1">
+                </div>
+              </div>
+              <div class="form-group col-sm-8">
+                <label for="card-number">Numero carta</label>
+                <input id="card-number" type="text" class="form-control" placeholder="Numero carta" aria-label="Numero carta" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="cvc">CVC</label>
+                <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-12">
+                <button type="button" class="btn btn-primary btn-block">Proceed</button>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
 </div>
-    </div><!--col-xs-5 end-->
-    <div class="col-xs-5">
-      <div id="cards">
-        <img src="" alt="Fattorino" width="100" height="100">
-      </div><!--#cards end-->
-      <div class="form-check">
-  <label class="form-check-label" for='paypal'>
-    <input id="paypal" class="form-check-input" type="checkbox" value="">
-    Pay $150.00 with PayPal
-  </label>
-</div>
-    </div><!--col-xs-5 end-->
-</div><!--row end-->
-  <div class="row">
-    <div class="col-xs-5">
-      <i class="fa fa fa-user"></i>
-      <label for="cardholder">Cardholder's Name</label>
-      <input type="text" id="cardholder">
-    </div><!--col-xs-5-->
-    <div class="col-xs-5">
-      <i class="fa fa-credit-card-alt"></i>
-      <label for="cardnumber">Card Number</label>
-      <input type="text" id="cardnumber">
-    </div><!--col-xs-5-->
-  </div><!--row end-->
-  <div class="row row-three">
-    <div class="col-xs-2">
-      <i class="fa fa-calendar"></i>
-      <label for="date">Valid thru</label>
-      <input type="text" placeholder="MM/YY" id="date">
-    </div><!--col-xs-3-->
-    <div class="col-xs-2">
-      <i class="fa fa-lock"></i>
-      <label for="date">CVV / CVC *</label>
-      <input type="text">
-    </div><!--col-xs-3-->
-    <div class="col-xs-5">
-      <span class="small">* CVV or CVC is the card security code, unique three digits number on the back of your card seperate from its number.</span>
-    </div><!--col-xs-6 end-->
-  </div><!--row end-->
-</div><!--wrapper end-->
