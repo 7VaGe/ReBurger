@@ -1,4 +1,5 @@
 <div class="container-lg my-5">
+  <form class="" action="index.php" method="post">
   <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
     <div class="col-lg-7-centered p-3 p-lg-5 pt-lg-3">
       <h1 class="display-4 fw-bold lh-1">Dettagli carta</h1>
@@ -25,10 +26,10 @@
                 <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
               </div>
               <div class="form-group col-sm-12">
-                <button type="button" class="btn btn-primary btn-block">Proceed</button>
+                <button type="submit" class="btn btn-primary btn-block">Proceed</button>
               </div>
-            </div>
           </div>
     </div>
   </div>
+    </form>
 </div>

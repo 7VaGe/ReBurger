@@ -10,7 +10,7 @@
         <div>Prezzo totale: €<span class="total-cart"></span></div>
       </div>
       <div class="footer">
-        <button type="button" class="btn btn-primary">Ordina</button>
+        <button type="button" class="btn btn-primary" onclick='window.location="pagamento.php"' >Ordina</button>
       </div>
     </div>
   </div>
