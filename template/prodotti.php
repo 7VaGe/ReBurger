@@ -1,6 +1,3 @@
-
-
-
 <div class="container-lg">
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
@@ -29,17 +26,16 @@
           <figcaption class="info-wrap px-3">
           <p class="title mb-2"><?php echo $prodotto["nome"]?></p>
 					      <div class="price-wrap">
-						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"] ?>€</span>
-				    	  </div> 
+						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
+				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-					      <a href="#" class="btn btn-warning">Aggiungi al carrello</a>
-					      <a href="#" class="btn btn-light btn-icon text-end"><i class="fa fa-heart"></i></a>
+					      <ahref="#" data-name="<?php echo $prodotto["nome"]?>" data-price="<?php echo $prodotto["prezzo"]?>" class="add-to-cart btn btn-primary">Aggiungi al carrello</a>
           </figcaption>
         </figure>
       </div>
       <?php endforeach; ?>
     <?php endforeach; ?>
     </div>
-    
+
   </div>
 </section>

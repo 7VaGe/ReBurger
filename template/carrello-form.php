@@ -1,19 +1,17 @@
-<div class="list-group">
-<?php
-foreach ($templateParams["carrello"] as $carrello):
-  $parametro =$dbh->getProdottoById($carrello["prodotto"]);
-  foreach($parametro as $prodotto):?>
+<div class="" id="cart" tabindex="-1" role="dialog">
+  <div class="container-lg my-5">
+    <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+        <h5 class="title" id="cartLabel">Carrello</h5>
+      <div class="body">
+        <table class="show-cart table">
 
-       <div class="list-group-item list-group-item-action d-flex gap-3 py-3">
-          <img src="<?php echo $prodotto["img"] ?>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-         <div class="d-flex gap-2 w-100 justify-content-between">
-           <div>
-             <h6 class="mb-0"><?php echo $prodotto["nome"] ?></h6>
-             <p class="mb-0 opacity-75"><?php echo $prodotto["descrizione"] ?></p>
-           </div>
-           <small class="opacity-50 text-nowrap"><?php echo $prodotto["prezzo"] ?></small>
-         </div>
-       </div>
-<?php endforeach;
-      endforeach;?>
-     </div>
+        </table>
+        <p>Seleziona la modalità di pagamento:</p><input type="radio" id="pagamento1" name="pagamento" value="1"><label for="pagamento1">Con carta</label><br><input type="radio" id="pagamento2" name="pagamento" value="2"><label for="pagamento2">Alla consegna</label><br>
+        <div>Prezzo totale: €<span class="total-cart"></span></div>
+      </div>
+      <div class="footer">
+        <button type="button" class="btn btn-primary">Ordina</button>
+      </div>
+    </div>
+  </div>
+</div>
