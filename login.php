@@ -19,6 +19,9 @@ if(isUserLoggedIn()){
     //se è loggato vedo la pagina di profilo.
     $templateParams["titolo"] = "ReBurger - Profilo";
     $templateParams["nome"] = "profile-form.php";
+    $templateParams["ordine"] = $dbh->getOrdiniByCliente($_SESSION["idutente"]);
+    $templateParams["referral"] = $dbh->getReferal($_SESSION["idutente"]);
+    $templateParams["utente"] = $dbh->getUtenteById($_SESSION["idutente"]);
 
 }else {
 
