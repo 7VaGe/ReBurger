@@ -6,5 +6,6 @@
         <tr><td><a href="modificaProdotto.php?id=<?php echo $prodotto["idprodotto"]?>"><?php echo $prodotto["idprodotto"] ?></a></td><td><?php echo $prodotto["nome"] ?></td><td><?php echo $prodotto["descrizione"] ?></td><td><?php echo $prodotto["categoria"] ?></td><td><?php echo $prodotto["prezzo"] ?></td></tr>
       <?php endforeach; ?>
     </table>
+    <button class="my-2 btn-lg btn-outline-primary" onclick='window.location="nuovoProdotto.php"'>Aggiungi un prodotto</button>
   </div>
 </div>

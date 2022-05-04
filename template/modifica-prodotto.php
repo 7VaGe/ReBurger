@@ -4,6 +4,9 @@
     <div class="container-lg">
       <?php foreach ($templateParams["prodotto"] as $prodotto):     ?>
       <div class="form-floating d-flex">
+          <input type="text" class="form-control my-2" id="idprodotto" value="<?php echo $prodotto["idprodotto"] ?>" name="idprodotto" hidden />
+      </div>
+      <div class="form-floating d-flex">
           <input type="text" class="form-control my-2" id="nome" value="<?php echo $prodotto["nome"] ?>" name="nome" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Nome</label>
       </div>
