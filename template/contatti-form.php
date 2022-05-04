@@ -1,6 +1,6 @@
-<?php if (isset($_POST["indirizzo"]) and isset($_POST["descrizione"]) and isset($_POST["nome_locale"])) {
-    $dbh->updateContatti($_POST["indirizzo"], $_POST["descrizione"], $_POST["nome_locale"]);
-    $_POST["indirizzo"]=NULL; $_POST["descrizione"]=NULL; $_POST["nome_locale"]=NULL;
+<?php if (isset($_GET["indirizzo"]) and isset($_GET["descrizione"]) and isset($_GET["nome_locale"])) {
+    $dbh->updateContatti($_GET["indirizzo"], $_GET["descrizione"], $_GET["nome_locale"]);
+    $_GET["indirizzo"]=NULL; $_GET["descrizione"]=NULL; $_GET["nome_locale"]=NULL;
     $templateParams["info"] = $dbh->getInfoVenditore();
   }?>
 <?php foreach ($templateParams["info"] as $info) :?>

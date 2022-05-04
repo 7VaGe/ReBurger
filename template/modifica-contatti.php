@@ -1,5 +1,5 @@
 <div class="text-center form-signin">
-  <form action="contatti.php" method="post">
+  <form action="contatti.php" method="get">
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
     <div class="container-lg">
       <?php foreach ($templateParams["info"] as $info):     ?>

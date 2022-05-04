@@ -16,7 +16,7 @@
 }else{ ?>
 <div class="text-center form-signin">
   <form action="" method="get">
-    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Compila i seguenti campi:</h1>
+    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Compila i seguenti campi per aggiungere un prodotto:</h1>
     <div class="container-lg">
       <?php
     $productDataRegistration = ["Nome"  => "nomeProdotto", "Prezzo"=> "prezzo", "Descizione" => "desc", "Categoria" => "categ"];

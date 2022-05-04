@@ -31,8 +31,7 @@
               <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
             </div>
       </div>
-      <?php } ?>
-    <?php if (isset($_SESSION["username"])) { ?>
+    <?php }elseif (isset($_SESSION["username"])) { ?>
       <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
           <li class="nav-item col-sm-3 ">

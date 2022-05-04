@@ -230,7 +230,7 @@ class DatabaseHelper{
     }
 
     public function updateContatti($indirizzo, $descrizione, $nome){
-        $query = "UPDATE contatti SET indirizzo=?, descrizione=?, nome=?";
+        $query = "UPDATE venditore SET indirizzo=?, descrizione=?, nome=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('sss',$indirizzo, $descrizione, $nome);
         $stmt->execute();
