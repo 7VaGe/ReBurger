@@ -210,6 +210,32 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function utenteIsVenditore($idutente){
+        $query = "SELECT idutente FROM utente WHERE username=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$idutente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+      return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getInfoVenditore(){
+        $query = "SELECT * FROM venditore";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+      return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updateContatti($indirizzo, $descrizione, $nome){
+        $query = "UPDATE contatti SET indirizzo=?, descrizione=?, nome=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss',$indirizzo, $descrizione, $nome);
+        $stmt->execute();
+        return true;
+    }
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
         $stmt->bind_param('i',$data);
@@ -238,15 +264,6 @@ class DatabaseHelper{
       return $result->fetch_all(MYSQLI_ASSOC);
   }
 
-  public function utenteIsVenditore($idutente){
-      $query = "SELECT idutente FROM utente WHERE username=?";
-      $stmt = $this->db->prepare($query);
-      $stmt->bind_param('s',$idutente);
-      $stmt->execute();
-      $result = $stmt->get_result();
-
-    return $result->fetch_all(MYSQLI_ASSOC);
-  }
 /*
     public function referral($invitato, $invitante){
         $query = "SELECT email FROM utente WHERE matricola=?";

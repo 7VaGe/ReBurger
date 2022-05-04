@@ -5,12 +5,12 @@
         <div class="card bg-dark rounded-6 shadow img-center">
           <?php foreach($templateParams["utente"] as $userInfo):?>
 
-             <img class="rounded-circle mx-auto d-block my-2" src="img/<?php echo $userInfo["img"]; ?>" style="height: 200px; width: 200px";/> 
+             <img class="rounded-circle mx-auto d-block my-2" src="img/<?php echo $userInfo["img"]; ?>" style="height: 200px; width: 200px";/>
               <div class="card-body">
                  <h5 class="card-title"><?php echo $userInfo["username"]; ?></h5>
-                 
-                  <?php endforeach;?>
-                  <table class="table table-dark table-hover table-striped">
+
+ <?php endforeach;?>
+ <table class="table table-dark table-hover table-striped">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
