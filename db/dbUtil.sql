@@ -65,3 +65,7 @@ INSERT INTO `utente` (`idutente`, `username`, `password`, `email`, `telefono`, `
 INSERT INTO `referral` (`idreferral`, `idinvitato`, `idinvitante`, `matinvitato`, `matinvitante`) VALUES
 (NULL, '4', '1', '0000756333', '0000756576'),
 (NULL, '3', '1', '0000750000', '0000756576');
+
+
+INSERT INTO `ordine` (`idordine`, `cliente`, `data_ordine`, `ora_ordine`, `stato`, `pagamento`) VALUES 
+('4', '7', '2022-05-03', '15:24:23', '1', '1');
