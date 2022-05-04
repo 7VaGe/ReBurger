@@ -23,12 +23,12 @@
             <a class="nav-link" href="ordini.php">Ordini</a>
           </li>
           <li class="nav-item col-sm-3">
-            <a class="nav-link" href="login.php"><?php echo  strtoupper($_SESSION["username"]) ?></a>
+            <a class="nav-link" href="login.php"><?php echo strtoupper($_SESSION["username"]) ?></a>
           </li>
         </ul>
         </div>
         <div class="container text-lg-center text-sm-end col  d-none d-md-block">
-              <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
+              <button type="button" class="btn btn-outline-warning" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
             </div>
       </div>
       
@@ -45,12 +45,12 @@
             <a class="nav-link" href="contatti.php">About</a>
           </li>
           <li class="nav-item col-sm-3">
-            <a class="nav-link" href="login.php"><?php echo $_SESSION["username"] ?></a>
+            <a class="nav-link" href="login.php"><?php echo strtoupper($_SESSION["username"]) ?></a>
           </li>
         </ul>
         </div>
         <div class="container text-lg-center text-sm-end col  d-none d-md-block">
-              <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
+              <button type="button" class="btn btn-outline-warning" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
             </div>
       </div>
   <?php    }else { ?>
