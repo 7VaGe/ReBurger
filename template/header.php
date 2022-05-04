@@ -23,7 +23,7 @@
             <a class="nav-link" href="ordini.php">Ordini</a>
           </li>
           <li class="nav-item col-sm-3">
-            <a class="nav-link" href="login.php"><?php echo $_SESSION["username"] ?></a>
+            <a class="nav-link" href="login.php"><?php echo  strtoupper($_SESSION["username"]) ?></a>
           </li>
         </ul>
         </div>
@@ -31,7 +31,8 @@
               <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
             </div>
       </div>
-    <?php }elseif (isset($_SESSION["username"])) { ?>
+      
+      <?php }elseif (isset($_SESSION["username"])) { ?>
       <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
           <li class="nav-item col-sm-3 ">
