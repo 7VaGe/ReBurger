@@ -1,3 +1,8 @@
+<?php if (isset($_POST["indirizzo"]) and isset($_POST["descrizione"]) and isset($_POST["nome_locale"])) {
+    $dbh->updateContatti($_POST["indirizzo"], $_POST["descrizione"], $_POST["nome_locale"]);
+    $_POST["indirizzo"]=NULL; $_POST["descrizione"]=NULL; $_POST["nome_locale"]=NULL;
+    $templateParams["info"] = $dbh->getInfoVenditore();
+  }?>
 <?php foreach ($templateParams["info"] as $info) :?>
 <div class="row row-cols-1  align-items-stretch g-4 py-5"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.-->
   <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
@@ -14,3 +19,6 @@
   </div>
 </div>
 <?php endforeach; ?>
+<?php if(isset($_SESSION["username"]) && $_SESSION["username"]=="propriolui"){ //da sostituire con il controllo se l'utente è o meno il venditore?>
+  <button type="button" class="btn btn-primary" onclick='window.location="modificaVenditore.php"' >Modifica</button>
+<?php  }?>
