@@ -236,6 +236,24 @@ class DatabaseHelper{
         $stmt->execute();
         return true;
     }
+
+    public function updateProdotto($nome, $descrizione, $categoria, $prezzo, $id){
+        $query = "UPDATE prodotto SET nome=?, descrizione=?, categoria=?, prezzo=? WHERE idprodotto=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss',$indirizzo, $descrizione, $nome);
+        $stmt->execute();
+        return true;
+    }
+
+    public function getAllProdotti(){
+        $query = "SELECT * FROM prodotto";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+      return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
         $stmt->bind_param('i',$data);
