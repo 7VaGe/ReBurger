@@ -8,7 +8,9 @@
              <img class="rounded-circle mx-auto d-block my-2" src="img/<?php echo $userInfo["img"]; ?>" style="height: 200px; width: 200px";/> 
               <div class="card-body">
                  <h5 class="card-title"><?php echo $userInfo["username"]; ?></h5>
-                 <table class="table table-hover">
+                 
+                  <?php endforeach;?>
+                  <table class="table table-dark table-hover table-striped">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -34,10 +36,10 @@
                       <th scope="row">3</th>
                       <td>Larry the Bird</td>
                       <td>@twitter</td>
+                      <td>@twitter</td>
                     </tr>
                   </tbody>
                 </table>
-                  <?php endforeach;?>
               </div>
         </div>
       </div>
