@@ -4,7 +4,9 @@
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
           <?php foreach($templateParams["utente"] as $userInfo):?>
-              <img class="rounded-circle mx-auto d-block my-2" src='img/<?php echo $userInfo["img"]; ?>' style="height: 200px; width: 200px;" />
+            <input type="file" id="imgupload" style="display:none"/> 
+             <img class="rounded-circle mx-auto d-block my-2" onclick="inputFiles()" id="OpenImgUpload" src='img/<?php echo $userInfo["img"]; ?>' style="height: 200px; width: 200px;" />
+               
               <div class="card-body">
                  <h5 class="card-title"><?php  echo strtoupper($userInfo["username"]);?></h5>
                  
