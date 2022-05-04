@@ -119,7 +119,7 @@ footer, footer.py-5>div.row{
   }
 
   table, th, td {
-    color: red;
+    color: rgb(253, 193, 64);
     border: 1px solid;
   }
 
@@ -144,7 +144,7 @@ footer, footer.py-5>div.row{
         display: inline;
     }
     table, th, td {
-      color: red;
+      color: rgb(253, 193, 64);
       border: 1px solid;
     }
 
@@ -168,7 +168,7 @@ footer, footer.py-5>div.row{
     }
 
     table, th, td {
-      color: red;
+      color: rgb(253, 193, 64);
       border: 1px solid;
     }
 
@@ -190,7 +190,7 @@ footer, footer.py-5>div.row{
         display:inline-flex;
     }
     table, th, td {
-      color: red;
+      color: rgb(253, 193, 64);
       border: 1px solid;
     }
 

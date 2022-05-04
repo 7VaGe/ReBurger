@@ -4,9 +4,11 @@ require_once 'bootstrap.php';
 
 $templateParams["titolo"] = "ReBurger - Profilo";
 $templateParams["nome"] = "profile-form.php";
-$templateParams["ordine"] = $dbh->getOrdiniByCliente(3);
-$templateParams["referral"] = $dbh->getReferal(3);
-$templateParams["utente"] = $dbh->getUtenteById(3);
+$templateParams["ordine"] = $dbh->getOrdiniByCliente($_SESSION["idutente"]);
+$templateParams["referral"] = $dbh->getReferal($_SESSION["idutente"]);
+$templateParams["utente"] = $dbh->getUtenteById($_SESSION["idutente"]);
+
+
 
 require_once 'template/base.php';
 ?>
