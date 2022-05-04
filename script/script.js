@@ -21,8 +21,4 @@ function goTop() {
   document.documentElement.scrollTop = 0;
 }
 
-function inputFiles(){
-  $('#OpenImgUpload').click(function(){ $('#imgupload').trigger('click'); });
-}
-
 
