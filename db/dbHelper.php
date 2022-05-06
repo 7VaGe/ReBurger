@@ -240,7 +240,7 @@ class DatabaseHelper{
     public function updateProdotto($nome, $descrizione, $categoria, $prezzo, $id){
         $query = "UPDATE prodotto SET nome=?, descrizione=?, categoria=?, prezzo=? WHERE idprodotto=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sss',$indirizzo, $descrizione, $nome);
+        $stmt->bind_param('ssiii',$nome, $descrizione, $categoria, $prezzo, $id);
         $stmt->execute();
         return true;
     }

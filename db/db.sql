@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `password` VARCHAR(24) NOT NULL,
   `email` VARCHAR(30) NOT NULL UNIQUE,
   `telefono` VARCHAR(13) NULL UNIQUE,
+  `matricola` VARCHAR(10) NOT NULL UNIQUE,
   `img` VARCHAR(100),
   `pagamento` INT(1) DEFAULT 1, -- 1 = pagamento in loco, 2= pagamento online, 3 = coupon ERGO
   UNIQUE INDEX `uc_username` (`username` ASC),
@@ -24,33 +25,29 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurger`.`cliente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurger`.`cliente` (
-  `idcliente` INT NOT NULL AUTO_INCREMENT UNIQUE,
-  `matricola` VARCHAR(10) NOT NULL UNIQUE,
-  `utente` INT NOT NULL UNIQUE,
-  PRIMARY KEY (`idcliente`),
-  CONSTRAINT `fk_utente_cliente`
-    FOREIGN KEY (`utente`)
-    REFERENCES `ReBurger`.`utente` (`idutente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
 -- Table `ReBurger`.`ordine`
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `cliente` INT NOT NULL,
+  `venditore` INT NOT NULL,
   `data_ordine` DATE DEFAULT current_timestamp(),
   `ora_ordine` TIME DEFAULT current_timestamp(),
+  `rider` INT NOT NULL,
   `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
   `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.GO
-  `descrizione` INT(1) DEFAULT 1,
   PRIMARY KEY (`idordine`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `ReBurger`.`spedizione`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `ReBurger`.`spedizione` (
+  `idordine` INT NOT NULL,
+  `nome` INT NOT NULL,
+  `quantita` INT(20) NOT NULL)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -89,40 +86,9 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`prodotto` (
   `nome` VARCHAR(20) NOT NULL UNIQUE,
   `descrizione` VARCHAR(512) NOT NULL,
   `categoria` INT NOT NULL,
-  `allergeni` VARCHAR(4) NOT NULL,
   `prezzo` INT(3) NOT NULL DEFAULT 0,
 	`img` VARCHAR(100),
   PRIMARY KEY (`idprodotto`))
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `ReBurger`.`carrello`
--- -----------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
-  `prodotto` INT NOT NULL, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
-  `utente` INT  NOT NULL ,
-  `quantita` INT(2) NOT NULL DEFAULT 0,
-  CONSTRAINT `fk_prodotto_carrello`
-    FOREIGN KEY (`prodotto`)
-    REFERENCES `ReBurger`.`prodotto` (`idprodotto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `ReBurger`.`item_nel_menu`
--- -----------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `ReBurger`.`venditore_crea_prodotto` (
-  `prodotto` INT NOT NULL  UNIQUE, -- codice venditore formato da 4 cifre diverso dallo stutente/cliente che è 5.
-  `venditore`INT NOT NULL,
-  `quantita` INT(2) NOT NULL DEFAULT 0,
-  CONSTRAINT `fk_prodotto`
-    FOREIGN KEY (`prodotto`)
-    REFERENCES `ReBurger`.`prodotto` (`idprodotto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -139,19 +105,6 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`rider` (
     REFERENCES `ReBurger`.`utente` (`idutente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `ReBurger`.`spedizione`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurger`.`spedizione` (
-  `idspedizione` INT NOT NULL AUTO_INCREMENT,
-  `rider` INT NOT NULL,
-  `cliente` INT NOT NULL,
-  `ordine` INT NOT NULL,
-  `venditore` INT NOT NULL,
-  `stato` INT(1) NOT NULL,
-  PRIMARY KEY (`idspedizione`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
