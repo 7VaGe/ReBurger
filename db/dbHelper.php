@@ -86,13 +86,20 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function updateUserImage($immagineUtente, $idutente){
+        $query = "UPDATE utente SET img=? WHERE idutente=? ";
+        $stmt = $this->db->prepare($query);
+    	$stmt->bind_param('si', $immagineUtente,$idutente);
+    	$stmt->execute();
+    	return $stmt;
+    }
+
     public function uploadImmaginiProdotto($idprodotto, $img){
     		$query = "INSERT INTO prodotto WHERE idprodotto=? VALUES (?)";
     		$stmt = $this->db->prepare($query);
     		$stmt->bind_param('is', $idprodotto, $img);
     		$stmt->execute();
     		return $stmt;
-
     		}
 
     public function checkLogin($username, $password){

@@ -41,17 +41,17 @@
 </style>
             <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"];?>' style="width: 200px; height:200px;" />
                 <div class="middle" id="wrap-btn">
-                  <input type="file" accept="image/*" class="d-none" id="inputFile" ></input>
-                <button class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
+                  <!-- <form id="mio-modulo">
+                          CONTENUTO DEL FORM ... 
+                          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/METTI IL PHP' style="width: 200px; height:200px; onclick="document.getElementById('mio-modulo').submit();" /> 
+                          potrebbe essere funzionante">
+                        </form>-->
+                  <input type="file" accept="immmagini/" class="d-none" id="inputFile" ></input>
+                <button onclick="open_file()" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
                 <script>
-                  
-                  $(document).ready(function(){
-                   
-                    $("wrap-btn").click(function(){
-                    alert("The btn-file was clicked.");
-                  });
-                });
-                
+                 function open_file(){
+                    document.getElementById('inputFile').click();
+                 }
                 </script>
                 </div> 
           </div>
