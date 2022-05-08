@@ -29,7 +29,9 @@
 						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
 				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-					      <ahref="#" data-name="<?php echo $prodotto["nome"]?>" data-price="<?php echo $prodotto["prezzo"]?>" class="add-to-cart btn btn-warning">Aggiungi al carrello</a>
+					      <ahref="#" data-name="<?php echo $prodotto["nome"]?>" data-price="<?php echo $prodotto["prezzo"]?>" class="add-to-cart btn btn-warning">Aggiungi al carrello</a> 
+                <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla, 
+                ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
           </figcaption>
         </figure>
       </div>
