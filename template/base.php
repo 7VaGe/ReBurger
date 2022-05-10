@@ -221,8 +221,9 @@
        var cartArray = shoppingCart.listCart();
        var output = "";
        for(var i in cartArray) {
+         let nameProduct = cartArray[i].name.replace("_"," ");
          output += "<tr>"
-           + "<td>" + cartArray[i].name + "</td>"
+           + "<td>" + nameProduct + "</td>"
            + "<td>(" + cartArray[i].price + ")</td>"
            + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
            + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
@@ -259,7 +260,7 @@
        displayCart();
      })
 
-     // Item count input
+     // Item count
      $('.show-cart').on("change", ".item-count", function(event) {
         var name = $(this).data('name');
         var count = Number($(this).val());

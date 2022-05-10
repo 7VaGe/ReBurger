@@ -24,13 +24,13 @@
                  echo $imgNoSpace?>.png" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
           <figcaption class="info-wrap px-3">
-          <p class="title mb-2"><?php echo $prodotto["nome"]?></p>
+          <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
 					      <div class="price-wrap">
 						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
 				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-					      <ahref="#" data-name="<?php echo $prodotto["nome"]?>" data-price="<?php echo $prodotto["prezzo"]?>" class="add-to-cart btn btn-warning">Aggiungi al carrello</a> 
-                <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla, 
+					      <ahref="#" data-name="<?php echo $prodotto["nome"]?>" data-price="<?php echo $prodotto["prezzo"]?>" class="add-to-cart btn btn-warning">Aggiungi al carrello</a>
+                <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla,
                 ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
           </figcaption>
         </figure>
