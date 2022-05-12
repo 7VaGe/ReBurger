@@ -53,33 +53,48 @@
                 </div>
           </div>
 
-
-              <div class="card-body">
-                 <h5 class="card-title"><?php  echo strtoupper($userInfo["username"]);?></h5>
-
-                  <?php endforeach;?>
-                  <table class="table table-dark table-hover table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">Ordine</th>
-                      <th scope="col">Data</th>
-                      <th scope="col">Ora</th>
-                      <th scope="col">Pagamento</th>
-                    </tr> <!-- Prima  è fissa senza php-->
-                  </thead>
-                  <tbody>
-                    <?php foreach($templateParams["ordine"] as $orderInfo) :?>
-                    <tr>
-                      <th scope="row" headers="Ordine "><?php echo $orderInfo["idordine"]?></th>
-                      <td headers="Data"><?php echo $orderInfo["data_ordine"]?></td>
-                      <td headers="Ora"><?php echo $orderInfo["ora_ordine"]?></td>
-                      <td headers="Pagamento"><?php echo $orderInfo["pagamento"]?></td>
-                    </tr>
-                  </tbody>
-                  <?php endforeach; ?>
-                </table>
-
-              </div>
+<?php endforeach;?>
+          <div class="card-body">
+              <h5 class="card-title"><?php  echo strtoupper($userInfo["username"]);?></h5>
+              <table class="table table-dark table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Ordine</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Ora</th>
+                  <th scope="col">Pagamento</th>
+                </tr> <!-- Prima  è fissa senza php-->
+              </thead>
+              <tbody>
+                <?php foreach($templateParams["ordine"] as $orderInfo) :?>
+                <tr>
+                  <th scope="row" headers="Ordine "><?php echo $orderInfo["idordine"]?></th>
+                  <td headers="Data"><?php echo $orderInfo["data_ordine"]?></td>
+                  <td headers="Ora"><?php echo $orderInfo["ora_ordine"]?></td>
+                  <td headers="Pagamento"><?php echo $orderInfo["pagamento"]?></td>
+                </tr>
+              </tbody>
+              <?php endforeach; ?>
+            </table>
+          </div>
+          <div class="card-body">
+              <table class="table table-dark table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">IDinvitato</th>
+                  <th scope="col">Matricola</th>
+                </tr> <!-- Prima  è fissa senza php-->
+              </thead>
+              <tbody>
+                <?php foreach($templateParams["referral"] as $referralInfo) :?>
+                <tr>
+                  <th><?php echo $referralInfo["idinvitato"]?></th>
+                  <td><?php echo $referralInfo["matinvitato"]?></td>
+                </tr>
+              </tbody>
+              <?php endforeach; ?>
+            </table>
+          </div>
         </div>
       </div>
     </div>
