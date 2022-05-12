@@ -3,7 +3,7 @@
 require_once 'bootstrap.php';
 
 if (isset($_GET["idprodotto"]) and isset($_GET["nome"]) and isset($_GET["descrizione"]) and isset($_GET["categoria"]) and isset($_GET["prezzo"])) {
-    $dbh->updateProdotto(str_replace(' ', '_', $_GET["nomeProdotto"]), $_GET["descrizione"], $_GET["categoria"], $_GET["prezzo"], $_GET["idprodotto"]);
+    $dbh->updateProdotto($_GET["nome"], $_GET["descrizione"], $_GET["categoria"], $_GET["prezzo"], $_GET["idprodotto"]);
   }
 
 $templateParams["titolo"] = "ReBurger";
