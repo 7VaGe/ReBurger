@@ -1,6 +1,6 @@
 <?php if (isset($_GET["nomeProdotto"]) and isset($_GET["prezzo"]) and isset($_GET["desc"]) and isset($_GET["categ"])) {
     $_GET["venditore"]=1;
-    $dbh->insertProdotto($_GET["venditore"], $_GET["nomeProdotto"], $_GET["desc"], $_GET["categ"], $_GET["prezzo"]);
+    $dbh->insertProdotto($_GET["venditore"], str_replace(' ', '_', $_GET["nomeProdotto"]), $_GET["desc"], $_GET["categ"], $_GET["prezzo"]);
      ?>
     <div class="container-lg my-5">
       <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">

@@ -1,4 +1,3 @@
-
   <div class="container-lg ">
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
@@ -13,10 +12,10 @@
                     .image {
                       opacity: 1;
                       display: block;
-                      width: 200px;    
+                      width: 200px;
                       height: 200px;
                       transition: .5s ease;
-                     
+
                     }
 
                     .middle {
@@ -37,7 +36,7 @@
                     .container .middle:hover {
                       opacity: 1;
                     }
-                   
+
 </style>
             <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"];?>' style="width: 200px; height:200px;" />
                 <div class="middle" id="wrap-btn">
@@ -51,13 +50,13 @@
                     document.getElementById('inputFile').click();
                  }
                 </script>
-                </div> 
+                </div>
           </div>
-             
-               
+
+
               <div class="card-body">
                  <h5 class="card-title"><?php  echo strtoupper($userInfo["username"]);?></h5>
-                 
+
                   <?php endforeach;?>
                   <table class="table table-dark table-hover table-striped">
                   <thead>
@@ -68,8 +67,8 @@
                       <th scope="col">Pagamento</th>
                     </tr> <!-- Prima  è fissa senza php-->
                   </thead>
-                  <tbody>     
-                    <?php foreach($templateParams["ordine"] as $orderInfo) :?>              
+                  <tbody>
+                    <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                     <tr>
                       <th scope="row" headers="Ordine "><?php echo $orderInfo["idordine"]?></th>
                       <td headers="Data"><?php echo $orderInfo["data_ordine"]?></td>
@@ -79,7 +78,7 @@
                   </tbody>
                   <?php endforeach; ?>
                 </table>
-                
+
               </div>
         </div>
       </div>

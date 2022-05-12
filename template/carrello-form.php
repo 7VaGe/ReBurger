@@ -6,12 +6,14 @@
         <table class="show-cart table">
 
         </table>
-        <p>Seleziona la modalità di pagamento:</p><input type="radio" id="pagamento1" name="pagamento" value="1"><label for="pagamento1">Con carta</label><br><input type="radio" id="pagamento2" name="pagamento" value="2"><label for="pagamento2">Alla consegna</label><br>
+        <form action="pagamento.php" method="post">
+        <p>Seleziona la modalità di pagamento:</p><input type="radio" id="pagamento1" name="pagamento" value="1" checked><label for="pagamento1">Con carta</label><br><input type="radio" id="pagamento2" name="pagamento" value="0"><label for="pagamento2">Alla consegna</label><br>
         <div>Prezzo totale: €<span class="total-cart"></span></div>
       </div>
-      <div class="footer">
-        <button type="button" class="btn btn-primary" onclick='window.location="pagamento.php"' >Ordina</button>
-      </div>
+        <div class="footer">
+          <button type="submit" class="btn btn-primary" onclick='window.location="pagamento.php"' >Ordina</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
