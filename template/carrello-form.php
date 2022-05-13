@@ -11,7 +11,12 @@
         <div>Prezzo totale: €<span class="total-cart"></span></div>
       </div>
         <div class="footer">
-          <button type="submit" class="btn btn-primary" onclick='window.location="pagamento.php"' >Ordina</button>
+          <?php if ($_SESSION["idutente"]==NULL){?>
+          </form>
+            <button class="btn btn-primary" onclick='window.location="login.php"'>Prima effettua il login</button>
+          <?php }else{ ?>
+            <button type="submit" class="btn btn-primary" onclick='window.location="pagamento.php"'>Ordina</button>
+          <?php }; ?>
         </div>
       </form>
     </div>

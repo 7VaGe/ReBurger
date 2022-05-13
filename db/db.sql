@@ -30,11 +30,10 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
-  `cliente` INT NOT NULL,
-  `venditore` INT NOT NULL,
+  `prezzo` INT NOT NULL,
   `data_ordine` DATE DEFAULT current_timestamp(),
   `ora_ordine` TIME DEFAULT current_timestamp(),
-  `rider` INT NOT NULL,
+  `contenuto` INT NOT NULL,
   `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
   `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.GO
   PRIMARY KEY (`idordine`))

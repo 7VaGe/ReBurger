@@ -161,7 +161,7 @@ class DatabaseHelper{
     public function insertOrdine($cliente, $stato, $prezzo, $descrizione){
         $query = "INSERT INTO ordine (cliente, stato, pagamento, descrizione) VALUES (?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('isiis',$cliente, $data, $stato, $prezzo, $descrizione);
+        $stmt->bind_param('iiis',$cliente, $data, $stato, $prezzo, $descrizione);
         $stmt->execute();
 
         return $stmt->insert_id;
@@ -261,6 +261,14 @@ class DatabaseHelper{
       return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getEmail($id){
+        $stmt = $this->db->prepare("SELECT email FROM utente WHERE idutente=?");
+        $stmt->execute();
+        $stmt->bind_param('i', $id);
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
         $stmt->bind_param('i',$data);

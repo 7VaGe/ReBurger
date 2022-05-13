@@ -154,10 +154,11 @@ var shoppingCart = (function() {
  function displayCart() {
    var cartArray = shoppingCart.listCart();
    var output = "";
+   var input = "";
+   var totale = shoppingCart.totalCart();
    for(var i in cartArray) {
-     let nameProduct = cartArray[i].name.replace("_"," ");
      output += "<tr>"
-       + "<td>" + nameProduct + "</td>"
+       + "<td>" + cartArray[i].name + "</td>"
        + "<td>(" + cartArray[i].price + ")</td>"
        + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
        + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
@@ -167,7 +168,19 @@ var shoppingCart = (function() {
        + "<td>" + cartArray[i].total + "</td>"
        +  "</tr>";
    }
+//   cartArray = shoppingCart.listCart();
+//   for(var x in cartArray) {
+//     input += "<p>Seleziona la modalità di pagamento:</p><input type='radio' id='pagamento1' name='pagamento' value='1' checked><label for='pagamento1'>Con carta</label><br><input type='radio' id='pagamento2' name='pagamento' value='0'><label for='pagamento2'>Alla consegna</label><br>"
+//       + "<p>Seleziona la modalità di pagamento:</p><input type='radio' id='pagamento1' name='pagamento' value='1' checked><label for='pagamento1'>Con carta</label><br><input type='radio' id='pagamento2' name='pagamento' value='0'><label for='pagamento2'>Alla consegna</label><br>"
+//       + "<div>Prezzo totale: €<span class='total-cart'></span></div>"
+//       + "<input type='text' class='form-control my-2' id=" + cartArray[x].name + " value=" + cartArray[x].name + " hidden />"
+//       + "<input type='text' class='form-control my-2' id=" + cartArray[x].count + " value=" + cartArray[x].count + " hidden />"
+//       + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[x].name + ">+</button></div></td>"
+//       + "<button type='submit' class='btn btn-primary'>Ordina</button>";
+//   }
+
    $('.show-cart').html(output);
+//   $('.hidden-cart').html(input);
    $('.total-cart').html(shoppingCart.totalCart());
    $('.total-count').html(shoppingCart.totalCount());
  }
@@ -179,7 +192,6 @@ var shoppingCart = (function() {
    shoppingCart.removeItemFromCartAll(name);
    displayCart();
  })
-
 
  // -1
  $('.show-cart').on("click", ".minus-item", function(event) {
