@@ -38,18 +38,15 @@
                     }
 
 </style>
-            <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"];?>' style="width: 200px; height:200px;" />
-                <div class="middle" id="wrap-btn">
-                  <form id="mio-modulo" method="post" action="upload.php" enctype="multipart/data">
-                          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/METTI IL PHP' style="width: 200px; height:200px;" onclick="document.getElementById('mio-modulo').submit();" />
+                
+                  
+                  
+                        <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"]?>' style="width: 200px; height:200px;"/>
+                        <div class="middle" id="wrap-btn">
+                          <form id="mio-modulo" method="post" action="profile.php" enctype="multipart/data">
+                          <!--<input type="file" accept="immmagini/*" class="d-none" id="inputFile" ></input>-->
+                            <button onclick="document.getElementById('mio-modulo').submit();" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
                         </form>
-                  <input type="file" accept="immmagini/*" class="d-none" id="inputFile" ></input>
-                <button onclick="open_file()" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
-                <script>
-                 function open_file(){
-                    document.getElementById('inputFile').click();
-                 }
-                </script>
                 </div>
           </div>
 

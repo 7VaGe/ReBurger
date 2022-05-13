@@ -94,6 +94,16 @@ class DatabaseHelper{
     	return $stmt;
     }
 
+    public function updateUtente($nome, $email, $password, $img, $idutente){
+        $query = "UPDATE utente SET username=?, email=?, password=?, img=? WHERE idutente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssi',$nome, $email, $password, $img, $idutente);
+        $stmt->execute();
+        return true;
+    }
+
+    
+
     public function uploadImmaginiProdotto($idprodotto, $img){
     		$query = "INSERT INTO prodotto WHERE idprodotto=? VALUES (?)";
     		$stmt = $this->db->prepare($query);
