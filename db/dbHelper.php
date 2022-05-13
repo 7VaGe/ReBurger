@@ -264,10 +264,10 @@ class DatabaseHelper{
     public function getEmail($id){
         $stmt = $this->db->prepare("SELECT email FROM utente WHERE idutente=?");
         $stmt->execute();
-        $stmt->bind_param('i', $id);
+        $stmt->bind_param('s', $id);
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result;
     }
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
