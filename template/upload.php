@@ -38,6 +38,6 @@
    </div>
   </form>
 </div>
-  <button class="w-75 btn btn-lg btn-warning my-4"  onclick='windows.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
+  <button class="w-75 btn btn-lg btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
 </div>
   <script src="script/showpwd.js"></script>
