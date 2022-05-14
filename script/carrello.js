@@ -177,13 +177,13 @@ var shoppingCart = (function() {
 //       + "<input type='text' class='form-control my-2' id=" + cartArray[x].count + " value=" + cartArray[x].count + " hidden />"
 //       + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[x].name + ">+</button></div></td>"
 //       + "<button type='submit' class='btn btn-primary'>Ordina</button>";
-   }
+//   }
 
    $('.show-cart').html(output);
 //   $('.hidden-cart').html(input);
    $('.total-cart').html(shoppingCart.totalCart());
    $('.total-count').html(shoppingCart.totalCount());
- 
+ }
 
  // Delete item button
 
