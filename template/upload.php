@@ -4,9 +4,6 @@
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($userInfo["username"]); ?> : </h1>
     <div class="container-lg">
       <div class="form-floating d-flex">
-          <input type="number" class="form-control my-2" id="idutente" value="<?php echo $userInfo["idutente"] ?>" name="idutente" hidden/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-      </div>
-      <div class="form-floating d-flex">
           <input type="text" class="form-control my-2" id="username" value="<?php echo $userInfo["username"] ?>" name="username" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Nome utente</label>
       </div>
@@ -18,7 +15,12 @@
           <input type="password" class="form-control my-2" id="password" value="<?php echo $userInfo["password"] ?>" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Password</label>
       </div>
+      <div class="form-floating">
+          <input type="text" class="form-control my-2" id="checkPwd" name="checkPwd" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Conferma Password</label>
           <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none b-inline-block"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
+      </div>
+      
       </div>
      <!-- <div class="form-floating d-flex">
           <input type="file" class="form-control my-2" id="img" accept="immmagini/*" value=" echo $userInfo["img"] ?>" name="img" />
