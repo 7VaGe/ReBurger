@@ -1,13 +1,13 @@
 $(document).ready( function(){
 
-var showPasswordToggle=document.querySelector('id="checkPwd"]');
+var showPasswordToggle=document.querySelector('id="checkPwd"');
 /**
  * Cliccando sulla mia casella input type password, vado a modificare una sua classe, 
  * togliendo il diplay-none all'elemento bottone, così facendo visualizzo a video il bottone e posso utilizzarlo per gestire
  * la modifica della mia password.
  */
 showPasswordToggle.onclick= function(){
-    document.querySelector('id="checkPwd"]').classList.add("input-password"); //casella inputTypePassword
+    document.querySelector('id="checkPwd"').classList.add("input-password"); //casella inputTypePassword
     document.getElementById("toggle-password").classList.remove("d-none"); //btn per mostrare la password
     const togglePasswordButton= document.getElementById("toggle-password"); //elemento icona
     togglePasswordButton.addEventListener("click",togglePassword);
