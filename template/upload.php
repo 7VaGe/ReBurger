@@ -1,5 +1,5 @@
 <div class="text-center">
-  <form action="profile.php" method="post">
+  <form action="profile.php" method="post" enctype="multipart/form-data">
    <?php foreach($templateParams["utente"] as $userInfo):     ?>
     <div class="container-lg">
     
@@ -24,14 +24,15 @@
           <label for="floatingInput">Conferma Password</label>
           <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none b-inline-block"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
       </div>
-      
-     <!-- <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="img" accept="immmagini/*" value=" echo $userInfo["img"] ?>" name="img" />
+      <div class="w-100 form-floating d-flex">
+          <input type="file" class="form-control my-2" id="img" accept="immagini/*" value="<?php echo $userInfo["img"] ?>" name="image" /> <!-- image serve per far capire a $_FILES il campo di input files che si deve tenere in considerazione. -->
           <label for="floatingInput">Immagine utente</label>
-      </div>-->
+      </div>
+  
     
-    
-<?php endforeach;?>
+<?php endforeach;?>  
+
+
  <button class="w-50 btn btn-lg btn-warning m-4"  type="submit"> Conferma modifiche  <br> <i class="fa-solid fa-circle-check"></i></button>
        </div> 
      
@@ -41,3 +42,5 @@
   <button class="w-75 btn btn-lg btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
 </div>
   <script src="script/showpwd.js"></script>
+
+

@@ -43,10 +43,12 @@
                   
                         <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"]?>' style="width: 200px; height:200px;"/>
                         <div class="middle" id="wrap-btn">
-                          <form id="mio-modulo" method="post" action="profile.php" enctype="multipart/data">
-                          <!--<input type="file" accept="immmagini/*" class="d-none" id="inputFile" ></input>-->
-                            <button onclick="document.getElementById('mio-modulo').submit();" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
-                        </form>
+                         <!--
+                         non sono sicuro ma questo doppio form, penso sia sbagliato, da sostituire con un collegamento a profile.php
+                         e poi usare il form vero e proprio da profile.php che rimanda a upload, che contiene il form effettivo delle modifiche.
+                         <form id="mio-modulo" method="post" action="profile.php" enctype="multipart/form-data">-->
+                            <button onclick="window.location='profile.php'" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
+                      <!-- </form>-->
                 </div>
           </div>
 

@@ -94,10 +94,10 @@ class DatabaseHelper{
     	return $stmt;
     }
 
-    public function updateUtente($nome, $email, $password, $id){
-        $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
+    public function updateUtente($nome, $email, $password, $img, $id){
+        $query = "UPDATE utente SET username=?, email=?, password=?, img= ? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssi',$nome, $email, $password, $id);
+        $stmt->bind_param('ssssi',$nome, $email, $password,$img, $id); //aggiunto immagine
         $stmt->execute();
         return true;
     }
