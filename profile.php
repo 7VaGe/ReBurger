@@ -2,9 +2,9 @@
 
 require_once 'bootstrap.php';
 
-if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["password"])){
+if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["password"]) and isset($_POST["img"])){
 
-  $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"], $_POST["idutente"]);
+  $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"],$_POST["img"], $_SESSION["idutente"]);
   $_SESSION["username"] = $_POST["username"];
 
   }
