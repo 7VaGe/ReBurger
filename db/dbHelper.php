@@ -95,7 +95,7 @@ class DatabaseHelper{
     }
 
     public function updateUtente($nome, $email, $password, $img, $id){
-        $query = "UPDATE utente SET username=?, email=?, password=?, $img =? WHERE idutente=?";
+       $query = "UPDATE utente SET username=?, email=?, password=?, $img =? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssi',$nome, $email, $password, $img, $id);
         $stmt->execute();
@@ -103,18 +103,39 @@ class DatabaseHelper{
     }
 
     public function uploadImageProdotto($idprodotto){
-        $percorso = "img/" . basename($_FILES["immagine"]["name"]);
-         if (move_uploaded_file($_FILES["immagine"], $percorso)){
-            $id = $idprodotto;
-            $immagine = $_FILES["immagine"];
-    		    $query = "INSERT INTO prodotto WHERE idprodotto=? VALUES (?)";
-    		    $stmt = $this->db->prepare($query);
-    		    $stmt->bind_param('is', $id, $immagine);
-    		    $stmt->execute();
-    		    return true;
-  	}else {
-      return false;
-    }
+      $target_dir = "img/";
+      $target_file = $target_dir . basename($_FILES["immagine"]["name"]);
+      $uploadOk = 1;
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      // Check if file already exists
+      if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+      }
+
+      // Allow certain file formats
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+      }
+
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+      } else {
+        if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $target_file)) {
+          $nome = basename($_FILES["immagine"]["name"]);
+          $id = $idprodotto;
+          $query = "UPDATE prodotto SET img=? WHERE idprodotto=?";
+          $stmt = $this->db->prepare($query);
+          $stmt->bind_param('si', $nome, $id);
+          $stmt->execute();
+          return true;
+        } else {
+          return false;
+        }
+      }
   }
 
     public function checkLogin($username, $password){
