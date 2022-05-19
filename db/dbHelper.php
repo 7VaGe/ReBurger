@@ -102,15 +102,20 @@ class DatabaseHelper{
         return true;
     }
 
-
-
-    public function uploadImmaginiProdotto($idprodotto, $img){
-    		$query = "INSERT INTO prodotto WHERE idprodotto=? VALUES (?)";
-    		$stmt = $this->db->prepare($query);
-    		$stmt->bind_param('is', $idprodotto, $img);
-    		$stmt->execute();
-    		return $stmt;
-    		}
+    public function uploadImageProdotto($idprodotto){
+        $percorso = "img/".basename($_FILES["immagine"]["name"]);
+         if (move_uploaded_file($_FILES["immagine"], $percorso)){
+            $id = $idprodotto;
+            $immagine = $_FILES["immagine"];
+    		    $query = "INSERT INTO prodotto WHERE idprodotto=? VALUES (?)";
+    		    $stmt = $this->db->prepare($query);
+    		    $stmt->bind_param('is', $id, $immagine);
+    		    $stmt->execute();
+    		    return true;
+  	}else {
+      return false;
+    }
+  }
 
     public function checkLogin($username, $password){
         $query = "SELECT idutente, username FROM utente WHERE username = ? AND password = ?";
@@ -279,6 +284,8 @@ class DatabaseHelper{
 
         return $result;
     }
+
+
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
         $stmt->bind_param('i',$data);

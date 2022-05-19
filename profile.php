@@ -7,20 +7,20 @@ if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["passw
   $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"],$_POST["img"], $_SESSION["idutente"]);
   $_SESSION["username"] = $_POST["username"];
 
-  } 
+  }
   $message ='';
   $error ='';
   $upload_path ='img/';
   $moved = false;
   $maxsize = 5242880;
   $types_allowed = ['image/jpeg', 'image/png', 'image/gif'];
-  $exts_allowed = ['jpg', 'jpeg', 'png', 'gif']; 
-  
+  $exts_allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
   if($_SERVER['REQUEST_METHOD']=='POST'){
       $error = ($_FILES['image']['error']===1) ? 'Immagine troppo grande' : '' ;
-  
-  
-  
+
+
+
       if($_FILES['image']['error']==0){ //se non ci sono errori.
           $error .=($_FILES['image']['size'] <= $maxsize) ? '' :  'Immagine troppo grande!';
       //controllo che il tipo sia nell'array $allowed_types.
@@ -28,7 +28,7 @@ if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["passw
       $error .= in_array($type, $types_allowed) ? '' : 'Tipo di file errato, cambiare file!';
       $exten =  strtolower(pathinfo($_FILES['image']['tmp_name'], PATHINFO_EXTENSION));
       $error .= in_array($exten, $exts_allowed) ? '': 'Estensione file errata!';
-  
+
       if(!$error){
           /***
            * se non ci sono errori crea il nuovo percorso e tenta di spostare il file nel percordo di destinazione
@@ -38,10 +38,10 @@ if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["passw
           $moved = move_uploaded_file ($_FILES['image']['tmp_name'], $destination);
       }
       }
-  
+
       if($moved === true){ //mostro l'immagine dalla cartella destinazione.
           $message = 'Immagine:<br><img src= "'. $destination .'">' ;
-  
+
       }else { //mostro gli errori se non carico il file.
           $message = '<b>Il file' . $filename. 'potrebbe non essere stato caricato!cbr> Errore: ' . $error .' !</b>';
       }
@@ -49,17 +49,17 @@ if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["passw
           *     Quando un file viene inviato al server, riceve un nome di file temporaneo e viene collocato in una cartella temporanea,
           *     L'interprete php cancellerà il file temporaneo al termine dell'esecuzione dello script, pertanto si utilizza la funzione move_uploaded_file()
           *     per spostarlo in un altra cartella.
-  
+
           devono essere sostituiti tutti quei caratteri presenti in un file che potrebbero causare dei problemi, tra questi abbiamo:
           spazi, &, : , sostituiamo quindi tutti i caratteri diversi da A-Z, a-z, 0-9 con un trattino.
-  
+
           $temp = $_FILES['image']['temp_name'];
           $path = 'img/'. $_FILES['image']['name'];
-  
+
           //sposto il file e salvo il risultato in $moved
           $moved = move_uploaded_file($temp, $path); //temp indica la posizione temporanea, path invece la destinazione in cui lo si vuole mandare, nel nostro caso /img.
-  
-  
+
+
       } if($moved === true){
           $message = '<p> Immagine: </p>' . $path . '<p> caricata correttamente! </P>'; //inserisci qualche effetto o animazione qui.
           }
@@ -96,9 +96,9 @@ while( file_exists($upload_path . $filename)){
 }
  return $filename;
 }
-  
 
-  
+
+
 $templateParams["titolo"] = "ReBurger - Modifica profilo";
 $templateParams["nome"] = "upload.php";
 $templateParams["ordine"] = $dbh->getOrdiniByCliente($_SESSION["idutente"]);
