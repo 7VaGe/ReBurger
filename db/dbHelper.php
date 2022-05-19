@@ -95,14 +95,14 @@ class DatabaseHelper{
     }
 
     public function updateUtente($nome, $email, $password, $img, $id){
-       $query = "UPDATE utente SET username=?, email=?, password=?, $img =? WHERE idutente=?";
+       $query = "UPDATE utente SET username=?, email=?, password=?, img=? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssi',$nome, $email, $password, $img, $id);
         $stmt->execute();
         return true;
     }
 
-    public function uploadImageProdotto($idprodotto){
+    public function uploadImageProdotto($id, $provenienza){
       $target_dir = "img/";
       $target_file = $target_dir . basename($_FILES["immagine"]["name"]);
       $uploadOk = 1;
@@ -112,18 +112,16 @@ class DatabaseHelper{
         echo "Sorry, file already exists.";
         $uploadOk = 0;
       }
-
       // Allow certain file formats
       if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
       }
-
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
-      } else {
+      }else($provenienza==1) {
         if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $target_file)) {
           $nome = basename($_FILES["immagine"]["name"]);
           $id = $idprodotto;
@@ -132,11 +130,22 @@ class DatabaseHelper{
           $stmt->bind_param('si', $nome, $id);
           $stmt->execute();
           return true;
-        } else {
-          return false;
         }
       }
-  }
+      if ($provenienza==0) {
+        if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $target_file)) {
+          $nome = basename($_FILES["immagine"]["name"]);
+          $id = $idprodotto;
+          $query = "UPDATE utente SET img=? WHERE idutente=?";
+          $stmt = $this->db->prepare($query);
+          $stmt->bind_param('si', $nome, $id);
+          $stmt->execute();
+          return true;
+      }else{
+          return false;
+          }
+        }
+      }
 
     public function checkLogin($username, $password){
         $query = "SELECT idutente, username FROM utente WHERE username = ? AND password = ?";
