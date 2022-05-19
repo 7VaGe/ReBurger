@@ -94,16 +94,16 @@ class DatabaseHelper{
     	return $stmt;
     }
 
-    public function updateUtente($nome, $email, $password, $img, $id){
-        $query = "UPDATE utente SET username=?, email=?, password=?, img= ? WHERE idutente=?";
+    public function updateUtente($nome, $email, $password, $id){
+        $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssi',$nome, $email, $password,$img, $id); //aggiunto immagine
+        $stmt->bind_param('sssi',$nome, $email, $password, $id);
         $stmt->execute();
         return true;
     }
 
     public function uploadImageProdotto($idprodotto){
-        $percorso = "img/".basename($_FILES["immagine"]["name"]);
+        $percorso = "img/" . basename($_FILES["immagine"]["name"]);
          if (move_uploaded_file($_FILES["immagine"], $percorso)){
             $id = $idprodotto;
             $immagine = $_FILES["immagine"];
