@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`venditore` (
   `P_IVA` INT (11) NOT NULL,
   `descrizione` VARCHAR(2048) NOT NULL,
   `nome` VARCHAR(20) NOT NULL,
+   `img` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`idvenditore`),
   CONSTRAINT `fk_utente_venditore`
     FOREIGN KEY (`utente`)
