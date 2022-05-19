@@ -2,8 +2,12 @@
 
 require_once 'bootstrap.php';
 
-if (isset($_GET["idprodotto"]) and isset($_GET["nome"]) and isset($_GET["descrizione"]) and isset($_GET["categoria"]) and isset($_GET["prezzo"])) {
-    $dbh->updateProdotto($_GET["nome"], $_GET["descrizione"], $_GET["categoria"], $_GET["prezzo"], $_GET["idprodotto"]);
+if (isset($_POST["idprodotto"]) and isset($_POST["nome"]) and isset($_POST["descrizione"]) and isset($_POST["categoria"]) and isset($_POST["prezzo"])) {
+    $dbh->updateProdotto($_POST["nome"], $_POST["descrizione"], $_POST["categoria"], $_POST["prezzo"], $_POST["idprodotto"]);
+    if (isset($_FILES["immagine"])) {
+      $dbh->uploadImmagine($_POST["idprodotto"], "prodotto");
+      $_FILES["immagine"]== NULL;
+    }
   }
 
 $templateParams["titolo"] = "ReBurger";
