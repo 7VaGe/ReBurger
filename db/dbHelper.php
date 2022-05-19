@@ -25,7 +25,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssss',$name, $password, $email, $telefono);
         $stmt->execute();
-        return $stmt->insert_id;;
+        return $stmt->insert_id;
     }
 
     public function insertCliente($matricola, $pagamento){
@@ -102,50 +102,49 @@ class DatabaseHelper{
         return true;
     }
 
-    public function uploadImageProdotto($id, $provenienza){
-      $target_dir = "img/";
-      $target_file = $target_dir . basename($_FILES["immagine"]["name"]);
-      $uploadOk = 1;
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-      // Check if file already exists
-      if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
+    public function uploadImmagine($id, $provenienza){
+      $director = "img/";
+      $percorso = $director . basename($_FILES["immagine"]["name"]);
+      $valida = 1;
+      $estensione = strtolower(pathinfo($percorso,PATHINFO_EXTENSION));
+
+      if (file_exists($percorso)) {
+
+        $valida = 0;
       }
-      // Allow certain file formats
-      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        $uploadOk = 0;
+
+      if($estensione != "jpg" && $estensione != "png" && $estensione != "jpeg") {
+        $valida = 0;
       }
-      // Check if $uploadOk is set to 0 by an error
-      if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-      }else($provenienza==1) {
-        if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $target_file)) {
-          $nome = basename($_FILES["immagine"]["name"]);
-          $id = $idprodotto;
+
+      if ($valida == 0) {
+
+        return false;
+      } else {
+        if ($provenienza=="prodotto" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
+          $img = basename($_FILES["immagine"]["name"]);
+          $identificatore = $id;
           $query = "UPDATE prodotto SET img=? WHERE idprodotto=?";
           $stmt = $this->db->prepare($query);
-          $stmt->bind_param('si', $nome, $id);
+          $stmt->bind_param('si', $img, $id);
           $stmt->execute();
           return true;
+        } else {
+          return false;
         }
-      }
-      if ($provenienza==0) {
-        if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $target_file)) {
-          $nome = basename($_FILES["immagine"]["name"]);
-          $id = $idprodotto;
+        if ($provenienza=="utente" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
+          $img = basename($_FILES["immagine"]["name"]);
+          $identificatore = $id;
           $query = "UPDATE utente SET img=? WHERE idutente=?";
           $stmt = $this->db->prepare($query);
-          $stmt->bind_param('si', $nome, $id);
+          $stmt->bind_param('si', $img, $id);
           $stmt->execute();
           return true;
-      }else{
+        } else {
           return false;
-          }
         }
       }
+     }
 
     public function checkLogin($username, $password){
         $query = "SELECT idutente, username FROM utente WHERE username = ? AND password = ?";
