@@ -18,7 +18,7 @@
           <label for="floatingInput">Email</label>
       </div>
       <div class="w-100 form-floating d-flex">
-          <input type="password" class="form-control my-2" id="password" value="<?php echo $userInfo["password"] ?>" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="password" class="form-control my-2" id="password" value="" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Password</label>
       </div>
       <div class="w-100 form-floating">
@@ -27,7 +27,7 @@
           <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none b-inline-block"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
       </div>
      <div class="w-100 form-floating d-flex">
-          <input type="file" class="form-control my-2" id="img" accept="immagini/*" value="<?php echo $userInfo["img"] ?>"" name="img" />
+          <input type="file" class="form-control my-2" id="immagine" accept="immagini/*" value="<?php echo $userInfo["img"] ?>" name="immagine" />
           <label for="floatingInput">Immagine utente</label>
       </div>
 <?php endforeach;?>
@@ -38,6 +38,7 @@
 
   </form>
 </div>
+<?php echo var_dump($_FILES["img"]);?>
 <button class="w-75 btn btn-lg btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
    </div>
   <script src="script/showpwd.js"></script>

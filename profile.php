@@ -1,12 +1,12 @@
 <?php
 
 require_once 'bootstrap.php';
+define($utente, 'utente');
 
 if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["password"]) and isset($_POST["img"])){
-
-  $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"],$_POST["img"], $_SESSION["idutente"]);
-  $_SESSION["username"] = $_POST["username"];
-
+  $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"],$_POST["img"], $_POST["idutente"]);
+  $dbh->uploadImageProdotto($_POST["idutente"], $utente);
+  $_SESSION["username"] = $_POST["username"]; 
   }
 
   
