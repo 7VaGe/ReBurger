@@ -28,14 +28,6 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
-    public function insertCliente($matricola, $pagamento){
-        $query = "INSERT INTO cliente (matricola, pagamento) VALUES (?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('is',$matricola, $pagamento);
-        $stmt->execute();
-        return $stmt->insert_id;
-    }
-
     public function insertProdotto($venditore, $nome, $descrizione, $categoria, $prezzo){
         $query = "INSERT INTO prodotto (venditore, nome, descrizione, categoria, prezzo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
@@ -94,10 +86,10 @@ class DatabaseHelper{
     	return $stmt;
     }
 
-    public function updateUtente($nome, $email, $password, $img, $id){
-       $query = "UPDATE utente SET username=?, email=?, password=?, img=? WHERE idutente=?";
+    public function updateUtente($nome, $email, $password, $id){
+       $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssi',$nome, $email, $password, $img, $id);
+        $stmt->bind_param('sssi',$nome, $email, $password, $id);
         $stmt->execute();
         return true;
     }
@@ -129,21 +121,17 @@ class DatabaseHelper{
           $stmt->bind_param('si', $img, $id);
           $stmt->execute();
           return true;
-        } else {
-          return false;
         }
         if ($provenienza=="utente" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
           $img = basename($_FILES["immagine"]["name"]);
           $identificatore = $id;
           $query = "UPDATE utente SET img=? WHERE idutente=?";
           $stmt = $this->db->prepare($query);
-          $stmt->bind_param('si', $img, $id);
+          $stmt->bind_param('si', $img, $identificatore);
           $stmt->execute();
           return true;
-        } else {
-          return false;
         }
-      }
+       }
      }
 
     public function checkLogin($username, $password){

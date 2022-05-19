@@ -1,5 +1,5 @@
 <div class="text-center form-signin">
-  <form action="listaProdotti.php" method="get">
+  <form action="listaProdotti.php" method="post" enctype="multipart/form-data">
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
     <div class="container-lg">
       <?php foreach ($templateParams["prodotto"] as $prodotto):     ?>
@@ -23,6 +23,10 @@
           <label for="floatingInput">Prezzo</label>
       </div>
 <?php endforeach;?>
+      <div class="form-floating d-flex">
+          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Immagine</label>
+      </div>
     <button class="w-100 btn btn-lg btn-warning" type="submit">Modifica</button>
     </div>
   </form>
