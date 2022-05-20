@@ -61,5 +61,4 @@
         <button type="button" class="w-75 btn btn-warning mt-4" onclick='window.location="modificaVenditore.php"' >Modifica <i class="fa-solid fa-pen-to-square"></i></button>
       <?php  }?>
 </div>
-
 <script src="script/showhero.js"> </script>
