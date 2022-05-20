@@ -10,7 +10,7 @@
           <div class="d-flex flex-column text-center pb-3  text-white">
             <h2 class="pt-5 mb-4 display-1 text-center lh-1 overflow-hidden "></h2>       
             <div class="d-flex flex-column display-4 fw-bold text-white text-shadow-1" >
-              <p><img src="img/Logo2.png" alt=""/></p>
+              <p><img class="img img-fluid "src="img/Logo2.png" alt=""/></p>
             </div>
             <div class="text-white">
              <p class="display-6"> <?php echo $info["descrizione"] ?></p>             
@@ -20,7 +20,7 @@
       </div>
       <?php endforeach; ?>
   </div>
-  <div class="container col-xxl-8 px-4 py-5 text-white fade" id="hero1">
+  <div class="container col-xxl-8 px-4 py-5 text-white fade" >
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
@@ -35,18 +35,18 @@
       </div>
     </div>
   </div>
-  <div class="container col-xxl-8 px-4 text-white fade"id="hero2">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4 text-white ">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 fade">
       <div class="col-lg-6">
         <h1 class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</h1>
         <p class="lead"><?php echo $info["descrizione2"];?></p>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6">
+      <div class="col-10 col-sm-8 col-lg-6 fade">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
       </div>
     </div>
   </div>
-  <div class="px-4 text-center text-white fade"id="hero3">
+  <div class="px-4 text-center text-white fade">
     <h1 class="display-5 fw-bold">Sinceramente parlando</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4"><?php echo $info["descrizione3"];?></p>
