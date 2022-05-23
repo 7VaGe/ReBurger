@@ -20,8 +20,8 @@
       </div>
       <?php endforeach; ?>
   </div>
-  <div class="container col-xxl-8 px-4 py-5 text-white fade" >
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+  <div class="container col-xxl-8 px-4 text-white " >
+    <div class="row flex-lg-row-reverse align-items-center g-5 fade">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
       </div>
@@ -36,12 +36,12 @@
     </div>
   </div>
   <div class="container col-xxl-8 px-4 text-white ">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 fade">
+    <div class="row flex-lg-row-reverse align-items-center g-5  fade">
       <div class="col-lg-6">
         <h1 class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</h1>
         <p class="lead"><?php echo $info["descrizione2"];?></p>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6 fade">
+      <div class="col-10 col-sm-8 col-lg-6 fade d-flex">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
       </div>
     </div>
