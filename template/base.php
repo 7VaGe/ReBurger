@@ -45,8 +45,11 @@
   ?>
 </main>
 
+<div>
+  <button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top"><i class="bi bi-arrow-up"></i></button>
+<button class="btn position-fixed btn-warning" id="cartIcon" title="ct"><i class="fa-solid fa-cart-plus"></i></button>
+</div>
 
-<button class="btn position-fixed btn-outline-warning " onclick="goTop()" id="topBtn" title="Go top"><i class="bi bi-arrow-up"></i></button>
 
 
 

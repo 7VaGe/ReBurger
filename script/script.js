@@ -1,6 +1,7 @@
  //se inserisco il document.ready( function (){ }) da un problema.
 topBtn = document.getElementById("topBtn");
 
+
 window.onscroll = function() {scroll()};
 /**
  * Mostro il topBtn quando scendo di 20px dal top del docuemento.
@@ -8,8 +9,11 @@ window.onscroll = function() {scroll()};
 function scroll() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     topBtn.style.display = "block";
+  
+    
   } else {
     topBtn.style.display = "none";
+
   }
 }
 /**

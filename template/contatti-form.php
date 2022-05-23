@@ -29,8 +29,8 @@
         <h1 class="display-6 fw-bold lh-1 mb-3">Cibo e impegno sociale</h1>
         <p class="lead"><?php echo $info["descrizione1"];?></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-warning btn-lg px-4 me-md-2">Primary</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+          <button type="button" class="btn btn-warning btn-lg px-4 me-md-2" onclick='window.location="menu.php"'>Vai ai prodotti</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick='window.location="index.php"'>Visualizza la Home</button>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
         <h1 class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</h1>
         <p class="lead"><?php echo $info["descrizione2"];?></p>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6 fade d-flex">
+      <div class="col-10 col-sm-8 col-lg-6">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
       </div>
     </div>
