@@ -124,8 +124,23 @@ footer, footer.py-5>div.row{
   .fade {
     margin: 50px;
     padding: 50px;
-    background-color: lightgreen;
     opacity: 1;
+  }
+
+  a:link {
+    color: rgb(253, 193, 64);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: rgb(0, 238, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(255, 187, 0);
+    background-color: transparent;
+    text-decoration: underline;
   }
 
  @media only screen and (min-width: 768px) and (max-width: 992px){
