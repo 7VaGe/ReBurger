@@ -129,7 +129,9 @@ footer, footer.py-5>div.row{
   }
 
   .fade {
-    opacity: 1;
+      margin: 20px;
+      padding: 20px;
+        opacity: 1;
   }
 
 
@@ -148,6 +150,15 @@ footer, footer.py-5>div.row{
     background-color: transparent;
 
   }
+
+  #QRcode {
+      transition: width 2s, height 2s, transform 2s;
+  }
+  #QRcode:hover{
+    transform: rotate(360deg);
+  }
+  
+ 
 
  @media only screen and (min-width: 768px) and (max-width: 992px){
 

@@ -41,7 +41,7 @@
         <h1 class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</h1>
         <p class="lead"><?php echo $info["descrizione2"];?></p>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6">
+      <div class="col-10 col-sm-8 col-lg-6 ">
         <img src="img/<?php echo $info["img"]?>" class="d-block mx-lg-auto img-fluid" alt="" width="700" height="500" loading="lazy">
       </div>
     </div>
