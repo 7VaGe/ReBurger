@@ -133,7 +133,136 @@ footer, footer.py-5>div.row{
       padding: 20px;
         opacity: 1;
   }
+  /***Aggiungo un'animazione per le card sui consigliati*/
+  @import url('https://fonts.googleapis.com/css?family=Sarala:700|Exo+2:300');
 
+*,
+*:before,
+*:after{
+  outline: 1px solid transparent;
+}
+
+
+.wrapper{
+  width: 280px;
+  height: 480px;
+  perspective: 800px;
+  position: relative;
+}
+
+#cardIndex{
+  width: 320px;
+  height: 450px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-140px);
+  transition: transform 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  cursor: pointer;
+}
+
+#cardIndex > .front{
+  position: absolute;
+  width: 320px;
+  height: 450px;
+  padding: 34px 21px;
+  transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
+.front{
+  transform: rotateY(0deg) translateZ(160px); 
+  border-radius: 34px 3px 0 0;
+}
+
+.back{ 
+  opacity: 0.08;
+  transform: rotateY(90deg) translateZ(160px);
+  border-radius: 0 0 3px 34px;
+}
+
+#cardIndex:hover{
+  transform: translateZ(-160px) rotateY( -90deg);
+}
+
+#cardIndex:hover .front{
+  opacity: 0; 
+}
+
+#cardIndex:hover .right{
+  opacity: 1; 
+}
+
+/*h1,h2{
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -.25px;
+  transform: translateX(-44px);
+  font-family: 'Sarala'; 
+  font-weight: 700;
+}
+
+h2{
+  font-size: 21px;
+  transform: translateX(-34px);
+}
+
+p{
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+span{
+  margin-left: 13px;
+  opacity: .55;
+}
+*/
+#cardIndex>img{
+  transform-origin: top right;
+  transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  transition-delay: 100ms;
+  transform: translateX(21%) rotateZ(13deg) skewX(3deg);
+  pointer-events: none;
+}
+
+.img-wrapper{
+  animation: float 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate;
+  position: relative;
+  top: 0; right: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+@keyframes float{
+  0%{
+    transform: translateZ(20px);
+  }
+  100%{
+    transform: translateY(-21px) translateX(-13px) translateZ(30px);
+  }
+}
+
+#cardIndex:hover ~ .img-wrapper> img{
+  transform: scale(0.9) translateX(77%) translateY(90%) rotateZ(80deg);
+}
+
+#cardIndex:hover button{
+   transform: scale(1) skewY(0);
+}
+
+#cardIndex:not(:hover) button{
+opacity: 0;
+}
+
+button:hover{
+  background-position: left;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0.33;
+    transform: scale(.89);
+  }
+}
 
   a:link {
     color: rgb(253, 193, 64);

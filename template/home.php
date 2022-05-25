@@ -32,26 +32,32 @@
     <div class="container-lg">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
-        <div class="col">
-
-          <figure class="card card-product-grid bg-dark rounded-6 shadow">
-          <div class="img-wrap text-center">
-          <img src="img/<?php
-                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
-                 echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
-          </div>
-          <figcaption class="info-wrap px-3">
-          <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
-                <p class="mb-2 text-center"><?php echo $prodotto["descrizione"]?></p>
-                <div class="text-center">
-                  <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
-                </div>
-                <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla,
-                ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
-          </figcaption>
-        </figure>
-          
+          <div class="col wrapper">
+               <div class="card" id="cardIndex">
+                 <figure class="card card-product-grid bg-dark rounded-6 shadow">
+                   <div class="img-wrapper text-center">
+                      <img src="img/<?php
+                          $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
+                          echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
+                     </div>
+                     <div class="front">
+                       <figcaption class="info-wrap px-3" id="front">
+                          <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p> 
+                          <div class="text-center">
+                            <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
+                          </div>
+                        </figcaption>
+                    </div>
+                    <div class="back">
+                      <figcaption class="info-wrap px-3" id="back">
+                        <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
+                        <p class="mb-2 text-center"><?php echo $prodotto["descrizione"]?></p>
+                        <p class="mb-2 text-center"><?php echo $prodotto["prezzo"]?></p>
+                      </figcaption>
+                    </div>                 
+           
         </div>
+      </figure>
         <?php endforeach; ?>
       </div>
     </div>
