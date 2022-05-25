@@ -91,3 +91,16 @@ Noi siamo qui per fornire un servizio ottimale ed orientato al consumatore che v
 Ci siamo presi qualche mese per effettuare una ricerca sulle migliori combinazioni per ogni nostro prodotto presente nel menù, cerchiamo ad oggi di portare un servizio che altri studenti come noi,ne usufruiscono quotidianamente.<br>
 Sappiamo benissimo la svogliatezza e la noncuranza che si hanno da fuorisede, quindi percependo questa necessità, perché non creare un qualcosa che favorisca il comfort adeguato?
 Potrai far affidamento su di noi, per tutte le tue voglie notturne; per le tue feste di laurea; per ogni evento in casa; siamo a completa disposizione, non esitare nell’ordinare! <br>( e se avanza invitateci pure ;) )"
+
+--aggiornamento notizie--
+
+UPDATE `notizie` SET `titolo` = 'Inaugurazione 2022' WHERE `notizie`.`idnews` =1;
+ALTER TABLE `notizie` CHANGE `contenuto` `contenuto` VARCHAR(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; -- cambio grandezza contenuto--
+UPDATE `notizie` SET `contenuto` = '<b>9 Giugno 2022</b> Non perderti l’evento più atteso dell’anno! <br>
+Inaugurazione del nostro nuovo ristorante in <b>via Martiri d&#180;Ungheria 6</b> a Cesena, tutti gli studenti riceveranno un gadget omaggio e un coupon utilizzabile per uno sconto sui loro primi 2 ordini.<br>
+A tutti i professori e personale universitario abbiamo riservato una magnifica sorpresa, che verrà svelata il giorno stesso dell’inaugurazione, non perdete questa fantastica giornata, vi aspettiamo numerosi! ' WHERE `notizie`.`idnews` =1;
+UPDATE `notizie` SET `immagine` = 'img/OpenBuffet.jpg' WHERE `notizie`.`idnews` = 1;
+
+UPDATE `notizie` SET `titolo` = 'Panino del mese' WHERE `notizie`.`idnews` = 2;
+UPDATE `notizie` SET `contenuto` = '<b>Giugno</b><br>\r\nPer questo mese abbiamo preparato per voi un nuovo squisito panino:<br>\r\n<center><cite><b>Ganimede</b> </cite></center><br>\r\n<cite>Partiamo con pane ricavato da zucca e grano duro con dei semi di papavero all &#180;interno, aggiungiamo una base di burrata e crema di pistacchio, mortadella IGP delle campagne bolognesi, condiamo con dei pinoli tostati ed infine del buonissimo miele d’acacia e pomodori secchi.</cite>' WHERE `notizie`.`idnews` = 2;
+UPDATE `notizie` SET `immagine` = 'img/PDMGiugno.jpg' WHERE `notizie`.`idnews` = 2;
