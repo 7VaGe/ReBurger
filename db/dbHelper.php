@@ -38,7 +38,7 @@ class DatabaseHelper{
     }
 
     public function getRandomProdotto($n){
-        $stmt = $this->db->prepare("SELECT idprodotto, nome, img FROM prodotto ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT * FROM prodotto ORDER BY RAND() LIMIT ?");
         $stmt->bind_param('i',$n);
         $stmt->execute();
         $result = $stmt->get_result();
