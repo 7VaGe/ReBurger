@@ -158,7 +158,7 @@ footer, footer.py-5>div.row{
   transform: translateZ(-140px);
   transition: transform 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
   cursor: pointer;
-  word-wrap: normal;
+  word-wrap:normal ;
 }
 
 #cardIndex > .front{
