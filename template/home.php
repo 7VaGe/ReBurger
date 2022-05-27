@@ -32,9 +32,9 @@
     <div class="container-lg ">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
-          <div class="col wrapper">
+          <div class="col wrapper ">
                <div class="bg-dark">
-                 <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center pt-5" id="cardIndex">
+                 <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center pt-5 mx-3" id="cardIndex">
                    <div class="img-wrapper">
                       <img src="img/<?php
                           $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
@@ -57,8 +57,9 @@
                       </figcaption>
                     </div>                 
            
+          </div>
+       </figure>
         </div>
-      </figure>
         <?php endforeach; ?>
       </div>
     </div>
