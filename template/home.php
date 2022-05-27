@@ -29,13 +29,13 @@
   <div class="text-center mb-4">
     <span class="text-white display-4 fw-bold ">Prodotti consigliati:</span>
   </div>
-    <div class="container-lg">
+    <div class="container-lg ">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
           <div class="col wrapper">
-               <div class="card" id="cardIndex">
-                 <figure class="card card-product-grid bg-dark rounded-6 shadow">
-                   <div class="img-wrapper text-center">
+               <div class="bg-dark">
+                 <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center pt-5" id="cardIndex">
+                   <div class="img-wrapper">
                       <img src="img/<?php
                           $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
                           echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
@@ -49,7 +49,7 @@
                         </figcaption>
                     </div>
                     <div class="back">
-                      <figcaption class="info-wrap px-3" id="back">
+                      <figcaption class="info-wrap text-dark text-center" id="back">
                         <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
                         <p class="mb-2 text-center"><?php echo $prodotto["descrizione"]?></p>
                         <p class="mb-2 text-center"><?php echo $prodotto["prezzo"]?></p>
