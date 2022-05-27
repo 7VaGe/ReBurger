@@ -176,7 +176,7 @@ footer, footer.py-5>div.row{
 .back{ 
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
-  background-color: yellow;
+  position: fixed;
 }
 
 #cardIndex:hover{

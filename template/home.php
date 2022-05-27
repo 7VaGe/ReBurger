@@ -43,16 +43,17 @@
                      <div class="front">
                        <figcaption class="info-wrap px-3" id="front">
                           <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p> 
-                          <div class="text-center">
-                            <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
-                          </div>
+                          
                         </figcaption>
                     </div>
                     <div class="back">
-                      <figcaption class="info-wrap text-dark text-center" id="back">
+                      <figcaption class="info-wrap text-white text-center" id="back">
                         <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
                         <p class="mb-2 text-center"><?php echo $prodotto["descrizione"]?></p>
                         <p class="mb-2 text-center"><?php echo $prodotto["prezzo"]?></p>
+                        <div class="text-center">
+                            <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
+                          </div>
                       </figcaption>
                     </div>                 
            
