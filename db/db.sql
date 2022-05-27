@@ -17,7 +17,6 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `telefono` VARCHAR(13) NULL UNIQUE,
   `matricola` VARCHAR(10) NOT NULL UNIQUE,
   `img` VARCHAR(100),
-  `pagamento` INT(1) DEFAULT 1, -- 1 = pagamento in loco, 2= pagamento online, 3 = coupon ERGO
   UNIQUE INDEX `uc_username` (`username` ASC),
   UNIQUE INDEX `uc_telefono` (`telefono` ASC),
   UNIQUE INDEX `uc_email` (`email` ASC),
@@ -35,7 +34,8 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `ora_ordine` TIME DEFAULT current_timestamp(),
   `contenuto` INT NOT NULL,
   `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
-  `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.GO
+  `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.G
+  `venditore` INT(1) DEFAULT 1,
   PRIMARY KEY (`idordine`))
 ENGINE = InnoDB;
 
@@ -43,7 +43,8 @@ ENGINE = InnoDB;
 -- Table `ReBurger`.`spedizione`
 -- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `ReBurger`.`spedizione` (
+CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
+  `idcarrello` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `idordine` INT NOT NULL,
   `nome` INT NOT NULL,
   `quantita` INT(20) NOT NULL)
@@ -63,7 +64,8 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`venditore` (
   `descrizione2` VARCHAR(2048) NOT NULL,
   `descrizione3` VARCHAR(2048) NOT NULL,
   `nome` VARCHAR(20) NOT NULL,
-   `img` VARCHAR(20) NOT NULL,
+   `img` VARCHAR(30) NOT NULL,
+   `logo` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`idvenditore`),
   CONSTRAINT `fk_utente_venditore`
     FOREIGN KEY (`utente`)
@@ -92,22 +94,6 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`prodotto` (
   `prezzo` INT(3) NOT NULL DEFAULT 0,
 	`img` VARCHAR(100),
   PRIMARY KEY (`idprodotto`))
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Table `ReBurger`.`rider`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurger`.`rider` (
-  `idrider` INT NOT NULL AUTO_INCREMENT,
-  `utente` INT NOT NULL ,
-  `venditore` INT NOT NULL,
-  `mezzo` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idrider`),
-  CONSTRAINT `fk_utente_rider`
-    FOREIGN KEY (`utente`)
-    REFERENCES `ReBurger`.`utente` (`idutente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
