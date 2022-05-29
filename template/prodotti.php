@@ -1,3 +1,4 @@
+
 <div class="container-lg">
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
@@ -29,9 +30,7 @@
 						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
 				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-                <div class="text-center">
-                  <button data-toggle="modal" data-target="<?php echo "#m".$prodotto["nome"]?>" class="btn btn-warning m-3">Aggiungi al carrello</button>
-                </div>
+                  <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="submitForm(this.value)">Inserisci</button>
                 <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla,
                 ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
           </figcaption>
@@ -43,35 +42,16 @@
     </div>
 
   </div>
-
-  <?php foreach($templateParams["catego"] as $category):
-    $parametro =$dbh->getProdottoByCategoria($category["idcategoria"]);
-    foreach($parametro as $prodotto):?>
-  <div id="<?php echo "m".$prodotto["nome"]?>" class="modal-fade" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><?php echo $prodotto["nome"]?></h4>
-        </div>
-        <form class="modal-form">
-          <p><?php echo "p".$prodotto["nome"]?></p>
-          <div class="form-floating d-flex">
-            <input type="text" class="form-control my-2" id="nome" name="nome" value="<?php echo $prodotto["nome"]?>" hidden/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-          </div>
-          <div class="form-floating d-flex">
-            <input type="number" class="form-control my-2" id="numero" name="numero" value="1"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-            <label for="floatingInput">Numero prodotti</label>
-          </div>
-          <button class="w-100 btn btn-lg btn-warning" type="submit">Inserisci</button>
-        </form>
-      </div>
-    </div>
-  </div>
-<?php endforeach; ?>
-<?php endforeach; ?>
-
+<script>
+function submitForm(val) {
+    var http = new XMLHttpRequest();
+    http.open("get", "insertInCart.php?p="+val, true);
+    http.send();
+    http.onload = function() {
+        alert(http.responseText);
+    }
+}
+</script>
   <div id="alert">
       <?php include 'alert-form.php' ?>
       </div>

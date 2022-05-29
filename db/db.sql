@@ -29,13 +29,12 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
-  `prezzo` INT NOT NULL,
+  `utente` INT,
+  `prezzo` INT,
   `data_ordine` DATE DEFAULT current_timestamp(),
   `ora_ordine` TIME DEFAULT current_timestamp(),
-  `contenuto` INT NOT NULL,
-  `stato` INT(1) NULL, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
+  `stato` INT(1) NULL DEFAULT 0, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
   `pagamento` INT(1) DEFAULT 1, -- valori da 1 a 3 per determinare se paga in loco, online o coupon ER.G
-  `venditore` INT(1) DEFAULT 1,
   PRIMARY KEY (`idordine`))
 ENGINE = InnoDB;
 
@@ -46,7 +45,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
   `idcarrello` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `idordine` INT NOT NULL,
-  `nome` INT NOT NULL,
+  `nome` VARCHAR(30) NOT NULL,
   `quantita` INT(20) NOT NULL)
 ENGINE = InnoDB;
 

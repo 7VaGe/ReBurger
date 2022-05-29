@@ -150,22 +150,33 @@ class DatabaseHelper{
         $stmt->bind_param('ii',$prodotto, $utente);
         $stmt->execute();
         $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
+        if ($result != NULL) {
+          return true;
+        }else {
+          return $result;
+        }
     }
 
-    public function updateCarrello($nome){
-      $parames=$this->db->checkCarrello($nome);
-        if($parames["prodotto"]==$nome){
-          $query = "UPDATE carrello SET quantita = quantita+1 WHERE utente = ?";
-        }else{
-          $query = "INSERT INTO carrello VALUES (?)";
-        }
+    public function updateCarrello($nome, $ordine){
+        $query = "INSERT INTO carrello (nome,idordine) VALUES (?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s',$nome);
+        $stmt->bind_param('si',$nome, $utente);
         $stmt->execute();
         return true;
     }
+
+    //    public function updateCarrello($nome, $utente){
+    //      $params=$this->db->checkCarrello($nome,$utente);
+    //        if($params["prodotto"]==$nome){
+    //          $query = "UPDATE carrello SET quantita = quantita+1 WHERE utente = ?";
+    //        }else{
+    //          $query = "INSERT INTO carrello VALUES (?)";
+    //        }
+    //        $stmt = $this->db->prepare($query);
+    //        $stmt->bind_param('si',$nome, $utente);
+    //        $stmt->execute();
+    //        return true;
+    //    }
 
     public function createCarrello(){
         $query = "CREATE TABLE IF NOT EXISTS `ReBurgher`.`utente`(`nome` VARCHAR(24) NOT NULL UNIQUE,`quantita` INT DEFAULT 1 ,`prezzo` INT NOT NULL, CONSTRAINT `fk_prodotto_carrello`, FOREIGN KEY (`prodotto`) REFERENCES `ReBurgher`.`prodotto` (`idprodotto`) ON DELETE NO ACTION ON UPDATE NO ACTION,  CONSTRAINT `fk_ordine_carrello` FOREIGN KEY (`ordine`) REFERENCES `ReBurgher`.`ordine` (`idordine`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB";
@@ -190,10 +201,10 @@ class DatabaseHelper{
         return true;
     }
 
-    public function insertOrdine($cliente, $stato, $prezzo, $descrizione){
-        $query = "INSERT INTO ordine (cliente, stato, pagamento, descrizione) VALUES (?, ?, ?, ?)";
+    public function insertOrdine($cliente){
+        $query = "INSERT INTO ordine (utente) VALUES (?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('iiis',$cliente, $data, $stato, $prezzo, $descrizione);
+        $stmt->bind_param('i',$cliente);
         $stmt->execute();
 
         return $stmt->insert_id;
@@ -233,7 +244,7 @@ class DatabaseHelper{
     }
 
     public function getOrdiniByCliente($idcliente){
-        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE cliente=?");
+        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=?");
         $stmt->bind_param('i',$idcliente);
         $stmt->execute();
         $result = $stmt->get_result();
