@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`carrello` (
   `idcarrello` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `idordine` INT NOT NULL,
   `nome` VARCHAR(30) NOT NULL,
-  `quantita` INT(20) NOT NULL)
+  `quantita` INT(20) DEFAULT 1)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------

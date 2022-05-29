@@ -75,23 +75,23 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+      return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function updateUserImage($immagineUtente, $idutente){
         $query = "UPDATE utente SET img=? WHERE idutente=? ";
         $stmt = $this->db->prepare($query);
-    	$stmt->bind_param('si', $immagineUtente,$idutente);
-    	$stmt->execute();
+    	  $stmt->bind_param('si', $immagineUtente,$idutente);
+        $stmt->execute();
     	return $stmt;
     }
 
     public function updateUtente($nome, $email, $password, $id){
-       $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
+        $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('sssi',$nome, $email, $password, $id);
         $stmt->execute();
-        return true;
+      return true;
     }
 
     public function uploadImmagine($id, $provenienza){
@@ -144,39 +144,34 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function checkCarrello($prodotto, $utente){
-        $query = "SELECT nome FROM carrello WHERE prodotto = ? AND utente = ?";
+    public function checkCarrello($nome, $ordine){
+        $query = "SELECT idcarrello FROM carrello WHERE nome = ? AND idordine = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ii',$prodotto, $utente);
+        $stmt->bind_param('si',$nome, $ordine);
         $stmt->execute();
         $result = $stmt->get_result();
-        if ($result != NULL) {
-          return true;
+        if ($result = NULL) {
+          return false;
         }else {
-          return $result;
+          return true;
         }
     }
 
-    public function updateCarrello($nome, $ordine){
+    public function insertCarrello($nome, $ordine){
         $query = "INSERT INTO carrello (nome,idordine) VALUES (?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si',$nome, $utente);
+        $stmt->bind_param('si',$nome, $ordine);
         $stmt->execute();
         return true;
     }
 
-    //    public function updateCarrello($nome, $utente){
-    //      $params=$this->db->checkCarrello($nome,$utente);
-    //        if($params["prodotto"]==$nome){
-    //          $query = "UPDATE carrello SET quantita = quantita+1 WHERE utente = ?";
-    //        }else{
-    //          $query = "INSERT INTO carrello VALUES (?)";
-    //        }
-    //        $stmt = $this->db->prepare($query);
-    //        $stmt->bind_param('si',$nome, $utente);
-    //        $stmt->execute();
-    //        return true;
-    //    }
+    public function updateCarrello($nome, $ordine){
+        $query = "UPDATE carrello SET quantita = quantita+1 WHERE nome = ? AND idordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $nome, $ordine);
+        $stmt->execute();
+        return true;
+    }
 
     public function createCarrello(){
         $query = "CREATE TABLE IF NOT EXISTS `ReBurgher`.`utente`(`nome` VARCHAR(24) NOT NULL UNIQUE,`quantita` INT DEFAULT 1 ,`prezzo` INT NOT NULL, CONSTRAINT `fk_prodotto_carrello`, FOREIGN KEY (`prodotto`) REFERENCES `ReBurgher`.`prodotto` (`idprodotto`) ON DELETE NO ACTION ON UPDATE NO ACTION,  CONSTRAINT `fk_ordine_carrello` FOREIGN KEY (`ordine`) REFERENCES `ReBurgher`.`ordine` (`idordine`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB";
