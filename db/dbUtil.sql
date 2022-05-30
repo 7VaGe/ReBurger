@@ -70,6 +70,12 @@ INSERT INTO `referral` (`idreferral`, `idinvitato`, `idinvitante`, `matinvitato`
 INSERT INTO `ordine` (`idordine`, `cliente`, `data_ordine`, `ora_ordine`, `stato`, `pagamento`) VALUES
 ('4', '7', '2022-05-03', '15:24:23', '1', '1');
 
+INSERT INTO `carte` (`nome`, `numero`, `cvc`)VALUES
+('pippo', '52', '000'),
+('lois', '1657', '000'),
+('peter', '952', '000'),
+('peppino', '121', '000');
+
 
 UPDATE `venditore` SET `descrizione` =
 'Ci hai sentito nominare? <br> \r\nSì, siamo noi quelli di cui senti parlare tra le aule della tua facoltà! <br>\r\nSiamo anche quelli della campagna con il burger con la coroncina sulla testa!<br> <br><br>\r\n\r\n\r\n <b>Cibo e impegno sociale </b> <br>\r\nNon è un caso se attiriamo e valorizziamo progetti con uno spessore e un’attenzione alla raccolta differenziata. Il km zero, il biologico, la microproduzione, l’ecosostenibilità sono i pilastri di una vita migliore. Gli studenti, le persone con poco tempo a disposizione, le persone disabili e i pendolari incarnano quella vita fatta di piccoli attimi,quei momenti rapidi composti da rapide pause, un pasto al volo, di corse per prendere una coincidenza alla fermata del bus;\r\nNoi siamo qui per fornire un servizio ottimale ed orientato al consumatore che vive la FAST LIFE.<br><br><br>\r\n\r\n <b>Ricerca incondizionata</b> <br>\r\nGli ingredienti scelti con cura, vengono quotidianamente recapitati a km zero, attraverso delle ditte limitrofe che aiutano la nostra ricerca selettiva del prodotto ottimale. Ci prendiamo cura di ogni nostro cliente, cercando sempre di fornirgli la giusta qualità prezzo.<br><br><br>\r\n\r\n\r\n <b>Sinceramente parlando</b><br>\r\nSiamo due studenti che nel tempo libero hanno deciso di intraprendere una carriera parallela a quella universitaria, aprendo così un’attività di food delivery; \r\nCi siamo presi qualche mese per effettuare una ricerca sulle migliori combinazioni per ogni nostro prodotto presente nel menù, cerchiamo ad oggi di portare un servizio che altri studenti come noi,ne usufruiscono quotidianamente.\r\nSappiamo benissimo la svogliatezza e la noncuranza che si hanno da fuorisede, quindi percependo questa necessità, perché non creare un qualcosa che favorisca il comfort adeguato?\r\nPotrai far affidamento su di noi, per tutte le tue voglie notturne; per le tue feste di laurea; per ogni evento in casa; siamo a completa disposizione, non esitare nell’ordinare! ( e se avanza invitateci pure ;) )\r\n' WHERE `venditore`.`idvenditore` = 1;

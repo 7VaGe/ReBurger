@@ -6,8 +6,8 @@
       <div class="card-details">
         <div class="row">
           <div class="form-group col-sm-7">
-            <label for="card-holder">Titolare della carta</label>
-            <input id="card-holder" type="text" class="form-control" placeholder="Titolare della carta" aria-label="Titolare della carta" aria-describedby="basic-addon1">
+            <label for="titolare">Titolare della carta</label>
+            <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta" aria-describedby="basic-addon1">
           </div>
           <div class="form-group col-sm-5">
             <label for="">Data di scadenza</label>
@@ -27,7 +27,7 @@
                 <option value="12">12</option>
               </select>
               <span class="date-separator"> / </span>
-              <select class="form-control" name="cc_exp_mo" size="0">
+              <select class="form-control" name="anno" size="0">
                 <option>2022</option>
                 <option>2023</option>
                 <option>2024</option>
@@ -38,16 +38,16 @@
             </div>
           </div>
           <div class="form-group col-sm-8">
-            <label for="card-number">Numero carta</label>
-            <input id="card-number" type="text" class="form-control" placeholder="Numero carta" aria-label="Numero carta" aria-describedby="basic-addon1">
+            <label for="numero">Numero carta</label>
+            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta" aria-describedby="basic-addon1">
           </div>
           <div class="form-group col-sm-4">
             <label for="cvc">CVC</label>
-            <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
+            <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
           </div>
           <div class="form-group col-sm-12">
-            <div>Pagamento: €<span class="total-cart"></span></div>
-            <button type="submit" class="clear-cart btn btn-primary btn-block">Procedi</button>
+            <div>Pagamento: €</div>
+            <button type="submit" class="btn btn-primary btn-block">Procedi</button>
           </div>
         </div>
       </div>

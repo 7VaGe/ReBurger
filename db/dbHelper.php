@@ -183,6 +183,7 @@ class DatabaseHelper{
     public function deleteCarrello($ordine){
         $query = "DELETE FROM carrello WHERE idordine=?";
         $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$ordine);
         $stmt->execute();
         return true;
     }
@@ -196,10 +197,10 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
-    public function updateStatoOrdine($idordine, $stato){
-        $query = "UPDATE ordine SET stato+1 WHERE idordine=?";
+    public function updateStatoOrdine($idordine){
+        $query = "UPDATE ordine SET stato=stato+1 WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ii',$idordine, $stato);
+        $stmt->bind_param('i',$idordine);
         $stmt->execute();
         return true;
     }
@@ -297,6 +298,16 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result;
+    }
+
+    public function checkCarta($titolare, $numero, $cvc){
+        $query = "SELECT idcarta FROM carte WHERE titolare = ? AND numero = ? AND cvc = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss',$titolare, $numero, $cvc);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
