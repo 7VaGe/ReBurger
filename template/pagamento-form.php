@@ -46,7 +46,7 @@
             <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC">
           </div>
           <div class="form-group col-sm-12">
-            <div>Pagamento: €</div>
+            <div>Pagamento: € <?php echo $templateParams["conto"]["prezzo"]; ?></div>
             <button type="submit" class="btn btn-primary btn-block">Procedi</button>
           </div>
         </div>
