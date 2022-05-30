@@ -7,7 +7,7 @@
         <div class="row">
           <div class="form-group col-sm-7">
             <label for="titolare">Titolare della carta</label>
-            <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta" aria-describedby="basic-addon1">
+            <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta">
           </div>
           <div class="form-group col-sm-5">
             <label for="">Data di scadenza</label>
@@ -39,11 +39,11 @@
           </div>
           <div class="form-group col-sm-8">
             <label for="numero">Numero carta</label>
-            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta" aria-describedby="basic-addon1">
+            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta">
           </div>
           <div class="form-group col-sm-4">
             <label for="cvc">CVC</label>
-            <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC" aria-describedby="basic-addon1">
+            <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC">
           </div>
           <div class="form-group col-sm-12">
             <div>Pagamento: €</div>

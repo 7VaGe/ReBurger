@@ -1,4 +1,4 @@
-<?php if ($templateParams["carrello"]==NULL) { ?>
+<?php if ($templateParams["carta"]!=NULL) { ?>
 <div class="container-lg mt-2">
   <div class="card bg-dark rounded-5 shadow-lg text-center">
     <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center text-white">
