@@ -34,7 +34,7 @@ INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `prezzo
 ('1', 'Baconcheeseburger', 'Soffici fette di pane farcite con delle svizzere di manzo, croccante bacon, formaggio americano lattuga, salse, e pomodorini.', '1', '12.50', 'baconcheese.png'),
 ('1', 'Patatine M', 'Patatine fritte, grandezza media', '2', '3.50', 'Patatine.png'),
 ('1', 'Patatine L', 'Patatine fritte, grandezza grnde', '2', '4.50', 'Patatine.png'),
-('1', 'Zeppole S.Giuseppe', 'Ciambelle di pasta choux, farcite di crema pasticcera e dolci amarene sciroppate, coperte da una pioggia di zucchero a velo', '2', '3.50', 'zeppole.png'),
+('1', 'Zeppole S.Giuseppe', 'Ciambelle di pasta choux, farcite di crema pasticcera e dolci amarene sciroppate, coperte da una pioggia di zucchero a velo', '4', '3.50', 'zeppole.png'),
 ('1', 'Acqua Naturale 0.5L', 'Acqua minerale naturale in bottiglia di vetro da 0.5 litri', '3', '1.50', 'acqua.png'),
 ('1', 'Acqua Naturale 1L', 'Acqua minerale naturale in bottiglia di vetro da 1 litro', '3', '2.50', 'acqua.png'),
 ('1', 'Acqua Frizzante 0.5L', 'Acqua minerale frizzante in bottiglia di vetro da 0.5 litri', '3', '1.50', 'acqua.png'),
@@ -120,7 +120,8 @@ UPDATE `venditore` SET `descrizione3` = '\"Siamo due studenti che nel tempo libe
 UPDATE `venditore` SET `img` = 'fotoLocale.jpg' WHERE `venditore`.`idvenditore` = 1;
 UPDATE `venditore` SET `logo` = 'Logo2.png' WHERE `venditore`.`idvenditore` = 1;
 
-
+-- aggiungere icona--
+ALTER TABLE `categoria` SET `icona`VARCHAR(50);
 
 
 --aggiornamento notizie--
