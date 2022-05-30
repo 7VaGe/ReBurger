@@ -8,9 +8,9 @@ if (isset($_GET["p"])) {
   $params = $dbh->checkCarrello($var, $_SESSION["ordine"]);
   if ($params == NULL) {
     $dbh->insertCarrello($var, $_SESSION["ordine"]);
-    echo "La funzione è stata eseguita";
+    echo $_GET["p"] ." è stato aggiunto al carrello";
   }else {
     $dbh->updateCarrello($var, $_SESSION["ordine"]);
-    echo "La funzione è stata eseguita";
+    echo $_GET["p"] . " non è stato aggiunto al carrello";
   }
 } ?>
