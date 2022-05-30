@@ -170,6 +170,14 @@ class DatabaseHelper{
         return true;
     }
 
+    public function decreaseCarrello($nome, $ordine){
+        $query = "UPDATE carrello SET quantita = quantita-1 WHERE nome = ? AND idordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $nome, $ordine);
+        $stmt->execute();
+        return true;
+    }
+
     public function getCarrello($ordine){
         $query = "SELECT * FROM carrello WHERE idordine=?";
         $stmt = $this->db->prepare($query);

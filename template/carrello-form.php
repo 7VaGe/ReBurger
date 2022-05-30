@@ -6,14 +6,12 @@
         <h5 class="title display-4 fw-bold" id="cartLabel">Carrello</h5>
       <div class="body">
         <table class="table table-dark table-hover table-striped border">
-          <tr>
-            <td>Nome</td>
-            <td>Quantita</td>
-          </tr>
           <?php foreach ($templateParams["carrello"] as $prodotto):?>
           <tr>
-              <td><?php echo str_replace('_', ' ', $prodotto["nome"]) ?></td>
-              <td><?php echo $prodotto["quantita"] ?></td>
+            <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
+            <td><div class="input-group"><button class="minus-item input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value)">-</button>
+            <input type="number" class="item-count form-control" value="<?php echo $prodotto["quantita"] ?>">
+            <button class="plus-item btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value)">+</button></div></td>
           </tr>
           <?php endforeach; ?>
         </table>
@@ -32,7 +30,7 @@
             <button class="btn btn-primary" onclick='window.location="login.php"'>Prima effettua il login</button>
           <?php }else{ ?>
             <div class="align-items-center">
-              <button type="submit" class="btn btn-warning mt-5 " onclick='window.location="pagamento.php"'>Ordina</button>
+              <button type="submit" class="btn btn-warning mt-5">Ordina</button>
             </div>
 
           <?php }; ?>
@@ -43,3 +41,26 @@
 </div>
 </div>
 </div>
+
+<script>
+function aggiungiCarrello(val) {
+    var http = new XMLHttpRequest();
+    http.open("get", "insertInCart.php?a="+val, true);
+    http.send();
+    http.onload = function() {
+        alert(http.responseText);
+    }
+}
+
+function sottraiCarrello(val) {
+    var http = new XMLHttpRequest();
+    http.open("get", "insertInCart.php?s="+val, true);
+    http.send();
+    http.onload = function() {
+        alert(http.responseText);
+    }
+}
+</script>
+
+<td><?php echo str_replace('_', ' ', $prodotto["nome"]) ?></td>
+<td><?php echo $prodotto["quantita"] ?></td>
