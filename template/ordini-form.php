@@ -12,7 +12,7 @@
           <td><?php echo $ordine["data_ordine"] ?></td>
           <td><?php echo $ordine["ora_ordine"] ?></td>
           <td><?php switch ($ordine["stato"]){case '3':echo "Completato";break;case '2':echo "In arrivo";break;case '1':echo "Accettato";break;case '0':echo "Ricevuto";break;}?></td>
-          <td><?php echo $ordine["pagamento"] ?></td>
+          <td><?php switch ($ordine["pagamento"]){case '0':echo "Alla consegna";break;case '1':echo "Carta";break;}?></td>
       </tr>
       <?php endforeach; ?>
        </table>
