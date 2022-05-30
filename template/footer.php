@@ -1,5 +1,6 @@
 <?php
 require_once 'utilityFunctions.php';
+require_once 'bootstrap.php';
 
 $colFooter = [1 => "Scopri il ristorante", 2 => "Di più sul nostro conto" ];
 $footerLink = [
@@ -7,6 +8,13 @@ $footerLink = [
   ["Carrello", "FAQs"]];
 $links=["menu.php","carrello.php","contatti.php","faqs.php"];
 $i=0;
+
+if(isset($_SESSION["idutente"])){
+  $placeholder = $dbh->getEmail($_SESSION["idutente"]);
+}else{
+  $placeholder = "Inserisci indirizzo email";
+}
+
 ?>
 <footer class="py-5 m-4 text-center text-white">
   <div class="row">
@@ -26,15 +34,16 @@ $i=0;
           </div>
         <?php endforeach ;?>
           <div class="col-12 py-4">
-            <form class="justify-content-center">
+            <form action="" id="form1" onsubmit="return alert('Ti sei registrato con successo alla newsletter')" class="signupform" name="signupform">
               <h5>Iscriviti alla nostra newsletter</h5>
               <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
               <div class="d-flex w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Indirizzo email</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Indirizzo Email ">
-                <button class="btn btn-warning" type="button">Iscriviti</button>
-              </div>
+                  <label for="newsletter1" class="visually-hidden">Indirizzo Email</label>
+                   <input id="newsletter1" type="text" class="form-control" placeholder="<?php echo $placeholder;?>">
+                    <button id="signupNL" class="btn btn-warning" type="submit">Iscriviti</button>  
+                </div>
             </form>
+           
           </div>
         <div class="col-12 d-block py-1 my-4 border-top">
           <!-- includendo il file dove ho le mie funzioni, riesco ad usarle. -->
@@ -49,3 +58,6 @@ $i=0;
           </ul>
     </div>
   </footer>
+ 
+
+
