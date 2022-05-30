@@ -150,11 +150,8 @@ class DatabaseHelper{
         $stmt->bind_param('si',$nome, $ordine);
         $stmt->execute();
         $result = $stmt->get_result();
-        if ($result = NULL) {
-          return false;
-        }else {
-          return true;
-        }
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function insertCarrello($nome, $ordine){
@@ -173,24 +170,18 @@ class DatabaseHelper{
         return true;
     }
 
-    public function createCarrello(){
-        $query = "CREATE TABLE IF NOT EXISTS `ReBurgher`.`utente`(`nome` VARCHAR(24) NOT NULL UNIQUE,`quantita` INT DEFAULT 1 ,`prezzo` INT NOT NULL, CONSTRAINT `fk_prodotto_carrello`, FOREIGN KEY (`prodotto`) REFERENCES `ReBurgher`.`prodotto` (`idprodotto`) ON DELETE NO ACTION ON UPDATE NO ACTION,  CONSTRAINT `fk_ordine_carrello` FOREIGN KEY (`ordine`) REFERENCES `ReBurgher`.`ordine` (`idordine`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB";
+    public function getCarrello($ordine){
+        $query = "SELECT * FROM carrello WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->execute();
-        return true;
-    }
-
-    public function getCarrello($idutente){
-        $stmt = $this->db->prepare("SELECT * FROM carrello WHERE utente=?");
-        $stmt->bind_param('i',$idutente);
+        $stmt->bind_param('i',$ordine);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function deleteCarrello($idutente){
-        $query = "DELETE FROM carrello WHERE utente=?";
+    public function deleteCarrello($ordine){
+        $query = "DELETE FROM carrello WHERE idordine=?";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return true;

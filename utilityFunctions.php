@@ -1,4 +1,5 @@
 <?php
+require_once 'bootstrap.php';
 function createCopyright(){
     $year = date('Y');
     $msg = '&copy; ' . $year;
@@ -19,5 +20,6 @@ function isUserLoggedIn(){
 function logoutUser(){ //da controllare bene.
     $_SESSION["idutente"] = null;
     $_SESSION["username"] = null;
+    $_SESSION["ordine"] = null;
 }
 ?>
