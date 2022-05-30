@@ -230,6 +230,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPrezzoProdotto($prodotto){
+        $query = "SELECT prezzo FROM prodotto WHERE nome=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$prodotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc();
+    }
+
     public function getOrdiniByCliente($idcliente){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=?");
         $stmt->bind_param('i',$idcliente);
@@ -310,6 +320,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function setPrezzo($prezzo, $ordine){
+        $query = "UPDATE ordine SET prezzo = ?+prezzo WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$prezzo, $ordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return true;
+    }
 
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
