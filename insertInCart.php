@@ -16,6 +16,6 @@ if (isset($_GET["p"])) {
     $dbh->updateCarrello($var, $_SESSION["ordine"]);
     $costo = $dbh->getPrezzoProdotto($var);
     $dbh->setPrezzo($costo["prezzo"], $_SESSION["ordine"]);
-    echo $_GET["p"] . " è stato aggiunto al carrello";
+    echo $_GET["p"] ." è stato aggiunto al carrello";
   }
 } ?>

@@ -240,6 +240,16 @@ class DatabaseHelper{
         return $result->fetch_assoc();
     }
 
+    public function getPrezzoOrdine($ordine){
+        $query = "SELECT prezzo FROM ordine WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$ordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc();
+    }
+
     public function getOrdiniByCliente($idcliente){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=?");
         $stmt->bind_param('i',$idcliente);
