@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `password` VARCHAR(24) NOT NULL,
   `email` VARCHAR(30) NOT NULL UNIQUE,
   `telefono` VARCHAR(13) NULL UNIQUE,
-  `matricola` VARCHAR(10) NOT NULL UNIQUE,
+  `matricola` VARCHAR(10),
   `img` VARCHAR(100),
   UNIQUE INDEX `uc_username` (`username` ASC),
   UNIQUE INDEX `uc_telefono` (`telefono` ASC),

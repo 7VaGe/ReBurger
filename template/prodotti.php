@@ -27,10 +27,11 @@
           <figcaption class="info-wrap px-3">
           <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
 					      <div class="price-wrap">
+                  
 						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
 				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-                  <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="submitForm(this.value)">Inserisci</button>
+                  <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="submitForm(this.value)">Aggiungi al carrello</button>
                 <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla,
                 ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
           </figcaption>
