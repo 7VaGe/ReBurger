@@ -9,9 +9,9 @@
           <?php foreach ($templateParams["carrello"] as $prodotto):?>
           <tr>
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
-            <td><div class="input-group"><button class="minus-item input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value)">-</button>
-            <input type="number" class="item-count form-control" value="<?php echo $prodotto["quantita"] ?>">
-            <button class="plus-item btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value)">+</button></div></td>
+            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value)" onclick="decValue()">-</button>
+            <input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">
+            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value)" onclick="incValue()">+</button></div></td>
           </tr>
           <?php endforeach; ?>
         </table>
@@ -47,8 +47,7 @@ function aggiungiCarrello(val) {
     var http = new XMLHttpRequest();
     http.open("get", "insertInCart.php?a="+val, true);
     http.send();
-    http.onload = function() {
-        alert(http.responseText);
+    http.onload = function(){
     }
 }
 
@@ -57,10 +56,6 @@ function sottraiCarrello(val) {
     http.open("get", "insertInCart.php?s="+val, true);
     http.send();
     http.onload = function() {
-        alert(http.responseText);
     }
 }
 </script>
-
-<td><?php echo str_replace('_', ' ', $prodotto["nome"]) ?></td>
-<td><?php echo $prodotto["quantita"] ?></td>
