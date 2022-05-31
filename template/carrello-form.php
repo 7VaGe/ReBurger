@@ -17,17 +17,20 @@
         </table>
         <form action="pagamento.php" method="post">
         <p class="display-6">Seleziona la modalità di pagamento:</p>
-        <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1" checked>
-        <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card"style="color:rgb(247,193,68)"></i>
-        </label><br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
+        <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1">
+        <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card"style="color:rgb(247,193,68)"></i></label>
+        <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
         <label class="m-2 display-6 fw-bold" for="pagamento2">Alla consegna <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
-        <br>
-        <div>Prezzo totale: € <?php echo $templateParams["conto"]["prezzo"]; ?></div>
+
+        <div>Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
+          echo "0";
+        }else {
+          echo $templateParams["conto"]["prezzo"]; }?></div>
       </div>
         <div class="footer">
           <?php if ($_SESSION["idutente"]==NULL){?>
           </form>
-            <button class="btn btn-primary" onclick='window.location="login.php"'>Prima effettua il login</button>
+            <button class="btn btn-warning" onclick='window.location="login.php"'>Prima effettua il login</button>
           <?php }else{ ?>
             <div class="align-items-center">
               <button type="submit" class="btn btn-warning mt-5">Ordina</button>

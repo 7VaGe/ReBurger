@@ -239,7 +239,7 @@ class DatabaseHelper{
     }
 
     public function getNews(){
-        $stmt = $this->db->prepare("SELECT * FROM notizie");
+        $stmt = $this->db->prepare("SELECT * FROM notizie ORDER BY idnews DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
