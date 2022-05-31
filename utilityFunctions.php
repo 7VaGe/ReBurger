@@ -21,5 +21,6 @@ function logoutUser(){ //da controllare bene.
     $_SESSION["idutente"] = null;
     $_SESSION["username"] = null;
     $_SESSION["ordine"] = null;
+    $_SESSION["venditore"] = null;
 }
 ?>

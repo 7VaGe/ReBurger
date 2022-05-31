@@ -10,7 +10,7 @@
     <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <?php if(isset($_SESSION["username"]) && $_SESSION["username"]=="propriolui"){ //da sostituire con il controllo se l'utente è o meno il venditore?>
+    <?php if(isset($_SESSION["venditore"])){ //da sostituire con il controllo se l'utente è o meno il venditore?>
       <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
           <li class="nav-item col-sm-3 ">
