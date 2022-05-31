@@ -55,26 +55,27 @@
 <?php endforeach;?>
           <div class="card-body">
               <h5 class="card-title"><?php echo strtoupper($userInfo["username"]);?></h5>
-              <table class="table table-dark table-hover table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Ordine</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Ora</th>
-                  <th scope="col">Pagamento</th>
-                </tr> <!-- Prima  è fissa senza php-->
-              </thead>
-              <tbody>
-                <?php foreach($templateParams["ordine"] as $orderInfo) :?>
-                <tr>
-                  <th scope="row" headers="Ordine "><?php echo $orderInfo["idordine"]?></th>
-                  <td headers="Data"><?php echo $orderInfo["data_ordine"]?></td>
-                  <td headers="Ora"><?php echo $orderInfo["ora_ordine"]?></td>
-                  <td headers="Pagamento"><?php echo $orderInfo["pagamento"]?></td>
-                </tr>
-              </tbody>
-              <?php endforeach; ?>
-            </table>
+              <div class="container-lg col-12">
+               
+                  <div class="accordion  accordion-flush " id="accordionFlushExample">
+                    <?php foreach($templateParams["ordine"] as $orderInfo) :?>
+                    <div class="accordion-item bg-dark">
+                      <h2 class="accordion-header" id="flush-heading<?php echo $orderInfo["idordine"]?>">
+                        <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo $orderInfo["idordine"]?>" aria-expanded="false" aria-controls="flush-collapse<?php echo $orderInfo["idordine"]?>">
+                          Ordine #<?php echo $orderInfo["idordine"]?>
+                        </button>
+                      </h2>
+                      <div id="flush-collapse<?php echo $orderInfo["idordine"]?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?php echo $orderInfo["idordine"]?>" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body d-flex"> 
+                          <p class="col">Data: <?php echo $orderInfo["data_ordine"]?></p>
+                          <p class="col"> Ora: <?php echo $orderInfo["ora_ordine"]?></p>
+                          <p class="col"> Pagamento: <?php echo $orderInfo["pagamento"]?></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
           </div>
           <div class="card-body">
               <table class="table table-dark table-hover table-striped">
@@ -99,3 +100,27 @@
     </div>
    </div>
   </div>
+  <script src="script/dropdownOrders.js"></script>
+<!-- 
+<table class="table table-dark table-hover table-striped dropdown">
+              <thead>
+                <tr>
+                  <th scope="col">Ordine</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Ora</th>
+                  <th scope="col">Pagamento</th>
+                </tr>Prima  è fissa senza php
+              </thead>
+              <tbody>
+                
+                <tr onclick="">
+                  <th scope="row" headers="Ordine "> echo $orderInfo["idordine"]?></th>
+                  <td headers="Data"> echo $orderInfo["data_ordine"]?></td>
+                  <td headers="Ora"> echo $orderInfo["ora_ordine"]?></td>
+                  <td headers="Pagamento"> echo $orderInfo["pagamento"]?></td>
+                </tr>
+              </tbody>
+             
+            </table>
+
+-->
