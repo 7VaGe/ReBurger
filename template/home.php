@@ -1,14 +1,15 @@
+<?php if (isset($_SESSION["venditore"])) {?>
  <div class="container-lg mt-2">
   <div class="card card-cover text-white bg-dark rounded-5 shadow-lg">
-    <span><p class="text-center"> prova </p></span>
+    <span class="text-center"><button type="button" class="btn btn-warning" onclick="window.location='notizie.php'" name="button">Aggiungi notizia</button></span>
   </div>
   </div>
-
+<?php } ?>
   <?php foreach($templateParams["notizia"] as $news):?>
   <div class="container col-xxl-8 px-4 text-white rounded-3 shadow-lg ">
     <div class="row flex-lg-row-reverse d-flex justify-content-center align-items-center g-5 fade">
       <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow-lg p-3">
-      <img class=" img img-fluid  "  src="<?php echo $news["immagine"] ?>" alt=""/>
+      <img class=" img img-fluid  "  src="<?php echo "img/".$news["immagine"] ?>" alt=""/>
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></h1>
@@ -42,7 +43,7 @@
                      </div>
                      <div class="front">
                        <figcaption class="info-wrap px-3" id="front">
-                          <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p> 
+                          <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
                         </figcaption>
                     </div>
                     <div class="back p-3">
@@ -54,10 +55,10 @@
                             <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
                           </div>
                       </figcaption>
-                    </div>                 
+                    </div>
            </figure>
           </div>
-       
+
         </div>
         <?php endforeach; ?>
       </div>
@@ -79,7 +80,7 @@
     <div class="col-lg-5 d-flex align-items-center mx-3 rounded-3 bg-dark overflow-hidden shadow-lg"> <!--  align-items-center va sempre con d-flex per modificare l'allineamento verticale centrale-->
      <img id="QRcode" src="img\<?php
                 $imgNoSpace = str_replace(' ', '', "moovit.png");            //da togliere e sistemare l'immagine in php
-                 echo $imgNoSpace?>" class="figure img-fluid p-lg-5 p-3" alt="..." 
+                 echo $imgNoSpace?>" class="figure img-fluid p-lg-5 p-3" alt="..."
                  />
                  </div>
   </div>
