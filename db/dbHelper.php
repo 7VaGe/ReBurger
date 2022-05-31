@@ -38,7 +38,7 @@ class DatabaseHelper{
     }
 
     public function insertNews($titolo, $desc){
-        $query = "INSERT INTO notizie (titolo, descrizione) VALUES (?, ?)";
+        $query = "INSERT INTO notizie (titolo, contenuto) VALUES (?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss',$titolo, $desc);
         $stmt->execute();
@@ -126,7 +126,7 @@ class DatabaseHelper{
           $identificatore = $id;
           $query = "UPDATE prodotto SET img=? WHERE idprodotto=?";
           $stmt = $this->db->prepare($query);
-          $stmt->bind_param('si', $img, $id);
+          $stmt->bind_param('si', $img, $identificatore);
           $stmt->execute();
           return true;
         }
@@ -142,9 +142,9 @@ class DatabaseHelper{
         if ($provenienza=="notizie" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
           $img = basename($_FILES["immagine"]["name"]);
           $identificatore = $id;
-          $query = "UPDATE notizie SET img=? WHERE idnews=?";
+          $query = "UPDATE notizie SET immagine=? WHERE idnews=?";
           $stmt = $this->db->prepare($query);
-          $stmt->bind_param('si', $img, $id);
+          $stmt->bind_param('si', $img, $identificatore);
           $stmt->execute();
           return true;
         }
@@ -464,7 +464,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     */
-    +    public function ilVisualizzato($idmittente, $iddestinatario,$limit=30){
+        public function ilVisualizzato($idmittente, $iddestinatario,$limit=30){
             $query ="UPDATE `messaggi` SET `data_lettura`=NOW() WHERE `id_mittente`=? AND `id_destinatario`=? AND `data_lettura` IS NULL";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('iii',$idmittente, $iddestinatario, $limit);
