@@ -64,6 +64,7 @@
                         <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo $orderInfo["idordine"]?>" aria-expanded="false" aria-controls="flush-collapse<?php echo $orderInfo["idordine"]?>">
                           Ordine #<?php echo $orderInfo["idordine"]?>
                         </button>
+                        
                       </h2>
                       <div id="flush-collapse<?php echo $orderInfo["idordine"]?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?php echo $orderInfo["idordine"]?>" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body "> 
@@ -72,10 +73,33 @@
                              <p class="col">Ora: <?php echo $orderInfo["ora_ordine"]?></p>
                              <p class="col">Pagamento: <?php echo $orderInfo["pagamento"]?></p>
                           </div>
-                          <div class="progress mt-2">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning  " role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> <!-- cambiare w- nel bootstrap a seconda dello stato-->
+                          <div class="container d-flex justify-content-center">
+                            <div class="progress mt-2 w-50 ">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning <?php switch($orderInfo["stato"]){
+                                      case '0':
+                                        echo "w-25";
+                                        $msg = "Il tuo ordine è stato approvato ed è in preparazione!";
+                                        break;
+                                      case '1':
+                                        echo "w-50";
+                                        $msg = "Il tuo ordine è stato consegnato al rider, arriverà presto!";
+                                        break;
+                                      case '2':
+                                        echo "w-75";
+                                        $msg = "Il tuo ordine è in consegna!";
+                                        break;  
+                                      case '2':
+                                        echo "w-100";
+                                        $msg = "Il tuo ordine è stato consegnato!";
+                                        break;
+                        }
+                          ?>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> 
                           </div>
                         </div>
+                         <p class="display-6 text-white mt-4">  <?php echo $msg ;?></p>
+                        
+                          </div>
+                          
                       </div>
                     </div>
                   </div>
@@ -105,7 +129,6 @@
     </div>
    </div>
   </div>
-  <script src="script/dropdownOrders.js"></script>
 <!-- 
 <table class="table table-dark table-hover table-striped dropdown">
               <thead>
@@ -129,3 +152,4 @@
             </table>
 
 -->
+
