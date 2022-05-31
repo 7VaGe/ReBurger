@@ -8,12 +8,12 @@
       <div class="row row-cols-1 align-items-stretch g-4"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
-            <h2 class="pt-5 mb-4 display-1 text-center lh-1 overflow-hidden "></h2>       
+            <h2 class="pt-5 mb-4 display-1 text-center lh-1 overflow-hidden "></h2>
             <div class="d-flex flex-column display-4 fw-bold text-white text-shadow-1" >
               <p><img class="img img-fluid "src="img/Logo2.png" alt=""/></p>
             </div>
             <div class="text-white">
-             <p class="display-6"> <?php echo $info["descrizione"] ?></p>             
+             <p class="display-6"> <?php echo $info["descrizione"] ?></p>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="container-lg text-center">
-<?php if(isset($_SESSION["username"]) && $_SESSION["username"]=="propriolui"){ //da sostituire con il controllo se l'utente è o meno il venditore?>
+<?php if(isset($_SESSION["venditore"])){ //da sostituire con il controllo se l'utente è o meno il venditore?>
         <button type="button" class="w-75 btn btn-warning mt-4" onclick='window.location="modificaVenditore.php"' >Modifica <i class="fa-solid fa-pen-to-square"></i></button>
       <?php  }?>
 </div>

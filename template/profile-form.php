@@ -38,9 +38,9 @@
                     }
 
 </style>
-                
-                  
-                  
+
+
+
                         <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"]?>' style="width: 200px; height:200px;"/>
                         <div class="middle" id="wrap-btn">
                          <!--
@@ -54,7 +54,7 @@
 
 <?php endforeach;?>
           <div class="card-body">
-              <h5 class="card-title"><?php  echo strtoupper($userInfo["username"]);?></h5>
+              <h5 class="card-title"><?php echo strtoupper($userInfo["username"]);?></h5>
               <table class="table table-dark table-hover table-striped">
               <thead>
                 <tr>

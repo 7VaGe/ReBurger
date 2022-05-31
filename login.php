@@ -11,7 +11,10 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
       $templateParams["errorelogin"] = "Errore! Controllare Username o Password inseriti";
   }else{
       registerLoggedUser($login_result[0]);
-
+      $vend =  $dbh->utenteIsVenditore($_SESSION["idutente"]);
+      if($vend!=NULL){
+        $_SESSION["venditore"] = $vend["idvenditore"];
+      }
   }
 }
 

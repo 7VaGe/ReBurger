@@ -25,14 +25,12 @@ if (isset($_GET["p"])) {
 if (isset($_GET["a"])) {
   $var=$_GET["a"];
   $dbh->updateCarrello($var, $_SESSION["ordine"]);
-  echo "<input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">";
 
 }
 
 if (isset($_GET["s"])) {
   $var=$_GET["s"];
   $dbh->decreaseCarrello($var, $_SESSION["ordine"]);
-  echo "<input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">";
 }
 
 ?>
