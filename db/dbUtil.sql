@@ -147,3 +147,10 @@ UPDATE `categoria` SET `icona` = 'mt-3 fa-solid fa-cookie-bite fa-bounce' WHERE 
 
 -- modifiche prodotti
 UPDATE `prodotto` SET `descrizione` = 'Patatine fritte, grandezza grande' WHERE `prodotto`.`idprodotto` = 18;
+
+
+-- messaggi inserimento chiavi 
+
+--ALTER TABLE `messaggi`
+ -- ADD PRIMARY KEY (`id_mittente`,`id_destinatario`,`data_invio`),
+ -- ADD KEY `data_lettura` (`data_lettura`);

@@ -375,8 +375,53 @@ class DatabaseHelper{
 
       return $result->fetch_all(MYSQLI_ASSOC);
   }
-
 /*
+    public function ilVisualizzato($idmittente, $iddestinatario,$limit=30){
+        $query ="UPDATE `messaggi` SET `data_lettura`=NOW() WHERE `id_mittente`=? AND `id_destinatario`=? AND `data_lettura` IS NULL";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii',$idmittente, $iddestinatario, $limit);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+    return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAllMsg($idmittente, $iddestinatario,$limit=30){
+        $query ="SELECT * FROM `messaggi`WHERE `id_mittente` IN (?,?) AND `id_destinatatio` IN (?,?) ORDER BY `data_invio` DESC LIMIT 0, $limit";
+    $stmt = $this->db->prepare($query);
+    $stmt->bind_param('iii',$idmittente, $iddestinatario, $limit);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function sendMsg($idmittente, $iddestinatario, $msg){
+        return $this->exec(
+            "INSERT INTO `messaggi` (`id_mittente`, `id_destinatario`, `msg`) VALUES (?,?,?)",
+            [$idmittente, $iddestinatario, $msg]
+        );
+    }
+
+   public function getMsgNonLetti($idutente){
+        $query ="SELECT `id_mittente`, COUNT(*) `nonLetti` FROM `messaggi` WHERE `id_destinatario`=? AND `data_lettura` IS NULL GROUP BY `id_mittente`";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idutente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+    return $result->fetch_all(MYSQLI_ASSOC);
+   }
+    
+   public function getUtenti(){
+    $query = "SELECT * FROM utente ";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+  return $result->fetch_all(MYSQLI_ASSOC);
+   }
+
     public function referral($invitato, $invitante){
         $query = "SELECT email FROM utente WHERE matricola=?";
         $stmt = $this->db->prepare($query);

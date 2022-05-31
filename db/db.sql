@@ -118,6 +118,9 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`notizie` (
   PRIMARY KEY (`idnews`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `ReBurger`.`carte`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ReBurger`.`carte` (
   `idcarta` INT NOT NULL AUTO_INCREMENT,
   `titolare` VARCHAR(20) NOT NULL,
@@ -125,6 +128,17 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`carte` (
   `cvc` VARCHAR(20),
   PRIMARY KEY (`idcarta`))
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `ReBurger`.`messaggi`
+-- -----------------------------------------------------
+CREATE TABLE `messaggi` (
+  `id_mittente` int(11) NOT NULL,
+  `id_destinatario` int(11) NOT NULL,
+  `data_invio` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_lettura` datetime DEFAULT NULL,
+  `msg` text NOT NULL
+) ENGINE=InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
