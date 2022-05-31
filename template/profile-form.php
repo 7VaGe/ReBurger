@@ -66,10 +66,15 @@
                         </button>
                       </h2>
                       <div id="flush-collapse<?php echo $orderInfo["idordine"]?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?php echo $orderInfo["idordine"]?>" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body d-flex"> 
-                          <p class="col">Data: <?php echo $orderInfo["data_ordine"]?></p>
-                          <p class="col"> Ora: <?php echo $orderInfo["ora_ordine"]?></p>
-                          <p class="col"> Pagamento: <?php echo $orderInfo["pagamento"]?></p>
+                        <div class="accordion-body "> 
+                          <div class="col-12 d-flex">
+                             <p class="col">Data: <?php echo $orderInfo["data_ordine"]?></p>
+                             <p class="col">Ora: <?php echo $orderInfo["ora_ordine"]?></p>
+                             <p class="col">Pagamento: <?php echo $orderInfo["pagamento"]?></p>
+                          </div>
+                          <div class="progress mt-2">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning  " role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> <!-- cambiare w- nel bootstrap a seconda dello stato-->
+                          </div>
                         </div>
                       </div>
                     </div>
