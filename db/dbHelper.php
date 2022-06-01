@@ -222,6 +222,15 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
+    public function setPagamentoOrdine($pagamento, $ordine){
+        $query = "UPDATE ordine SET pagamento=? WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$pagamento ,$ordine);
+        $stmt->execute();
+
+        return true;
+    }
+
     public function updateStatoOrdine($stato, $idordine){
         $query = "UPDATE ordine SET stato=? WHERE idordine=?";
         $stmt = $this->db->prepare($query);

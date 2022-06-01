@@ -17,7 +17,7 @@
         </table>
         <form action="pagamento.php" method="post">
         <p class="display-6">Seleziona la modalità di pagamento:</p>
-        <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1">
+        <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1" checked>
         <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card"style="color:rgb(247,193,68)"></i></label>
         <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
         <label class="m-2 display-6 fw-bold" for="pagamento2">Alla consegna <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
