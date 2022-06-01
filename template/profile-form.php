@@ -74,6 +74,7 @@
                              <p class="col">Pagamento: <?php echo $orderInfo["pagamento"]?></p>
                           </div>
                           <div class="container d-flex justify-content-center">
+                      
                             <div class="progress mt-2 w-50 ">
                           <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning <?php switch($orderInfo["stato"]){
                                       case '0':
@@ -88,7 +89,7 @@
                                         echo "w-75";
                                         $msg = "Il tuo ordine è in consegna!";
                                         break;  
-                                      case '2':
+                                      case '3':
                                         echo "w-100";
                                         $msg = "Il tuo ordine è stato consegnato!";
                                         break;
@@ -97,7 +98,6 @@
                           </div>
                         </div>
                          <p class="display-6 text-white mt-4">  <?php echo $msg ;?></p>
-                        
                           </div>
                           
                       </div>
