@@ -1,0 +1,26 @@
+{ 
+    "notifiche":[
+        {
+            "stato": "0",
+            "msg": "Completa il tuo ordine"
+        },{
+            "stato": "1",
+            "msg": "Il tuo ordine è in fase di approvazione"
+        },{
+            "stato": "2",
+            "msg": "Il tuo ordine è stato approvato ed è in preparazione!"
+        },
+        {
+            "stato": "3",
+            "msg": "Il tuo ordine è stato consegnato al rider, arriverà presto!"
+        },
+        {
+            "stato": "4",
+            "msg": "Il tuo ordine è stato consegnato!"
+        },
+        {
+            "stato": "5",
+            "msg": "Il tuo ordine è stato rifiutato!"
+        }
+    ]
+}
