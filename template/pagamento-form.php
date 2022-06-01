@@ -45,10 +45,20 @@
             <label for="cvc">CVC</label>
             <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC">
           </div>
-          <div class="form-group col-sm-12">
-            <div>Pagamento: € <?php echo $templateParams["conto"]["prezzo"]; ?></div>
-            <button type="submit" class="btn btn-warning btn-block">Procedi</button>
+          <div class="form-group col-12 mt-3  d-flex justify-content-center" id="credit_cards" >
+                <img class="img-fluid img mx-2" src="img/visa.png" id="visa" style="heigth:80px; width:75px;">
+                <img class="img-fluid img mx-2 " src="img/mastercard.png" id="mastercard" style="heigth:80px; width:75px;">
+                <img class="img-fluid img mx-2 " src="img/paypal.png" id="paypal" style="heigth:80px; width:75px;">
+</div>
+          <div class="form-group col-6 col-sm-12 d-flex justify-content-between">          
+            <div class="mt-3 display-5 fw-bold ">Pagamento:  <?php echo $templateParams["conto"]["prezzo"]; ?>€
+          </div> 
+       
+            <button type="submit" class="mx-2 btn btn-warning mt-2 ">Procedi</button>
+          
+          
           </div>
+         
         </div>
       </div>
     </div>
