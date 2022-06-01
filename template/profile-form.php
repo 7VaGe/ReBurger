@@ -56,10 +56,9 @@
           <div class="card-body">
               <h5 class="card-title"><?php echo strtoupper($userInfo["username"]);?></h5>
               <div class="container-lg col-12">
-               
-                  <div class="accordion  accordion-flush " id="accordionFlushExample">
-                    <?php foreach($templateParams["ordine"] as $orderInfo) :?>
-                    <div class="accordion-item bg-dark">
+                <?php foreach($templateParams["ordine"] as $orderInfo) :?>
+                  <div class="accordion  accordion-flush " id="accordionFlushExample">                     
+                    <div class="accordion-item bg-dark">                    
                       <h2 class="accordion-header" id="flush-heading<?php echo $orderInfo["idordine"]?>">
                         <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo $orderInfo["idordine"]?>" aria-expanded="false" aria-controls="flush-collapse<?php echo $orderInfo["idordine"]?>">
                           Ordine #<?php echo $orderInfo["idordine"]?>
@@ -76,23 +75,27 @@
                           <div class="container d-flex justify-content-center">
                       
                             <div class="progress mt-2 w-50 ">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning <?php switch($orderInfo["stato"]){
+                          <div class="progress-bar progress-bar-striped progress-bar-animated <?php switch($orderInfo["stato"]){
                                       case '0':
-                                        echo "w-25";
+                                        echo "w-25 bg-warning";
                                         $msg = "Il tuo ordine è stato approvato ed è in preparazione!";
                                         break;
                                       case '1':
-                                        echo "w-50";
+                                        echo "w-50 bg-warning";
                                         $msg = "Il tuo ordine è stato consegnato al rider, arriverà presto!";
                                         break;
                                       case '2':
-                                        echo "w-75";
+                                        echo "w-75 bg-warning";
                                         $msg = "Il tuo ordine è in consegna!";
                                         break;  
                                       case '3':
-                                        echo "w-100";
+                                        echo "w-100 bg-warning";
                                         $msg = "Il tuo ordine è stato consegnato!";
                                         break;
+                                        case '4':
+                                         echo "w-100 bg-success";
+                                          $msg = "Il tuo ordine è stato consegnato!";
+                                          break;
                         }
                           ?>" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div> 
                           </div>
