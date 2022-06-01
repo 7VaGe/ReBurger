@@ -1,5 +1,5 @@
 <?php if (($templateParams["carta"]==NULL && $controllata==false)||($templateParams["carta"]!=NULL && $controllata==true)) {
-    $dbh->updateStatoOrdine($_SESSION["ordine"]);
+    $dbh->updateStatoOrdine(1 ,$_SESSION["ordine"]);
     $_SESSION["ordine"]=NULL;?>
 <div class="container-lg mt-2">
   <div class="card bg-dark rounded-5 shadow-lg text-center">

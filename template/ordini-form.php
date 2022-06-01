@@ -11,12 +11,15 @@
           <td><?php echo $ordine["utente"] ?></td>
           <td><?php echo $ordine["data_ordine"] ?></td>
           <td><?php echo $ordine["ora_ordine"] ?></td>
-          <td><?php switch ($ordine["stato"]){case '3':echo "Completato";break;case '2':echo "In arrivo";break;case '1':echo "Accettato";break;case '0':echo "Ricevuto";break;}?></td>
+          <td><?php if($ordine["stato"]==1){
+            ?><button class="btn-warning" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine["idordine"] ?>'">Accetta ordine</button><?php
+          }else {
+            switch ($ordine["stato"]){case '4':echo "Completato";break;case '3':echo "In arrivo";break;case '2':echo "Accettato";break;case '5':echo "Rifiutato";break;case '0':echo "Elaborazione";break;}
+          }?></td>
           <td><?php switch ($ordine["pagamento"]){case '0':echo "Alla consegna";break;case '1':echo "Carta";break;}?></td>
       </tr>
       <?php endforeach; ?>
        </table>
     </div>
-
-      </div>
+    </div>
 </div>

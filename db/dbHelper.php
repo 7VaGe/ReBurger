@@ -222,10 +222,10 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
-    public function updateStatoOrdine($idordine){
-        $query = "UPDATE ordine SET stato=stato+1 WHERE idordine=?";
+    public function updateStatoOrdine($stato, $idordine){
+        $query = "UPDATE ordine SET stato=? WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idordine);
+        $stmt->bind_param('ii',$stato, $idordine);
         $stmt->execute();
         return true;
     }
@@ -276,7 +276,7 @@ class DatabaseHelper{
     }
 
     public function getOrdiniByCliente($idcliente){
-        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=?");
+        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=? ORDER BY idordine DESC");
         $stmt->bind_param('i',$idcliente);
         $stmt->execute();
         $result = $stmt->get_result();
