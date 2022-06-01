@@ -13,16 +13,14 @@
           <td><?php echo $ordine["ora_ordine"] ?></td>
           <td><?php if($ordine["stato"]==1){
             ?><button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine["idordine"] ?>'">Accetta ordine</button><?php
+          }elseif($ordine["stato"]==2) {
+            ?><button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine["idordine"] ?>'">Spedisci ordine</button><?php
+          }elseif($ordine["stato"]==3) {
+            ?><button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine["idordine"] ?>'">Consegnato</button><?php
           }else {
-            switch ($ordine["stato"])
-            {
+            switch ($ordine["stato"]){
               case '4':
                 echo "Completato";
-                break;
-              case '3':
-                echo "In arrivo";
-                break;
-              case '2':echo "Accettato";
                 break;
               case '5':
                 echo "Rifiutato";

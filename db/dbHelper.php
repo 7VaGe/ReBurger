@@ -230,6 +230,16 @@ class DatabaseHelper{
         return true;
     }
 
+    public function getStatoOrdine($idordine){
+        $query = "SELECT stato FROM ordine WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc();
+    }
+
     public function getCategories(){
         $stmt = $this->db->prepare("SELECT * FROM categoria");
         $stmt->execute();
