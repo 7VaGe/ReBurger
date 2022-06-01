@@ -1,6 +1,6 @@
 <div class="container-lg my-5">
   <form action="checkout.php" method="post">
-  <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
+  <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 shadow-lg bg-dark text-white">
     <div class="col-lg-7-centered p-3 p-lg-5 pt-lg-3">
       <h1 class="display-4 fw-bold lh-1">Dettagli carta</h1>
       <div class="card-details">
@@ -39,7 +39,7 @@
           </div>
           <div class="form-group col-sm-8">
             <label for="numero">Numero carta</label>
-            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta">
+            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta " maxlength="16">
           </div>
           <div class="form-group col-sm-4">
             <label for="cvc">CVC</label>
@@ -47,7 +47,7 @@
           </div>
           <div class="form-group col-sm-12">
             <div>Pagamento: € <?php echo $templateParams["conto"]["prezzo"]; ?></div>
-            <button type="submit" class="btn btn-primary btn-block">Procedi</button>
+            <button type="submit" class="btn btn-warning btn-block">Procedi</button>
           </div>
         </div>
       </div>
@@ -55,3 +55,5 @@
   </div>
   </form>
 </div>
+
+<script src="script/checkinput.js"></script>

@@ -25,36 +25,42 @@ $(document).ready(function($){
       };
     /**
      * Filtro generico per i valori interi, da utilizzarlo per le input type che necessitano un controllo.
-     * @param {} $element valore dell'elemento nel dom, tramite un ID o proprio il tag.
+     * @param {} element valore dell'elemento nel dom, tramite un ID o proprio il tag. return /^-?\d*$/.test(value); }, "");
      */
-    function filterInteger($element){
-        $element.inputFilter(function(value){
-        return /^-?\d*$/.test(value); }, "Dovresti inserire un intero.");
-        };
+    function filterInteger(element){
+            $(element).inputFilter(function(value){
+            return /^\d*$/.test(value); }, "Dovresti inserire un intero.");
+            };
         /**
      * Filtro generico per i valori interi contenuti tra 1 e 999, da utilizzarlo per le input type che necessitano un controllo.
-     * @param {} $element valore dell'elemento nel dom, tramite un ID o proprio il tag.
+     * @param {} element valore dell'elemento nel dom, tramite un ID o proprio il tag.
      */
-    function filterIntegerBeetween($element){
-        $element.inputFilter(function(value){
+    function filterIntegerBeetween(element){
+        $(element).inputFilter(function(value){
         return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 999); }, "Inserisci il codice segreto di 3 cifre riportato dietro la tua carta.");
         };
         /**
      * Filtro generico per i caratteri, da utilizzarlo per le input type che necessitano un controllo.
-     * @param {} $element valore dell'elemento nel dom, tramite un ID o proprio il tag.
+     * @param {} element valore dell'elemento nel dom, tramite un ID o proprio il tag.
      */
-    function filterOnlyCharacters($element){
-        $element.inputFilter(function(value){
-        return /^[a-z]*$/i.test(value); }, "Dovresti inserire solo i caratteri A-Z.");
+    function filterOnlyCharacters(element){
+        $(element).inputFilter(function(value){
+        return /^[a-z ]*$/i.test(value) }, "Dovresti inserire solo i caratteri A-Z.");
         };
         /**
      * Filtro generico per i valori interi delle valute ammette 2 cifre decimali dopo la virgola, da utilizzarlo per le input type che necessitano un controllo.
-     * @param {} $element valore dell'elemento nel dom, tramite un ID o proprio il tag.
+     * @param {} element valore dell'elemento nel dom, tramite un ID o proprio il tag.
      */
-    function filterCurrencys($element){
-        $element.inputFilter(function(value){
+    function filterCurrencys(element){
+        $(element).inputFilter(function(value){
         return /^-?\d*[.,]?\d{0,2}$/.test(value); }, "Inserisci il valore seguito da al massimo 2 cifre dopo la virgola.");
         };
-    
 
+    var titolare = document.getElementById("titolare");
+    filterOnlyCharacters(titolare);
+    var numero = document.getElementById("numero");
+    filterInteger(numero);
+    var cvc = document.getElementById("cvc");
+    filterIntegerBeetween(cvc);
+    
 });
