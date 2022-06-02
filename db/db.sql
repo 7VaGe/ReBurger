@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `email` VARCHAR(30) NOT NULL UNIQUE,
   `telefono` VARCHAR(13) NULL UNIQUE,
   `matricola` VARCHAR(10),
-  `img` VARCHAR(100),
+  `img` VARCHAR(100) DEFAULT 'user.jpg',
   UNIQUE INDEX `uc_username` (`username` ASC),
   UNIQUE INDEX `uc_telefono` (`telefono` ASC),
   UNIQUE INDEX `uc_email` (`email` ASC),
@@ -132,7 +132,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `ReBurger`.`messaggi`
 -- -----------------------------------------------------
-CREATE TABLE `messaggi` (
+CREATE TABLE IF NOT EXISTS `messaggi` (
   `id_mittente` int(11) NOT NULL,
   `id_destinatario` int(11) NOT NULL,
   `data_invio` datetime NOT NULL DEFAULT current_timestamp(),

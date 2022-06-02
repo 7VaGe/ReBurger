@@ -1,8 +1,7 @@
-
 <div class="container-lg">
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
-      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" onclick="location.href='#<?php echo $category['nomecategoria']?>'" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample">
+      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample" value="0">
       <div class="ms-2 me-auto">
         <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
       </div>
@@ -52,6 +51,16 @@ function insertInCarrello(val) {
         alert(http.responseText);
     }
 }
+ function setFocusTo(val, aperto, indice){
+   var visione = document.getElementById(val);
+   if (aperto=="0") {
+     visione.focus();
+     visione.scrollIntoView();
+     document.getElementById(indice).value='1';
+   }else {
+     document.getElementById(indice).value='0';
+   }
+ }
 </script>
   <div id="alert">
       <?php include 'alert-form.php' ?>
