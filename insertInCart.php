@@ -31,6 +31,7 @@ if (isset($_GET["a"])) {
 if (isset($_GET["s"])) {
   $var=$_GET["s"];
   $dbh->decreaseCarrello($var, $_SESSION["ordine"]);
+  $dbh->deleteCarrello();
 }
 
 ?>

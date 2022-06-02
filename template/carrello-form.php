@@ -7,11 +7,11 @@
       <div class="body">
         <table class="table table-dark table-hover table-striped border">
           <?php foreach ($templateParams["carrello"] as $prodotto):?>
-          <tr>
+          <tr id="<?php echo "riga".$prodotto["nome"]; ?>">
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
-            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value)" onclick="decValue()">-</button>
+            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);">-</button>
             <input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">
-            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value)" onclick="incValue()">+</button></div></td>
+            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value);incVal(this.value);">+</button></div></td>
           </tr>
           <?php endforeach; ?>
         </table>
@@ -60,5 +60,22 @@ function sottraiCarrello(val) {
     http.send();
     http.onload = function() {
     }
+}
+
+function incVal(val){
+
+    var x = document.getElementById(val).value;
+    document.getElementById(val).value = ++x;
+
+}
+
+function decVal(val){
+
+  var riga = 'riga'+val;
+  var x = document.getElementById(val).value;
+  document.getElementById(val).value = x - 1;
+  if (document.getElementById(val).value == "0") {
+    document.getElementById(riga).remove();
+  }
 }
 </script>

@@ -205,10 +205,9 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function deleteCarrello($ordine){
-        $query = "DELETE FROM carrello WHERE idordine=?";
+    public function deleteCarrello(){
+        $query = "DELETE FROM carrello WHERE quantita=0";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$ordine);
         $stmt->execute();
         return true;
     }
