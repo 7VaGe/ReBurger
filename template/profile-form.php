@@ -2,7 +2,6 @@
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
-          <?php foreach($templateParams["utente"] as $userInfo):?>
           <div class="container">
           <style>
                     .container {
@@ -41,7 +40,7 @@
 
 
 
-                        <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $userInfo["img"]?>' style="width: 200px; height:200px;"/>
+                        <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
                         <div class="middle" id="wrap-btn">
                          <!--
                          non sono sicuro ma questo doppio form, penso sia sbagliato, da sostituire con un collegamento a profile.php
@@ -51,11 +50,9 @@
                       <!-- </form>-->
                 </div>
           </div>
-
-<?php endforeach;?>
      
           <div class="card-body">
-                 
+
                       <div class="accordion" id="accordionExample">
                         <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                         <div class="accordion-item bg-dark ">
@@ -74,7 +71,7 @@
                              <p class="col">Ora: <?php echo $orderInfo["ora_ordine"];?></p>
                              <p class="col">Pagamento: <?php echo $orderInfo["pagamento"];?></p>
                           </div>
-                          <div class="container d-flex justify-content-center">                     
+                          <div class="container d-flex justify-content-center">
                             <div class="progress mt-2 w-50 ">
                           <div class="progress-bar progress-bar-striped progress-bar-animated <?php switch($orderInfo["stato"]){
                                       case '0':
@@ -88,7 +85,7 @@
                                       case '2':
                                         echo "w-50 bg-warning";
                                         $msg = "Il tuo ordine è stato approvato ed è in preparazione!";
-                                        break;  
+                                        break;
                                       case '3':
                                         echo "w-75 bg-warning";
                                         $msg = "Il tuo ordine è stato consegnato al rider, arriverà presto!";
@@ -103,7 +100,7 @@
                                         break;
                         }
                           ?>" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
-                          </div> 
+                          </div>
                           </div>
                         </div>
                         <p class="display-6 text-white mt-4">  <?php echo $msg ;?></p>
@@ -112,7 +109,7 @@
                         </div>
                         <?php endforeach; ?>
                       </div>
-                      
+
           </div>
           <div class="card-body">
               <table class="table table-dark table-hover table-striped">
@@ -156,4 +153,3 @@
     //puoi fare un else inserendo qualcosa se non cambia lo stato..
     }*/
   </script>
-

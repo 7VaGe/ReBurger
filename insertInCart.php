@@ -25,13 +25,18 @@ if (isset($_GET["p"])) {
 if (isset($_GET["a"])) {
   $var=$_GET["a"];
   $dbh->updateCarrello($var, $_SESSION["ordine"]);
-
+  $costo = $dbh->getPrezzoProdotto($var);
+  $dbh->setPrezzo($costo["prezzo"], $_SESSION["ordine"]);
+  $templateParams["conto"]["prezzo"] += $costo["prezzo"];
 }
 
 if (isset($_GET["s"])) {
   $var=$_GET["s"];
   $dbh->decreaseCarrello($var, $_SESSION["ordine"]);
   $dbh->deleteCarrello();
+  $costo = $dbh->getPrezzoProdotto($var);
+  $dbh->setPrezzo("-".$costo["prezzo"], $_SESSION["ordine"]);
+  $templateParams["conto"]["prezzo"] -= $costo["prezzo"];
 }
 
 ?>

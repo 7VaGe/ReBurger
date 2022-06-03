@@ -83,7 +83,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-      return $result->fetch_all(MYSQLI_ASSOC);
+      return $result->fetch_assoc();
     }
 
     public function updateUserImage($immagineUtente, $idutente){
@@ -208,6 +208,14 @@ class DatabaseHelper{
     public function deleteCarrello(){
         $query = "DELETE FROM carrello WHERE quantita=0";
         $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return true;
+    }
+
+    public function deleteProdotto($idprodotto){
+        $query = "DELETE FROM prodotto WHERE idprodotto=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idprodotto);
         $stmt->execute();
         return true;
     }
@@ -417,7 +425,7 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
 
-      return $result->fetch_all(MYSQLI_ASSOC);
+      return $result->fetch_assoc();
   }
 
 /*

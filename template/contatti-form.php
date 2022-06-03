@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="container-lg text-center">
-<?php if(isset($_SESSION["venditore"])){ //da sostituire con il controllo se l'utente è o meno il venditore?>
+<?php if(isset($_SESSION["venditore"])){?>
         <button type="button" class="w-75 btn btn-warning mt-4" onclick='window.location="modificaVenditore.php"' >Modifica <i class="fa-solid fa-pen-to-square"></i></button>
       <?php  }?>
 </div>
