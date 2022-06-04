@@ -17,6 +17,6 @@
       </tr>
       <?php endforeach; ?>
     </table>
-    <button class="my-2 btn-lg btn-outline-primary" onclick='window.location="nuovoProdotto.php"'>Aggiungi un prodotto</button>
+    <button class="my-2 btn-lg btn-outline-warning" onclick='window.location="nuovoProdotto.php"'>Aggiungi un prodotto</button>
   </div>
 </div>

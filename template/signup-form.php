@@ -1,4 +1,39 @@
-<?php if (isset($_POST["username"]) and isset($_POST["password"]) and isset($_POST["email"]) and isset($_POST["tel"])) {
+<?php
+$nameErr = $emailErr = $imgError = $passErr = $telErr = "";
+$controlloErr = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["username"])) {
+    $nameErr = "Inserisci un Username";
+    $controlloErr = 1;
+  } else {
+    $presente = $dbh->checkNomeUtente($_POST["username"]);
+    if ($presente!= false) {
+      $nameErr = "Questo nome utente è gia usato";
+      $controlloErr = 1;
+    }
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+    $controlloErr = 1;
+  } else {
+    $presente = $dbh->checkEmailUtente($_POST["email"]);
+    if ($presente!= false){
+      $emailErr = "Questa email è gia usato";
+      $controlloErr = 1;
+    }
+  }
+
+  if (empty($_POST["password"])) {
+    $passErr = "Immetti una password";
+    $controlloErr = 1;
+  }
+
+  if (empty($_POST["tel"])) {
+    $telErr = "Immetti un numero di telefono";
+    $controlloErr = 1;
+  }
+if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
     $dbh->uploadImmagine($indice, "utente");
     $_FILES["immagine"]= NULL;
@@ -17,23 +52,34 @@
       </div>
     </div>
 <?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL;
-}else{ ?>
+}
+}?>
 <div class="text-center form-signin">
   <form action="" method="post" enctype="multipart/form-data">
     <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
     <div class="container-lg">
-      <?php
-    $userDataRegistration = ["Username"  => "username", "Password"=> "password", /*"Conferma Password"=> "password",*/ "Email" => "email", "Telefono" => "tel"/*, "Immagine"=> "file"*/];
-            $msgDataInvalid =["username" => "Riempi questo campo", "password" => "Inserisci almeno 8 caratteri, tra cui un carattere speciale, un numero e una lettera maiuscola", "tel"=> "Inserisci un numero valido di 10 cifre"];
-            foreach ($userDataRegistration as $data => $type):
-     ?>
       <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="<?php echo $type?>" placeholder="nameExample" name="<?php echo $type?>" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-          <label for="floatingInput"><?php echo $data?></label>
+          <input type="text" class="form-control my-2" id="username" name="username" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Username</label>
+          <span class="error" style="color:red"><?php echo $nameErr;?></span>
       </div>
-<?php endforeach;?>
       <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="password" class="form-control my-2" id="password" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Password</label>
+          <span class="error" style="color:red"><?php echo $passErr;?></span>
+      </div>
+      <div class="form-floating d-flex">
+          <input type="email" class="form-control my-2" id="email" name="email" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Email</label>
+          <span class="error" style="color:red"><?php echo $emailErr;?></span>
+      </div>
+      <div class="form-floating d-flex">
+          <input type="tel" class="form-control my-2" id="tel" name="tel" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <label for="floatingInput">Telefono</label>
+          <span class="error" style="color:red"><?php echo $telErr;?></span>
+      </div>
+      <div class="form-floating d-flex">
+          <input type="file" class="form-control my-2" id="immagine" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Immagine</label>
         </div>
       <div class="container d-flex justify-content-center my-3 py-3">
@@ -46,4 +92,3 @@
     </div>
   </form>
 </div>
-<?php } ?>

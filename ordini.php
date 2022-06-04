@@ -23,11 +23,6 @@ if (isset($_GET["ordine"]) and isset($_GET["scelta"])) {
 
       break;
   }
-  if ($comando=="accettato") {
-    $dbh->updateStatoOrdine(2,$_GET["ordine"]);
-  }elseif ($comando=="rifiutato") {
-    $dbh->updateStatoOrdine(5,$_GET["ordine"]);
-    }
 }
 
 $templateParams["titolo"] = "ReBurger - Profilo";

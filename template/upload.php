@@ -20,11 +20,6 @@
           <input type="password" class="form-control my-2" id="password" value="<?php echo $templateParams["utente"]["password"] ?>" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Password</label>
       </div>
-      <div class="w-100 form-floating">
-          <input type="password" class="form-control my-2" id="checkPwd" name="checkPwd" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-          <label for="floatingInput">Conferma Password</label>
-          <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none b-inline-block"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
-      </div>
      <div class="w-100 form-floating d-flex">
           <input type="file" class="form-control my-2" id="immagine" value="" name="immagine" />
           <label for="floatingInput">Immagine utente</label>

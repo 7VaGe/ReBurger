@@ -86,14 +86,6 @@ class DatabaseHelper{
       return $result->fetch_assoc();
     }
 
-    public function updateUserImage($immagineUtente, $idutente){
-        $query = "UPDATE utente SET img=? WHERE idutente=? ";
-        $stmt = $this->db->prepare($query);
-    	  $stmt->bind_param('si', $immagineUtente,$idutente);
-        $stmt->execute();
-    	return $stmt;
-    }
-
     public function updateUtente($nome, $email, $password, $id){
         $query = "UPDATE utente SET username=?, email=?, password=? WHERE idutente=?";
         $stmt = $this->db->prepare($query);
@@ -107,9 +99,9 @@ class DatabaseHelper{
       $percorso = $director . basename($_FILES["immagine"]["name"]);
       $valida = 1;
       $estensione = strtolower(pathinfo($percorso,PATHINFO_EXTENSION));
+      $img = basename($_FILES["immagine"]["name"]);
 
       if (file_exists($percorso)) {
-
         $valida = 0;
       }
 
@@ -119,10 +111,9 @@ class DatabaseHelper{
 
       if ($valida == 0) {
 
-        return false;
+        return "Non siamo riusciti ad inserire l'immagine nel nostro database controlli se il file sia della giusta estensione oppure ne modifichi il nome";
       } else {
         if ($provenienza=="prodotto" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
-          $img = basename($_FILES["immagine"]["name"]);
           $identificatore = $id;
           $query = "UPDATE prodotto SET img=? WHERE idprodotto=?";
           $stmt = $this->db->prepare($query);
@@ -131,7 +122,6 @@ class DatabaseHelper{
           return true;
         }
         if ($provenienza=="utente" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
-          $img = basename($_FILES["immagine"]["name"]);
           $identificatore = $id;
           $query = "UPDATE utente SET img=? WHERE idutente=?";
           $stmt = $this->db->prepare($query);
@@ -140,7 +130,6 @@ class DatabaseHelper{
           return true;
         }
         if ($provenienza=="notizie" && move_uploaded_file($_FILES["immagine"]["tmp_name"], $percorso)) {
-          $img = basename($_FILES["immagine"]["name"]);
           $identificatore = $id;
           $query = "UPDATE notizie SET immagine=? WHERE idnews=?";
           $stmt = $this->db->prepare($query);
@@ -165,6 +154,36 @@ class DatabaseHelper{
         $query = "SELECT idcarrello FROM carrello WHERE nome = ? AND idordine = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si',$nome, $ordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkNomeUtente($username){
+        $query = "SELECT idutente FROM utente WHERE username = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkNomeProdotto($nome){
+        $query = "SELECT idprodotto FROM prodotto WHERE nome = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$nome);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkEmailUtente($mail){
+        $query = "SELECT idutente FROM utente WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$mail);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -266,15 +285,6 @@ class DatabaseHelper{
 
     public function getNews(){
         $stmt = $this->db->prepare("SELECT * FROM notizie ORDER BY idnews DESC");
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function getReferal($invitante){
-        $stmt = $this->db->prepare("SELECT * FROM referral WHERE idinvitante=?");
-        $stmt->bind_param('i',$invitante);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -428,77 +438,6 @@ class DatabaseHelper{
       return $result->fetch_assoc();
   }
 
-/*
-    public function referral($invitato, $invitante){
-        $query = "SELECT email FROM utente WHERE matricola=?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss',$invitato, $invitante);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $address = $result->fetch_all(MYSQLI_ASSOC);
-        foreach ($address as $valore=0) {
-          if($valore==0){
-            mail($address, 'referral', 'Il referal è andato a buon fine usi il seguente codice per ricevere lo sconto : REFERAL');
-          }else{mail($address, 'referral', 'La tua matricola è stata usata per una operazione di referal usa il codice per ricevere il tuo sconto : REFERAL');}
-        }
-        return true;
-    }
-
-    public function searchReferral($idinvitante){
-        $query = "SELECT matinvitato FROM referral WHERE idinvitante=?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('is',$idinvitato, $matinvitante);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function searchClienteByMatricola($matricola){
-        $query = "SELECT utente FROM cliente WHERE matricola=?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idinvitato);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result;
-    }
-
-    public function insertReferral($idinvitato, $idinvitante, $matinvitato, $matinvitante){
-        $query = "INSERT INTO referral (idinvitato, idinvitante, matinvitato, matinvitante) VALUES (?, ?, ?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('iiss',$idinvitato, $idinvitante, $matinvitato, $matinvitante);
-        $stmt->execute();
-
-        return $stmt->insert_id;
-    }
-
-    public function insertRider($utente, $venditore, $mezzo){
-        $query = "INSERT INTO rider (utente, venditore, mezzo) VALUES (?, ?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('iis',$utente, $venditore, $mezzo);
-        $stmt->execute();
-
-        return $stmt->insert_id;
-    }
-
-    public function insertSpedizione($rider, $cliente, $ordine, $venditore, $stato){
-        $query = "INSERT INTO spedizione (rider, cliente, ordine, venditore, stato) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('iiiii',$rider, $cliente, $ordine, $venditore, $stato);
-        $stmt->execute();
-
-        return $stmt->insert_id;
-    }
-
-    public function getSpedioneByRider($rider){
-        $query = "SELECT * FROM spedizione WHERE rider=?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$rider);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    */
         public function ilVisualizzato($idmittente, $iddestinatario,$limit=30){
             $query ="UPDATE `messaggi` SET `data_lettura`=NOW() WHERE `id_mittente`=? AND `id_destinatario`=? AND `data_lettura` IS NULL";
             $stmt = $this->db->prepare($query);

@@ -50,7 +50,7 @@
                       <!-- </form>-->
                 </div>
           </div>
-     
+
           <div class="card-body">
 
                       <div class="accordion" id="accordionExample">
@@ -110,24 +110,6 @@
                         <?php endforeach; ?>
                       </div>
 
-          </div>
-          <div class="card-body">
-              <table class="table table-dark table-hover table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">IDinvitato</th>
-                  <th scope="col">Matricola</th>
-                </tr> <!-- Prima  è fissa senza php-->
-              </thead>
-              <tbody>
-                <?php foreach($templateParams["referral"] as $referralInfo) :?>
-                <tr>
-                  <th><?php echo $referralInfo["idinvitato"]?></th>
-                  <td><?php echo $referralInfo["matinvitato"]?></td>
-                </tr>
-              </tbody>
-              <?php endforeach; ?>
-            </table>
           </div>
         </div>
       </div>

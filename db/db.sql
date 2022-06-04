@@ -97,18 +97,6 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`prodotto` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurger`.`referral`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ReBurger`.`referral` (
-  `idreferral` INT NOT NULL AUTO_INCREMENT,
-  `idinvitato` INT NOT NULL,
-  `idinvitante` INT NOT NULL,
-  `matinvitato` INT NOT NULL,
-  `matinvitante` INT NOT NULL,
-  PRIMARY KEY (`idreferral`))
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
 -- Table `ReBurger`.`notizie`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ReBurger`.`notizie` (
