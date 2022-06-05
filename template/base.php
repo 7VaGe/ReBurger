@@ -23,19 +23,15 @@
 <header class="bg-dark text-white d-block">
 <?php include 'header.php'; ?>
 </header>
-<div class="container-lg col-12 my-2 d-lg-none d-sm-block bg-dark">
-    <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3">
-      <div class="col-lg-7 p-1 p-lg-5 pt-lg-3">
-          <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none">
-            <?php if (isset($_SESSION["username"])) { ?>
-              <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
-            <?php }else{ ?>
+    <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 justify-content-md-center rounded-3">
+      <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none" id="bottoniLog">
+        <?php if (isset($_SESSION["username"])) { ?>
+          <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
+        <?php }else{ ?>
             <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
             <button type="button" class="btn btn-warning" onclick='window.location="signup.php"'>Sign-up</button>
             <?php } ?>
-            </div>
-        </div>
-     </div>
+    </div>
 </div>
 
 <main>

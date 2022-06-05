@@ -170,10 +170,10 @@ footer, footer.py-5>div.row{
 }
 
 .front{
-  transform: rotateY(0deg) translateZ(160px); 
+  transform: rotateY(0deg) translateZ(160px);
 }
 
-.back{ 
+.back{
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
   position: fixed;
@@ -184,11 +184,11 @@ footer, footer.py-5>div.row{
 }
 
 #cardIndex:hover .front{
-  opacity: 0; 
+  opacity: 0;
 }
 
 #cardIndex:hover .back{
-  opacity: 1; 
+  opacity: 1;
 }
 
 /*h1,h2{
@@ -196,7 +196,7 @@ footer, footer.py-5>div.row{
   font-size: 38px;
   letter-spacing: -.25px;
   transform: translateX(-44px);
-  font-family: 'Sarala'; 
+  font-family: 'Sarala';
   font-weight: 700;
 }
 
@@ -286,8 +286,16 @@ button:hover{
   #QRcode:hover{
     transform: rotate(360deg);
   }
-  
- 
+
+ @media only screen and (min-width: 0) and (max-width: 768px){
+   #bottoniLog{
+     padding-top: 10px;
+     padding-top: fixed;
+     padding-bottom: 10px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+   }
+ }
 
  @media only screen and (min-width: 768px) and (max-width: 992px){
 
