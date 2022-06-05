@@ -287,13 +287,10 @@ button:hover{
     transform: rotate(360deg);
   }
 
+
  @media only screen and (min-width: 0) and (max-width: 768px){
    #bottoniLog{
-     padding-top: 10px;
-     padding-top: fixed;
-     padding-bottom: 10px;
-     margin-top: 10px;
-     margin-bottom: 10px;
+
    }
  }
 
