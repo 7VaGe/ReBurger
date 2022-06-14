@@ -29,7 +29,7 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
           <form class="" action="pagamento.php" method="post">
             <input type="text" id="pagamento" name="pagamento" value="1" hidden>
-            <button type="submit" class="btn btn-warning">Torna al pagamento</button>
+            <button type="submit" class="btn-lg btn-warning">Torna al pagamento</button>
           </form>
 
         </div>
@@ -37,5 +37,4 @@
     </div>
   </div>
 </div>
-
 <?php } ?>
