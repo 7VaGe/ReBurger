@@ -1,24 +1,32 @@
-<?php if (isset($_SESSION["venditore"])) {?>
- <div class="container-lg mt-2">
-  <div class="card card-cover text-white bg-dark rounded-5 shadow-lg">
-    <span class="text-center"><button type="button" class="btn btn-warning" onclick="window.location='notizie.php'" name="button">Aggiungi notizia</button></span>
+<?php
+if (isset($_SESSION["venditore"])) {?>
+ <div class="container mt-2">
+  <div class="card card-cover text-white bg-dark rounded-5 shadow-lg mb-5">
+    <span class="text-center m-2"><button type="button" class="btn btn-warning" onclick="window.location='notizie.php'" name="button">Aggiungi notizia</button></span>
   </div>
   </div>
 <?php } ?>
   <?php foreach($templateParams["notizia"] as $news):?>
-  <div class="container col-xxl-8 px-4 text-white rounded-3 shadow-lg ">
-    <div class="row flex-lg-row-reverse d-flex justify-content-center align-items-center g-5 fade">
-      <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow-lg p-3">
+      <div class="container col-xxl-8 px-4 text-white rounded-3 shadow-lg fade mt-5">  
+    <?php if(isset($_SESSION["venditore"])){ ?>
+      <button class=' btn position-static p-2 btn-danger w-25 rounded text-white' id="delNews<?php echo $news["idnews"]?>" value="<?php echo $news["idnews"]?>" onclick='rimuoviNotizia(this.value);' >
+      <i class="fa-solid fa-trash-can"></i> Rimuovi notizia
+    </button>
+  <?php } ?>  
+   <div class="row flex-lg-row-reverse d-flex justify-content-center align-items-center g-5 m-3">
+   
+      <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow-lg p-3 mb-3">
       <img class=" img img-fluid"  src="<?php echo "img/".$news["immagine"] ?>" alt=""/>
       </div>
       <div class="col-lg-6">
+       
         <h1 class="display-6 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></h1>
         <p class="lead"><cite><?php echo $news["contenuto"] ?></cite></p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
         <?php if($news['idnews']==1){ ?> <!--Questa forzatura va valutata, o inseriamo un nuovo ruolo da mettere nelle notizie per suddividere i button sotto, tra quelli che rimandano all'about e quelli che riandano ai prodotti  -->
-        <button onclick="window.location='contatti.php'" type="button" class="btn btn-warning">About-us</button>
+        <button onclick="window.location='contatti.php'" type="button" class="btn btn-warning m-3">About-us</button>
         <?php } else {?>
-          <button onclick="window.location='menu.php'" type="button" class="btn btn-warning">Visualizza il menù</button>
+          <button onclick="window.location='menu.php'" type="button" class="btn btn-warning  m-3">Visualizza il menù</button>
           <?php } ?>
         </div>
       </div>
@@ -87,4 +95,27 @@
                  </div>
   </div>
   </div>
+  
+  
 <script src="script/showhero.js"> </script>
+
+<script> 
+function rimuoviNotizia(idnews){
+  var http =new XMLHttpRequest(); 
+  
+  http.open("get", "index.php?n="+idnews,true);
+  http.send();
+  http.onload = function(){   
+    window.alert("la notizia è stata rimossa");
+    var elem = 'delNews'+idnews;
+    var ff = document.getElementById(idnews).value;
+    if(ff==idnews){
+      elem.remove();
+    }
+  } 
+  
+  
+}
+
+</script>
+

@@ -238,6 +238,14 @@ class DatabaseHelper{
         $stmt->execute();
         return true;
     }
+    public function deleteNews($idnews){
+        $query = "DELETE FROM notizie WHERE idnews=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idnews);
+        $stmt->execute();
+        return true;
+    }
+
 
     public function insertOrdine($cliente){
         $query = "INSERT INTO ordine (utente) VALUES (?)";
