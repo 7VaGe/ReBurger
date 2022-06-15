@@ -62,7 +62,7 @@
     <div class="container" id="listaProdotti">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center"> 
         <?php foreach($templateParams["prod"] as $prodotto) : ?>
-          <div class="col wrapper m-4" id="colWrapper<?php echo $prodotto["nome"]; ?>">
+          <div class="col wrapper m-4" id="<?php echo $prodotto["nome"]; ?>">
                <div class="bg-dark">
                  <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center" id="cardProdotto">
                         <div class="img-wrapper">
@@ -100,14 +100,8 @@ function eliminaProdotto(val) {
 </script>
 <script>
   $(document).ready(function(){
-  $(" ".Search ).on("click", function() {
 
-    var value = $(this).val().toLowerCase();
-    var wrapper = $("#colWrapper")+value;
-    
-    $("#colWrapper").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
+    $(document).find("this").val();
+ 
 });
 </script>

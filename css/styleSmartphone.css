@@ -148,8 +148,8 @@ footer, footer.py-5>div.row{
   padding:0px;
 }
 .wrapperAddItem{
-  width: 200px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   position: relative;
   padding:0px;
 }
@@ -297,9 +297,8 @@ button:hover{
       padding:0px;
     }
     .wrapperAddItem{
-      width: 250px;
-      height: 380px;
-      position: relative;
+      width: 270px;
+      height: 300px;
       padding:0px;
     }
     
@@ -337,6 +336,12 @@ button:hover{
     .wrapper{
       width: 270px;
       height: 390px;
+      padding:0px;
+    }
+    .wrapperAddItem{
+      width: 300px;
+      height: 300px;
+      position: relative;
       padding:0px;
     }
     #cardIndex{
@@ -378,11 +383,17 @@ button:hover{
       height: 410px;
       padding:0px;
     }
+    .wrapperAddItem{
+      width: 320px;
+      height: 300px;
+      padding:0px;
+    }
     
     #cardIndex{
       width: 275px;
       height: 410px;
     }
+    
     
     #cardIndex > .front{
       width: 275px;
