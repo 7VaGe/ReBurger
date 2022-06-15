@@ -76,7 +76,7 @@ if (isset($_SESSION["venditore"])) {?>
     </div>
   </div>
 
-  <div class="my-5 fade" >
+  <div class="m-5 fade" >
   <div class="row p-4 pb-auto pt-lg-5 text-dark rounded-3 shadow-lg justify-content-between" style="background-color: rgb(255, 187, 0)">
     <div class="col-lg-6 p-3 p-lg-5 pt-lg-3 text-center">
       <h1 class="display-5 fw-bold lh-1">Scarica Moovit</h1>
