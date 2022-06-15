@@ -15,7 +15,7 @@ if (isset($_SESSION["venditore"])) {?>
   <?php } ?>  
    <div class="row flex-lg-row-reverse d-flex justify-content-center align-items-center g-5 m-3">
    
-      <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow-lg p-3 mb-3">
+      <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow p-3 mb-3 mt-3">
       <img class=" img img-fluid"  src="<?php echo "img/".$news["immagine"] ?>" alt=""/>
       </div>
       <div class="col-lg-6">

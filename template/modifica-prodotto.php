@@ -1,6 +1,6 @@
 <div class="text-center form-signin">
   <form action="listaProdotti.php" method="post" enctype="multipart/form-data">
-    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
+    <h1 class=" my-4 display-5 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
     <div class="container-lg">
       <div class="form-floating d-flex">
           <input type="text" class="form-control my-2" id="idprodotto" value="<?php echo $templateParams["prodotto"]["idprodotto"] ?>" name="idprodotto" hidden />
@@ -26,10 +26,10 @@
           <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
           <label for="floatingInput">Immagine</label>
       </div>
-    <button class="w-100 btn btn-lg btn-warning" type="submit">Modifica</button>
+    <button class="w-100 mt-2 btn btn-lg btn-warning" type="submit">Modifica</button>
     </div>
   </form>
-  <button class="w-100 btn btn-lg btn-danger" value="<?php echo $templateParams["prodotto"]["idprodotto"]?>" onclick="eliminaProdotto(this.value);">Rimuovi</button>
+  <button class="w-75 mt-3 btn btn-lg btn-danger" value="<?php echo $templateParams["prodotto"]["idprodotto"]?>" onclick="eliminaProdotto(this.value);">Rimuovi</button>
 </div>
 
 
