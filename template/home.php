@@ -39,7 +39,7 @@ if (isset($_SESSION["venditore"])) {?>
     <span class="text-white display-4 fw-bold ">Prodotti consigliati:</span>
   </div>
     <div class="container" id="consigliati">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center"> 
+      <div class="row row-cols-1  row-cols-lg-4 g-4 d-flex justify-content-center"> 
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
           <div class="col wrapper m-4 ">
                <div class="bg-dark">
