@@ -355,10 +355,10 @@ class DatabaseHelper{
       return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function updateContatti($indirizzo, $descrizione, $nome){
-        $query = "UPDATE venditore SET indirizzo=?, descrizione=?, nome=?";
+    public function updateContatti($indirizzo, $descrizione, $desc1, $desc2, $desc3, $nome){
+        $query = "UPDATE venditore SET indirizzo=?, descrizione=?,descrizione1=?,descrizione2=?,descrizione3=?, nome=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sss',$indirizzo, $descrizione, $nome);
+        $stmt->bind_param('ssssss',$indirizzo, $descrizione, $desc1, $desc2, $desc3, $nome);
         $stmt->execute();
         return true;
     }
