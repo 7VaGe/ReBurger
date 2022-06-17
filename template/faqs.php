@@ -8,7 +8,6 @@
                             NOME FAQS
                               <span class='visually-hidden'> </span>
                               </span>
-                              <?php endif; ?>
                             </button>
                           </h2>
                           <div id="collapseIDFAQS" class="accordion-collapse collapse " aria-labelledby="headingIDFAQS" data-bs-parent="#accordionExample">

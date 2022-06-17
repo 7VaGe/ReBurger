@@ -9,6 +9,7 @@ $footerLink = [
 $links=["menu.php","carrello.php","contatti.php","faqs.php"];
 $i=0;
 
+
 if(isset($_SESSION["idutente"])){
   $placeholder = $dbh->getEmail($_SESSION["idutente"]);
   
