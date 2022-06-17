@@ -64,7 +64,7 @@
                           </div>
                           <div class="container d-flex justify-content-center">
                             <div class="progress mt-2 w-50 ">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated <?php switch($orderInfo["stato"]){
+                              <div class="progress-bar progress-bar-striped progress-bar-animated <?php switch($orderInfo["stato"]){
                                       case '0':
                                         echo "w-0 bg-warning";
                                         $msg = "Completa il tuo ordine";
@@ -79,7 +79,7 @@
                                         break;
                                       case '3':
                                         echo "w-75 bg-warning";
-                                        $msg = "Il tuo ordine è stato consegnato al rider, arriverà presto!";
+                                        $msg = "Il tuo ordine è stato consegnato al rider, arriverà alle: ".$orderInfo["ora_consegna"];
                                         break;
                                       case '4':
                                         echo "w-100 bg-success";
