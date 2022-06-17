@@ -7,19 +7,19 @@ if (isset($_SESSION["venditore"])) {?>
   </div>
 <?php } ?>
   <?php foreach($templateParams["notizia"] as $news):?>
-      <div class="container col-xxl-8 px-4 text-white rounded-3 shadow-lg fade mt-5">  
+      <div class="container md-center col-xxl-8 px-4 text-white rounded-3 shadow-lg fade mt-5">  
     <?php if(isset($_SESSION["venditore"])){ ?>
       <button class=' btn position-static p-2 btn-danger w-25 rounded text-white' id="delNews<?php echo $news["idnews"]?>" value="<?php echo $news["idnews"]?>" onclick='rimuoviNotizia(this.value);' >
       <i class="fa-solid fa-trash-can"></i> Rimuovi notizia
     </button>
-  <?php } ?>  
+  <?php } ?>
    <div class="row flex-lg-row-reverse d-flex justify-content-center align-items-center g-5 m-3">
-   
+
       <div class="col-10 col-sm-8 col-lg-6 overflow-hidden shadow p-3 mb-3 mt-3">
       <img class=" img img-fluid"  src="<?php echo "img/".$news["immagine"] ?>" alt=""/>
       </div>
       <div class="col-lg-6">
-       
+
         <h1 class="display-6 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></h1>
         <p class="lead"><cite><?php echo $news["contenuto"] ?></cite></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
@@ -39,14 +39,14 @@ if (isset($_SESSION["venditore"])) {?>
     <span class="text-white display-4 fw-bold ">Prodotti consigliati:</span>
   </div>
     <div class="container" id="consigliati">
-      <div class="row row-cols-1  row-cols-lg-4 g-4 d-flex justify-content-center"> 
+      <div class="row row-cols-1  row-cols-lg-4 g-4 d-flex justify-content-center">
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
           <div class="col wrapper m-4 ">
                <div class="bg-dark">
                  <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center" id="cardIndex">
                         <div class="img-wrapper">
                             <img src="img/<?php
-                                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            
+                                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
                                 echo $imgNoSpace?>" class="figure img-fluid p-5 " alt="..." style="height: 220px;"/>
                           </div>
                                         <div class="front">
@@ -90,32 +90,31 @@ if (isset($_SESSION["venditore"])) {?>
     </div>
     <div class="col-lg-2 d-flex align-items-center justify-content-center rounded-3 bg-dark overflow-hidden shadow-lg"> <!--  align-items-center va sempre con d-flex per modificare l'allineamento verticale centrale-->
      <img id="QRcode" src="img\<?php
-                $imgNoSpace = str_replace(' ', '', "moovit.png");     
+                $imgNoSpace = str_replace(' ', '', "moovit.png");
                  echo $imgNoSpace?>" class="img img-fluid p-3" alt="..." style="width:200px; height:200px"/>
                  </div>
   </div>
   </div>
-  
-  
+
+
 <script src="script/showhero.js"> </script>
 
-<script> 
+<script>
 function rimuoviNotizia(idnews){
-  var http =new XMLHttpRequest(); 
-  
+  var http =new XMLHttpRequest();
+
   http.open("get", "index.php?n="+idnews,true);
   http.send();
-  http.onload = function(){   
+  http.onload = function(){
     window.alert("la notizia è stata rimossa");
     var elem = 'delNews'+idnews;
     var ff = document.getElementById(idnews).value;
     if(ff==idnews){
       elem.remove();
     }
-  } 
-  
-  
+  }
+
+
 }
 
 </script>
-

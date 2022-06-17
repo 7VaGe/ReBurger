@@ -13,6 +13,7 @@ if (isset($_GET["ordine"]) and isset($_GET["scelta"])) {
       break;
     case "spedito":
       $dbh->updateStatoOrdine(3,$_GET["ordine"]);
+      $dbh->setOraOrdine($_GET["ora"],$_GET["ordine"]);
       break;
     case "consegnato":
       $dbh->updateStatoOrdine(4,$_GET["ordine"]);

@@ -418,6 +418,16 @@ class DatabaseHelper{
 
         return true;
     }
+
+    public function setOraOrdine($ora, $ordine){
+        $query = "UPDATE ordine SET ora_consegna=? WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si',$ora, $ordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return true;
+    }
   /*  public function getOrdiniByDate($data){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
         $stmt->bind_param('i',$data);
