@@ -1,5 +1,4 @@
-$(document).ready( function( ){
-    
+$(document).ready( function( ){    
 /* Visualiizza il banner dei cookie 
 function showCookieBanner(){
     
@@ -28,19 +27,17 @@ function showCookieBanner(){
     }
 }
 */
-
-function hideCookieBanner(){
+  function hideCookieBanner(){
     let cookieBanner = document.getElementById("cb-cookie-banner");
     cookieBanner.style.display = "none";
-   }
+    }
 
-   function showCookieBanner(){
+  function showCookieBanner(){
     let cookieBanner = document.getElementById("cb-cookie-banner");
     cookieBanner.style.display = "block";
-   }
+  }
 
-
-   function setCookie(cname,cvalue,exdays) {
+  function setCookie(cname,cvalue,exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires=" + d.toUTCString();
@@ -62,25 +59,25 @@ function hideCookieBanner(){
     }
     return "";
   }
+  function isCookieAccepted(){
+      let val = "yes"
+      setCookie("_CkAccepted",val,1); //Validità 1 giorno
+      hideCookieBanner();
+  }
 
-
-function checkCookies(){
-    let btnAccetta = document.getElementById("ck_accetta");
-    let btnRifiuta = document.getElementById("ck_rifiuta");
-if(getCookie("_CkAccepted") === "no" || getCookie("_CkAccepted") == null || getCookie("_CkAccepted") == ""){
-    showCookieBanner();
-    if(btnAccetta.ariaChecked){
-        let val = "yes"
-        setCookie("_CkAccepted",val,1); //Validità 1 giorno, lo invio a tutte le pagine, inviato con HTTP o HTTPS, nascosto da javaScript.
-        hideCookieBanner();
-    } else if(btnRifiuta.ariaChecked){
-        let val = "no";
-        setCookie("_CkAccepted",val,1);
-        hideCookieBanner();
-    }   
-}else {
-    hideCookieBanner();
-}
-}
-   window.onload = checkCookies();
-   });
+  function isCookiesRefused(){
+     let val = "no";
+                setCookie("_CkAccepted",val,1);
+                hideCookieBanner();
+  }
+  function checkCookies(){
+      if(getCookie("_CkAccepted") === "no" || getCookie("_CkAccepted") == null || getCookie("_CkAccepted") == ""){
+          showCookieBanner(); 
+          let btnAccetta = document.getElementById("ck_accetta").addEventListener("click", isCookieAccepted());
+          let btnRifiuta = document.getElementById("ck_rifiuta").addEventListener("click", isCookiesRefused());
+      }else { //se è impostato a yes, nascondo il banner.
+          hideCookieBanner(); //entra sempre qua, non so il motivo
+      }
+  }
+  window.onload = checkCookies();
+});
