@@ -14,10 +14,7 @@
     </div>
 
     <div class="container d-flex justify-content-center my-3 py-3">
-       <div class="checkbox mb-3">
-         <label class="text-white">
-           <input type="checkbox" value="remember-me"> Ricordami
-         </label>
+       <div class="mb-3">
          <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
        </div>
     </div>

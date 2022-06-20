@@ -32,9 +32,9 @@ input[type='radio']:after {
 <div class="container-lg mt-2">
 <div class="card bg-dark rounded-5 shadow-lg">
   <div class="container-lg my-5">
-  <?php 
+  <?php
         if( $templateParams["carrello"]== null){?>
-        
+
         <div class="text-white text-center">
         <p class="title display-4 fw-bold text-center">Il carrello è vuoto</p>
 
@@ -77,7 +77,7 @@ input[type='radio']:after {
           <div class="mt-3 text-center">
               <button class="btn-lg btn-warning" onclick='window.location="login.php"'>Prima effettua il login</button>
           </div>
-          
+
           <?php }else{ ?>
             <div class="text-center mt-3">
               <button type="submit" class="btn-lg btn-warning">Ordina</button>
@@ -92,7 +92,7 @@ input[type='radio']:after {
 
 
 <?php }?>
-    
+
   </div>
 </div>
 </div>
@@ -115,20 +115,16 @@ function sottraiCarrello(val) {
 }
 
 function incVal(val){
-
-    var x = document.getElementById(val).value;
-    document.getElementById(val).value = ++x;
-    document.getElementById("spesa").innerhtml.reload;
+    ++document.getElementById(val).value;
+    document.getElementById("spesa").innerhtml;
 }
 
 function decVal(val){
-
   var riga = 'riga'+val;
-  var x = document.getElementById(val).value;
-  document.getElementById(val).value = x - 1;
+  document.getElementById(val).value--;
   if (document.getElementById(val).value == "0") {
     document.getElementById(riga).remove();
   }
-  document.getElementById("spesa").innerhtml.reload;
+  document.getElementById("spesa").innerhtml;
 }
 </script>

@@ -11,6 +11,11 @@ function registerLoggedUser($user){
 //dalla query nel dbhelper in checklogin.
 $_SESSION["idutente"] = $user["idutente"];
 $_SESSION["username"] = $user["username"];
+if (isset($_SESSION["sceltaCookie"])){
+  if ($_SESSION["sceltaCookie"] == "accettato") {
+    setCookie("username", $_SESSION["username"], time() + 3600);
+    }
+  }
 }
 
 function isUserLoggedIn(){
