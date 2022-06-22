@@ -53,9 +53,9 @@ input[type='radio']:after {
           <?php foreach ($templateParams["carrello"] as $prodotto):?>
           <tr id="<?php echo "riga".$prodotto["nome"]; ?>">
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
-            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);">-</button>
+            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);aggiornaCarrello();">-</button>
             <input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">
-            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value);incVal(this.value);">+</button></div></td>
+            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value);incVal(this.value);aggiornaCarrello();">+</button></div></td>
           </tr>
           <?php endforeach; ?>
         </table>
@@ -69,6 +69,7 @@ input[type='radio']:after {
         <div id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
           echo "0";
         }else {
+
           echo $templateParams["conto"]["prezzo"]; }?></div>
       </div>
         <div class="footer">
@@ -126,5 +127,16 @@ function decVal(val){
     document.getElementById(riga).remove();
   }
   document.getElementById("spesa").innerhtml;
+}
+
+function aggiornaCarrello(){
+  var xmlhttp = new XMLHttpRequest();
+
+  xmlhttp.open("GET", "insertInCart.php?c=1", true);
+  xmlhttp.send();
+  xmlhttp.onreadystatechange = function() {
+    document.getElementById("spesa").innerHTML = this.responseText;
+  }
+
 }
 </script>

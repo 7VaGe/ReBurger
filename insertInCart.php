@@ -39,4 +39,8 @@ if (isset($_GET["s"])) {
   $templateParams["conto"]["prezzo"] -= $costo["prezzo"];
 }
 
+if (isset($_GET["c"])) {
+  $templateParams["conto"] = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
+  echo "Prezzo totale: €",$templateParams["conto"]["prezzo"];
+}
 ?>

@@ -88,7 +88,9 @@ if ($controlloErr == 0) {
           </div>
         </div>
     <button class="w-100 btn btn-lg btn-warning" type="submit">Registrati</button>
-    <button class="w-100 my-2 btn-lg btn-outline-primary" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
     </div>
   </form>
+  <div class="container-lg">
+    <button class="w-100 my-2 btn-lg btn-outline-primary" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
+  </div>
 </div>
