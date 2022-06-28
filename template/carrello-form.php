@@ -38,7 +38,7 @@ input[type='radio']:after {
         <div class="text-white text-center">
         <p class="title display-4 fw-bold text-center">Il carrello è vuoto</p>
 
-        <img src="img\Carrellovuoto.png" alt="Carrello vuoto"/>
+        <img src="img\Carrellovuoto.png" alt="Carrello vuoto" style="width:350px ">
 
         <div class="mt-3">
         <button class="btn-lg btn-warning" onclick='window.location="menu.php"'>Effettua un ordine</button>
@@ -69,7 +69,6 @@ input[type='radio']:after {
         <div id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
           echo "0";
         }else {
-
           echo $templateParams["conto"]["prezzo"]; }?></div>
       </div>
         <div class="footer">
@@ -95,7 +94,6 @@ input[type='radio']:after {
 <?php }?>
 
   </div>
-</div>
 </div>
 
 <script>
@@ -134,7 +132,7 @@ function aggiornaCarrello(){
 
   xmlhttp.open("GET", "insertInCart.php?c=1", true);
   xmlhttp.send();
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onload = function() {
     document.getElementById("spesa").innerHTML = this.responseText;
   }
 
