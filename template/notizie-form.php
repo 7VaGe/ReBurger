@@ -19,7 +19,7 @@
 }else{ ?>
 <div class="text-center form-signin">
   <form action="" method="post" enctype="multipart/form-data">
-    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
+    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Inserisci una nuova notizia compilando i seguenti campi:</h1>
     <div class="container-lg">
       <?php
     $userDataRegistration = ["Titolo"  => "titolo", "Descrizione"=> "descrizione"];

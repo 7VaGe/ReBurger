@@ -2,11 +2,11 @@
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
       <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample" value="0">
-      <div class="ms-2 me-auto">
-        <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
-      </div>
-      <span class="badge"><i class='<?php echo $category["icona"]?>' style='font-size:48px;color:rgb(247,193,68)'></i></span>
-    </li>
+        <div class="ms-2 me-auto">
+          <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
+        </div>
+        <span class="badge"><i class='<?php echo $category["icona"]?>' style='font-size:48px;color:rgb(247,193,68)'></i></span>
+      </li>
     <?php endforeach ; ?>
   </ol>
 </div>
@@ -40,8 +40,8 @@
       <?php endforeach; ?>
     <?php endforeach; ?>
     </div>
-
   </div>
+</section>
 <script>
 function insertInCarrello(val) {
     var http = new XMLHttpRequest();
@@ -62,8 +62,3 @@ function insertInCarrello(val) {
    }
  }
 </script>
-  <div id="alert">
-      <?php include 'alert-form.php' ?>
-      </div>
-</section>
-<script src="script/alertHandler.js"></script>

@@ -50,9 +50,7 @@
 
 
 <!-- Javascript-->
-  <script src="script/cookies.js"></script>
   <script src="script/script.js"></script>
-  <script src="script/carrello.js"></script>
 
 <!-- footer qui -->
 

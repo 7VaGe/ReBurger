@@ -25,12 +25,10 @@
           <label for="floatingInput">Immagine utente</label>
       </div>
     <button class="w-50 btn btn-lg btn-warning m-4" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
+      </div>
     </div>
-
-     </div>
-
   </form>
 </div>
 <button class="w-75 btn btn-lg btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
-   </div>
+</div>
   <script src="script/showpwd.js"></script>

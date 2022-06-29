@@ -12,11 +12,10 @@
       <input type="password" class="form-control" placeholder="Password" id="password" name="password" required/>
       <label for="password">Password</label>
     </div>
-
     <div class="container d-flex justify-content-center my-3 py-3">
-       <div class="mb-3">
-         <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
-       </div>
+      <div class="mb-3">
+        <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
+      </div>
     </div>
     <button class="w-100 btn btn-lg btn-warning" type="submit" name="submit">Accedi</button>
   </form>
