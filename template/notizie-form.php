@@ -3,18 +3,35 @@
     $dbh->uploadImmagine($indice, "notizie");
     $_FILES["immagine"]= NULL;
      ?>
-    <div class="container-lg my-5">
+
+<div class="container-lg mt-2" id="card">
+      <div class="row row-cols-1 align-items-stretch g-4 "> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
+        <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
+          <div class="d-flex flex-column text-center pb-3  text-white">
+            <div class="text-white">
+              <p class="lead display-6">
+            <cite>Hai inserito la notizia con successo</cite>
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
+          <button type="button" class="btn btn-warning" onclick='window.location="index.php"'>Torna alla home</button><button type="button" class="btn btn-warning" onclick='window.location="notizie.php"'>Aggiungi un'altra notizia</button>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <!-- <div class="container-lg my-5">
       <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
           <p class="lead">
-            <cite>Hai inserito la notizia con successo</cite>
+            <cite></cite>
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
             <button type="button" class="btn btn-warning" onclick='window.location="index.php"'>Torna alla home</button><button type="button" class="btn btn-warning" onclick='window.location="notizie.php"'>Aggiungi un'altra notizia</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 <?php $_POST["titolo"]=NULL; $_POST["descrizione"]=NULL;
 }else{ ?>
 <div class="text-center form-signin">
