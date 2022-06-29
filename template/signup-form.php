@@ -38,10 +38,29 @@ if ($controlloErr == 0) {
     $dbh->uploadImmagine($indice, "utente");
     $_FILES["immagine"]= NULL;
      ?>
-    <div class="container-lg my-5">
+     <div class="container-lg mt-2" id="card">
+      <div class="row row-cols-1 align-items-stretch g-4 "> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
+        <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
+          <div class="d-flex flex-column text-center pb-3  text-white">
+            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"] ?></h2>
+            <div class="text-white">
+              <p class="lead">
+            <cite>Hai effettuato la registrazione con successo</cite>
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
+          <button type="button" class="btn btn-warning" onclick='window.location="login.php"'>Accedi per la prima volta</button>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+    
+    <!--<div class="container-lg my-5">
       <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1"><?php echo $_POST["username"] ?></h1>
+          <h1 class="display-4 fw-bold lh-1"></h1>
           <p class="lead">
             <cite>Hai effettuato la registrazione con successo</cite>
           </p>
@@ -50,7 +69,7 @@ if ($controlloErr == 0) {
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 <?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL;
 }
 }?>
@@ -94,3 +113,5 @@ if ($controlloErr == 0) {
     <button class="w-100 my-2 btn-lg btn-outline-primary" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
   </div>
 </div>
+
+<script src="script/showpwd.js"></script>

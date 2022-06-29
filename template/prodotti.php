@@ -23,7 +23,7 @@
                 $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
                  echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
-          <figcaption class="info-wrap px-3">
+          <figcaption class="info-wrap p-3">
           <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
 					      <div class="price-wrap">
 

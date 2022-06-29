@@ -24,7 +24,10 @@
           <input type="file" class="form-control my-2" id="immagine" value="" name="immagine" />
           <label for="floatingInput">Immagine utente</label>
       </div>
-    <button class="w-50 btn btn-lg btn-warning m-4" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
+      <div class="checkbox m-3">
+          <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+          </div>
+    <button class="w-50 btn btn-lg btn-warning m-3" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
       </div>
     </div>
   </form>

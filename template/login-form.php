@@ -19,5 +19,4 @@
     </div>
     <button class="w-100 btn btn-lg btn-warning" type="submit" name="submit">Accedi</button>
   </form>
-  <script src="script/showpwd.js"></script>
 </div>

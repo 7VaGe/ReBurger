@@ -69,7 +69,7 @@ input[type='radio']:after {
         <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
         <label class="m-2 display-6 fw-bold" for="pagamento2">Contanti <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
 
-        <div id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
+        <div class="text-center display-6" id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
           echo "0";
         }else {
           echo $templateParams["conto"]["prezzo"]; }?>
@@ -92,7 +92,6 @@ input[type='radio']:after {
       </form>
     </div>
 <?php }?>
-
   </div>
 </div>
 
