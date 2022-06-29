@@ -20,18 +20,7 @@
         </div>
       </div>
   </div>
-    <!-- <div class="container-lg my-5">
-      <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg bg-white">
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <p class="lead">
-            <cite></cite>
-          </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <button type="button" class="btn btn-warning" onclick='window.location="index.php"'>Torna alla home</button><button type="button" class="btn btn-warning" onclick='window.location="notizie.php"'>Aggiungi un'altra notizia</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
+  
 <?php $_POST["titolo"]=NULL; $_POST["descrizione"]=NULL;
 }else{ ?>
 <div class="text-center form-signin">
@@ -47,7 +36,7 @@
       </div>
 <?php endforeach;?>
       <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> 
           <label for="floatingInput">Immagine</label>
         </div>
       <div class="container d-flex justify-content-center my-3 py-3">

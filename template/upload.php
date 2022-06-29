@@ -9,15 +9,15 @@
           <input type="number" class="form-control my-2" id="idutente" value="<?php echo $templateParams["utente"]["idutente"] ?>" name="idutente" hidden/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
       </div>
       <div class="w-100 form-floating d-flex  mt-4">
-          <input type="text" class="form-control my-2" id="username" value="<?php echo $templateParams["utente"]["username"] ?>" name="username" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="username" value="<?php echo $templateParams["utente"]["username"] ?>" name="username" /> 
           <label for="floatingInput">Nome utente</label>
       </div>
       <div class="w-100 form-floating d-flex ">
-          <input type="email" class="form-control my-2" id="email" value="<?php echo $templateParams["utente"]["email"] ?>" name="email" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="email" class="form-control my-2" id="email" value="<?php echo $templateParams["utente"]["email"] ?>" name="email" /> 
           <label for="floatingInput">Email</label>
       </div>
       <div class="w-100 form-floating d-flex">
-          <input type="password" class="form-control my-2" id="password" value="<?php echo $templateParams["utente"]["password"] ?>" name="password" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="password" class="form-control my-2" id="password" value="<?php echo $templateParams["utente"]["password"] ?>" name="password" /> 
           <label for="floatingInput">Password</label>
       </div>
      <div class="w-100 form-floating d-flex">

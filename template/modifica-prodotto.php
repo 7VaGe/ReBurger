@@ -10,20 +10,20 @@
           <label for="floatingInput">Nome</label>
       </div>
       <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="descrizione" value="<?php echo $templateParams["prodotto"]["descrizione"] ?>" name="descrizione" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="descrizione" value="<?php echo $templateParams["prodotto"]["descrizione"] ?>" name="descrizione" /> 
           <label for="floatingInput">Ingredienti</label>
       </div>
       <div class="form-floating d-flex">
-          <input type="number" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="number" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" /> 
           <label for="floatingInput">Categoria</label>
       </div>
       <div class="form-floating d-flex">
-          <input type="number" class="form-control my-2" id="prezzo" value="<?php echo $templateParams["prodotto"]["prezzo"] ?>" name="prezzo" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="number" class="form-control my-2" id="prezzo" value="<?php echo $templateParams["prodotto"]["prezzo"] ?>" name="prezzo" /> 
           <label for="floatingInput">Prezzo</label>
       </div>
 
       <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="file" class="form-control my-2" id="immagine" placeholder="nameExample" name="immagine" />
           <label for="floatingInput">Immagine</label>
       </div>
     <button class="w-100 mt-2 btn btn-lg btn-warning" type="submit">Modifica</button>

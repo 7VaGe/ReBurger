@@ -9,8 +9,7 @@
         <h1 class="display-4 fw-bold lh-1">Ordine effettuato con successo</h1>
         <p class="lead">
           <cite>Gustati anche l'attesa ciccione</cite>
-        </p> <!-- andrebbe inserito il riepilogo di quello che è stato preso con le immaginine piccole, la quantità
-          e il totale,dato che faremo il carrello in php, dovebbe essere molto veloce la cosa, per il design poi ci penso io, basta che ho il carrello in php e non in js che non lo possiamo fare in js-->
+        </p> 
           <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
             <button type="button" class="btn btn-warning" onclick='window.location="index.php"'>Torna alla Home</button>
           </div>

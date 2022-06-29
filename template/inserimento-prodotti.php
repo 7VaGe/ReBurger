@@ -68,22 +68,22 @@ if ($controlloErr == 0) {
           <span class="error" style="color:red"><?php echo $nameErr;?></span>
       </div>
       <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="prezzo" name="prezzo" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="prezzo" name="prezzo" />
           <label for="floatingInput">Prezzo</label>
           <span class="error" style="color:red"><?php echo $prezzoErr;?></span>
       </div>
       <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="desc" name="desc" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="desc" name="desc" /> 
           <label for="floatingInput">Descizione</label>
           <span class="error" style="color:red"><?php echo $descErr;?></span>
       </div>
       <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="categ" name="categ" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="text" class="form-control my-2" id="categ" name="categ" /> 
           <label for="floatingInput">Categoria</label>
           <span class="error" style="color:red"><?php echo $categErr;?></span>
       </div>
       <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="immagine" name="immagine" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+          <input type="file" class="form-control my-2" id="immagine" name="immagine" /> 
           <label for="floatingInput">Immagine</label>
         </div>
     <button class="w-100 btn btn-lg btn-warning" type="submit">Inserisci</button>

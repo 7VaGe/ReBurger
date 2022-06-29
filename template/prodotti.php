@@ -20,7 +20,7 @@
         <figure class="card card-product-grid bg-dark rounded-6 shadow">
           <div class="img-wrap text-center">
           <img src="img/<?php
-                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);            //da togliere e sistemare l'immagine in php
+                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);           
                  echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
           <figcaption class="info-wrap p-3">
@@ -31,8 +31,6 @@
 				    	  </div>
                 <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
                   <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="insertInCarrello(this.value)">Aggiungi al carrello</button>
-                <!-- va inserito qui un effetto, o un feedback visivo per l'avvenuta aggiunta nel carrello, devo capire se posso usare un onclick="" oppure il codice si impalla,
-                ad ogni modo quando viene aggiunto o metto un effetto o un messaggio in dissolvenza (fadein+fadeout o altro) -->
           </figcaption>
         </figure>
       </div>

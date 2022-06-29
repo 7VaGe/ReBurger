@@ -5,7 +5,7 @@
       <h3 class=" my-4 h3 mb-3 text-white fw-normal"><?php echo $ordine["quantita"] . " ". $ordine["nome"];?></h3>
     <?php endforeach;?>
     <?php if ($templateParams["stato"]["stato"]==1){
-      ?><button class="w-100 btn btn-lg btn-warning" onclick="window.location='ordini.php?ordine=<?php echo $ordine["idordine"]?>&scelta=accettato'">Accetta ordine</button><?php
+      ?><button class="w-100 btn btn-lg btn-warning" onclick="window.location='ordini.php?ordine=<?php echo $ordine['idordine']?>&scelta=accettato'">Accetta ordine</button><?php
     }elseif ($templateParams["stato"]["stato"]==2) {
       ?><form class="" action="ordini.php" method="get">
           <label for="ora" class="text-white">Seleziona un'ora di arrivo</label>
@@ -15,8 +15,8 @@
           <button class="w-100 btn btn-lg btn-warning" type="submit">Ordine spedito</button>
       </form><?php
     }elseif ($templateParams["stato"]["stato"]==3) {
-      ?><button class="w-100 btn btn-lg btn-warning" onclick="window.location='ordini.php?ordine=<?php echo $ordine["idordine"]?>&scelta=consegnato'">Ordine consegnato</button><?php
+      ?><button class="w-100 btn btn-lg btn-warning" onclick="window.location='ordini.php?ordine=<?php echo $ordine['idordine']?>&scelta=consegnato'">Ordine consegnato</button><?php
     }?>
-    <button class="w-100 btn btn-lg btn-danger mt-2" onclick="window.location='ordini.php?ordine=<?php echo $ordine["idordine"]?>&scelta=annullato'">Annulla</button>
+    <button class="w-100 btn btn-lg btn-danger mt-2" onclick="window.location='ordini.php?ordine=<?php echo $ordine['idordine']?>&scelta=annullato'">Annulla</button>
     </div>
 </div>
