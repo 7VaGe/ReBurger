@@ -27,7 +27,8 @@ if (isset($_GET["a"])) {
   $dbh->updateCarrello($var, $_SESSION["ordine"]);
   $costo = $dbh->getPrezzoProdotto($var);
   $dbh->setPrezzo($costo["prezzo"], $_SESSION["ordine"]);
-  $templateParams["conto"]["prezzo"] += $costo["prezzo"];
+  $spesa = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
+  echo "Prezzo totale: € ",$spesa["prezzo"];
 }
 
 if (isset($_GET["s"])) {
@@ -36,11 +37,7 @@ if (isset($_GET["s"])) {
   $dbh->deleteCarrello();
   $costo = $dbh->getPrezzoProdotto($var);
   $dbh->setPrezzo("-".$costo["prezzo"], $_SESSION["ordine"]);
-  $templateParams["conto"]["prezzo"] -= $costo["prezzo"];
-}
-
-if (isset($_GET["c"])) {
-  $templateParams["conto"] = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
-  echo "Prezzo totale: €",$templateParams["conto"]["prezzo"];
+  $spesa = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
+  echo "Prezzo totale: € ",$spesa["prezzo"];
 }
 ?>
