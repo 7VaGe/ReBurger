@@ -259,7 +259,7 @@ class DatabaseHelper{
     public function setPagamentoOrdine($pagamento, $ordine){
         $query = "UPDATE ordine SET pagamento=? WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ii',$pagamento ,$ordine);
+        $stmt->bind_param('ii', $pagamento, $ordine);
         $stmt->execute();
 
         return true;
@@ -268,7 +268,15 @@ class DatabaseHelper{
     public function updateStatoOrdine($stato, $idordine){
         $query = "UPDATE ordine SET stato=? WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ii',$stato, $idordine);
+        $stmt->bind_param('ii', $stato, $idordine);
+        $stmt->execute();
+        return true;
+    }
+
+    public function updateOrdine($ora, $stato, $idordine){
+        $query = "UPDATE ordine SET ora_consegna=? , stato=? WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sii', $ora, $stato, $idordine);
         $stmt->execute();
         return true;
     }
@@ -319,6 +327,16 @@ class DatabaseHelper{
         return $result->fetch_assoc();
     }
 
+    public function getClienteByOrdine($idordine){
+        $query = "SELECT utente FROM ordine WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$idordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc();
+    }
+
     public function getOrdiniByCliente($idcliente){
         $stmt = $this->db->prepare("SELECT * FROM ordine WHERE utente=? ORDER BY idordine DESC");
         $stmt->bind_param('i',$idcliente);
@@ -329,7 +347,7 @@ class DatabaseHelper{
     }
 
     public function getOrdini(){
-        $stmt = $this->db->prepare("SELECT * FROM ordine");
+        $stmt = $this->db->prepare("SELECT * FROM ordine ORDER BY idordine DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 

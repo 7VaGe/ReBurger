@@ -103,21 +103,3 @@
   </div>
 </div>
 </div>
-<script>
-   /* function notifyStateChange(val){
-      var btn = document.getElementById("#btnOrd");
-      stato = $dbh->getStatoOrdine(val);
-      if(btn){
-        $.ajax({
-          type:'post',
-          url: 'notifiche.php',
-          data:{
-            ordine:stato,
-           }success: function(response){
-            btn.append().html(response);
-           }
-        });
-      }
-    //puoi fare un else inserendo qualcosa se non cambia lo stato..
-    }*/
-  </script>
