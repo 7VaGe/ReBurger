@@ -137,3 +137,6 @@ UPDATE `prodotto` SET `descrizione` = 'Patatine fritte, grandezza grande' WHERE 
 --ALTER TABLE `messaggi`
  -- ADD PRIMARY KEY (`id_mittente`,`id_destinatario`,`data_invio`),
  -- ADD KEY `data_lettura` (`data_lettura`);
+
+-- cambio di grandezza per le email degli utenti 
+ALTER TABLE `utente` CHANGE `email` `email` VARCHAR(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
