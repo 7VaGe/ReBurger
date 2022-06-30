@@ -5,11 +5,27 @@
           <div class="container">
               <div class="card-body">
                   <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($templateParams["utente"]["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>
-                  <div class="accordion" id="accordionExample">
-                    <?php foreach($templateParams["ordine"] as $ordine) :?>
+                 <div class="container-lg mt-2">
+                            <div class="card bg-dark rounded-5 shadow-lg">
+                              <div class="container-lg my-5">
+                                <?php if( $templateParams["ordine"]== null):?>
+
+                                  <div class="text-white text-center">
+                                    <p class="title display-4 fw-bold text-center">Non sono presenti ordini al momento</p>
+
+                                    <img src="img\Carrellovuoto.png" alt="Non ci sono ordini" style="width:350px "/>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    <?php else: ?>
+                    <div class="accordion" id="accordionExample">
+                    <?php foreach($templateParams["ordine"] as $ordine) :?> 
+                      
                       <div class="accordion-item bg-dark">
                         <h2 class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
-
+                       
                         <!-- Divido qui i vari ordini per stato --->
                         <?php if($ordine["stato"] != 1 && $ordine["stato"] != 2 && $ordine["stato"] !=3):?>
                           <button class="accordion-button collapsed bg-dark text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
@@ -42,12 +58,12 @@
                               <div class="container d-flex justify-content-center">
                               <?php if($ordine["stato"]==1){
             ?>
-            <button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Accetta ordine</button>
-            <?php } elseif($ordine["stato"]==2) {?>
-            <button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Spedisci ordine</button>
-            <?php}elseif($ordine["stato"]==3) {?>
-              <button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Consegnato</button>
-            <?php}else {
+            <button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Accetta ordine</button><?php
+            } elseif($ordine["stato"]==2) {
+              ?><button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Spedisci ordine</button><?php 
+          }elseif($ordine["stato"]==3) {?>
+          <button class="btn-warning btn" onclick="window.location='dettagliOrdine.php?ordine=<?php echo $ordine['idordine'] ?>'">Consegnato</button><?php
+          }else {
             switch ($ordine["stato"]){
               case '4':
                 echo "Completato";
@@ -62,10 +78,13 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            <?php endforeach; ?>
+              </div> 
+              
+              <?php endforeach; ?>
           </div>
+          
          </div>
+        <?php endif; ?>
         </div>
       </div>
     </div>
