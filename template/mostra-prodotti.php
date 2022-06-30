@@ -22,10 +22,10 @@
 
 <div class="album mb-5 bg-dark text-white">
   <div class="text-center mb-4">
-    <span class="text-white display-4 fw-bold mb-3">Lista prodotti</span>
+    <span class="text-white display-4 fw-bold">Lista prodotti</span>
 
-    <div class="container" id="listaProdotti">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center">
+    <div class="container-fluid" id="listaProdotti">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center my-3">
         <?php foreach($templateParams["prod"] as $prodotto) : ?>
           <div class="col wrapper m-4" id="<?php echo $prodotto["nome"]; ?>">
             <div class="bg-dark">

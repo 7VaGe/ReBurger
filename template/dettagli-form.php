@@ -12,7 +12,7 @@
           <input id="ora" name="ora" type="time" ></input>
           <input id="ordine" name="ordine" type="number" value="<?php echo $ordine["idordine"]?>" hidden></input>
           <input id="scelta" name="scelta" type="text" value="spedito" hidden></input>
-          <button class="w-100 btn btn-lg btn-warning" type="submit">Ordine spedito</button>
+          <button class="w-100 btn btn-lg btn-warning mt-3" type="submit">Ordine spedito</button>
       </form><?php
     }elseif ($templateParams["stato"]["stato"]==3) {
       ?><button class="w-100 btn btn-lg btn-warning" onclick="window.location='ordini.php?ordine=<?php echo $ordine['idordine']?>&scelta=consegnato'">Ordine consegnato</button><?php
