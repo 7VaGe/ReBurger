@@ -13,7 +13,8 @@ if ($_POST["pagamento"]==1) {
 }else{
   $dbh->setPagamentoOrdine($_POST["pagamento"], $_SESSION["ordine"]);
   $templateParams["nome"] = "checkout-form.php";
-  //mail($address,"Ordine confermato",$msg);
+  $templateParams["carta"]=NULL;
+  $controllata=false;
 
 }
 
