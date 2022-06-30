@@ -1,7 +1,5 @@
-
-
 <div class="text-center mb-2 ">
-  <span class="text-white display-4 fw-bold ">Aggiungi un prodotto</span>
+  <span class="text-white display-4 fw-bold ">Aggiungi un prodotto o una categoria</span>
   <div class="container d-flex justify-content-center">
     <div class="container wrapperAddItem m-4">
       <div class="bg-dark">
@@ -15,6 +13,19 @@
             </figcaption>
           </div>
         </figure>
+      </div>
+    </div>
+    <div class="container wrapperAddItem m-4 bg-dark">
+      <div class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom" id="cardClasse">
+        <form class="" action="" method="post">
+        <div class="imgWrapper">
+          <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
+        </div>
+          <input type="text" class="form-control" id="nomeCategoria" name="nomeCategoria" required>
+        <div class="front">
+          <button type="submit" class="btn btn-warning">Aggiungi una categoria</button>
+        </div>
+      </form>
       </div>
     </div>
   </div>

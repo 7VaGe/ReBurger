@@ -45,6 +45,14 @@ class DatabaseHelper{
         return $stmt->insert_id;
     }
 
+    public function insertCategoria($nome){
+        $query = "INSERT INTO categoria (nomecategoria) VALUES (?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $nome);
+        $stmt->execute();
+        return true;
+    }
+
     public function getRandomProdotto($n){
         $stmt = $this->db->prepare("SELECT * FROM prodotto ORDER BY RAND() LIMIT ?");
         $stmt->bind_param('i',$n);
