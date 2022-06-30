@@ -1,9 +1,8 @@
-<div class="mx-5">
+<div class="mx-5" id="OrdiniContainer">
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
               <div class="card-body my-3">
-                  <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($_SESSION["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>
                               <!-- tolto un container -->
                                 <?php if( $templateParams["ordine"]== null):?>
                                   <div class="text-white text-center">
@@ -12,33 +11,28 @@
                                 </div>
                             </div>
                     <?php else: ?>
-                    <div class="accordion" id="accordionExample">
+                      <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($_SESSION["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>
+                    <div class="accordion" id="accordionContainer">
                     <?php foreach($templateParams["ordine"] as $ordine) :?>
 
                       <div class="accordion-item bg-dark">
                         <h2 class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
 
                         <!-- Divido qui i vari ordini per stato --->
-                        <button class="accordion-button collapsed text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>"
-                        <?php switch ($ordine["stato"]){
-                          case '3':
-                            echo ' style="background-color:rgb(255,194,0);"';
-                            break;
-
-                          case '5':
-                            echo ' style="background-color:red;"';
-                            break;
-
-                          case '4':
-                            echo ' style="background-color:green;"';
-                            break;
-
-                          default:
-                            echo ' style="background-color:rgb(20,20,41);"';
-                            break;
-                        } ?>>Ordine #<?php echo $ordine["idordine"];?></button>
+                        <?php if($ordine["stato"] == 1 || $ordine["stato"] == 2 || $ordine["stato"] ==3):?>
+                          <button class="accordion-button collapsed bg-warning text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
+                            Ordine #<?php echo $ordine["idordine"];?>
+                            </button>
+                            <?php elseif($ordine["stato"] == 5):?>
+                              <button class="accordion-button collapsed bg-danger text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
+                            Ordine #<?php echo $ordine["idordine"];?>
+                            </button>
+                            <?php else:?>
+                              <button class="accordion-button collapsed bg-dark text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
+                            Ordine #<?php echo $ordine["idordine"];?>    
+                            <?php endif;?>
                           </h2>
-                          <div id="collapse<?php echo $ordine["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $ordine["idordine"];?>" data-bs-parent="#accordionExample">
+                          <div id="collapse<?php echo $ordine["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $ordine["idordine"];?>" data-bs-parent="#accordionContainer">
                             <div class="accordion-body text-white text-center p-0 pt-3 ">
                               <div class=" col-12 d-flex row mx-0">
                                 <p class="col-sm p-0 mb-2">Utente<br><?php echo $ordine["pagamento"];?></p>
