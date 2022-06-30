@@ -84,9 +84,8 @@ footer, footer.py-5>div.row{
 
 
 .form-signin {
-    max-width: 700px;
-    padding: 15px;
-    margin: auto;
+    max-width: 900px;
+    padding-bottom: 16px;
 }
    .form-signin .checkbox {
     font-weight: 400;
