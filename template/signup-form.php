@@ -61,45 +61,52 @@ if ($controlloErr == 0) {
 <?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL;
 }
 }?>
-<div class="text-center form-signin">
-  <form action="" method="post" enctype="multipart/form-data">
-    <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
-    <div class="container-lg">
-      <div class="form-floating d-flex">
-          <input type="text" class="form-control my-2" id="username" name="username" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-          <label for="floatingInput">Username</label>
-          <span class="error" style="color:red"><?php echo $nameErr;?></span>
-      </div>
-      <div class="form-floating d-flex">
-          <input type="password" class="form-control my-2" id="password" name="password" /> 
-          <label for="floatingInput">Password</label>
-          <span class="error" style="color:red"><?php echo $passErr;?></span>
-      </div>
-      <div class="form-floating d-flex">
-          <input type="email" class="form-control my-2" id="email" name="email" /> 
-          <label for="floatingInput">Email</label>
-          <span class="error" style="color:red"><?php echo $emailErr;?></span>
-      </div>
-      <div class="form-floating d-flex">
-          <input type="tel" class="form-control my-2" id="tel" name="tel" />
-          <label for="floatingInput">Telefono</label>
-          <span class="error" style="color:red"><?php echo $telErr;?></span>
-      </div>
-      <div class="form-floating d-flex">
-          <input type="file" class="form-control my-2" id="immagine" name="immagine" /> 
-          <label for="floatingInput">Immagine</label>
-        </div>
-      <div class="container d-flex justify-content-center my-3 py-3">
-        <div class="checkbox mb-3">
-          <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+<div class="container-fluid mt-2 w-25 p-2" id="SignUpContainer">
+      <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
+        <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
+            <div class="text-center p-1 ">
+              <form action="" method="post" enctype="multipart/form-data">
+                <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
+                <div class="container-lg">
+                  <div class="form-floating d-flex justify-content-center">
+                      <input type="text" class="form-control my-2" id="username" name="username" required="required"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+                      <label class="text-dark" for="floatingInput">Username</label>
+                      <span class="error" style="color:red"><?php echo $nameErr;?></span>
+                  </div>
+                  <div class="form-floating d-flex justify-content-center">
+                      <input type="password" class="form-control my-2" id="password" name="password"required="required" /> 
+                      <label class="text-dark" for="floatingInput">Password</label>
+                      <span class="error" style="color:red"><?php echo $passErr;?></span>
+                  </div>
+                  <div class="form-floating d-flex justify-content-center">
+                      <input type="email" class="form-control my-2" id="email" name="email" required="required"/> 
+                      <label class="text-dark" for="floatingInput">Email</label>
+                      <span class="error" style="color:red"><?php echo $emailErr;?></span>
+                  </div>
+                  <div class="form-floating d-flex justify-content-center">
+                      <input type="tel" class="form-control my-2" id="tel" name="tel" required="required" />
+                      <label class="text-dark" for="floatingInput">Telefono</label>
+                      <span class="error" style="color:red"><?php echo $telErr;?></span>
+                  </div>
+                  <div class="form-floating d-flex justify-content-center">
+                      <input type="file" class="form-control my-2" id="immagine" name="immagine" /> 
+                      <label class="text-dark" for="floatingInput">Immagine</label>
+                    </div>
+                  <div class="container d-flex justify-content-center">
+                    <div class="checkbox my-3">
+                      <button id="toggle-password" type="button" class="btn-sm btn-warning d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+                      </div>
+                    </div>
+                <button class="btn btn-warning" type="submit">Registrati</button>
+                </div>
+              </form>
+              <div class="container-lg">
+                <button class="my-2 btn btn-outline-primary" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
+              </div>
+            </div>
           </div>
         </div>
-    <button class="w-100 btn btn-lg btn-warning" type="submit">Registrati</button>
-    </div>
-  </form>
-  <div class="container-lg">
-    <button class="w-100 my-2 btn-lg btn-outline-primary" onclick='window.location="login.php"'>Hai già un account? Entra!</button>
-  </div>
-</div>
+      </div>
+            
 
 <script src="script/showpwd.js"></script>

@@ -82,23 +82,11 @@ footer, footer.py-5>div.row{
     z-index: 999; /* Make sure it does not overlap */
   }
 
-
-.form-signin {
-    max-width: 900px;
-    padding-bottom: 16px;
+#LoginContainer{
+  width: 75% !important;
 }
-   .form-signin .checkbox {
-    font-weight: 400;
-}
-
-  .form-signin .form-floating:focus-within {
-    z-index: 2;
-}
-
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+#SignUpContainer{
+  width: 75% !important;
 }
 
 .checkbox:checked{
@@ -310,6 +298,12 @@ button:hover{
     height: 390px;
     
   }
+  #LoginContainer{
+    width: 75% !important;
+  }
+  #SignUpContainer{
+    width: 75% !important;
+  }
   }
  @media only screen and (min-width: 768px) and (max-width: 991px){
 
@@ -353,6 +347,12 @@ button:hover{
       height: 380px;
       
     } 
+    #LoginContainer{
+      width: 50% !important;
+    }
+    #SignUpContainer{
+      width: 50% !important;
+    }
   }
 
 /********** MEDIA QUERY ************/
@@ -395,6 +395,14 @@ button:hover{
       height: 390px;
       
     }
+    #LoginContainer{
+      width: 50% !important;
+    }
+    #SignUpContainer{
+      width: 50% !important;
+    }
+   
+
     }
 
 
@@ -441,4 +449,11 @@ button:hover{
       height: 410px;
       
     }
+    #LoginContainer{
+      width: 50% !important;
+    }
+    #SignUpContainer{
+      width: 50% !important;
+    }
+   
 }
