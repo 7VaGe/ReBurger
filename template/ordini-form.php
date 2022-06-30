@@ -1,10 +1,9 @@
 <div class="mx-5">
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
-        <div class="card bg-dark rounded-6 shadow">+
-
+        <div class="card bg-dark rounded-6 shadow">
               <div class="card-body my-3">
-                  <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($templateParams["utente"]["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>       
+                  <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($_SESSION["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>       
                               <!-- tolto un container -->
                                 <?php if( $templateParams["ordine"]== null):?>
                                   <div class="text-white text-center">

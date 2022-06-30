@@ -1,10 +1,9 @@
 <?php
 if (isset($_SESSION["venditore"])) {?>
-  <div class="container-fluid mt-2">
-    <div class="card card-cover text-white bg-dark rounded-5 shadow-lg mb-5">
+ 
+    <div class=" text-center mb-5">
       <span class="text-center m-2"><button type="button" class="btn btn-warning" onclick="window.location='notizie.php'" name="button">Aggiungi notizia</button></span>
     </div>
-  </div>
 <?php } ?>
 <?php foreach($templateParams["notizia"] as $news):?>
   <div class="container-fluid md-center col-xxl-8 px-4 text-white rounded-3 shadow-lg fade mt-5" id="<?php echo $news["idnews"]?>">
