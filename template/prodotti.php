@@ -14,13 +14,13 @@
   <div class="container">
     <div class="row mt-3">
     <?php foreach($templateParams["catego"] as $category):
-      $parametro =$dbh->getProdottoByCategoria($category["idcategoria"]);
+      $parametro =$dbh->getProdottoByCategoria($category["nomecategoria"]);
       foreach($parametro as $prodotto):?>
       <div class="col-lg-3 col-md-6 col-sm-6 collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>">
         <figure class="card card-product-grid bg-dark rounded-6 shadow">
           <div class="img-wrap text-center">
           <img src="img/<?php
-                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);           
+                $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
                  echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
           <figcaption class="info-wrap p-3">

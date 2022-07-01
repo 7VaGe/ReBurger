@@ -1,8 +1,9 @@
 <?php
 $nameErr = $prezzoErr = $imgError = $descErr = $categErr = "";
-$controlloErr = 0;
+$controlloErr = 1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $controlloErr = 0;
   if (empty($_POST["nome"])) {
     $nameErr = "Inserisci un nome per il prodotto da modificare ";
     $controlloErr = 1;
@@ -84,9 +85,9 @@ if ($controlloErr == 0) {
 
 <?php $_POST["nome"] = $_POST["prezzo"] = $_POST["descrizione"] = $_POST["img"] = $_POST["categoria"] = $_FILES["immagine"] = NULL;
 }
-}else {
+}
 ?>
-<div class="container-fluid mt-2 w-75 p-2">
+<div class="container-fluid mt-2 w-75 p-2" <?php if ($controlloErr == 0){ echo "hidden";} ?>>
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
               <div class="container text-center p-1 ">
@@ -130,8 +131,6 @@ if ($controlloErr == 0) {
               </div>
             </div>
           </div>
-
-<?php } ?>
 
 <script>
 function eliminaProdotto(val) {
