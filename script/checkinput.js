@@ -58,7 +58,7 @@ $(document).ready(function($){
 
     function passwordStrenght(element){
       $(element).inputFilter(function(value){
-          return value.length >=8 && /\d/.test(value) && /([a-z].*[A-Z])|([A-Z].*[a-z])/i.test(value)  && /([!,%,&,@,#,$,^,*,?,_,~])/.test(value)}, 
+          return value.length >=8 && /\d/.test(value) && /([a-z].*[A-Z])|([A-Z].*[a-z])/i.test(value) && /([!,%,&,@,#,$,^,*,?,_,~])/.test(value)}, 
           "Inserisci almeno 8 caratteri, di cui:<br><ul type='circle'><li>Una lettera maiuscola</li><li>Un carattere speciale</li><li>Un numero</li></ul>")
     };
 

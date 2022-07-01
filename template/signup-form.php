@@ -58,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
-    $y = $dbh->uploadImmagine($indice, "utente");
 
      ?>
      <div class="container-lg mt-2" id="card">

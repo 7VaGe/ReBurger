@@ -1,11 +1,6 @@
 INSERT INTO `utente` (`username`, `password`, `email`, `telefono`, `img`)VALUES
-('propriolui', 'password', 'paicheo@email.it', '0000000073789', '0' ),
-('pippo', 'password', 'pera12@live.it', '0000000023456', '0'),
-('pluto', 'pass', 'pluto@live.it', '000000003123', '0'),
-('paperino', 'word', 'paperino@live.it', '0000000023123', '0');
+('venditore', 'password', 'reburger@email.it', '0000000073789', 'Reburger.png' ),
 
-INSERT INTO `ordine` (`utente`, `stato`, `pagamento`)VALUES
-('3', '3', '1');
 
 INSERT INTO `categoria` (`nomecategoria`,`icona`) VALUES
 ('Panini', 'mt-3 fas fa-hamburger fa-bounce'),

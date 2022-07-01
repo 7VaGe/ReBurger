@@ -36,7 +36,7 @@
                       opacity: 1;
                     }
                   </style>
-                  <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
+                  <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img\<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
                   <div class="middle" id="wrap-btn">
                     <button onclick="window.location='profile.php'" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
                   </div>
