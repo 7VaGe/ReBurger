@@ -41,7 +41,7 @@ if(isset($_SESSION["idutente"])){
       <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
       <div class="d-flex w-100 gap-2">
         <label for="newsletter1" class="visually-hidden">Indirizzo Email</label>
-        <input id="newsletter1" type="text" class="form-control" placeholder="<?php var_dump($placeholder);echo $placeholder;?>">
+        <input id="newsletter1" type="text" class="form-control" placeholder="">
         <button id="signupNL" class="btn btn-warning" type="submit">Iscriviti</button>
       </div>
     </form>
