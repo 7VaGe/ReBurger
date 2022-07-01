@@ -1,6 +1,5 @@
 INSERT INTO `utente` (`username`, `password`, `email`, `telefono`, `img`)VALUES
-('venditore', 'password', 'reburger@email.it', '0000000073789', 'Reburger.png' ),
-
+('venditore', 'password', 'reburger@email.it', '0000000073789', 'Reburger.png' );
 
 INSERT INTO `categoria` (`nomecategoria`,`icona`) VALUES
 ('Panini', 'mt-3 fas fa-hamburger fa-bounce'),

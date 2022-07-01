@@ -71,5 +71,5 @@ $(document).ready(function($){
     filterIntegerBeetween(cvc);
     var password = document.getElementById("password");
     passwordStrenght(password);
-    
+
 });

@@ -59,17 +59,17 @@
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4"><?php echo $info["descrizione3"];?></p>
         </div>
-        <div style="max-height: 30vh;"> 
+        <div style="max-height: 30vh;">
         <p class="display-6 text-white fw-bold"> Vieni a trovarci nel nostro ristorante</p>
           <div class="container px-5">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2863.421765648172!2d12.24379561513581!3d44.1365477290594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ca4c84ba16541%3A0x6ebdadf647fd2af5!2sVia%20Martiri%20D&#39;Ungheria%2C%206%2C%2047521%20Cesena%20FC!5e0!3m2!1sit!2sit!4v1653045886880!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
         </div>
       </div>
 </div>
- 
 
-  
 
-  
+
+
+
 
 <script src="script/showhero.js"> </script>
