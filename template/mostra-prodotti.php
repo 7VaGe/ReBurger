@@ -1,39 +1,46 @@
 <div class="text-center mb-2 ">
   <span class="text-white display-4 fw-bold ">Aggiungi un prodotto o una categoria</span>
-  <div class="container d-flex justify-content-center">
-    <div class="container wrapperAddItem m-4">
-      <div class="bg-dark">
-        <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom" id="cardProdotto">
-          <div class="imgWrapper" onclick='window.location="nuovoProdotto.php"'>
-            <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
-          </div>
-          <div class="front">
-            <figcaption class="info-wrap px-3 m-3" id="front">
-              <button class=" btn btn-warning" onclick='window.location="nuovoProdotto.php"'>Aggiungi un prodotto</button>
-            </figcaption>
-          </div>
-        </figure>
-      </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 d-flex justify-content-center align-items-center">
+
+            <div class="col container wrapperAddItem m-4">
+              <div class="bg-dark">
+                <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom" id="cardProdotto">
+                  <div class="imgWrapper" onclick='window.location="nuovoProdotto.php"'>
+                    <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
+                  </div>
+                  <div class="front">
+                    <figcaption class="info-wrap px-3 m-3" id="front">
+                      <button class=" mt-5 btn btn-warning" onclick='window.location="nuovoProdotto.php"'>Aggiungi un prodotto</button>
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+            <div class=" col container wrapperAddItem mx-4 my-3 bg-dark mt-2">
+              <div class=" card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom " id="cardClasse">
+                <form class="" action="" method="post">
+                <div class="imgWrapper">
+                  <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
+                </div>
+                <div class=" form-floating d-flex justify-content-center">
+                  <input type="text" class="form-control mb-2 mx-5" id="nomeCategoria" name="nomeCategoria" required>
+                  <label class="text-dark w-75" for="nomeCategoria">Nome categoria</label>
+                </div>
+                  <button type="submit" class="btn mb-3 btn-warning">Aggiungi una categoria</button>
+                
+              </form>
+              </div>
+            </div>
     </div>
-    <div class="container wrapperAddItem m-4 bg-dark">
-      <div class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom" id="cardClasse">
-        <form class="" action="" method="post">
-        <div class="imgWrapper">
-          <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
-        </div>
-          <input type="text" class="form-control" id="nomeCategoria" name="nomeCategoria" required>
-        <div class="front">
-          <button type="submit" class="btn btn-warning">Aggiungi una categoria</button>
-        </div>
-      </form>
-      </div>
-    </div>
+    
+    
   </div>
 </div>
 
 <div class="album mb-5 bg-dark text-white">
-  <div class="text-center mb-4">
-    <span class="text-white display-4 fw-bold">Lista prodotti</span>
+  <div class="text-center  mt-5">
+    <span class="text-white display-4 fw-bold ">Lista prodotti</span>
 
     <div class="container-fluid" id="listaProdotti">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center my-3">
