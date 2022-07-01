@@ -82,3 +82,6 @@ UPDATE `venditore` SET `logo` = 'Logo2.png' WHERE `venditore`.`idvenditore` = 1;
  -- ADD KEY `data_lettura` (`data_lettura`);
 
 -- cambio di grandezza per le email degli utenti
+
+
+ALTER TABLE `prodotto` CHANGE `prezzo` `prezzo` FLOAT(3) NOT NULL DEFAULT '0';

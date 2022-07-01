@@ -110,7 +110,7 @@ class DatabaseHelper{
     public function insertProdotto($venditore, $nome, $descrizione, $categoria, $prezzo){
         $query = "INSERT INTO prodotto (venditore, nome, descrizione, categoria, prezzo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('issii',$venditore, $nome, $descrizione, $categoria, $prezzo);
+        $stmt->bind_param('isssd',$venditore, $nome, $descrizione, $categoria, $prezzo);
         $stmt->execute();
 
         return $stmt->insert_id;
@@ -144,7 +144,7 @@ class DatabaseHelper{
     public function getProdottoByCategoria($idcategory){
         $query = "SELECT * FROM prodotto WHERE categoria=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idcategory);
+        $stmt->bind_param('s',$idcategory);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -174,7 +174,7 @@ class DatabaseHelper{
     public function updateProdotto($nome, $descrizione, $categoria, $prezzo, $id){
         $query = "UPDATE prodotto SET nome=?, descrizione=?, categoria=?, prezzo=? WHERE idprodotto=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssiii',$nome, $descrizione, $categoria, $prezzo, $id);
+        $stmt->bind_param('sssdi',$nome, $descrizione, $categoria, $prezzo, $id);
         $stmt->execute();
         return true;
     }
@@ -323,7 +323,7 @@ class DatabaseHelper{
     public function setPrezzo($prezzo, $ordine){
         $query = "UPDATE ordine SET prezzo = ?+prezzo WHERE idordine=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ii',$prezzo, $ordine);
+        $stmt->bind_param('di',$prezzo, $ordine);
         $stmt->execute();
         $result = $stmt->get_result();
 
