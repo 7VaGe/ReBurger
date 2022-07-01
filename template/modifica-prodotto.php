@@ -3,11 +3,11 @@ $nameErr = $prezzoErr = $imgError = $descErr = $categErr = "";
 $controlloErr = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["nomeProdotto"])) {
+  if (empty($_POST["nome"])) {
     $nameErr = "Inserisci un nome per il prodotto da modificare ";
     $controlloErr = 1;
   } else {
-    $presente = $dbh->checkNomeProdotto($_POST["nomeProdotto"]);
+    $presente = $dbh->checkNomeProdotto($_POST["nome"]);
     if ($presente!= false) {
       $nameErr = "Questo nome del prodotto è gia in uso";
       $controlloErr = 1;
@@ -25,17 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  if (empty($_POST["desc"])) {
+  if (empty($_POST["descrizione"])) {
     $descErr = "Per favore inserisci la lista degli ingredienti o una breve descrizione";
     $controlloErr = 1;
   }
 
- $lettere = preg_match('/[A-Za-z]/', $_POST["categ"]);
-  if (empty($_POST["categ"])) {
+ $lettere = preg_match('/[A-Za-z]/', $_POST["categoria"]);
+  if (empty($_POST["categoria"])) {
     $categErr = "Definisci una categoria d'appartenenza";
     $controlloErr = 1;
   }else{
-    $presente = $dbh->checkNomeCategoria($_POST["categ"]);
+    $presente = $dbh->checkNomeCategoria($_POST["categoria"]);
     if (!$presente){
       $categErr = "Questa categoria non esiste, aggiungila prima di inserirla in una modifica";
       $controlloErr = 1;
@@ -60,8 +60,8 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 align-items-stretch g-4 "> 
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
-          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST[""]?>'/>
-            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["img"]?></h2>
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST["img"]?>'/>
+            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"]?></h2>
             <div class="text-white">
               <p class="lead">
             <cite>Hai modificato il prodotto con successo</cite>
@@ -78,9 +78,10 @@ if ($controlloErr == 0) {
 
 
 
-<?php $_POST["nomeProdotto"]=NULL; $_POST["prezzo"]=NULL; $_POST["desc"]=NULL; $_POST["img"]=NULL; $_POST["categ"]=NULL; $_FILES["immagine"]=NULL;
+<?php $_POST["nome"]=NULL; $_POST["prezzo"]=NULL; $_POST["descrizione"]=NULL; $_POST["img"]=NULL; $_POST["categoria"]=NULL; $_FILES["immagine"]=NULL;
 }
-}?>
+}
+?>
 <div class="container-fluid mt-2 w-75 p-2">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
