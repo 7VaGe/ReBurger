@@ -36,7 +36,7 @@ if ($controlloErr == 0) {
     $dbh->uploadImmagine($indice, "prodotto");
     $_FILES["immagine"]== NULL;
      ?>
-     
+
      <div class="container-lg mt-2" id="card">
       <div class="row row-cols-1 align-items-stretch g-4 "> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
@@ -54,7 +54,7 @@ if ($controlloErr == 0) {
         </div>
       </div>
   </div>
-  
+
 <?php $_POST["nomeProdotto"]=NULL; $_POST["prezzo"]=NULL; $_POST["desc"]=NULL; $_POST["img"]=NULL; $_POST["categ"]=NULL; $_FILES["immagine"]=NULL;
 }
 }?>
@@ -80,17 +80,17 @@ if ($controlloErr == 0) {
                     </div>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="text" class="form-control my-2" id="desc" name="desc" required="required"/> 
+                    <input type="text" class="form-control my-2" id="desc" name="desc" required="required"/>
                     <label class="text-dark"for="floatingInput">Descizione</label>
                     <span class="error" style="color:red"><?php echo $descErr;?></span>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="text" class="form-control my-2" id="categ" name="categ"required="required" /> 
+                    <input type="text" class="form-control my-2" id="categ" name="categ"required="required" />
                     <label class="text-dark"for="floatingInput">Categoria</label>
                     <span class="error" style="color:red"><?php echo $categErr;?></span>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="file" class="form-control my-2" id="immagine" name="immagine"required="required" /> 
+                    <input type="file" class="form-control my-2" id="immagine" name="immagine"required="required" />
                     <label class="text-dark"for="floatingInput">Immagine</label>
                   </div>
               <button class="btn btn-warning my-3" type="submit">Inserisci</button>
@@ -98,6 +98,6 @@ if ($controlloErr == 0) {
             </form>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
     <script src="script/checkinput.js"></script>

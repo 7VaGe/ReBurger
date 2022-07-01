@@ -25,6 +25,7 @@
   <div class="container-fluid text-center">
 <?php if(isset($_SESSION["venditore"])){?>
         <button type="button" class="w-50 btn btn-warning mt-4" onclick='window.location="modificaVenditore.php"' >Modifica <i class="fa-solid fa-pen-to-square"></i></button>
+        <button type="button" class="w-50 btn btn-warning mt-4" onclick='window.location="newsletter.php"' >Invia una newsletter agli iscritti <i class="fa-solid fa-pen-to-square"></i></button>
       <?php  }?>
 </div>
 <div id="aboutNews">

@@ -30,4 +30,23 @@ function inviaMail($to, $email, $subject, $message){
   }
 }
 
+function inviaNewsletter($email, $subject, $message){
+  $mail=new PHPMailer();
+  $mail-> isSMTP();
+  $mail->SMTPAuth= true;
+  $mail->SMTPSecure="tls";
+  $mail->Host="smtp.office365.com";
+  $mail->Port=587;
+
+  $mail->Username = 'giovanni.pe12@outlook.it';
+  $mail->Password = 'gabriella1212';
+
+  $mail->setFrom('giovanni.pe12@outlook.it', 'ReBurger');
+  $mail->AddAddress("$email", "Gentile cliente");
+  $mail->FromName="ReBurger";
+  $mail->Subject ="$subject";
+  $mail->AltBody ="...";
+  $mail->MsgHTML($message);
+  $mail->IsHTML(true);
+}
 ?>
