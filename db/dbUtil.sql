@@ -13,12 +13,6 @@ INSERT INTO `categoria` (`nomecategoria`,`icona`) VALUES
 ('Bevande', 'mt-3 fas fa-solid fa-champagne-glasses fa-bounce'),
 ('Dolci', 'mt-3 fa-solid fa-cookie-bite fa-bounce');
 
-INSERT INTO `categoria` (`icona`) VALUES
-('mt-3 fas fa-hamburger fa-bounce'),
-('mt-3 fas fa-solid fa-bacon fa-bounce'),
-('mt-3 fas fa-solid fa-champagne-glasses fa-bounce'),
-('mt-3 fa-solid fa-cookie-bite fa-bounce');
-
 INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `prezzo`, `img`) VALUES
 ('1', 'Hamburger', 'Soffici fette di pane farcite con delle svizzere di manzo, lattuga, salse, e pomodorini.', '1', '7.50', 'hamburger.png'),
 ('1', 'Cheeseburger', 'Soffici fette di pane farcite con delle svizzere di manzo,formaggio americano lattuga, salse, e pomodorini.', '1', '9.00', 'cheeseburger.png'),
