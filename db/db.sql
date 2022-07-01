@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`utente` (
   `idutente` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `username` VARCHAR(15) NOT NULL UNIQUE,
   `password` VARCHAR(24) NOT NULL,
-  `email` VARCHAR(30) NOT NULL UNIQUE,
+  `email` VARCHAR(45) NOT NULL UNIQUE,
   `telefono` VARCHAR(13) NULL UNIQUE,
   `matricola` VARCHAR(10),
   `img` VARCHAR(100) DEFAULT 'user.jpg',
@@ -78,6 +78,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ReBurger`.`categoria` (
   `idcategoria` INT NOT NULL AUTO_INCREMENT,
   `nomecategoria` VARCHAR(50) NOT NULL,
+  `icona`VARCHAR(50),
   PRIMARY KEY (`idcategoria`))
 ENGINE = InnoDB;
 
@@ -102,7 +103,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ReBurger`.`notizie` (
   `idnews` INT NOT NULL AUTO_INCREMENT,
   `titolo` VARCHAR(20) NOT NULL,
-  `contenuto` VARCHAR(100) NOT NULL,
+  `contenuto` VARCHAR(2048) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `immagine` VARCHAR(20),
   PRIMARY KEY (`idnews`))
 ENGINE = InnoDB;
@@ -114,20 +115,19 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`carte` (
   `idcarta` INT NOT NULL AUTO_INCREMENT,
   `titolare` VARCHAR(20) NOT NULL,
   `numero` VARCHAR(20) NOT NULL,
-  `cvc` VARCHAR(20),
+  `cvc` VARCHAR(3),
   PRIMARY KEY (`idcarta`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `ReBurger`.`messaggi`
+-- Table `ReBurger`.`newsLetter`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `messaggi` (
-  `id_mittente` int(11) NOT NULL,
-  `id_destinatario` int(11) NOT NULL,
-  `data_invio` datetime NOT NULL DEFAULT current_timestamp(),
-  `data_lettura` datetime DEFAULT NULL,
-  `msg` text NOT NULL
-) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS `ReBurger`.`newsLetter` (
+  `idletter` INT NOT NULL AUTO_INCREMENT,
+  `emailletter` VARCHAR(50) NOT NULL,
+  `usernameletter` VARCHAR(50),
+  PRIMARY KEY (`idletter`))
+ENGINE=InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
