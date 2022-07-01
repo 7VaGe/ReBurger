@@ -2,11 +2,6 @@
 $nameErr = $emailErr = $imgError = $passErr = $telErr = "";
 $controlloErr = 0;
 
-//validazione input 
-
- 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
     $nameErr = "Inserisci un Username";
@@ -28,10 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($presente!= false){
       $emailErr = "Questa email è gia usata";
       $controlloErr = 1;
-    }elseif($emailformat){
+    }else{
+      if(!$emailformat){
       $emailErr = "inserisci un indirizzo email tra le forme seguenti:<br><ul type='circle'><li>user@domain</li><li>user@domain.it</li><li>user@domain.unibo.it</li><li>user.surname@domain.it</li></ul>";
       $controlloErr = 1;
     }
+  }
   }  
   $upperCase = preg_match('@[A-Z]@',$_POST["password"]);
   $lowerCase = preg_match('@[a-z]@',$_POST["password"]);
