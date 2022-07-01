@@ -46,18 +46,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  $numeri = preg_match('/[0-9]/',$_POST["password"]);
+  $numeri = preg_match('/[0-9]/',$_POST["tel"]);
   if (empty($_POST["tel"])) {
     $telErr = "Immetti un numero di telefono";
     $controlloErr = 1;
   }else{
-    if(!$numeri || strlen($_POST["tel"])<9 || strlen($_POST["tel"])>15){
+    $presente = $dbh->checkTelUtente($_POST["tel"]);
+    if ($presente!= false){
+      $telErr = "Questp numero è gia usata";
+      $controlloErr = 1;
+    }else{
+      if(!$numeri || strlen($_POST["tel"])<9 || strlen($_POST["tel"])>15){
         $telErr = "Immetti un numero di telefono da 13 cifre, sono ammessi solo valori numerici";
         $controlloErr = 1;
       }
   }
+}
   if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
+    $dbh->uploadImmagine($indice, "utente");
 
      ?>
      <div class="container-lg mt-2" id="card">

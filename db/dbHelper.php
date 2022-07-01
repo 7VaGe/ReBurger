@@ -56,6 +56,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function checkTelUtente($tel){
+        $query = "SELECT idutente FROM utente WHERE telefono = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$tel);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getEmail($id){
         $stmt = $this->db->prepare("SELECT email FROM utente WHERE idutente=?");
         $stmt->bind_param('s', $id);
@@ -86,7 +96,7 @@ class DatabaseHelper{
 
 //funzione di controllo login
     public function checkLogin($username, $password){
-        $query = "SELECT idutente, username FROM utente WHERE username = ? AND password = ?";
+        $query = "SELECT idutente, username, email FROM utente WHERE username = ? AND password = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss',$username, $password);
         $stmt->execute();
@@ -487,14 +497,36 @@ class DatabaseHelper{
         $stmt->execute();
         return true;
     }
+
 //Funzioni sulla tabella newsLetter
-public function insertNewsLetter($idnews){
-    $query = "DELETE FROM notizie WHERE idnews=?";
-    $stmt = $this->db->prepare($query);
-    $stmt->bind_param('i',$idnews);
-    $stmt->execute();
-    return true;
-}
+
+    public function insertNewsLetter($mail){
+        $query = "INSERT INTO newsLetter(emailletter) VALUES (?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$mail);
+        $stmt->execute();
+
+        return true;
+    }
+
+    public function getNewsLetter(){
+        $query = "SELECT * FROM newsLetter";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkNewsLetter($mail){
+        $query = "SELECT idletter FROM newsletter WHERE emailletter = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$mail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc();
+    }
 
 }
 

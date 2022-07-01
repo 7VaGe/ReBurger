@@ -11,6 +11,8 @@ function registerLoggedUser($user){
 //dalla query nel dbhelper in checklogin.
 $_SESSION["idutente"] = $user["idutente"];
 $_SESSION["username"] = $user["username"];
+$_SESSION["mail"] = $user["email"];
+
 if (isset($_SESSION["sceltaCookie"])){
   if ($_SESSION["sceltaCookie"] == "accettato") {
     setCookie("username", $_SESSION["username"], time() + 3600);
@@ -27,5 +29,6 @@ function logoutUser(){ //da controllare bene.
     $_SESSION["username"] = null;
     $_SESSION["ordine"] = null;
     $_SESSION["venditore"] = null;
+    $_SESSION["mail"] = null;
 }
 ?>

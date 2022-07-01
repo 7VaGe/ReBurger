@@ -15,8 +15,7 @@ if(isset($_SESSION["idutente"])){
 
 }else{
   $placeholder = "Inserisci indirizzo email";
-}
-?>
+}?>
 <footer class="py-5 m-4 text-center text-white">
   <div class="row">
     <?php foreach($colFooter as $num => $titolo):?> <!-- Cicla i titoli-->
@@ -36,16 +35,24 @@ if(isset($_SESSION["idutente"])){
     </div>
   <?php endforeach ;?>
   <div class="col-12 py-4">
-    <form action="" id="form1" class="signupform" name="signupform">
-      <h5>Iscriviti alla nostra newsletter</h5>
-      <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
-      <div class="d-flex w-100 gap-2">
-        <label for="newsletter1" class="visually-hidden">Indirizzo Email</label>
-        <input id="newsletter1" type="text" class="form-control" placeholder="">
-        <button id="signupNL" class="btn btn-warning" type="submit">Iscriviti</button>
-      </div>
-    </form>
+    <?php $templateParams["newsletter"] = $dbh->checkNewsLetter($_SESSION["mail"]);
+    if($templateParams["newsletter"]==NULL){ ?>
+    <h5>Iscriviti alla nostra newsletter</h5>
+    <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
+    <div class="d-flex w-100 gap-2">
+      <label for="newsletter" class="visually-hidden">Indirizzo Email</label>
+      <input id="newsletter" type="text" class="form-control" value="<?php if(isset($_SESSION["mail"])){echo $_SESSION["mail"];}?>">
+      <button class="btn btn-warning" onclick="insertInNewsLetter()">Iscriviti</button>
+    </div>
+  <?php }else {
+    ?><h5>Grazie per essere iscritto alla nostra newsletter</h5>
+    <p>Riceverai notizie e offerte non appena saranno disponibili.</p>
+    <div class="d-flex w-100 gap-2">
+        
+      </div><?php
+  } ?>
   </div>
+
   <div class="col-12 d-block py-1 my-4 border-top">
     <p class="text-center text-muted"><?php echo createCopyright()?> Società, Inc. Tutti i diritti riservati.</p>
   </div>
@@ -59,3 +66,16 @@ if(isset($_SESSION["idutente"])){
   </div>
 </div>
 </footer>
+
+<script>
+function insertInNewsLetter(){
+    var http = new XMLHttpRequest();
+    var val = document.getElementById("newsletter").value;
+    document.getElementById("newsletter").value = " ";
+    http.open("get", "insertInCart.php?m="+val, true);
+    http.send();
+    http.onload = function() {
+        alert(http.responseText);
+    }
+}
+</script>

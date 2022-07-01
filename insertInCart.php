@@ -40,4 +40,14 @@ if (isset($_GET["s"])) {
   $spesa = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
   echo "Prezzo totale: € ",$spesa["prezzo"];
 }
+
+if (isset($_GET["m"])) {
+  $presenza = $dbh->checkNewsLetter($_GET["m"]);
+  if ($presenza==NULL) {
+    $dbh->insertNewsLetter($_GET["m"]);
+    echo "La mail ",$_GET["m"]," è stata aggiuta alla newsletter";
+  }else{
+    echo "La mail ",$_GET["m"]," è già iscritta alla newsletter";
+  }
+}
 ?>
