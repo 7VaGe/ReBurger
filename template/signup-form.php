@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $controlloErr = 1;
     }
   }
+
   $numeri = preg_match('/[0-9]/',$_POST["password"]);
   if (empty($_POST["tel"])) {
     $telErr = "Immetti un numero di telefono";
@@ -53,18 +54,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(!$numeri || strlen($_POST["tel"])<9 || strlen($_POST["tel"])>15){
         $telErr = "Immetti un numero di telefono da 13 cifre, sono ammessi solo valori numerici";
         $controlloErr = 1;
+      }
   }
-  }
-if ($controlloErr == 0) {
+  if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
-    $dbh->uploadImmagine($indice, "utente");
-    $_FILES["immagine"]= NULL;
+    $y = $dbh->uploadImmagine($indice, "utente");
+
      ?>
      <div class="container-lg mt-2" id="card">
       <div class="row row-cols-1 align-items-stretch g-4 ">
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
-          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php if($_FILES["immagine"]["name"]==NULL){
+            echo "user.jpg";
+          }else{
+            echo $_FILES["immagine"]["name"];
+          }?>' style="width: 200px; height:200px;"/>
             <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"] ?></h2>
             <div class="text-white">
               <p class="lead">
@@ -78,9 +83,10 @@ if ($controlloErr == 0) {
         </div>
       </div>
   </div>
-<?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL;
+<?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL; $_FILES["immagine"]= NULL;
 }
-}?>
+}
+?>
 <div class="container-fluid mt-2 w-25 p-2" id="SignUpContainer">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
