@@ -30,18 +30,18 @@ INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `prezzo
 
 
 INSERT INTO `notizie` (`titolo`, `contenuto`, `immagine`)VALUES
-('nuovo', 'prova qualcosa di nuovo', 'img/hamburger.png'),
-('non troppo', 'mangiare fa diventare ciccione', 'img/hamburger.png');
+('nuovo', 'prova qualcosa di nuovo', 'hamburger.png'),
+('non troppo', '', 'hamburger.png');
 
 UPDATE `notizie` SET `titolo` = 'Inaugurazione 2022' WHERE `notizie`.`idnews` =1;
 UPDATE `notizie` SET `contenuto` = '<b>9 Giugno 2022</b> Non perderti l’evento più atteso dell’anno! <br>
 Inaugurazione del nostro nuovo ristorante in <b>via Martiri d&#180;Ungheria 6</b> a Cesena, tutti gli studenti riceveranno un gadget omaggio e un coupon utilizzabile per uno sconto sui loro primi 2 ordini.<br>
 A tutti i professori e personale universitario abbiamo riservato una magnifica sorpresa, che verrà svelata il giorno stesso dell’inaugurazione, non perdete questa fantastica giornata, vi aspettiamo numerosi! ' WHERE `notizie`.`idnews` =1;
-UPDATE `notizie` SET `immagine` = 'img/OpenBuffet.jpg' WHERE `notizie`.`idnews` = 1;
+UPDATE `notizie` SET `immagine` = 'OpenBuffet.jpg' WHERE `notizie`.`idnews` = 1;
 
 UPDATE `notizie` SET `titolo` = 'Panino del mese' WHERE `notizie`.`idnews` = 2;
 UPDATE `notizie` SET `contenuto` = '<b>Giugno</b><br>\r\nPer questo mese abbiamo preparato per voi un nuovo squisito panino:<br>\r\n<center><cite><b>Ganimede</b> </cite></center><br>\r\n<cite>Partiamo con pane ricavato da zucca e grano duro con dei semi di papavero all &#180;interno, aggiungiamo una base di burrata e crema di pistacchio, mortadella IGP delle campagne bolognesi, condiamo con dei pinoli tostati ed infine del buonissimo miele d’acacia e pomodori secchi.</cite>' WHERE `notizie`.`idnews` = 2;
-UPDATE `notizie` SET `immagine` = 'img/PDMGiugno.jpg' WHERE `notizie`.`idnews` = 2;
+UPDATE `notizie` SET `immagine` = 'PDMGiugno.jpg' WHERE `notizie`.`idnews` = 2;
 
 INSERT INTO `ordine` (`idordine`, `utente`, `data_ordine`, `ora_ordine`, `stato`, `pagamento`) VALUES
 ('4', '7', '2022-05-03', '15:24:23', '1', '1');
