@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 <?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL; $_FILES["immagine"]= NULL;
 }
-}
+}else {
 ?>
 <div class="container-fluid mt-2 w-25 p-2" id="SignUpContainer">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
@@ -140,3 +140,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
 <script src="script/showpwd.js"></script>
+<?php } ?>

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controlloErr = 1;
   } else {
     $presente = $dbh->checkNomeProdotto($_POST["nome"]);
-    if ($presente!= false) {
+    if ($presente!= false && $templateParams["prodotto"]["nome"] != $_POST["nome"]) {
       $nameErr = "Questo nome del prodotto è gia in uso";
       $controlloErr = 1;
     }
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $controlloErr = 1;
   }else{
     $presente = $dbh->checkNomeCategoria($_POST["categoria"]);
-    if (!$presente){
+    if ($presente == NULL){
       $categErr = "Questa categoria non esiste, aggiungila prima di inserirla in una modifica";
       $controlloErr = 1;
     }else{
@@ -57,11 +57,15 @@ if ($controlloErr == 0) {
 ?>
 
 <div class="container-lg mt-2" id="card">
-      <div class="row row-cols-1 align-items-stretch g-4 "> 
+      <div class="row row-cols-1 align-items-stretch g-4 ">
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
-          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST["img"]?>'/>
-            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"]?></h2>
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php if ($_FILES["immagine"]["name"]==NULL) {
+            echo $templateParams["prodotto"]["img"];
+          }else{
+            echo $_FILES["immagine"]["name"];
+          } ?>' style="width:250px; height:250px;"/>
+            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["nome"]?></h2>
             <div class="text-white">
               <p class="lead">
             <cite>Hai modificato il prodotto con successo</cite>
@@ -78,16 +82,16 @@ if ($controlloErr == 0) {
 
 
 
-<?php $_POST["nome"]=NULL; $_POST["prezzo"]=NULL; $_POST["descrizione"]=NULL; $_POST["img"]=NULL; $_POST["categoria"]=NULL; $_FILES["immagine"]=NULL;
+<?php $_POST["nome"] = $_POST["prezzo"] = $_POST["descrizione"] = $_POST["img"] = $_POST["categoria"] = $_FILES["immagine"] = NULL;
 }
-}
+}else {
 ?>
 <div class="container-fluid mt-2 w-75 p-2">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
               <div class="container text-center p-1 ">
                 <form action="" method="post" enctype="multipart/form-data">
-                <img class="mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST["img"];?>'/>
+                <img class="mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["prodotto"]["img"];?>' style="width:250px; height:250px;"/>
                   <h1 class=" my-4 display-5 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
                   <div class="container-lg p-1">
                     <div class="form-floating">
@@ -96,19 +100,20 @@ if ($controlloErr == 0) {
                     <div class="form-floating ">
                         <input type="text" class="form-control my-2" id="nome" value="<?php echo $templateParams["prodotto"]["nome"] ?>" name="nome" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
                         <label class="text-dark" for="floatingInput">Nome</label>
+                        <span class="error d-block text-start text-danger"><?php echo $nameErr;?></span>
                     </div>
                     <div class="form-floating ">
-                        <input type="text" class="form-control my-2" id="descrizione" value="<?php echo $templateParams["prodotto"]["descrizione"] ?>" name="descrizione" /> 
+                        <input type="text" class="form-control my-2" id="descrizione" value="<?php echo $templateParams["prodotto"]["descrizione"] ?>" name="descrizione" />
                         <label class="text-dark" for="floatingInput">Ingredienti</label>
                         <span class="error d-block text-start text-danger"><?php echo $descErr;?></span>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" /> 
+                        <input type="text" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" />
                         <label class="text-dark" for="floatingInput">Categoria</label>
                         <span class="error d-block text-start text-danger"><?php echo $categErr;?></span>
                     </div>
                     <div class="form-floating ">
-                        <input type="text" class="form-control my-2" id="prezzo" value="<?php echo $templateParams["prodotto"]["prezzo"] ?>" name="prezzo" /> 
+                        <input type="text" class="form-control my-2" id="prezzo" value="<?php echo $templateParams["prodotto"]["prezzo"] ?>" name="prezzo" />
                         <label class="text-dark" for="floatingInput">Prezzo</label>
                         <span class="error d-block text-start text-danger"><?php echo $prezzoErr;?></span>
                     </div>
@@ -121,12 +126,12 @@ if ($controlloErr == 0) {
                   </div>
                 </form>
                 <button class="my-1 btn btn-md btn-danger" value="<?php echo $templateParams["prodotto"]["idprodotto"]?>" onclick="eliminaProdotto(this.value);">Rimuovi <i class="fa-solid fa-trash-can"></i></button>
-                </div>  
-              </div>  
-            </div>  
+                </div>
+              </div>
+            </div>
           </div>
 
-
+<?php } ?>
 
 <script>
 function eliminaProdotto(val) {

@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ReBurger`.`ordine` (
   `idordine` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `utente` INT,
-  `prezzo` INT DEFAULT 0,
+  `prezzo` DOUBLE(5,2) DEFAULT 0,
   `data_ordine` DATE DEFAULT current_timestamp(),
   `ora_ordine` TIME DEFAULT current_timestamp(),
   `stato` INT(1) DEFAULT 0, -- diamo qualche valore con una cifra per lo stato dell'ordine, a seconda del valore compare una stringa adeguata.
@@ -91,8 +91,8 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`prodotto` (
   `venditore` INT NOT NULL,
   `nome` VARCHAR(20) NOT NULL UNIQUE,
   `descrizione` VARCHAR(512) NOT NULL,
-  `categoria` INT NOT NULL,
-  `prezzo` INT(3) NOT NULL DEFAULT 0,
+  `categoria` VARCHAR(25) NOT NULL,
+  `prezzo` DOUBLE(5, 2) NOT NULL DEFAULT 0,
 	`img` VARCHAR(100),
   PRIMARY KEY (`idprodotto`))
 ENGINE = InnoDB;
@@ -125,7 +125,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ReBurger`.`newsLetter` (
   `idletter` INT NOT NULL AUTO_INCREMENT,
   `emailletter` VARCHAR(50) NOT NULL,
-  `usernameletter` VARCHAR(50),
   PRIMARY KEY (`idletter`))
 ENGINE=InnoDB;
 

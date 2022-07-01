@@ -56,32 +56,5 @@ UPDATE `venditore` SET `descrizione2` = '\"Gli ingredienti scelti con cura, veng
 
 UPDATE `venditore` SET `descrizione3` = '\"Siamo due studenti che nel tempo libero hanno deciso di intraprendere una carriera parallela a quella universitaria, aprendo così un’attività di food delivery; Ci siamo presi qualche mese per effettuare una ricerca sulle migliori combinazioni per ogni nostro prodotto presente nel menù, cerchiamo ad oggi di portare un servizio che altri studenti come noi,ne usufruiscono quotidianamente.<br> Sappiamo benissimo la svogliatezza e la noncuranza che si hanno da fuorisede, quindi percependo questa necessità, perché non creare un qualcosa che favorisca il comfort adeguato? Potrai far affidamento su di noi, per tutte le tue voglie notturne; per le tue feste di laurea; per ogni evento in casa; siamo a completa disposizione, non esitare nell’ordinare! <br>( e se avanza invitateci pure ;) )\"' WHERE `venditore`.`idvenditore` = 1;
 
-
---logo e immagini del venditore--
 UPDATE `venditore` SET `img` = 'fotoLocale.jpg' WHERE `venditore`.`idvenditore` = 1;
 UPDATE `venditore` SET `logo` = 'Logo2.png' WHERE `venditore`.`idvenditore` = 1;
-
--- aggiungere icona--
-
-
---aggiornamento notizie--
-
-
-
-
---categorie--
-
-
--- modifiche prodotti
-
-
--- messaggi inserimento chiavi
-
---ALTER TABLE `messaggi`
- -- ADD PRIMARY KEY (`id_mittente`,`id_destinatario`,`data_invio`),
- -- ADD KEY `data_lettura` (`data_lettura`);
-
--- cambio di grandezza per le email degli utenti
-
-
-ALTER TABLE `prodotto` CHANGE `prezzo` `prezzo` FLOAT(3) NOT NULL DEFAULT '0';
