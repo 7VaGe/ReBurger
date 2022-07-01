@@ -1,8 +1,87 @@
+<?php
+$nameErr = $prezzoErr = $imgError = $descErr = $categErr = "";
+$controlloErr = 0;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["nomeProdotto"])) {
+    $nameErr = "Inserisci un nome per il prodotto da modificare ";
+    $controlloErr = 1;
+  } else {
+    $presente = $dbh->checkNomeProdotto($_POST["nomeProdotto"]);
+    if ($presente!= false) {
+      $nameErr = "Questo nome del prodotto è gia in uso";
+      $controlloErr = 1;
+    }
+  }
+
+  $numeri = preg_match('/^([0-9]+)|((([1-9][0-9]*)|([0-9]))([.,])[0-9]{1,2})$/',$_POST["prezzo"]);
+  if (empty($_POST["prezzo"])) {
+    $prezzoErr = "Inserisci il prezzo del prodotto";
+    $controlloErr = 1;
+  }else {
+    if(!$numeri){
+      $prezzoErr="Il formato del prezzo non corrisponde a quelli consentiti, inseriscilo nuovamente";
+      $controlloErr = 1;
+    }
+  }
+
+  if (empty($_POST["desc"])) {
+    $descErr = "Per favore inserisci la lista degli ingredienti o una breve descrizione";
+    $controlloErr = 1;
+  }
+
+ $lettere = preg_match('/[A-Za-z]/', $_POST["categ"]);
+  if (empty($_POST["categ"])) {
+    $categErr = "Definisci una categoria d'appartenenza";
+    $controlloErr = 1;
+  }else{
+    $presente = $dbh->checkNomeCategoria($_POST["categ"]);
+    if ($presente == false){
+      $categErr = "Questa categoria non esiste, aggiungila prima di inserirla in una modifica";
+      $controlloErr = 1;
+    }else(!$lettere){
+      $categErr ="Sono consentiti solamente caratteri A-Z maiuscoli e minuscoli";
+      $controlloErr =1;
+    }
+  }
+
+if ($controlloErr == 0) {
+    $_POST["venditore"]=1;
+    $indice = $dbh->insertProdotto($_POST["venditore"], str_replace(' ', '_', $_POST["nomeProdotto"]), $_POST["desc"], $_POST["categ"], $_POST["prezzo"]);
+    $dbh->uploadImmagine($indice, "prodotto");
+    $_FILES["immagine"]== NULL;
+?>
+
+<div class="container-lg mt-2" id="card">
+      <div class="row row-cols-1 align-items-stretch g-4 "> 
+        <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
+          <div class="d-flex flex-column text-center pb-3  text-white">
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST[""]?>'/>
+            <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["img"]?></h2>
+            <div class="text-white">
+              <p class="lead">
+            <cite>Hai modificato il prodotto con successo</cite>
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
+            <button type="button" class="btn btn-warning" onclick='window.location="listaProdotti.php"'>Torna alla lista dei prodotti</button>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+<?php $_POST["nomeProdotto"]=NULL; $_POST["prezzo"]=NULL; $_POST["desc"]=NULL; $_POST["img"]=NULL; $_POST["categ"]=NULL; $_FILES["immagine"]=NULL;
+}
+}?>
 <div class="container-fluid mt-2 w-75 p-2">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
               <div class="container text-center p-1 ">
                 <form action="listaProdotti.php" method="post" enctype="multipart/form-data">
+                <img class="mx-auto d-block my-2 img-fluid" src='img/<?php echo $_POST["img"];?>'/>
                   <h1 class=" my-4 display-5 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
                   <div class="container-lg p-1">
                     <div class="form-floating d-flex">
@@ -17,7 +96,7 @@
                         <label class="text-dark" for="floatingInput">Ingredienti</label>
                     </div>
                     <div class="form-floating d-flex">
-                        <input type="number" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" /> 
+                        <input type="text" class="form-control my-2" id="categoria" value="<?php echo $templateParams["prodotto"]["categoria"] ?>" name="categoria" /> 
                         <label class="text-dark" for="floatingInput">Categoria</label>
                     </div>
                     <div class="form-floating d-flex">
