@@ -1,6 +1,12 @@
 <?php
 $nameErr = $emailErr = $imgError = $passErr = $telErr = "";
 $controlloErr = 0;
+
+//validazione input 
+
+ 
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
     $nameErr = "Inserisci un Username";
@@ -13,25 +19,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
+  $emailformat = preg_match('@[^@]+@[^@]@', $_POST["email"]);
+  if (empty($_POST["email"])){
+    $emailErr = "Inserisci una email";
     $controlloErr = 1;
-  } else {
-    $presente = $dbh->checkEmailUtente($_POST["email"]);
+  }else{
+     $presente = $dbh->checkEmailUtente($_POST["email"]);
     if ($presente!= false){
-      $emailErr = "Questa email è gia usato";
+      $emailErr = "Questa email è gia usata";
+      $controlloErr = 1;
+    }elseif($emailformat){
+      $emailErr = "inserisci un indirizzo email tra le forme seguenti:<br><ul type='circle'><li>user@domain</li><li>user@domain.it</li><li>user@domain.unibo.it</li><li>user.surname@domain.it</li></ul>";
       $controlloErr = 1;
     }
-  }
-
+  }  
+  $upperCase = preg_match('@[A-Z]@',$_POST["password"]);
+  $lowerCase = preg_match('@[a-z]@',$_POST["password"]);
+  $numeri = preg_match('@[0-9]@',$_POST["password"]);
+  $carSpeciali = preg_match('@[^\w]@',$_POST["password"]);
   if (empty($_POST["password"])) {
     $passErr = "Immetti una password";
     $controlloErr = 1;
+    }else{
+      if(!$upperCase || !$lowerCase || !$numeri || $carSpeciali || strlen($_POST["password"]) < 8){
+       $passErr= "Inserisci almeno 8 caratteri, di cui:<br><ul type='circle'><li>Una lettera maiuscola</li><li>Un carattere speciale</li><li>Un numero</li></ul>";
+       $controlloErr = 1;
+    } 
   }
 
   if (empty($_POST["tel"])) {
     $telErr = "Immetti un numero di telefono";
     $controlloErr = 1;
+  }else{
+    if(!$numeri || strlen($_POST["tel"])!= 13){
+        $telErr = "Immetti un numero di telefono da 13 cifre, sono ammessi solo valori numerici";
+        $controlloErr = 1;
+  }
   }
 if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
@@ -55,9 +78,6 @@ if ($controlloErr == 0) {
         </div>
       </div>
   </div>
-    
-    
-   
 <?php $_POST["username"]=NULL; $_POST["password"]=NULL; $_POST["email"]=NULL; $_POST["tel"]=NULL;
 }
 }?>
@@ -65,30 +85,30 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
             <div class="text-center p-1 ">
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="" method="post" enctype="multipart/form-data " id="formSignUp">
                 <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
                 <div class="container-lg">
-                  <div class="form-floating d-flex justify-content-center">
+                  <div class="form-floating ">
                       <input type="text" class="form-control my-2" id="username" name="username" required="required"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
                       <label class="text-dark" for="floatingInput">Username</label>
-                      <span class="error" style="color:red"><?php echo $nameErr;?></span>
+                      <span class="error d-block text-start text-danger"><?php echo $nameErr;?></span>
                   </div>
-                  <div class="form-floating d-flex justify-content-center">
-                      <input type="password" class="form-control my-2" id="password" name="password"required="required" /> 
+                  <div class="form-floating ">
+                      <input type="password" class="form-control my-2" id="password" name="password" required="required" /> 
                       <label class="text-dark" for="floatingInput">Password</label>
-                      <span class="error" style="color:red"><?php echo $passErr;?></span>
+                      <span class="error d-block text-start text-danger" ><?php echo $passErr;?></span>
                   </div>
-                  <div class="form-floating d-flex justify-content-center">
+                  <div class="form-floating ">
                       <input type="email" class="form-control my-2" id="email" name="email" required="required"/> 
                       <label class="text-dark" for="floatingInput">Email</label>
-                      <span class="error" style="color:red"><?php echo $emailErr;?></span>
+                      <span class="error d-block text-start text-danger"><?php echo $emailErr;?></span>
                   </div>
-                  <div class="form-floating d-flex justify-content-center">
-                      <input type="tel" class="form-control my-2" id="tel" name="tel" required="required" />
+                  <div class="form-floating ">
+                      <input type="tel" class="form-control my-2" id="tel" name="tel" required="required" minlenght="13" maxlenght="13"  />
                       <label class="text-dark" for="floatingInput">Telefono</label>
-                      <span class="error" style="color:red"><?php echo $telErr;?></span>
+                      <span class="error d-block text-start text-danger"><?php echo $telErr;?></span>
                   </div>
-                  <div class="form-floating d-flex justify-content-center">
+                  <div class="form-floating ">
                       <input type="file" class="form-control my-2" id="immagine" name="immagine" /> 
                       <label class="text-dark" for="floatingInput">Immagine</label>
                     </div>
@@ -107,6 +127,5 @@ if ($controlloErr == 0) {
           </div>
         </div>
       </div>
-            
-
 <script src="script/showpwd.js"></script>
+

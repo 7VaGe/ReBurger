@@ -56,11 +56,20 @@ $(document).ready(function($){
         return /^-?\d*[.,]?\d{0,2}$/.test(value); }, "Inserisci il valore seguito da al massimo 2 cifre dopo la virgola.");
         };
 
+    function passwordStrenght(element){
+      $(element).inputFilter(function(value){
+          return value.length >=8 && /\d/.test(value) && /([a-z].*[A-Z])|([A-Z].*[a-z])/i.test(value)  && /([!,%,&,@,#,$,^,*,?,_,~])/.test(value)}, 
+          "Inserisci almeno 8 caratteri, di cui:<br><ul type='circle'><li>Una lettera maiuscola</li><li>Un carattere speciale</li><li>Un numero</li></ul>")
+    };
+
     var titolare = document.getElementById("titolare");
     filterOnlyCharacters(titolare);
+
     var numero = document.getElementById("numero");
     filterInteger(numero);
     var cvc = document.getElementById("cvc");
     filterIntegerBeetween(cvc);
+    var password = document.getElementById("password");
+    passwordStrenght(password);
     
 });

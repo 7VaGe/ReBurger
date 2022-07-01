@@ -68,6 +68,18 @@ footer, footer.py-5>div.row{
     border-radius: 0;
  }
 
+ label.error{
+  color:red;
+  font-size: 1rem;
+  display: block;
+  margin-top: 5px;
+ }
+ input.error {
+  border: 1px red;
+  font-weight: 300;
+  color: red;
+}
+
  #topBtn {
     display: none;
     bottom: 20px; /* Place the button at the bottom of the page */
