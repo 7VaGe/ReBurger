@@ -64,6 +64,7 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 align-items-stretch g-4 "> 
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
             <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"] ?></h2>
             <div class="text-white">
               <p class="lead">
@@ -88,29 +89,26 @@ if ($controlloErr == 0) {
                 <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
                 <div class="container-lg">
                   <div class="form-floating ">
-                      <input type="text" class="form-control my-2" id="username" name="username" required="required"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+                      <input type="text" class="form-control my-2" id="username" name="username"  value="<?php if(isset($_POST["username"])){echo $_POST["username"];}?>"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
                       <label class="text-dark" for="floatingInput">Username</label>
                       <span class="error d-block text-start text-danger"><?php echo $nameErr;?></span>
                   </div>
                   <div class="form-floating ">
-                      <input type="password" class="form-control my-2" id="password" name="password" required="required" /> 
+                      <input type="password" class="form-control my-2" id="password" name="password"  value="<?php if(isset($_POST["password"])){echo $_POST["password"];}?>"/> 
                       <label class="text-dark" for="floatingInput">Password</label>
                       <span class="error d-block text-start text-danger" ><?php echo $passErr;?></span>
                   </div>
                   <div class="form-floating ">
-                      <input type="email" class="form-control my-2" id="email" name="email" required="required" placeholder="<?php 
-                      if(isset($_POST["email"]){
-                        return echo $_POST["email"];
-                        }?>"/> 
+                      <input type="email" class="form-control my-2" id="email" name="email" value="<?php if(isset($_POST["email"])){echo $_POST["email"];}?>"/> 
                       <label class="text-dark" for="floatingInput">Email</label>
                       <span class="error d-block text-start text-danger"><?php echo $emailErr;?></span>
                   </div>
                   <div class="form-floating ">
-                      <input type="tel" class="form-control my-2" id="tel" name="tel" required="required" minlenght="13" maxlenght="13"  />
+                      <input type="tel" class="form-control my-2" id="tel" name="tel" minlenght="13" maxlenght="13"  value="<?php if(isset($_POST["tel"])){echo $_POST["tel"];}?>" />
                       <label class="text-dark" for="floatingInput">Telefono</label>
                       <span class="error d-block text-start text-danger"><?php echo $telErr;?></span>
                   </div>
-                  <div class="form-floating ">
+                  <div class="form-floating">
                       <input type="file" class="form-control my-2" id="immagine" name="immagine" /> 
                       <label class="text-dark" for="floatingInput">Immagine</label>
                     </div>
