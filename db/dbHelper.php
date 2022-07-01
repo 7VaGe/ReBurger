@@ -58,8 +58,8 @@ class DatabaseHelper{
 
     public function getEmail($id){
         $stmt = $this->db->prepare("SELECT email FROM utente WHERE idutente=?");
-        $stmt->execute();
         $stmt->bind_param('s', $id);
+        $stmt->execute();
         $result = $stmt->get_result();
 
         return $result;
@@ -487,24 +487,15 @@ class DatabaseHelper{
         $stmt->execute();
         return true;
     }
-  /*  public function getOrdiniByDate($data){
-        $stmt = $this->db->prepare("SELECT * FROM ordine WHERE data_ordine=?");
-        $stmt->bind_param('i',$data);
-        $stmt->execute();
-        $result = $stmt->get_result();
+//Funzioni sulla tabella newsLetter
+public function insertNewsLetter($idnews){
+    $query = "DELETE FROM notizie WHERE idnews=?";
+    $stmt = $this->db->prepare($query);
+    $stmt->bind_param('i',$idnews);
+    $stmt->execute();
+    return true;
+}
 
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function getOrdiniByPrezzo($prezzo){
-          $stmt = $this->db->prepare("SELECT * FROM ordine WHERE costo=?");
-          $stmt->bind_param('i',$prezzo);
-          $stmt->execute();
-          $result = $stmt->get_result();
-
-          return $result->fetch_all(MYSQLI_ASSOC);
-      }
-*/
 }
 
 ?>
