@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  $emailformat = preg_match('@[^@]+@[^@]@', $_POST["email"]);
+  $emailformat = preg_match('/[a-zA-Z0-9_\.]+@[a-zA-Z0-9-]+\.[a-zA-Z]{0,4}/', $_POST["email"]);
   if (empty($_POST["email"])){
     $emailErr = "Inserisci una email";
     $controlloErr = 1;
@@ -25,25 +25,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $controlloErr = 1;
     }else{
       if(!$emailformat){
-      $emailErr = "inserisci un indirizzo email tra le forme seguenti:<br><ul type='circle'><li>user@domain</li><li>user@domain.it</li><li>user@domain.unibo.it</li><li>user.surname@domain.it</li></ul>";
+      $emailErr = "inserisci un indirizzo email valido";
       $controlloErr = 1;
     }
   }
-  }  
-  $upperCase = preg_match('@[A-Z]@',$_POST["password"]);
-  $lowerCase = preg_match('@[a-z]@',$_POST["password"]);
-  $numeri = preg_match('@[0-9]@',$_POST["password"]);
-  $carSpeciali = preg_match('@[^\w]@',$_POST["password"]);
+  } 
+  
+  $saltPassword = preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/', $_POST["password"]);
+  /*$upperCase = preg_match('/[A-Z]/',$_POST["password"]);
+  $lowerCase = preg_match('/[a-z]/',$_POST["password"]);
+  $carSpeciali = preg_match('/[^\w]/',$_POST["password"]);*/
+
   if (empty($_POST["password"])) {
     $passErr = "Immetti una password";
     $controlloErr = 1;
     }else{
-      if(!$upperCase || !$lowerCase || !$numeri || $carSpeciali || strlen($_POST["password"]) < 8){
+      if(!$saltPassword){
        $passErr= "Inserisci almeno 8 caratteri, di cui:<br><ul type='circle'><li>Una lettera maiuscola</li><li>Un carattere speciale</li><li>Un numero</li></ul>";
        $controlloErr = 1;
     } 
   }
-
+  $numeri = preg_match('/[0-9]/',$_POST["password"]);
   if (empty($_POST["tel"])) {
     $telErr = "Immetti un numero di telefono";
     $controlloErr = 1;
@@ -82,7 +84,7 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
             <div class="text-center p-1 ">
-              <form action="" method="post" enctype="multipart/form-data " id="formSignUp">
+              <form action="" method="post" enctype="multipart/form-data" id="formSignUp">
                 <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Registrati compilando i seguenti campi:</h1>
                 <div class="container-lg">
                   <div class="form-floating ">
@@ -96,7 +98,10 @@ if ($controlloErr == 0) {
                       <span class="error d-block text-start text-danger" ><?php echo $passErr;?></span>
                   </div>
                   <div class="form-floating ">
-                      <input type="email" class="form-control my-2" id="email" name="email" required="required"/> 
+                      <input type="email" class="form-control my-2" id="email" name="email" required="required" placeholder="<?php 
+                      if(isset($_POST["email"]){
+                        return echo $_POST["email"];
+                        }?>"/> 
                       <label class="text-dark" for="floatingInput">Email</label>
                       <span class="error d-block text-start text-danger"><?php echo $emailErr;?></span>
                   </div>
