@@ -60,7 +60,7 @@ if ($controlloErr == 0) {
 <div class="container-lg mt-2" id="card">
       <div class="row row-cols-1 align-items-stretch g-4 ">
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
-          <div class="d-flex flex-column text-center pb-3  text-white">
+          <div class="d-flex flex-column text-center pb-3 text-white">
           <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php if ($_FILES["immagine"]["name"]==NULL) {
             echo $templateParams["prodotto"]["img"];
           }else{
