@@ -91,7 +91,7 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
               <div class="container text-center p-1 ">
-                <form action="modificaProdotto.php" method="post" enctype="multipart/form-data">
+                <form action="modificaProdotto.php?id=<?php echo $_GET["id"]; ?>" method="post" enctype="multipart/form-data">
                 <img class="mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["prodotto"]["img"];?>' style="width:250px; height:250px;"/>
                   <h1 class=" my-4 display-5 mb-3 text-center text-white fw-normal">Modifica i campi del prodotto:</h1>
                   <div class="container-lg p-1">

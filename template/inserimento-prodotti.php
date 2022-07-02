@@ -68,30 +68,30 @@ if ($controlloErr == 0) {
               <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Compila i seguenti campi per aggiungere un prodotto:</h1>
               <div class="container-lg">
                 <div class="form-floating d-flex  justify-content-centerv">
-                    <input type="text" class="form-control my-2" id="nomeProdotto" name="nomeProdotto"required="required" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-                    <label class="text-dark"for="floatingInput">Nome</label>
+                    <input type="text" class="form-control my-2" id="nomeProdotto" name="nomeProdotto" /> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+                    <label class="text-dark">Nome</label>
                     <span class="error" style="color:red"><?php echo $nameErr;?></span>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="text" class="form-control my-2" id="prezzo" name="prezzo"required="required" />
-                    <label class="text-dark"for="floatingInput">Prezzo</label>
+                    <input type="text" class="form-control my-2" id="prezzo" name="prezzo" />
+                    <label class="text-dark">Prezzo</label>
                     <div>
                        <span class="error" style="color:red"><?php echo $prezzoErr;?></span>
                     </div>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="text" class="form-control my-2" id="desc" name="desc" required="required"/>
-                    <label class="text-dark"for="floatingInput">Descizione</label>
+                    <input type="text" class="form-control my-2" id="desc" name="desc" />
+                    <label class="text-dark">Descizione</label>
                     <span class="error" style="color:red"><?php echo $descErr;?></span>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="text" class="form-control my-2" id="categ" name="categ"required="required" />
-                    <label class="text-dark"for="floatingInput">Categoria</label>
+                    <input type="text" class="form-control my-2" id="categ" name="categ" />
+                    <label class="text-dark">Categoria</label>
                     <span class="error" style="color:red"><?php echo $categErr;?></span>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
-                    <input type="file" class="form-control my-2" id="immagine" name="immagine"required="required" />
-                    <label class="text-dark"for="floatingInput">Immagine</label>
+                    <input type="file" class="form-control my-2" id="immagine" name="immagine" />
+                    <label class="text-dark">Immagine</label>
                   </div>
               <button class="btn btn-warning my-3" type="submit">Inserisci</button>
               </div>

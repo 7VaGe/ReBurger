@@ -103,31 +103,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="container-lg">
                   <div class="form-floating ">
                       <input type="text" class="form-control my-2" id="username" name="username"  value="<?php if(isset($_POST["username"])){echo $_POST["username"];}?>"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-                      <label class="text-dark" for="floatingInput">Username</label>
+                      <label class="text-dark" >Username</label>
                       <span class="error d-block text-start text-danger"><?php echo $nameErr;?></span>
                   </div>
                   <div class="form-floating ">
                       <input type="password" class="form-control my-2" id="password" name="password"  value="<?php if(isset($_POST["password"])){echo $_POST["password"];}?>"/>
-                      <label class="text-dark" for="floatingInput">Password</label>
+                      <label class="text-dark" >Password</label>
                       <span class="error d-block text-start text-danger" ><?php echo $passErr;?></span>
                   </div>
                   <div class="form-floating ">
                       <input type="email" class="form-control my-2" id="email" name="email" value="<?php if(isset($_POST["email"])){echo $_POST["email"];}?>"/>
-                      <label class="text-dark" for="floatingInput">Email</label>
+                      <label class="text-dark" >Email</label>
                       <span class="error d-block text-start text-danger"><?php echo $emailErr;?></span>
                   </div>
                   <div class="form-floating ">
-                      <input type="tel" class="form-control my-2" id="tel" name="tel" minlenght="13" maxlenght="13"  value="<?php if(isset($_POST["tel"])){echo $_POST["tel"];}?>" />
-                      <label class="text-dark" for="floatingInput">Telefono</label>
+                      <input type="tel" class="form-control my-2" id="tel" name="tel" value="<?php if(isset($_POST["tel"])){echo $_POST["tel"];}?>" />
+                      <label class="text-dark" >Telefono</label>
                       <span class="error d-block text-start text-danger"><?php echo $telErr;?></span>
                   </div>
                   <div class="form-floating">
                       <input type="file" class="form-control my-2" id="immagine" name="immagine" />
-                      <label class="text-dark" for="floatingInput">Immagine</label>
+                      <label class="text-dark" >Immagine</label>
                     </div>
                   <div class="container d-flex justify-content-center">
                     <div class="checkbox my-3">
-                      <button id="toggle-password" type="button" class="btn-sm btn-warning d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+                      <button id="toggle-password" type="button" class="btn-sm btn-warning d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
                       </div>
                     </div>
                 <button class="btn btn-warning" type="submit">Registrati</button>
@@ -140,4 +140,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
         </div>
       </div>
+
 <script src="script/showpwd.js"></script>
