@@ -36,7 +36,7 @@
                       opacity: 1;
                     }
                   </style>
-                  <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
+                  <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' alt="..." style="width: 200px; height:200px;"/>
                   <div class="middle" id="wrap-btn">
                     <button onclick="window.location='profile.php'" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
                   </div>
@@ -47,11 +47,8 @@
                     <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                       <div class="accordion-item bg-dark ">
                         <h2 class="accordion-header" id="heading<?php echo $orderInfo["idordine"];?>">
-                          <button class="accordion-button collapsed  bg-dark text-white border-0 rounded-3" id="btnOrd" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
-                            Ordine #<?php echo $orderInfo["idordine"];?> <?php if($orderInfo["stato"]!=4):?><span class='position-absolute top-0 start-100 translate-middle p-2 bg-danger  rounded-circle'>
-                              <span class='visually-hidden'> </span>
-                              </span>
-                              <?php endif; ?>
+                          <button class="accordion-button collapsed  bg-dark text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                            Ordine #<?php echo $orderInfo["idordine"];?>
                             </button>
                           </h2>
                           <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordionExample">
@@ -88,7 +85,7 @@
                                         echo "w-100 bg-danger";
                                         $msg = "Il tuo ordine è stato rifiutato!";
                                         break;
-                        }?>" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">
+                        }?>" role="progressbar" aria-valuemin="0" aria-valuemax="100">
                       </div>
                     </div>
                   </div>

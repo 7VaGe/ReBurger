@@ -44,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="container-lg">
               <div class="form-floating ">
                   <input type="text" class="form-control my-2" id="oggetto" name="oggetto"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-                  <label class="text-dark" for="floatingInput">Oggetto</label>
+                  <label class="text-dark">Oggetto</label>
                   <span class="error d-block text-start text-danger"><?php echo $oggettoErr; ?></span>
               </div>
               <div class="form-floating ">
-                  <textarea class="form-control" id="messaggio" name="messaggio" rows="8" cols="200"/></textarea>
+                  <textarea class="form-control" id="messaggio" name="messaggio" rows="8" cols="200"></textarea>
                   <span class="error d-block text-start text-danger"><?php echo $messaggioErr; ?></span>
               </div>
             <button class="btn btn-warning" type="submit">Invia</button>

@@ -10,9 +10,9 @@
             <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta">
           </div>
           <div class="form-group col-sm-5">
-            <label for="">Data di scadenza</label>
+            <label>Data di scadenza</label>
             <div class="input-group expiration-date">
-              <select class="form-control" name="mese" size="0">
+              <select class="form-control" name="mese" >
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -27,7 +27,7 @@
                 <option value="12">12</option>
               </select>
               <span class="date-separator"> / </span>
-              <select class="form-control" name="anno" size="0">
+              <select class="form-control" name="anno" >
                 <option>2022</option>
                 <option>2023</option>
                 <option>2024</option>
@@ -46,9 +46,9 @@
             <input id="cvc" type="text" class="form-control" name="cvc" placeholder="CVC" aria-label="CVC">
           </div>
           <div class="form-group col-12 mt-3  d-flex justify-content-center" id="credit_cards" >
-            <img class="img-fluid img mx-2" src="img/visa.png" id="visa" style="heigth:80px; width:75px;">
-            <img class="img-fluid img mx-2 " src="img/mastercard.png" id="mastercard" style="heigth:80px; width:75px;">
-            <img class="img-fluid img mx-2 " src="img/paypal.png" id="paypal" style="heigth:80px; width:75px;">
+            <img class="img-fluid img mx-2" alt="..." src="img/visa.png" id="visa" style="width:75px;">
+            <img class="img-fluid img mx-2" alt="..." src="img/mastercard.png" id="mastercard" style="width:75px;">
+            <img class="img-fluid img mx-2" alt="..." src="img/paypal.png" id="paypal" style="width:75px;">
           </div>
           <div class="form-group col-6 col-sm-12 d-flex justify-content-between">
             <div class="mt-3 display-5 fw-bold ">Pagamento:  <?php echo $templateParams["conto"]["prezzo"]; ?>€</div>

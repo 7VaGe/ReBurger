@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $templateParams["utente"]["img"];
           }else{
             echo $_FILES["immagine"]["name"];
-          } ?>' style="width:250px; height:250px;"/>
+          } ?>' alt="..." style="width:250px; height:250px;"/>
             <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"]?></h2>
             <div class="text-white">
               <p class="lead">
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="container-lg px-0">
             <h1 class="my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </h1>
             <div class="bg-dark rounded-6 shadow-lg" >
-              <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
+              <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' alt="..." style="width: 200px; height:200px;"/>
               <div class="container col-lg-6 col-lg-offset-2">
                 <div class="form-floating">
                   <input type="number" class="form-control my-2" id="idutente" value="<?php echo $templateParams["utente"]["idutente"] ?>" name="idutente" hidden/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
@@ -138,14 +138,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <span class="error d-block text-start text-danger"><?php echo $passErr;?></span>
                 </div>
                 <div class="form-floating">
-                  <input type="file" class="form-control my-2" id="immagine" value="" name="immagine" />
+                  <input type="file" class="form-control my-2" id="immagine" name="immagine" />
                   <label class="text-dark">Immagine utente</label>
                 </div>
                 <div class="checkbox m-3">
-                  <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
+                  <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>
                   </div>
                   <button class="btn btn-warning m-3" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
                 </div>
+              </div>
               </div>
             </form>
           </div>
@@ -153,7 +154,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
     </div>
-  </div>
 
 
 
