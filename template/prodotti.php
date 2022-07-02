@@ -23,21 +23,20 @@
                  echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
           <figcaption class="info-wrap p-3">
-          <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
-					      <div class="price-wrap">
-
-						      <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
-				    	  </div>
-                <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
-                  <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="insertInCarrello(this.value)">Aggiungi al carrello</button>
+            <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
+            <div class="price-wrap">
+              <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
+            </div>
+            <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
+            <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="insertInCarrello(this.value)">Aggiungi al carrello</button>
           </figcaption>
         </figure>
       </div>
-
       <?php endforeach; ?>
     <?php endforeach; ?>
     </div>
   </div>
+  
 <script>
 function insertInCarrello(val) {
     var http = new XMLHttpRequest();

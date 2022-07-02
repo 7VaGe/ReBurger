@@ -54,7 +54,7 @@ input[type='radio']:after {
         <p class="title display-4 fw-bold text-center">Carrello</p>
         <table class="table table-dark table-hover table-striped border">
           <?php foreach ($templateParams["carrello"] as $prodotto):
-            $prodotto["nome"] = str_replace(' ', '_', $prodotto["nome"])?>
+            //$prodotto["nome"] = str_replace(' ', '_', $prodotto["nome"])?>
           <tr id="<?php echo "riga".$prodotto["nome"]; ?>">
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
             <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);">-</button>
@@ -75,32 +75,32 @@ input[type='radio']:after {
           }else {
             echo $templateParams["conto"]["prezzo"]; }?>
           </div>
-        <div class="footer">
           <?php if ($_SESSION["idutente"]==NULL){?>
+        </form>
+        <div class="footer">
           <div class="mt-3 text-center">
-              <button class="btn-lg btn-warning" onclick='window.location="login.php"'>Prima effettua il login</button>
+            <button class="btn-lg btn-warning" onclick='window.location="login.php"'>Prima effettua il login</button>
           </div>
-
+        </div>
           <?php }else{ ?>
+          <div class="footer">
             <div class="text-center mt-3">
               <button type="submit" class="btn-lg btn-warning">Ordina</button>
             </div>
-
+          </div>
+        </form>
           <?php }; ?>
         </div>
-      </form>
     </div>
   </div>
 </div>
-</div>
-
 <?php }?>
 
 <script>
 function aggiungiCarrello(val) {
-    let result = val.replace("_", " ");
+    //let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
-    http.open("get", "insertInCart.php?a="+result, true);
+    http.open("get", "insertInCart.php?a="+val, true);
     http.send();
     http.onload = function(){
       document.getElementById("spesa").innerHTML = this.responseText;
@@ -108,9 +108,9 @@ function aggiungiCarrello(val) {
 }
 
 function sottraiCarrello(val) {
-    let result = val.replace("_", " ");
+    //let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
-    http.open("get", "insertInCart.php?s="+result, true);
+    http.open("get", "insertInCart.php?s="+val, true);
     http.send();
     http.onload = function() {
       document.getElementById("spesa").innerHTML = this.responseText;

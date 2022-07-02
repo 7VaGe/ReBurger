@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION["venditore"])) {?>
- 
+
     <div class=" text-center mb-5">
       <span class="text-center m-2"><button type="button" class="btn btn-warning" onclick="window.location='notizie.php'" name="button">Aggiungi notizia</button></span>
     </div>
@@ -83,7 +83,7 @@ if (isset($_SESSION["venditore"])) {?>
       </div>
     </div>
     <div class="col-lg-2 d-flex align-items-center justify-content-center rounded-3 bg-dark overflow-hidden shadow-lg"> <!--  align-items-center va sempre con d-flex per modificare l'allineamento verticale centrale-->
-     <img id="QRcode" src="img\<?php $imgNoSpace = str_replace(' ', '', "moovit.png");
+     <img id="QRcode" src="img/<?php $imgNoSpace = str_replace(' ', '', "moovit.png");
                  echo $imgNoSpace?>" alt="QRCODE" class="img img-fluid p-3" />
     </div>
   </div>
