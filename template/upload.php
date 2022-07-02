@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
     <div class="text-white bg-dark rounded-5 shadow-lg text-center">
       <div class="text-center p-1 ">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="profile.php" method="post" enctype="multipart/form-data">
           <div class="container-lg px-0">
             <h1 class="my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </h1>
             <div class="bg-dark rounded-6 shadow-lg" >

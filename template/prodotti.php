@@ -1,7 +1,7 @@
 <div class="container-lg">
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
-      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" aria-controls="collapseWidthExample" value="0">
+      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" value="0">
         <div class="ms-2 me-auto">
           <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
         </div>
@@ -10,8 +10,7 @@
     <?php endforeach ; ?>
   </ol>
 </div>
-<section class="padding-y text-white">
-  <div class="container">
+  <div class="container text-white">
     <div class="row mt-3">
     <?php foreach($templateParams["catego"] as $category):
       $parametro =$dbh->getProdottoByCategoria($category["nomecategoria"]);
@@ -39,7 +38,6 @@
     <?php endforeach; ?>
     </div>
   </div>
-</section>
 <script>
 function insertInCarrello(val) {
     var http = new XMLHttpRequest();

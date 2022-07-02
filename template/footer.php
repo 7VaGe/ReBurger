@@ -35,7 +35,11 @@ if(isset($_SESSION["idutente"])){
     </div>
   <?php endforeach ;?>
   <div class="col-12 py-4">
-    <?php $templateParams["newsletter"] = $dbh->checkNewsLetter($_SESSION["mail"]);
+    <?php if (isset($_SESSION["mail"])){
+      $templateParams["newsletter"] = $dbh->checkNewsLetter($_SESSION["mail"]);
+    }else{
+      $templateParams["newsletter"] = NULL;
+    }
     if($templateParams["newsletter"]==NULL){ ?>
     <h5>Iscriviti alla nostra newsletter</h5>
     <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
@@ -48,7 +52,7 @@ if(isset($_SESSION["idutente"])){
     ?><h5>Grazie per essere iscritto alla nostra newsletter</h5>
     <p>Riceverai notizie e offerte non appena saranno disponibili.</p>
     <div class="d-flex w-100 gap-2">
-        
+
       </div><?php
   } ?>
   </div>

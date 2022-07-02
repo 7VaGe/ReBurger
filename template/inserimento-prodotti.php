@@ -64,7 +64,7 @@ if ($controlloErr == 0) {
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
           <div class="container text-center p-1">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="nuovoProdotto.php" method="POST" enctype="multipart/form-data">
               <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Compila i seguenti campi per aggiungere un prodotto:</h1>
               <div class="container-lg">
                 <div class="form-floating d-flex  justify-content-centerv">

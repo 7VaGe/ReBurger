@@ -38,7 +38,7 @@ input[type='radio']:after {
         <div class="text-white text-center">
           <p class="title display-4 fw-bold text-center">Il carrello è vuoto</p>
 
-          <img src="img\Carrellovuoto.png" alt="Carrello vuoto" style="width:350px ">
+          <img src="img/Carrellovuoto.png" alt="Carrello vuoto" style="width:350px ">
 
           <div class="mt-3">
             <button class="btn-lg btn-warning" onclick='window.location="menu.php"'>Effettua un ordine</button>
@@ -53,7 +53,8 @@ input[type='radio']:after {
   <div class="text-white">
         <p class="title display-4 fw-bold text-center">Carrello</p>
         <table class="table table-dark table-hover table-striped border">
-          <?php foreach ($templateParams["carrello"] as $prodotto):?>
+          <?php foreach ($templateParams["carrello"] as $prodotto):
+            $prodotto["nome"] = str_replace(' ', '_', $prodotto["nome"])?>
           <tr id="<?php echo "riga".$prodotto["nome"]; ?>">
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
             <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);">-</button>
@@ -63,21 +64,19 @@ input[type='radio']:after {
           <?php endforeach; ?>
         </table>
         <form action="pagamento.php" method="post">
-        <p class="display-6">Seleziona la modalità di pagamento:</p>
-        <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1" checked>
-        <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card"style="color:rgb(247,193,68)"></i></label>
-        <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
-        <label class="m-2 display-6 fw-bold" for="pagamento2">Contanti <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
+          <p class="display-6">Seleziona la modalità di pagamento:</p>
+          <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1" checked>
+          <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card" style="color:rgb(247,193,68)"></i></label>
+          <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
+          <label class="m-2 display-6 fw-bold" for="pagamento2">Contanti <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
 
-        <div class="text-center display-6" id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
-          echo "0";
-        }else {
-          echo $templateParams["conto"]["prezzo"]; }?>
-        </div>
-      </div>
+          <div class="text-center display-6" id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
+            echo "0";
+          }else {
+            echo $templateParams["conto"]["prezzo"]; }?>
+          </div>
         <div class="footer">
           <?php if ($_SESSION["idutente"]==NULL){?>
-          </form>
           <div class="mt-3 text-center">
               <button class="btn-lg btn-warning" onclick='window.location="login.php"'>Prima effettua il login</button>
           </div>
@@ -91,14 +90,17 @@ input[type='radio']:after {
         </div>
       </form>
     </div>
-<?php }?>
   </div>
 </div>
+</div>
+
+<?php }?>
 
 <script>
 function aggiungiCarrello(val) {
+    let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
-    http.open("get", "insertInCart.php?a="+val, true);
+    http.open("get", "insertInCart.php?a="+result, true);
     http.send();
     http.onload = function(){
       document.getElementById("spesa").innerHTML = this.responseText;
@@ -106,8 +108,9 @@ function aggiungiCarrello(val) {
 }
 
 function sottraiCarrello(val) {
+    let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
-    http.open("get", "insertInCart.php?s="+val, true);
+    http.open("get", "insertInCart.php?s="+result, true);
     http.send();
     http.onload = function() {
       document.getElementById("spesa").innerHTML = this.responseText;
@@ -120,12 +123,12 @@ function incVal(val){
 }
 
 function decVal(val){
-  var riga = 'riga'+val;
-  document.getElementById(val).value--;
-  if (document.getElementById(val).value == "0") {
-    document.getElementById(riga).remove();
-  }
-  document.getElementById("spesa").innerhtml;
+    var riga = 'riga'+val;
+    document.getElementById(val).value--;
+    if (document.getElementById(val).value == "0") {
+      document.getElementById(riga).remove();
+    }
+    document.getElementById("spesa").innerhtml;
 }
 
 </script>

@@ -20,14 +20,14 @@
         </div>
       </div>
   </div>
-  
+
 <?php $_POST["titolo"]=NULL; $_POST["descrizione"]=NULL;
 }else{ ?>
 
 <div class="container-fluid mt-2 w-75 p-2">
       <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="notizie.php" method="post" enctype="multipart/form-data">
                   <h1 class=" my-4 h3 mb-3 text-center text-white">Inserisci una nuova notizia</h1>
                   <div class="container-lg p-1">
                     <?php
@@ -39,7 +39,7 @@
                     </div>
               <?php endforeach;?>
                     <div class="form-floating d-flex justify-content-center">
-                        <input type="file" class="form-control my-2 " id="immagine" placeholder="nameExample" name="immagine" required="required" /> 
+                        <input type="file" class="form-control my-2 " id="immagine" placeholder="nameExample" name="immagine" required="required" />
                         <label class="text-dark" for="floatingInput ">Immagine</label>
                       </div>
                   <button class="btn btn-warning m-3" type="submit">inserisci</button>

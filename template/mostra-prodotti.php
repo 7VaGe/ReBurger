@@ -19,7 +19,7 @@
             </div>
             <div class=" col container wrapperAddItem mx-4 my-3 bg-dark mt-2">
               <div class=" card card-product-grid bg-dark rounded-6 shadow d-flex align-items-bottom " id="cardClasse">
-                <form class="" action="" method="post">
+                <form class="" action="listaProdotti.php" method="post">
                 <div class="imgWrapper">
                   <img src="img/addItem.png" class="figure img-fluid p-5 " alt="..." style="height: 220px;" />
                 </div>
@@ -28,13 +28,13 @@
                   <label class="text-dark w-75" for="nomeCategoria">Nome categoria</label>
                 </div>
                   <button type="submit" class="btn mb-3 btn-warning">Aggiungi una categoria</button>
-                
+
               </form>
               </div>
             </div>
     </div>
-    
-    
+
+
   </div>
 </div>
 
