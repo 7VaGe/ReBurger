@@ -100,6 +100,9 @@ footer, footer.py-5>div.row{
 #SignUpContainer{
   width: 75% !important;
 }
+#UploadContainer{
+  width: 75% !important;
+}
 
 .checkbox:checked{
     background-color: rgb(253, 193, 64);
@@ -250,11 +253,6 @@ button:hover{
     background-color: transparent;
     text-decoration: none;
   }
-  a:visited {
-    color: rgb(0, 238, 255);
-    background-color: transparent;
-    text-decoration: none;
-  }
   a:hover {
     color: rgb(255, 187, 0);
     background-color: transparent;
@@ -316,6 +314,9 @@ button:hover{
   #SignUpContainer{
     width: 75% !important;
   }
+  #UploadContainer{
+    width: 75% !important;
+  }
   }
  @media only screen and (min-width: 768px) and (max-width: 991px){
 
@@ -363,6 +364,9 @@ button:hover{
       width: 50% !important;
     }
     #SignUpContainer{
+      width: 50% !important;
+    }
+    #UploadContainer{
       width: 50% !important;
     }
   }
@@ -413,7 +417,9 @@ button:hover{
     #SignUpContainer{
       width: 50% !important;
     }
-   
+    #UploadContainer{
+      width: 50% !important;
+    }
 
     }
 
@@ -465,6 +471,9 @@ button:hover{
       width: 50% !important;
     }
     #SignUpContainer{
+      width: 50% !important;
+    }
+    #UploadContainer{
       width: 50% !important;
     }
    

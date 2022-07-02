@@ -104,14 +104,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 }
 ?>
-<div class="container-fluid mt-2 w-25 p-2" id="SignUpContainer" <?php if ($controlloErr == 0){ echo "hidden";} ?>>
+<div class="container-fluid mt-2 p-2" id="UploadContainer" <?php if ($controlloErr == 0){ echo "hidden";} ?>>
   <div class="row row-cols-1 d-flex justify-content-center"> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
-    <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
+    <div class="text-white bg-dark rounded-5 shadow-lg text-center">
       <div class="text-center p-1 ">
         <form action="" method="post" enctype="multipart/form-data">
-          <div class="container-lg">
-            <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </h1>
-            <div class="card bg-dark rounded-6 shadow-lg" >
+          <div class="container-lg px-0">
+            <h1 class="my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </h1>
+            <div class="bg-dark rounded-6 shadow-lg" >
               <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' style="width: 200px; height:200px;"/>
               <div class="container col-lg-6 col-lg-offset-2">
                 <div class="form-floating">
@@ -144,12 +144,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="checkbox m-3">
                   <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon"class="bi bi-eye-slash"></i>
                   </div>
-                  <button class="w-50 btn btn-lg btn-warning m-3" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
+                  <button class="btn btn-warning m-3" type="submit"> Conferma modifiche <br> <i class="fa-solid fa-circle-check"></i></button>
                 </div>
               </div>
             </form>
           </div>
-          <button class="w-75 btn btn-lg btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
+          <button class="btn btn-warning my-4"  onclick='window.location="login.php"'> <i class="fa-solid fa-circle-arrow-left"></i> Torna al tuo profilo</button>
         </div>
       </div>
     </div>
