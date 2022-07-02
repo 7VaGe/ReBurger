@@ -51,6 +51,7 @@
     <div class="container text-lg-center text-sm-end col  d-none d-md-block">
       <button type="button" class="btn btn-outline-warning" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
     </div>
+  </div>
   <?php }else { ?>
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
@@ -69,5 +70,6 @@
       <button type="button" class="btn btn-outline-light" onclick='window.location="login.php"'>Login</button>
       <button type="button" class="btn btn-warning my-2" onclick='window.location="signup.php"'>Sign-up</button>
     </div>
+  </div>
 <?php } ?>
 </nav>
