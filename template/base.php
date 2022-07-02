@@ -24,7 +24,7 @@
 <?php include 'header.php'; ?>
 </header>
     <div class="row mx-4 p-2 pb-0 pe-lg-0 pt-lg-5 justify-content-md-center rounded-3">
-      <div class="py-5 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none" id="bottoniLog">
+      <div class="py-2 text-center col-12 d-grid gap-2 d-md-flex justify-content-md-center d-md-none" id="bottoniLog">
         <?php if (isset($_SESSION["username"])) { ?>
           <button type="button" class="btn btn-outline-light" onclick='window.location="index.php?logout=1"'>LOGOUT</button>
         <?php }else{ ?>
