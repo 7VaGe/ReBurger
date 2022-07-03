@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["titolo"]) && isset($_POST["descrizione"]) && $controlloErr == 0) {
     $indice = $dbh->insertNews($_POST["titolo"], $_POST["descrizione"]);
     if(isset($_FILES["immagine"])){
-      $dbh->uploadImmagine($indice, "notizie");
+      $dbh->uploadImmagine($indice, "notizie", $_POST["titolo"]);
       $_FILES["immagine"]= NULL;
     }
      ?>

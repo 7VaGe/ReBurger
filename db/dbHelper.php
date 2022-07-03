@@ -210,7 +210,7 @@ class DatabaseHelper{
 
 //Funzione per inserimento immagine
 
-    public function uploadImmagine($id, $provenienza){
+    public function uploadImmagine($id, $provenienza, $nome){
         $director = "img/";
         $percorso = $director . basename($_FILES["immagine"]["name"]);
         $valida = 1;
@@ -218,7 +218,11 @@ class DatabaseHelper{
         $img = basename($_FILES["immagine"]["name"]);
 
         if (file_exists($percorso)) {
-          $valida = 0;
+          $img = $nome.".".$estensione;
+          if ($img == $percorso){
+            unlink($percorso);
+          }
+          $percorso = $director . $img;
         }
 
         if($estensione != "jpg" && $estensione != "png" && $estensione != "jpeg") {

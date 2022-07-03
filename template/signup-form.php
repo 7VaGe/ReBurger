@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
     //inviaMail($_POST["username"], $_POST["email"], "Conferma registrazione", "Ti ringraziamo per esserti iscritto al nostro sito speriamo di ricevere presto il tuo primo ordine");
     if($_FILES["immagine"]["name"]==NULL){
-      $dbh->uploadImmagine($indice, "utente");
+      $dbh->uploadImmagine($indice, "utente", $_POST["username"]);
     }
      ?>
      <div class="container-lg mt-2" id="card">

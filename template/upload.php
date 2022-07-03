@@ -67,22 +67,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["username"]) and isset($_POST["email"]) and isset($_POST["password"])){
       $dbh->updateUtente($_POST["username"], $_POST["email"], $_POST["password"], $_POST["idutente"]);
       if(isset($_FILES["immagine"])){
-        $risposta=$dbh->uploadImmagine($_SESSION["idutente"], "utente");
+        $risposta=$dbh->uploadImmagine($_SESSION["idutente"], "utente", $_POST["username"]);
         $_FILES["immagine"]=NULL;
       }
       $_SESSION["username"] = $_POST["username"];
       $_SESSION["mail"] = $_POST["email"];
+      $templateParams["utente"] = $dbh->getUtenteById($_SESSION["idutente"]);
     }?>
 
 <div class="container-lg mt-2" id="card">
       <div class="row row-cols-1 align-items-stretch g-4 ">
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
-          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php if ($_FILES["immagine"]==NULL) {
-            echo $templateParams["utente"]["img"];
-          }else{
-            echo $_FILES["immagine"]["name"];
-          } ?>' alt="..." style="width:250px; height:250px;"/>
+          <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"];
+           ?>' alt="..." style="width:250px; height:250px;"/>
             <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["username"]?></h2>
             <div class="text-white">
               <p class="lead">

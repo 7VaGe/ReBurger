@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($controlloErr == 0) {
     $_POST["venditore"]=1;
     $indice = $dbh->insertProdotto($_POST["venditore"], str_replace(' ', '_', $_POST["nomeProdotto"]), $_POST["desc"], $_POST["categ"], $_POST["prezzo"]);
-    $dbh->uploadImmagine($indice, "prodotto");
+    $dbh->uploadImmagine($indice, "prodotto", str_replace(' ', '_', $_POST["nomeProdotto"]));
     $_FILES["immagine"]== NULL;
      ?>
 
      <div class="container-lg mt-2" id="card">
-      <div class="row row-cols-1 align-items-stretch g-4 "> <!-- ho tolto row-cols-lg-3 che mi dava la forma a quadretto per la card.<img class="img img-fluid" src="img/ echo $info["img"]?>" style="height:100%; width:100%;"></img>-->
+      <div class="row row-cols-1 align-items-stretch g-4 ">
         <div class="card card-cover  text-white bg-dark rounded-5 shadow-lg">
           <div class="d-flex flex-column text-center pb-3  text-white">
             <h2 class="pt-5 mb-4 display-4 text-center lh-1 overflow-hidden fw-bold"><?php echo $_POST["nomeProdotto"] ?></h2>
