@@ -65,8 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
   if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
-    $dbh->uploadImmagine($indice, "utente");
-
+    //inviaMail($_POST["username"], $_POST["email"], "Conferma registrazione", "Ti ringraziamo per esserti iscritto al nostro sito speriamo di ricevere presto il tuo primo ordine");
+    if($_FILES["immagine"]["name"]==NULL){
+      $dbh->uploadImmagine($indice, "utente");
+    }
      ?>
      <div class="container-lg mt-2" id="card">
       <div class="row row-cols-1 align-items-stretch g-4 ">
