@@ -10,9 +10,17 @@ if(isset($_GET["elimina"]) and isset($_GET["prodotto"])){
   $dbh->deleteProdotto($_GET["prodotto"]);
 }
 
+if(isset($_GET["elimina"]) and isset($_GET["categoria"])){
+  $templateParams["prodotto"] = $dbh->getProdottoByCategoria($_GET["categoria"]);
+  foreach ($templateParams["prodotto"] as $prodotto) {
+    $dbh->deleteProdotto($prodotto["idprodotto"]);
+  }
+  $dbh->deleteCategoria($_GET["categoria"]);
+}
+
 $templateParams["titolo"] = "ReBurger";
 $templateParams["nome"] = "mostra-prodotti.php";
-$templateParams["prod"] = $dbh->getAllProdotti();
+$templateParams["categoria"] = $dbh->getCategories();
 
 require_once 'template/base.php';
 ?>

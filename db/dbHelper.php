@@ -482,6 +482,14 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function deleteCategoria($nomecategoria){
+        $query = "DELETE FROM categoria WHERE nomecategoria=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$nomecategoria);
+        $stmt->execute();
+        return true;
+    }
+
 //Funzioni su tabella notizie
 
     public function insertNews($titolo, $desc){

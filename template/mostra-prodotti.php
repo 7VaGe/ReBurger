@@ -31,18 +31,18 @@
               </div>
             </div>
     </div>
-
-
   </div>
 </div>
 
 <div class="album mb-5 bg-dark text-white">
   <div class="text-center  mt-5">
-    <span class="text-white display-4 fw-bold ">Lista prodotti</span>
-
-    <div class="container-fluid" id="listaProdotti">
+    <?php foreach ($templateParams["categoria"] as $categoria){
+      $templateParams["prod"] = $dbh->getProdottoByCategoria($categoria["nomecategoria"]);
+      ?>
+    <span class="text-white display-4 fw-bold ">Lista <?php echo $categoria["nomecategoria"] ?> <button value="<?php echo $categoria["nomecategoria"]?>" onclick="eliminaCategoria(this.value);" class="btn btn-danger m-3"><i class="fa-solid fa-trash-can"></i></button></span>
+    <div class="container-fluid">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 d-flex justify-content-center my-3">
-        <?php foreach($templateParams["prod"] as $prodotto) : ?>
+        <?php foreach($templateParams["prod"] as $prodotto){ ?>
           <div class="col wrapper m-4">
             <div class="bg-dark">
               <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center">
@@ -57,21 +57,27 @@
                     <button value="<?php echo $prodotto["idprodotto"]?>" onclick="eliminaProdotto(this.value);" class="btn btn-danger m-3"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </figcaption>
-
-              </figure>   <!-- chiudi figure -->
+              </figure>
             </div>
           </div>
-        <?php endforeach; ?>
+        <?php } ?>
       </div>
     </div>
+  <?php } ?>
   </div>
 </div>
+
+
 <script>
 function eliminaProdotto(val) {
   if (confirm("Sei sicuro di voler rimuove questo prodotto dal tuo menù ?") == true) {
     window.location="listaProdotti.php?elimina=1&prodotto="+val;
-  }else {
+  }
+}
 
+function eliminaCategoria(val) {
+  if (confirm("Sei sicuro di voler rimuove questa categoria e tutti i suoi prodotti dal tuo menù ?") == true) {
+    window.location="listaProdotti.php?elimina=1&categoria="+val;
   }
 }
 </script>
