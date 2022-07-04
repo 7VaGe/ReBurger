@@ -2,6 +2,7 @@
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
+          <h2 class="card-title mt-4">Premi sull'immagine per modificarla</h2>
           <div class="container" id="ContainerProfilo">
                   <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' alt="..." style="width: 200px; height:200px;"/>
                   <div class="middle" id="wrap-btn">
@@ -10,8 +11,8 @@
                 </div>
                 <div class="card-body">
                   <h5 class="card-title"><?php echo strtoupper($templateParams["utente"]["username"]);?></h5>
-                  <?php if ($templateParams["ordine"]==NULL):
-                    echo "<h5>I tuoi ordini verrano visualizzati qui sotto</h5>";
+                  <?php if ($templateParams["ordine"]==NULL && !isset($_SESSION["venditore"])):
+                    echo "<h5>I tuoi ordini verrano visualizzati qui sotto</h6>";
                    endif; ?>
                   <div class="accordion" id="accordion">
                     <?php foreach($templateParams["ordine"] as $orderInfo) :?>
