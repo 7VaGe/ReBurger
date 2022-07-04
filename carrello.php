@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $dbh->emptyCarrello($_SESSION["ordine"]);
     $dbh->setPrezzoEmpty($_SESSION["ordine"]);
   }
-  
+
   if(isset($_GET["ordine"])){
     $templateParams["riproposta"] = $dbh->checkOldCarrello($_GET["ordine"]);
     foreach ($templateParams["riproposta"] as $prod){
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 $templateParams["titolo"] = "ReBurger - Carrello";
-$templateParams["nome"] = "carrello-form.php";
+$templateParams["nome"] = "template-carrello.php";
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["ordine"]);
 $templateParams["conto"] = $dbh->getPrezzoOrdine($_SESSION["ordine"]);
 

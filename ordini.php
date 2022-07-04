@@ -38,7 +38,7 @@ if (isset($_GET["ordine"]) and isset($_GET["scelta"])) {
 }
 
 $templateParams["titolo"] = "ReBurger - Ordini";
-$templateParams["nome"] = "ordini-form.php";
+$templateParams["nome"] = "template-ordini.php";
 $templateParams["ordine"] = $dbh->getOrdini();
 
 require_once 'template/base.php';
