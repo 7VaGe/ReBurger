@@ -23,12 +23,12 @@
         <p class="title display-4 fw-bold text-center">Carrello</p>
         <table class="table table-dark table-hover table-striped border">
           <?php foreach ($templateParams["carrello"] as $prodotto):
-            //$prodotto["nome"] = str_replace(' ', '_', $prodotto["nome"])?>
+            $prodotto["nome"] = str_replace(' ', '_', $prodotto["nome"])?>
           <tr id="<?php echo "riga".$prodotto["nome"]; ?>">
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
-            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello(this.value);decVal(this.value);">-</button>
+            <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello('<?php echo str_replace('_', ' ', $prodotto["nome"]); ?>');decVal(this.value);">-</button>
             <input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">
-            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello(this.value);incVal(this.value);">+</button></div></td>
+            <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello('<?php echo str_replace('_', ' ', $prodotto["nome"]); ?>');incVal(this.value);">+</button></div></td>
           </tr>
           <?php endforeach; ?>
         </table>
@@ -70,7 +70,6 @@
 
 <script>
 function aggiungiCarrello(val) {
-    //let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
     http.open("get", "insertInCart.php?a="+val, true);
     http.send();
@@ -80,7 +79,6 @@ function aggiungiCarrello(val) {
 }
 
 function sottraiCarrello(val) {
-    //let result = val.replace("_", " ");
     var http = new XMLHttpRequest();
     http.open("get", "insertInCart.php?s="+val, true);
     http.send();

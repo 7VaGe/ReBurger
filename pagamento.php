@@ -12,7 +12,7 @@ if ($_POST["pagamento"]==1) {
 
 }else{
   $dbh->setPagamentoOrdine($_POST["pagamento"], $_SESSION["ordine"]);
-  $templateParams["nome"] = "checkout-form.php";
+  $templateParams["nome"] = "template-checkout.php";
   $templateParams["carta"]=NULL;
   $controllata=false;
 
