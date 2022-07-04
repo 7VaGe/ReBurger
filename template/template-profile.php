@@ -10,7 +10,10 @@
                 </div>
                 <div class="card-body">
                   <h5 class="card-title"><?php echo strtoupper($templateParams["utente"]["username"]);?></h5>
-                  <div class="accordion" id="accordionExample">
+                  <?php if ($templateParams["ordine"]==NULL):
+                    echo "<h5>I tuoi ordini verrano visualizzati qui sotto</h5>";
+                   endif; ?>
+                  <div class="accordion" id="accordion">
                     <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                       <div class="accordion-item bg-dark ">
                         <div class="accordion-header" id="heading<?php echo $orderInfo["idordine"];?>">
@@ -28,7 +31,7 @@
                             Ordine in fase di approvazione</button>
                           <?php endif; ?>
                         </div>
-                          <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordionExample">
+                          <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordion">
                             <div class="accordion-body text-white">
                               <div class="col-12 d-flex">
                                 <p class="col">Pagamento: <?php switch ($orderInfo["pagamento"]){
