@@ -79,7 +79,7 @@ if (isset($_SESSION["venditore"])) {?>
         <button onclick="window.location='contatti.php'" type="button" class="btn btn-dark">About-us</button>
       </div>
     </div>
-    <div class="col-lg-2 d-flex align-items-center justify-content-center rounded-3 bg-dark overflow-hidden shadow-lg"> <!--  align-items-center va sempre con d-flex per modificare l'allineamento verticale centrale-->
+    <div class="col-lg-2 d-flex align-items-center justify-content-center border-5 rounded-3 bg-dark overflow-hidden shadow-lg"> <!--  align-items-center va sempre con d-flex per modificare l'allineamento verticale centrale-->
      <img id="QRcode" src="img/<?php $imgNoSpace = str_replace(' ', '', "moovit.png");
                  echo $imgNoSpace?>" alt="QRCODE" class="img img-fluid p-3" />
     </div>
