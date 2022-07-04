@@ -1,34 +1,3 @@
-<style>
-input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #d1d3d1;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
-
-    input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: rgb(247,193,68);
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
-</style>
-
-
 <div class="container-lg mt-2">
   <div class="card bg-dark rounded-5 shadow-lg">
     <div class="container-lg my-5">
@@ -66,9 +35,9 @@ input[type='radio']:after {
         <form action="pagamento.php" method="post">
           <p class="display-6">Seleziona la modalità di pagamento:</p>
           <input class="m-2" type="radio" id="pagamento1" name="pagamento" value="1" checked>
-          <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card" style="color:rgb(247,193,68)"></i></label>
+          <label class="m-2 display-6 fw-bold" for="pagamento1">Con carta <i class="fa-solid fa-credit-card" style="color:rgb(253,193,64)"></i></label>
           <br><input class="m-2" type="radio" id="pagamento2" name="pagamento" value="0">
-          <label class="m-2 display-6 fw-bold" for="pagamento2">Contanti <i class="fa-solid fa-money-bill-wave" style="color:rgb(247,193,68)"></i></label>
+          <label class="m-2 display-6 fw-bold" for="pagamento2">Contanti <i class="fa-solid fa-money-bill-wave" style="color:rgb(253,193,64)"></i></label>
 
           <div class="text-center display-6" id="spesa">Prezzo totale: € <?php if ($templateParams["conto"]==NULL){
             echo "0";

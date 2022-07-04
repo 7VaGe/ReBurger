@@ -2,7 +2,7 @@
 
 require_once 'bootstrap.php';
 
-$templateParams["titolo"] = "ReBurger - Home";
+$templateParams["titolo"] = "ReBurger - About";
 $templateParams["nome"] = "contatti-form.php";
 $templateParams["info"] = $dbh->getInfoVenditore();
 

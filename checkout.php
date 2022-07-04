@@ -8,7 +8,7 @@ if (isset($_POST["titolare"]) && isset($_POST["numero"]) && isset($_POST["cvc"])
   $templateParams["carta"] = NULL;
   $controllata=false;
 }
-$templateParams["titolo"] = "ReBurger";
+$templateParams["titolo"] = "ReBurger - Checkout";
 $templateParams["nome"] = "checkout-form.php";
 
 require_once 'template/base.php';

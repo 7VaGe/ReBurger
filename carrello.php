@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   }
 }
 
-$templateParams["titolo"] = "ReBurger - carrello";
+$templateParams["titolo"] = "ReBurger - Carrello";
 $templateParams["nome"] = "carrello-form.php";
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["ordine"]);
 $templateParams["conto"] = $dbh->getPrezzoOrdine($_SESSION["ordine"]);

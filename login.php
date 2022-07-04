@@ -27,7 +27,7 @@ if(isUserLoggedIn()){
 
 }else {
 
-$templateParams["titolo"] = "ReBurger - Home";
+$templateParams["titolo"] = "ReBurger - Login";
 $templateParams["nome"] = "login-form.php";
 }
 

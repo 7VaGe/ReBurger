@@ -16,7 +16,10 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="https://kit.fontawesome.com/c62994c39a.js" crossorigin="anonymous"></script>
 
-        <title>ReBurger</title>
+        <title><?php
+      if(isset($templateParams["titolo"])){
+          echo $templateParams["titolo"];}
+  ?></title>
     </head>
 <body class="bg-dark">
 <?php include 'cookie.php'; ?>

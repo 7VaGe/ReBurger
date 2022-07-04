@@ -82,16 +82,16 @@ footer, footer.py-5>div.row{
 
  #topBtn {
     display: none;
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 15px; /* Place the button 30px from the right */
-    z-index: 999; /* Make sure it does not overlap */
+    bottom: 20px; 
+    right: 15px; 
+    z-index: 999; 
   }
 
   #cartIcon {
     display: none;
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 100px; /* Place the button 30px from the right */
-    z-index: 999; /* Make sure it does not overlap */
+    bottom: 20px; 
+    right: 100px; 
+    z-index: 999; 
   }
 
 #LoginContainer{
@@ -103,9 +103,63 @@ footer, footer.py-5>div.row{
 #UploadContainer{
   width: 75% !important;
 }
+#ContainerProfilo{
+  position: relative;
+}
+#ContainerProfilo:hover .image-rounded-circle{
+  opacity: 0.1;
+}
+#ContainerProfilo .middle:hover{
+  opacity: 1;
+}
+#ContainerProfilo .image {
+  opacity: 1;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transition: .5s ease;
+}
+.container > .middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+
+}
 
 .checkbox:checked{
     background-color: rgb(253, 193, 64);
+}
+ form > input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+form > input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: rgb(253,193,64);
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
 
 /** Css per il login**/

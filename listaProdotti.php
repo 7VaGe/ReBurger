@@ -28,7 +28,7 @@ if(isset($_GET["elimina"]) and isset($_GET["categoria"])){
   $dbh->deleteCategoria($_GET["categoria"]);
 }
 
-$templateParams["titolo"] = "ReBurger";
+$templateParams["titolo"] = "ReBurger - Prodotti";
 $templateParams["nome"] = "mostra-prodotti.php";
 $templateParams["categoria"] = $dbh->getCategories();
 
