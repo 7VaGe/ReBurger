@@ -20,7 +20,7 @@ if(isset($_SESSION["idutente"])){
   <div class="row">
     <?php foreach($colFooter as $num => $titolo):?> <!-- Cicla i titoli-->
       <div class="col-6">
-        <h5><?php echo $titolo?></h5>
+        <div><?php echo $titolo?></div>
         <ul class="nav flex-column">
         <?php foreach ($footerLink as list($group1,$group2)) :?>
           <li class="nav-item mb-2"><a href="<?php echo $links[$i] ?>" class="nav-link p-0 text-muted">
@@ -41,7 +41,7 @@ if(isset($_SESSION["idutente"])){
       $templateParams["newsletter"] = NULL;
     }
     if($templateParams["newsletter"]==NULL){ ?>
-    <h5>Iscriviti alla nostra newsletter</h5>
+    <div>Iscriviti alla nostra newsletter</div>
     <p>Riepilogo mensile delle nostre offerte e del panino del mese.</p>
     <div class="d-flex w-100 gap-2">
       <label for="newsletter" class="visually-hidden">Indirizzo Email</label>
@@ -49,7 +49,7 @@ if(isset($_SESSION["idutente"])){
       <button class="btn btn-warning" onclick="insertInNewsLetter()">Iscriviti</button>
     </div>
   <?php }else {
-    ?><h5>Grazie per essere iscritto alla nostra newsletter</h5>
+    ?><div>Grazie per essere iscritto alla nostra newsletter</div>
     <p>Riceverai notizie e offerte non appena saranno disponibili.</p>
     <div class="d-flex w-100 gap-2">
 
@@ -60,7 +60,7 @@ if(isset($_SESSION["idutente"])){
   <div class="col-12 d-block py-1 my-4 border-top">
     <p class="text-center text-muted"><?php echo createCopyright()?> Società, Inc. Tutti i diritti riservati.</p>
   </div>
-  <div class="d-flex justify-content-center px-2 ">
+  <div class="d-flex justify-content-center px-2" title ="Social links">
     <ul class="list-unstyled d-flex text-white">
       <?php $social = [ "Meta" => '"bi bi-meta"', "Instagram" =>'"bi bi-instagram"', "Twitter" => '"bi bi-twitter"'];
       foreach($social as $nomeSocial => $icona): ?>

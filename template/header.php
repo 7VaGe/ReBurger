@@ -14,16 +14,16 @@
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="listaProdotti.php">Prodotti</a>
+          <a class="nav-link" href="listaProdotti.php" title ="prodotti">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="contatti.php">About</a>
+          <a class="nav-link" href="contatti.php" title ="about">About</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="ordini.php">Ordini</a>
+          <a class="nav-link" href="ordini.php"title ="ordini">Ordini</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="login.php"><?php echo strtoupper($_SESSION["username"]) ?></a>
+          <a class="nav-link" href="login.php" title ="utente"><?php echo strtoupper($_SESSION["username"]) ?></a>
         </li>
       </ul>
     </div>
@@ -35,16 +35,16 @@
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="menu.php">Prodotti</a>
+          <a href="menu.php" class="nav-link" title ="prodotti">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="carrello.php">Carrello</a>
+          <a  href="carrello.php" class="nav-link" title ="carrello">Carrello</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="contatti.php">About</a>
+          <a  href="contatti.php" class="nav-link" title ="about">About</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="login.php"><?php echo strtoupper($_SESSION["username"]) ?></a>
+          <a  href="login.php" class="nav-link" title ="utente"><?php echo strtoupper($_SESSION["username"]) ?></a>
         </li>
       </ul>
     </div>
@@ -56,13 +56,13 @@
     <div class="container-mb col-5 collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="col-12 navbar-nav text-center" style="font-size:3vw;">
         <li class="nav-item col-sm-3 ">
-          <a class="nav-link" href="menu.php">Prodotti</a>
+          <a href="menu.php"class="nav-link" title ="prodotti">Prodotti</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="carrello.php">Carrello</a>
+          <a  href="carrello.php" class="nav-link"title ="carrello">Carrello</a>
         </li>
         <li class="nav-item col-sm-3">
-          <a class="nav-link" href="contatti.php">About</a>
+          <a  href="contatti.php"class="nav-link"title ="about">About</a>
         </li>
       </ul>
     </div>

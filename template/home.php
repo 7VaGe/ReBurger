@@ -43,7 +43,7 @@ if (isset($_SESSION["venditore"])) {?>
               <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center">
                 <div class="img-wrapper">
                   <img src="img/<?php $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
-                                echo $imgNoSpace?>"  alt="Immagine per il <?php echo $prodotto["idprodotto"]?>° prodotto" style="height: 220px;" class="figure img-fluid p-5 "/>
+                                echo $imgNoSpace?>"  alt="<?php echo $prodotto["descrizione"]?>" style="height: 220px;" class="figure img-fluid p-5 "/>
               </div>
               <div class="front">
                 <div class="info-wrap px-3" >
