@@ -2,7 +2,7 @@
     <div class="mt-4 text-white text-center ">
       <div class="row col row-cols-1 row-cols-md-1 g-4">
         <div class="card bg-dark rounded-6 shadow">
-          <div class="container">
+          <div class="container" id="ContainerProfilo">
                   <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' alt="..." style="width: 200px; height:200px;"/>
                   <div class="middle" id="wrap-btn">
                     <button onclick="window.location='profile.php'" class="btn btn-warning" id="btn-file" ><i class="fa-solid fa-image"></i></button>
@@ -14,9 +14,19 @@
                     <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                       <div class="accordion-item bg-dark ">
                         <h2 class="accordion-header" id="heading<?php echo $orderInfo["idordine"];?>">
-                          <button class="accordion-button collapsed  bg-dark text-white border-2 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                        <?php if($orderInfo["stato"] == 1 || $orderInfo["stato"] == 2 || $orderInfo["stato"] ==3):?>
+                          <button class="accordion-button collapsed bg-warning text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
                             Ordine #<?php echo $orderInfo["idordine"];?>
-                            </button>
+                            <?php elseif($orderInfo["stato"] == 5):?>
+                              <button class="accordion-button collapsed bg-danger text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                            Ordine #<?php echo $orderInfo["idordine"];?>
+                            <?php else:?>
+                              <button class="accordion-button collapsed bg-dark text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                            Ordine #<?php echo $orderInfo["idordine"];?>
+                            <?php endif;?>
+                          <!--<button class="accordion-button collapsed  bg-dark text-white border-2 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                            Ordine #<php echo $orderInfo["idordine"];?>
+                            </button> -->
                           </h2>
                           <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordionExample">
                             <div class="accordion-body text-white">

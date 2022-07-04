@@ -18,7 +18,7 @@ if (isset($_SESSION["venditore"])) {?>
      </div>
      <div class="col-lg-6">
        <h1 class="display-6 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></h1>
-       <p class="lead"><cite><?php echo $news["contenuto"] ?></cite></p>
+       <p class="lead"><?php echo $news["contenuto"] ?></p>
        <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
          <?php if($news['idnews']==1){ ?> <!--Questa forzatura va valutata, o inseriamo un nuovo ruolo da mettere nelle notizie per suddividere i button sotto, tra quelli che rimandano all'about e quelli che riandano ai prodotti  -->
          <button onclick="window.location='contatti.php'" type="button" class="btn btn-warning m-3">About-us</button>
@@ -57,7 +57,7 @@ if (isset($_SESSION["venditore"])) {?>
                     <p class="mb-2 p-2 text-center"><?php echo $prodotto["descrizione"]?></p>
                     <p class="mb-2 text-center ">Prezzo: <?php echo $prodotto["prezzo"]?> € </p>
                     <div class="text-center mb-2 mt-5">
-                      <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" id="goToMenù" >Ordina ora!</button>
+                      <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" >Ordina ora!</button>
                     </div>
                   </figcaption>
                 </div>
@@ -74,10 +74,7 @@ if (isset($_SESSION["venditore"])) {?>
   <div class="row p-4 pb-auto pt-lg-5 text-dark rounded-3 shadow-lg justify-content-between" style="background-color: rgb(255, 187, 0)">
     <div class="col-lg-6 p-3 p-lg-5 pt-lg-3 text-center">
       <h1 class="display-5 fw-bold lh-1">Scarica Moovit</h1>
-      <p class="lead text-dark">
-        <cite>Ottieni le indicazioni per raggiungerci, comodamente sul tuo smartphone!<br>
-        <div><p>Inquadra questo QR-Code</p></div></cite>
-      </p>
+      <p class="lead text-dark"><cite>Ottieni le indicazioni per raggiungerci, comodamente sul tuo smartphone!<br></cite><div><p>Inquadra questo QR-Code</p></div></p>
       <div class="d-grid mt-4 d-md-flex justify-content-md-center ">
         <button onclick="window.location='contatti.php'" type="button" class="btn btn-dark">About-us</button>
       </div>

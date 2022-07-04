@@ -210,7 +210,7 @@ form > input[type='radio']:checked:after {
   padding:0px;
 }
 
-#cardIndex{
+#consigliati .card{
   width: 235px;
   height: 400px;
   position: relative;
@@ -221,23 +221,23 @@ form > input[type='radio']:checked:after {
   word-wrap:normal ;
 }
 
-#cardIndex > .front{
+#consigliati .card > :nth-child(2){
   position: relative;
   width: 235px;
   height: 400px;
   transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 
-.front{
+.card > :nth-child(2){
   transform: rotateY(0deg) translateZ(160px);
 }
 
-.back{
+.card > :nth-child(3){
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
   position: absolute;
 }
-#cardBack {
+.card > :nth-child(3)+:first-child {
   width: 235px;
   height: 400px;
 }
