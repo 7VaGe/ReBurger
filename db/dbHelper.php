@@ -275,9 +275,18 @@ class DatabaseHelper{
     public function insertCarrello($nome, $ordine){
         $query = "INSERT INTO carrello (nome,idordine) VALUES (?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si',$nome, $ordine);
+        $stmt->bind_param('si', $nome, $ordine);
         $stmt->execute();
-        
+
+        return true;
+    }
+
+    public function multyInsertCarrello($nome, $ordine, $quantita){
+        $query = "INSERT INTO carrello (nome,idordine,quantita) VALUES (?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sii', $nome, $ordine, $quantita);
+        $stmt->execute();
+
         return true;
     }
 
@@ -286,6 +295,15 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $nome, $ordine);
         $stmt->execute();
+        return true;
+    }
+
+    public function multyUpdateCarrello($quantita, $nome, $ordine){
+        $query = "UPDATE carrello SET quantita = quantita+? WHERE nome = ? AND idordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isi', $quantita, $nome, $ordine);
+        $stmt->execute();
+
         return true;
     }
 
@@ -310,6 +328,14 @@ class DatabaseHelper{
     public function deleteCarrello(){
         $query = "DELETE FROM carrello WHERE quantita=0";
         $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return true;
+    }
+
+    public function emptyCarrello($ordine){
+        $query = "DELETE FROM carrello WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$ordine);
         $stmt->execute();
         return true;
     }
