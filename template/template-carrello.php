@@ -7,7 +7,7 @@
         <div class="text-white text-center">
           <p class="title display-4 fw-bold text-center">Il carrello è vuoto</p>
 
-          <img src="img/Carrellovuoto.png" alt="Carrello vuoto" style="width:350px ">
+          <img src="img/Carrellovuoto.png" alt="" style="width:350px ">
 
           <div class="mt-3">
             <button class="btn-lg btn-warning" onclick='window.location="menu.php"'>Effettua un ordine</button>
@@ -28,6 +28,7 @@
             <td><?php echo str_replace('_', ' ', $prodotto["nome"])?></td>
             <td><div class="input-group"><button class="input-group-addon btn btn-warning" value="<?php echo $prodotto["nome"]; ?>" onclick="sottraiCarrello('<?php echo str_replace('_', ' ', $prodotto["nome"]); ?>');decVal(this.value);">-</button>
             <input type="number" id="<?php echo $prodotto["nome"]; ?>" class="form-control" readonly value="<?php echo $prodotto["quantita"] ?>">
+            <label for="<?php echo $prodotto["nome"]; ?>" hidden><?php echo $prodotto["nome"]; ?></label>
             <button class="btn btn-warning input-group-addon" value="<?php echo $prodotto["nome"]; ?>" onclick="aggiungiCarrello('<?php echo str_replace('_', ' ', $prodotto["nome"]); ?>');incVal(this.value);">+</button></div></td>
           </tr>
           <?php endforeach; ?>

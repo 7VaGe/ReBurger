@@ -49,7 +49,7 @@
               <div class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center">
                 <div class="img-wrapper">
                   <img src="img/<?php $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
-                                echo $imgNoSpace?>" class="figure img-fluid p-5 " alt="<?php echo $prodotto["descrizione"]?>" style="height: 220px;"/>
+                                echo $imgNoSpace?>" class="figure img-fluid p-5 " alt="<?php echo $prodotto["descrizione"];?>" style="height: 220px;"/>
                 </div>
                 <div class="info-wrap px-3">
                   <p class="title mb-2 pt-4 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>

@@ -6,7 +6,7 @@
       }?>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="col-12 container-fluid justify-content-sm-center">
-    <img class="col justify-content-lg-start overflow-hidden" src="img/Logo2.png" alt="ReBurger Logo" onclick='window.location="index.php"'/>
+    <img class="col justify-content-lg-start overflow-hidden" src="img/Logo2.png" alt="" onclick='window.location="index.php"'/>
     <button class="col navbar-toggler ms-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
