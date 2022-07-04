@@ -29,7 +29,7 @@ if(isset($_GET["elimina"]) and isset($_GET["categoria"])){
 }
 
 $templateParams["titolo"] = "ReBurger - Prodotti";
-$templateParams["nome"] = "mostra-prodotti.php";
+$templateParams["nome"] = "template-mostraProdotti.php";
 $templateParams["categoria"] = $dbh->getCategories();
 
 require_once 'template/base.php';

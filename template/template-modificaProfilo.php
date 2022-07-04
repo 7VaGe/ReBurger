@@ -33,9 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $saltPassword = preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/', $_POST["password"]);
-  /*$upperCase = preg_match('/[A-Z]/',$_POST["password"]);
-  $lowerCase = preg_match('/[a-z]/',$_POST["password"]);
-  $carSpeciali = preg_match('/[^\w]/',$_POST["password"]);*/
 
   if (empty($_POST["password"])) {
     $passErr = "Immetti una password";
