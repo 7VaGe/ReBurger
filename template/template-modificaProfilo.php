@@ -105,36 +105,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="text-center p-1 ">
         <form action="profile.php" method="post" enctype="multipart/form-data">
           <div class="container-lg px-0">
-            <h1 class="my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </h1>
+            <div class="my-4 h3 mb-3 text-center text-white fw-normal">Benvenuto, ora puoi modificare il tuo profilo <?php echo strtolower($templateParams["utente"]["username"]); ?> : </div>
             <div class="bg-dark rounded-6 shadow-lg" >
               <img class="rounded-circle mx-auto d-block my-2 img-fluid" src='img/<?php echo $templateParams["utente"]["img"]?>' alt="..." style="width: 200px; height:200px;"/>
               <div class="container col-lg-6 col-lg-offset-2">
                 <div class="form-floating">
-                  <input type="number" class="form-control my-2" id="idutente" value="<?php echo $templateParams["utente"]["idutente"] ?>" name="idutente" hidden/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
+                  <input type="number" class="form-control my-2" id="idutente" value="<?php echo $templateParams["utente"]["idutente"] ?>" name="idutente" hidden/>
+                  <label for="idutente" hidden>id utente</label> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
                 </div>
                 <div class="form-floating">
                   <input type="text" class="form-control my-2" id="username" value="<?php echo $templateParams["utente"]["username"] ?>" name="username" />
-                  <label class="text-dark">Nome utente</label>
+                  <label for="username" class="text-dark">Nome utente</label>
                   <span class="error d-block text-start text-danger"><?php echo $nameErr;?></span>
                 </div>
                 <div class="form-floating">
                   <input type="email" class="form-control my-2" id="email" value="<?php echo $templateParams["utente"]["email"] ?>" name="email" />
-                  <label class="text-dark">Email</label>
+                  <label for="email"class="text-dark">Email</label>
                   <span class="error d-block text-start text-danger"><?php echo $emailErr;?></span>
                 </div>
                 <div class="form-floating">
                   <input type="tel" class="form-control my-2" id="tel" value="<?php echo $templateParams["utente"]["telefono"] ?>" name="tel" />
-                  <label class="text-dark">Telefono</label>
+                  <label for="tel" class="text-dark">Telefono</label>
                   <span class="error d-block text-start text-danger"><?php echo $telErr;?></span>
                 </div>
                 <div class="form-floating">
                   <input type="password" class="form-control my-2" id="password" value="<?php echo $templateParams["utente"]["password"] ?>" name="password" />
-                  <label class="text-dark">Password</label>
+                  <label for="password" class="text-dark">Password</label>
                   <span class="error d-block text-start text-danger"><?php echo $passErr;?></span>
                 </div>
                 <div class="form-floating">
                   <input type="file" class="form-control my-2" id="immagine" name="immagine" />
-                  <label class="text-dark">Immagine utente</label>
+                  <label for="immagine"class="text-dark">Immagine utente</label>
                 </div>
                 <div class="checkbox m-3">
                   <button id="toggle-password" type="button" class="btn-sm btn-warning mx-4 d-none"><i id="eyeIcon" class="bi bi-eye-slash"></i></button>

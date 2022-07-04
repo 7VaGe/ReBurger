@@ -17,7 +17,7 @@ if (isset($_SESSION["venditore"])) {?>
        <img class="img img-fluid" alt="Immagine per la <?php echo $news["idnews"];?>^ notizia" src="<?php echo "img/".$news["immagine"] ?>" />
      </div>
      <div class="col-lg-6">
-       <h1 class="display-6 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></h1>
+       <div class="display-6 fw-bold lh-1 mb-3"><?php echo $news["titolo"] ?></div>
        <p class="lead"><?php echo $news["contenuto"] ?></p>
        <div class="d-grid gap-2 d-md-flex justify-content-md-center ">
          <?php if($news['idnews']==1){ ?> <!--Questa forzatura va valutata, o inseriamo un nuovo ruolo da mettere nelle notizie per suddividere i button sotto, tra quelli che rimandano all'about e quelli che riandano ai prodotti  -->
@@ -73,7 +73,7 @@ if (isset($_SESSION["venditore"])) {?>
 <div class="m-5 fade" >
   <div class="row p-4 pb-auto pt-lg-5 text-dark rounded-3 shadow-lg justify-content-between" style="background-color: rgb(255, 187, 0)">
     <div class="col-lg-6 p-3 p-lg-5 pt-lg-3 text-center">
-      <h1 class="display-5 fw-bold lh-1">Scarica Moovit</h1>
+      <div class="display-5 fw-bold lh-1">Scarica Moovit</div>
       <p class="lead text-dark"><cite>Ottieni le indicazioni per raggiungerci, comodamente sul tuo smartphone!<br></cite><div><p>Inquadra questo QR-Code</p></div></p>
       <div class="d-grid mt-4 d-md-flex justify-content-md-center ">
         <button onclick="window.location='contatti.php'" type="button" class="btn btn-dark">About-us</button>

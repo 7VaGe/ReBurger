@@ -64,7 +64,7 @@ if(isset($_SESSION["idutente"])){
     <ul class="list-unstyled d-flex text-white">
       <?php $social = [ "Meta" => '"bi bi-meta"', "Instagram" =>'"bi bi-instagram"', "Twitter" => '"bi bi-twitter"'];
       foreach($social as $nomeSocial => $icona): ?>
-      <li class="ms-3"><a class="link-warning" href="#" id=<?php echo $nomeSocial?>><i class=<?php echo $icona?>></i></a></li>
+      <li class="ms-3"><a class="link-warning" title ="<?php echo $nomeSocial;?>"href="#" id=<?php echo $nomeSocial?>><i class=<?php echo $icona?>></i></a></li>
       <?php endforeach; ?>
     </ul>
   </div>

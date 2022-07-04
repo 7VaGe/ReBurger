@@ -34,7 +34,7 @@
         <img src="img/fotoLocale.jpg" class="d-block mx-lg-auto img-fluid" alt=""  />
       </div>
       <div class="col-lg-6">
-        <h1 class="display-6 fw-bold lh-1 mb-3">Cibo e impegno sociale</h1>
+        <div class="display-6 fw-bold lh-1 mb-3">Cibo e impegno sociale</div>
         <p class="lead"><?php echo $info["descrizione1"];?></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <button type="button" class="btn btn-warning btn-lg px-4 me-md-2" onclick='window.location="menu.php"'>Vai ai prodotti</button>
@@ -46,7 +46,7 @@
   <div class="container-fluid col-xxl-8 px-4 text-white ">
       <div class="row flex-lg-row-reverse align-items-center g-5 fade my-3 d-flex justify-content-center">
         <div class="col-lg-6">
-          <h1 class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</h1>
+          <div class="display-6 fw-bold lh-1 mb-3">Ricerca incondizionata</div>
           <p class="lead"><?php echo $info["descrizione2"];?></p>
         </div>
         <div class="col-10 col-sm-8 col-lg-6 ">
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="px-4 text-center text-white fade my-3">
-        <h1 class="display-5 fw-bold">Sinceramente parlando</h1>
+        <div class="display-5 fw-bold">Sinceramente parlando</div>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4"><?php echo $info["descrizione3"];?></p>
         </div>

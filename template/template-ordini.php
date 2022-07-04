@@ -15,7 +15,7 @@
                   <?php foreach($templateParams["ordine"] as $ordine) :?>
                     <?php if ($ordine["stato"]!=0): ?>
                     <div class="accordion-item bg-dark">
-                      <h2 class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
+                      <div class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
                         <?php if($ordine["stato"] == 1 || $ordine["stato"] == 2 || $ordine["stato"] ==3):?>
                           <button class="accordion-button collapsed bg-warning text-black border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
                             Ordine #<?php echo $ordine["idordine"];?>
@@ -27,7 +27,7 @@
                             Ordine #<?php echo $ordine["idordine"];?>
                             <?php endif;?>
                           </button>
-                        </h2>
+                            </div>
                           <div id="collapse<?php echo $ordine["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $ordine["idordine"];?>" data-bs-parent="#accordionContainer">
                             <div class="accordion-body text-white text-center p-0 pt-3 ">
                               <div class=" col-12 d-flex row mx-0">
