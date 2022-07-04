@@ -15,10 +15,10 @@ INSERT INTO `prodotto` (`venditore`, `nome`, `descrizione`, `categoria`, `prezzo
 ('1', 'Patatine M', 'Patatine fritte, grandezza media', 'Fritti', '3.50', 'Patatine.png'),
 ('1', 'Patatine L', 'Patatine fritte, grandezza grande', 'Fritti', '4.50', 'Patatine.png'),
 ('1', 'Zeppole S.Giuseppe', 'Ciambelle di pasta choux, farcite di crema pasticcera e dolci amarene sciroppate, coperte da una pioggia di zucchero a velo', 'Dolci', '3.50', 'zeppole.png'),
-('1', 'Bottiglietta Acqua Naturale', 'Acqua minerale naturale in bottiglia di vetro da 0.5 litri', 'Bevande', '1.50', 'acqua.png'),
-('1', 'Acqua Naturale', 'Acqua minerale naturale in bottiglia di vetro da 1 litro', 'Bevande', '2.50', 'acqua.png'),
-('1', 'Bottiglietta Acqua Frizzante', 'Acqua minerale frizzante in bottiglia di vetro da 0.5 litri', 'Bevande', '1.50', 'acqua.png'),
-('1', 'Acqua Frizzante', 'Acqua minerale frizzante in bottiglia di vetro da 1 litro', 'Bevande', '2.50', 'acqua.png'),
+('1', 'Acqua Naturale 0.5L', 'Acqua minerale naturale in bottiglia di vetro da 0.5 litri', 'Bevande', '1.50', 'acqua.png'),
+('1', 'Acqua Naturale 1L', 'Acqua minerale naturale in bottiglia di vetro da 1 litro', 'Bevande', '2.50', 'acqua.png'),
+('1', 'Acqua Frizzante 0.5L', 'Acqua minerale frizzante in bottiglia di vetro da 0.5 litri', 'Bevande', '1.50', 'acqua.png'),
+('1', 'Acqua Frizzante 1L', 'Acqua minerale frizzante in bottiglia di vetro da 1 litro', 'Bevande', '2.50', 'acqua.png'),
 ('1', 'Coca-Cola', 'Bevanda dissetante analcolica frizzante', 'Bevande', '2.50', 'Coca-Cola.png'),
 ('1', 'Fanta', 'Bevanda dissetante analcolica frizzante', 'Bevande', '2.50', 'fanta.png'),
 ('1', 'Sprite', 'Bevanda dissetante analcolica frizzante', 'Bevande', '2.50', 'sprite.png');
@@ -39,11 +39,11 @@ UPDATE `notizie` SET `contenuto` = '<b>Giugno</b><br>\r\nPer questo mese abbiamo
 UPDATE `notizie` SET `immagine` = 'PDMGiugno.jpg' WHERE `notizie`.`idnews` = 2;
 
 
-INSERT INTO `carte` (`titolare`, `numero`, `cvc`)VALUES
-('prova', '52', '000'),
-('lois', '1657', '000'),
-('peter', '952', '000'),
-('peppino', '121', '000');
+INSERT INTO `carte` (`titolare`, `numero`, `cvc`, `scadenza`)VALUES
+('prova', '52', '000','2022-09'),
+('lois', '1657', '000','2023-09'),
+('peter', '952', '000','2023-09'),
+('peppino', '121', '000','2023-02');
 
 INSERT INTO `venditore` (`utente`, `indirizzo`, `P_IVA`, `descrizione`,`descrizione1`,`descrizione2`,`descrizione3`,`nome`)VALUES('1', 'via martiri DUngheria 6', '1234567890123', ' ', ' ', ' ', ' ', 'ReBurger');
 

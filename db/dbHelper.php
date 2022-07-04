@@ -492,10 +492,10 @@ class DatabaseHelper{
 
 //Funzione di controllo validita carta
 
-    public function checkCarta($titolare, $numero, $cvc){
-        $query = "SELECT idcarta FROM carte WHERE titolare = ? AND numero = ? AND cvc = ?";
+    public function checkCarta($titolare, $numero, $cvc, $scadenza){
+        $query = "SELECT idcarta FROM carte WHERE titolare = ? AND numero = ? AND cvc = ? AND scadenza = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sss',$titolare, $numero, $cvc);
+        $stmt->bind_param('ssss',$titolare, $numero, $cvc, $scadenza);
         $stmt->execute();
         $result = $stmt->get_result();
 
