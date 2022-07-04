@@ -11,7 +11,7 @@
           </div>
           <div class="form-group col-sm-5">
             <label>Data di scadenza</label>
-            <input type="month" id="scadenza" name="scadenza" required>
+            <input id="scadenza" type="month" class="form-control" name="scadenza" required>
           </div>
           <div class="form-group col-sm-8">
             <label for="numero">Numero carta</label>
