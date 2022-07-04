@@ -6,6 +6,9 @@ require_once "PHPMailer/PHPMailer.php";
 require_once "PHPMailer/SMTP.php";
 require_once "PHPMailer/Exception.php";
 
+$_SESSION["emailsmtp"] = ''
+$_SESSION["passwordsmtp"] = ''
+
 function inviaMail($to, $email, $subject, $message){
   $mail=new PHPMailer();
   $mail-> isSMTP();
@@ -14,9 +17,9 @@ function inviaMail($to, $email, $subject, $message){
   $mail->Host="smtp.office365.com";
   $mail->Port=587;
   $mail->SMTPDebug = 3;
-  $mail->Username = 'giovanni.pe12@outlook.it';
-  $mail->Password = 'gabriella1212';
-  $mail->setFrom('giovanni.pe12@outlook.it', 'ReBurger');
+  $mail->Username = $_SESSION["emailsmtp"];
+  $mail->Password = $_SESSION["passwordsmtp"];
+  $mail->setFrom($_SESSION["emailsmtp"], 'ReBurger');
   $mail->AddAddress("$email", "$to");
   $mail->FromName="ReBurger";
   $mail->Subject ="$subject";
@@ -38,10 +41,10 @@ function inviaNewsletter($email, $subject, $message){
   $mail->Host="smtp.office365.com";
   $mail->Port=587;
 
-  $mail->Username = 'giovanni.pe12@outlook.it';
-  $mail->Password = 'gabriella1212';
+  $mail->Username = $_SESSION["emailsmtp"];
+  $mail->Password = $_SESSION["passwordsmtp"];
 
-  $mail->setFrom('giovanni.pe12@outlook.it', 'ReBurger');
+  $mail->setFrom($_SESSION["emailsmtp"], 'ReBurger');
   $mail->AddAddress("$email", "Gentile cliente");
   $mail->FromName="ReBurger";
   $mail->Subject ="$subject";

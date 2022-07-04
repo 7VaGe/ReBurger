@@ -33,9 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $saltPassword = preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/', $_POST["password"]);
-  /*$upperCase = preg_match('/[A-Z]/',$_POST["password"]);
-  $lowerCase = preg_match('/[a-z]/',$_POST["password"]);
-  $carSpeciali = preg_match('/[^\w]/',$_POST["password"]);*/
 
   if (empty($_POST["password"])) {
     $passErr = "Immetti una password";
@@ -65,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
   if ($controlloErr == 0) {
     $indice = $dbh->insertUtente($_POST["username"], $_POST["password"], $_POST["email"], $_POST["tel"]);
-    //inviaMail($_POST["username"], $_POST["email"], "Conferma registrazione", "Ti ringraziamo per esserti iscritto al nostro sito speriamo di ricevere presto il tuo primo ordine");
+    inviaMail($_POST["username"], $_POST["email"], "Conferma registrazione", "Ti ringraziamo per esserti iscritto al nostro sito speriamo di ricevere presto il tuo primo ordine");
     if($_FILES["immagine"]["name"]==NULL){
       $dbh->uploadImmagine($indice, "utente", $_POST["username"]);
     }
