@@ -1,7 +1,7 @@
 <div class="container-lg">
   <ol class="list-group">
     <?php foreach($templateParams["catego"] as $category):?>
-      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target="#<?php echo $category["nomecategoria"]?>" aria-expanded="false" value="0">
+      <li class="mt-3 bg-dark rounded-3 shadow text-white list-group-item d-flex justify-content-center align-items-start" id="list<?php echo $category['nomecategoria']?>" onclick="setFocusTo('<?php echo $category['nomecategoria']?>', this.value, 'list<?php echo $category['nomecategoria']?>')" data-bs-toggle="collapse" data-bs-target=".categoria<?php echo $category['nomecategoria']; ?>" aria-expanded="false" value="0">
         <div class="ms-2 me-auto">
           <div class="fw-bold display-1"><?php echo $category["nomecategoria"]?></div>
         </div>
@@ -14,8 +14,12 @@
     <div class="row mt-3">
     <?php foreach($templateParams["catego"] as $category):
       $parametro =$dbh->getProdottoByCategoria($category["nomecategoria"]);
-      foreach($parametro as $prodotto):?>
-      <div class="col-lg-3 col-md-6 col-sm-6 collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>">
+      $indiceFocus=0;
+      foreach($parametro as $prodotto):
+        $indiceFocus = $indiceFocus+1;?>
+      <div class="col-lg-3 col-md-6 col-sm-6 collapse collapse-horizontal categoria<?php echo $category['nomecategoria']; ?>" <?php if ($indiceFocus==1):
+        echo "id=".$category['nomecategoria'];
+       endif; ?>>
         <div class="card card-product-grid bg-dark rounded-6 shadow">
           <div class="img-wrap text-center">
           <img src="img/<?php
