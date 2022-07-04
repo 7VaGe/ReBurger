@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="card bg-dark rounded-5 shadow-lg text-center">
       <div class="row mx-4 p-4 pb-auto pe-lg-0 pt-lg-5 align-items-center text-white">
         <div class="col-lg-12 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1">Hai inviato la newsletter con successo</h1>
+          <div class="display-4 fw-bold lh-1">Hai inviato la newsletter con successo</div>
           <p class="lead">
             <cite>Hai informato tutti gli iscritti alla newsletter torna alla home o inviane un'altra.</cite>
           </p>
@@ -40,15 +40,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
         <div class="text-center p-1 ">
           <form action="newsletter.php" method="post" enctype="multipart/form-data" id="formSignUp">
-            <h1 class=" my-4 h3 mb-3 text-center text-white fw-normal">Inserisci oggetto e contenuto del messaggio per la newsletter:</h1>
+            <div class=" my-4 h3 mb-3 text-center text-white fw-normal">Inserisci oggetto e contenuto del messaggio per la newsletter:</div>
             <div class="container-lg">
               <div class="form-floating ">
                   <input type="text" class="form-control my-2" id="oggetto" name="oggetto"/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-                  <label class="text-dark">Oggetto</label>
+                  <label for="oggetto"class="text-dark">Oggetto</label>
                   <span class="error d-block text-start text-danger"><?php echo $oggettoErr; ?></span>
               </div>
               <div class="form-floating ">
                   <textarea class="form-control" id="messaggio" name="messaggio" rows="8" cols="200"></textarea>
+                  <label for="messaggio" class="text-dark">Messaggio</label>
                   <span class="error d-block text-start text-danger"><?php echo $messaggioErr; ?></span>
               </div>
             <button class="btn btn-warning" type="submit">Invia</button>

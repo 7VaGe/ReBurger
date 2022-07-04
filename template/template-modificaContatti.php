@@ -3,32 +3,32 @@
         <div class="card card-cover text-white bg-dark rounded-5 shadow-lg text-center">
             <div class="container text-center p-1">
             <form action="contatti.php" method="get">
-                <h1 class=" my-4 h3 mb-3 text-white fw-normal">Modifica i seguenti argomenti: </h1>
+                <div class=" my-4 h3 mb-3 text-white fw-normal">Modifica i seguenti argomenti: </div>
                 <div class="container-lg">
                 <?php foreach ($templateParams["info"] as $info):     ?>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2  " id="indirizzo" value="<?php echo $info["indirizzo"] ?>" name="indirizzo" required/> <!-- oninvalid="this.setCustomValidity('cambia messaggio')" puoi cambiare il messaggio d'errore-->
-                    <label class="text-dark" for="floatingInput">Indirizzo</label>
+                    <label for="indirizzo"class="text-dark" >Indirizzo</label>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2  " id="descrizione" value="<?php echo $info["descrizione"] ?>" name="descrizione" required/>
-                    <label class="text-dark" for="floatingInput">descrizione</label>
+                    <label for="descrizione"class="text-dark" >descrizione</label>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2" id="descrizione1" value="<?php echo $info["descrizione1"] ?>" name="descrizione1" required/>
-                    <label  class="text-dark" for="floatingInput">descrizione1</label>
+                    <label for="descrizione1" class="text-dark" >descrizione1</label>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2" id="descrizione2" value="<?php echo $info["descrizione2"] ?>" name="descrizione2" required/>
-                    <label  class="text-dark" for="floatingInput">descrizione2</label>
+                    <label for="descrizione2" class="text-dark" >descrizione2</label>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2 " id="descrizione3" value="<?php echo $info["descrizione3"] ?>" name="descrizione3" required/>
-                    <label class="text-dark" for="floatingInput">descrizione3</label>
+                    <label for="descrizione3" class="text-dark" >descrizione3</label>
                 </div>
                 <div class="form-floating d-flex justify-content-center">
                     <input type="text" class="form-control my-2" id="nome_locale4" value="<?php echo $info["nome"] ?>" name="nome_locale" required/>
-                    <label class="text-dark" for="floatingInput">Nome</label>
+                    <label for="nome_locale4" class="text-dark" >Nome</label>
                 </div>
             <?php endforeach;?>
                 <button class="btn btn-warning my-3 " type="submit">Modifica <i class="fa-solid fa-pen-to-square"></i></button>
