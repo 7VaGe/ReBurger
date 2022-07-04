@@ -38,3 +38,6 @@ Nella cartella db sono presenti due file per la creazione e il popolamento del d
 - db.sql // CREAZIONE
 - dbUtil.sql // POPOLAMENTO
 Mentre il dbHelper raggruppa per tabella influenzata tutte le funzioni necessarie alla comunicazione tra sito e database in PHP.
+
+
+link per mockup tramite figma versione finale: https://www.figma.com/file/xuS1w4ONQTKzfrOMleSDxG/ReBurger-iPhone12_13Pro.
