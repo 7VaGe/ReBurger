@@ -13,21 +13,21 @@
                   <div class="accordion" id="accordionExample">
                     <?php foreach($templateParams["ordine"] as $orderInfo) :?>
                       <div class="accordion-item bg-dark ">
-                        <h2 class="accordion-header" id="heading<?php echo $orderInfo["idordine"];?>">
-                        <?php if($orderInfo["stato"] == 1 || $orderInfo["stato"] == 2 || $orderInfo["stato"] ==3):?>
+                        <div class="accordion-header" id="heading<?php echo $orderInfo["idordine"];?>">
+                        <?php if($orderInfo["stato"] == 2 || $orderInfo["stato"] ==3):?>
                           <button class="accordion-button collapsed bg-warning text-black border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
-                            Ordine previsto per le: <?php echo $orderInfo["ora_ordine"];?>
+                            Ordine previsto per le: <?php echo $orderInfo["ora_ordine"];?></button>
                             <?php elseif($orderInfo["stato"] == 5):?>
                               <button class="accordion-button collapsed bg-danger text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
-                            Ordine annullato in data: <?php echo $orderInfo["data_ordine"];?>
-                          <?php elseif($orderInfo["stato"] == 4):?>
+                            Ordine annullato in data: <?php echo $orderInfo["data_ordine"];?></button>
+                            <?php elseif($orderInfo["stato"] == 4):?>
                               <button class="accordion-button collapsed bg-dark text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
-                            Ordine completato in data: <?php echo $orderInfo["data_ordine"];?>
-                            <?php endif;?>
-                          <!--<button class="accordion-button collapsed  bg-dark text-white border-2 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
-                            Ordine #<php echo $orderInfo["idordine"];?>
-                            </button> -->
-                          </h2>
+                            Ordine completato in data: <?php echo $orderInfo["data_ordine"];?></button>
+                          <?php elseif($orderInfo["stato"] == 1):?>
+                              <button class="accordion-button collapsed bg-warning text-black border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $orderInfo["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $orderInfo["idordine"];?>">
+                            Ordine in fase di approvazione</button>
+                          <?php endif; ?>
+                        </div>
                           <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordionExample">
                             <div class="accordion-body text-white">
                               <div class="col-12 d-flex">
