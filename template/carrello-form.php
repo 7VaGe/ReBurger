@@ -58,6 +58,9 @@
             </div>
           </div>
         </form>
+        <div class="text-center mt-3">
+          <button class="btn-lg btn-danger centered" onclick="svuotaCarrello()">Svuota il Carrello</button>
+        </div>
           <?php }; ?>
         </div>
     </div>
@@ -98,6 +101,12 @@ function decVal(val){
       document.getElementById(riga).remove();
     }
     document.getElementById("spesa").innerhtml;
+}
+
+function svuotaCarrello(){
+  if (confirm("Sei sicuro di voler svuotare il carrello ?") == true) {
+    window.location="carrello.php?del=1";
+  }
 }
 
 </script>

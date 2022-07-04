@@ -356,7 +356,15 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('di',$prezzo, $ordine);
         $stmt->execute();
-        $result = $stmt->get_result();
+
+        return true;
+    }
+
+    public function setPrezzoEmpty($ordine){
+        $query = "UPDATE ordine SET prezzo = 0 WHERE idordine=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $ordine);
+        $stmt->execute();
 
         return true;
     }

@@ -36,7 +36,7 @@
     <?php endforeach; ?>
     </div>
   </div>
-  
+
 <script>
 function insertInCarrello(val) {
     var http = new XMLHttpRequest();

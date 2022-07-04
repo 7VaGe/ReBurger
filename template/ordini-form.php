@@ -17,7 +17,7 @@
                     <div class="accordion-item bg-dark">
                       <h2 class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
                         <?php if($ordine["stato"] == 1 || $ordine["stato"] == 2 || $ordine["stato"] ==3):?>
-                          <button class="accordion-button collapsed bg-warning text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
+                          <button class="accordion-button collapsed bg-warning text-black border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">
                             Ordine #<?php echo $ordine["idordine"];?>
                             <?php elseif($ordine["stato"] == 5):?>
                               <button class="accordion-button collapsed bg-danger text-white border-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $ordine["idordine"];?>" aria-expanded="true" aria-controls="collapse<?php echo $ordine["idordine"];?>">

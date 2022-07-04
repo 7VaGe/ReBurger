@@ -3,9 +3,16 @@
 require_once 'bootstrap.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
   if (!isset($_SESSION["ordine"])) {
     $_SESSION["ordine"] = $dbh->insertOrdine($_SESSION["idutente"]);
   }
+
+  if (isset($_GET["del"])) {
+    $dbh->emptyCarrello($_SESSION["ordine"]);
+    $dbh->setPrezzoEmpty($_SESSION["ordine"]);
+  }
+  
   if(isset($_GET["ordine"])){
     $templateParams["riproposta"] = $dbh->checkOldCarrello($_GET["ordine"]);
     foreach ($templateParams["riproposta"] as $prod){
