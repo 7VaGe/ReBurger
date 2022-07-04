@@ -54,9 +54,17 @@
                           <div id="collapse<?php echo $orderInfo["idordine"];?>" class="accordion-collapse collapse " aria-labelledby="heading<?php echo $orderInfo["idordine"];?>" data-bs-parent="#accordionExample">
                             <div class="accordion-body text-white">
                               <div class="col-12 d-flex">
-                                <p class="col">Data: <?php echo $orderInfo["data_ordine"];?></p>
+                                <p class="col">Pagamento: <?php switch ($orderInfo["pagamento"]){
+                                                                case '0':
+                                                                echo "Alla consegna";
+                                                                break;
+                                                                case '1':
+                                                                echo "Carta";
+                                                                break;
+                                                                }
+                                                                ?></p>
                                 <p class="col">Ora: <?php echo $orderInfo["ora_ordine"];?></p>
-                                <p class="col">Pagamento: <?php echo $orderInfo["pagamento"];?></p>
+                                <p class="col">Prezzo: <?php echo $orderInfo["prezzo"];?>€</p>
                               </div>
                               <div class="container d-flex justify-content-center">
                                 <div class="progress mt-2 w-50 ">
@@ -90,6 +98,7 @@
                     </div>
                   </div>
                   <p class="display-6 text-white mt-4">  <?php echo $msg ;?></p>
+                  <button class="btn-warning btn mb-3" onclick="window.location='riepilogo.php?ordine=<?php echo $orderInfo['idordine'] ?>'">Dettagli ordine</button>
                 </div>
               </div>
             </div>

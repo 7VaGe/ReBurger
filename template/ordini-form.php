@@ -13,6 +13,7 @@
                 <h5 class="card-title text-white text-center">Ciao <?php echo strtoupper($_SESSION["username"]); ?>, qui puoi visualizzare lo storico degli ordini ricevuti</h5>
                 <div class="accordion" id="accordionContainer">
                   <?php foreach($templateParams["ordine"] as $ordine) :?>
+                    <?php if ($ordine["stato"]!=0): ?>
                     <div class="accordion-item bg-dark">
                       <h2 class="accordion-header" id="heading<?php echo $ordine["idordine"];?>">
                         <?php if($ordine["stato"] == 1 || $ordine["stato"] == 2 || $ordine["stato"] ==3):?>
@@ -34,7 +35,7 @@
                                 <p class="col-sm p-0 mb-2">Data<br><?php echo $ordine["data_ordine"];?></p>
                                 <p class="col-sm p-0 mb-2">Ora<br><?php echo $ordine["ora_ordine"];?></p>
                               </div>
-                              <div>
+                              <div class=" col-12 d-flex row mx-0">
                               <p class="col p-0">Pagamento<br><?php switch ($ordine["pagamento"]){
                                                               case '0':
                                                               echo "Alla consegna";
@@ -44,6 +45,7 @@
                                                               break;
                                                               }
                                                               ?></p>
+                              <p class="col-sm p-0 mb-2">Prezzo: <br><?php echo $ordine["prezzo"];?>€</p>
                               </div>
                               <div class="container d-flex justify-content-center">
                               <?php if($ordine["stato"]==1){
@@ -69,10 +71,9 @@
                   </div>
                 </div>
               </div>
-
-              <?php endforeach; ?>
+              <?php endif; ?>
+            <?php endforeach; ?>
           </div>
-
          </div>
         <?php endif; ?>
         </div>

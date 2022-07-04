@@ -2,8 +2,18 @@
 
 require_once 'bootstrap.php';
 
+  $categoriaErr = "";
+
 if(isset($_POST["nomeCategoria"])){
-  $dbh->insertCategoria($_POST["nomeCategoria"]);
+  $controlloErr = 0;
+  $presente = $dbh->checkNomeCategoria($_POST["nomeCategoria"]);
+  if ($presente!= false) {
+    $categoriaErr = "Questo nome categoria è gia in uso";
+    $controlloErr = 1;
+  }if($controlloErr == 0){
+    $dbh->insertCategoria($_POST["nomeCategoria"]);
+  }
+
 }
 
 if(isset($_GET["elimina"]) and isset($_GET["prodotto"])){

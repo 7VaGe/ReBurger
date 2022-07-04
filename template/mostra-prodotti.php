@@ -25,6 +25,7 @@
                   <input type="text" class="form-control mb-2 mx-5" id="nomeCategoria" name="nomeCategoria" required>
                   <label class="text-dark w-75" for="nomeCategoria">Nome categoria</label>
                 </div>
+                <span class="error d-block text-danger align-text-center"><?php echo $categoriaErr;?></span>
                   <button type="submit" class="btn mb-3 btn-warning">Aggiungi una categoria</button>
 
               </form>

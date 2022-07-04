@@ -198,16 +198,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function checkNomeCategoria($nome){
-        $query = "SELECT idcategoria FROM categoria WHERE nomecategoria = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s',$nome);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
 //Funzione per inserimento immagine
 
     public function uploadImmagine($id, $provenienza, $nome){
@@ -265,7 +255,17 @@ class DatabaseHelper{
     public function checkCarrello($nome, $ordine){
         $query = "SELECT idcarrello FROM carrello WHERE nome = ? AND idordine = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si',$nome, $ordine);
+        $stmt->bind_param('si', $nome, $ordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkOldCarrello($ordine){
+        $query = "SELECT * FROM carrello WHERE idordine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $ordine);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -277,6 +277,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si',$nome, $ordine);
         $stmt->execute();
+        
         return true;
     }
 
@@ -492,6 +493,16 @@ class DatabaseHelper{
         $stmt->bind_param('s',$nomecategoria);
         $stmt->execute();
         return true;
+    }
+
+    public function checkNomeCategoria($nome){
+        $query = "SELECT idcategoria FROM categoria WHERE nomecategoria = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$nome);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 //Funzioni su tabella notizie
