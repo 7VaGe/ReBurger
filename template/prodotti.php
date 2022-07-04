@@ -16,21 +16,21 @@
       $parametro =$dbh->getProdottoByCategoria($category["nomecategoria"]);
       foreach($parametro as $prodotto):?>
       <div class="col-lg-3 col-md-6 col-sm-6 collapse collapse-horizontal" id="<?php echo $category["nomecategoria"]?>">
-        <figure class="card card-product-grid bg-dark rounded-6 shadow">
+        <div class="card card-product-grid bg-dark rounded-6 shadow">
           <div class="img-wrap text-center">
           <img src="img/<?php
                 $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
                  echo $imgNoSpace?>" class="figure img-fluid  p-3" alt="..." style="height: 220px;"/>
           </div>
-          <figcaption class="info-wrap p-3">
+          <div class="info-wrap p-3">
             <p class="title mb-2"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
             <div class="price-wrap">
               <span class="price text-end">Prezzo: <?php echo $prodotto["prezzo"]?>€</span>
             </div>
             <p class="mb-2"><?php echo $prodotto["descrizione"]?></p>
             <button class="w-100 btn btn-lg btn-warning" value="<?php echo $prodotto["nome"]?>" onclick="insertInCarrello(this.value)">Aggiungi al carrello</button>
-          </figcaption>
-        </figure>
+      </div>
+      </div>
       </div>
       <?php endforeach; ?>
     <?php endforeach; ?>

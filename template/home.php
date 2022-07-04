@@ -35,31 +35,31 @@ if (isset($_SESSION["venditore"])) {?>
   <div class="text-center mb-4">
     <span class="text-white display-4 fw-bold ">Prodotti consigliati:</span>
   </div>
-    <div class="container-fluid" id="consigliati">
+    <div class="container-fluid">
       <div class="row row-cols-1  row-cols-lg-4 g-4 d-flex justify-content-center">
         <?php foreach($templateParams["prodottoRandom"] as $prodotto) : ?>
           <div class="col wrapper m-4 ">
             <div class="bg-dark">
-              <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center" id="cardIndex">
+              <figure class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center">
                 <div class="img-wrapper">
                   <img src="img/<?php $imgNoSpace = str_replace(' ', '', $prodotto["img"]);
                                 echo $imgNoSpace?>"  alt="Immagine per il <?php echo $prodotto["idprodotto"]?>° prodotto" style="height: 220px;" class="figure img-fluid p-5 "/>
               </div>
               <div class="front">
-                <figcaption class="info-wrap px-3" id="front">
+                <div class="info-wrap px-3" >
                   <p class="title mb-2 pt-4 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
-                </figcaption>
+        </div>
               </div>                                        <!-- fine front  -->
               <div class="back">
-                <div class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center pt-5" id="cardBack">
-                  <figcaption class="text-white text-center" id="back">
+                <div class="card card-product-grid bg-dark rounded-6 shadow d-flex align-items-center pt-5">
+                  <div class="text-white text-center">
                     <p class="title mb-2 text-center fw-bold"><?php echo str_replace('_', ' ', $prodotto["nome"])?></p>
                     <p class="mb-2 p-2 text-center"><?php echo $prodotto["descrizione"]?></p>
                     <p class="mb-2 text-center ">Prezzo: <?php echo $prodotto["prezzo"]?> € </p>
                     <div class="text-center mb-2 mt-5">
                       <button onclick="window.location='menu.php'" class="add-to-cart btn btn-warning m-3" >Ordina ora!</button>
                     </div>
-                  </figcaption>
+        </div>
                 </div>
               </div>
             </figure>

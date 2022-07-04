@@ -210,7 +210,7 @@ form > input[type='radio']:checked:after {
   padding:0px;
 }
 
-#consigliati .card{
+figure{
   width: 235px;
   height: 400px;
   position: relative;
@@ -221,40 +221,42 @@ form > input[type='radio']:checked:after {
   word-wrap:normal ;
 }
 
-#consigliati .card > :nth-child(2){
+figure > :nth-child(2){
   position: relative;
   width: 235px;
   height: 400px;
   transition: all 350ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 
-.card > :nth-child(2){
+figure > :nth-child(2){
   transform: rotateY(0deg) translateZ(160px);
 }
 
-.card > :nth-child(3){
-  opacity: 0.08;
+figure > :nth-child(3){
+  opacity: 1;
   transform: rotateY(90deg) translateZ(160px);
+  width: 235px;
+  height: 400px;
   position: absolute;
 }
-.card > :nth-child(3)+:first-child {
+figure > :nth-child(3)+:first-child {
   width: 235px;
   height: 400px;
 }
 
-#cardIndex:hover{
+figure:hover{
   transform: translateZ(-160px) rotateY( -90deg);
 }
 
-#cardIndex:hover .front{
+figure:nth-child(2){
   opacity: 0;
 }
 
-#cardIndex:hover .back{
+figure:nth-child(3){
   opacity: 1;
 }
 
-#cardIndex>img{
+figure>img{
   transform-origin: top right;
   transition: transform 300ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
   transition-delay: 100ms;
@@ -279,15 +281,15 @@ form > input[type='radio']:checked:after {
   }
 }
 
-#cardIndex:hover ~ .img-wrapper> img{
+figure:hover ~ .img-wrapper> img{
   transform: scale(0.9) translateX(77%) translateY(90%) rotateZ(80deg);
 }
 
-#cardIndex:hover button{
+figure:hover button{
    transform: scale(1) skewY(0);
 }
 
-#cardIndex:not(:hover) button{
+figure:not(:hover) button{
 opacity: 0;
 }
 
@@ -348,16 +350,16 @@ button:hover{
     position: relative;
     padding:0px;
   }
-  #cardIndex{
+  figure{
     width: 190px;
     height: 390px;
   }
   
-  #cardIndex > .front{
+  figure > :nth-child(2){
     width: 190px;
     height: 390px;
   }
-  #cardBack{
+  figure> :nth-child(3){
     width: 190px;
     height: 390px;
     
@@ -400,16 +402,16 @@ button:hover{
       padding:0px;
     }
     
-    #cardIndex{
+    figure{
       width: 230px;
       height: 380px;
     }
     
-    #cardIndex > .front{
+    figure > :nth-child(2){
       width: 230px;
       height: 380px;
     }
-    #cardBack{
+    figure> :nth-child(3){
       width: 230px;
       height: 380px;
       
@@ -451,16 +453,16 @@ button:hover{
       position: relative;
       padding:0px;
     }
-    #cardIndex{
+    figure{
       width: 179px;
       height: 390px;
     }
     
-    #cardIndex > .front{
+    figure > :nth-child(2){
       width: 179px;
       height: 390px;
     }
-    #cardBack{
+    figure> :nth-child(3){
       width: 179px;
       height: 390px;
       
@@ -491,7 +493,7 @@ button:hover{
         display:inline-flex;
     }
 
-    #consigliati{
+    .album .container-fluid{
       max-width: 1800px !important;
     }
 
@@ -506,13 +508,13 @@ button:hover{
       padding:0px;
     }
     
-    #cardIndex{
+    #figure{
       width: 255px;
       height: 410px;
     }
     
     
-    #cardIndex > .front{
+    figure > :nth-child(2){
       width: 255px;
       height: 410px;
     }
