@@ -8,15 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   }
   if(isset($_GET["ordine"])){
     $templateParams["riproposta"] = $dbh->checkOldCarrello($_GET["ordine"]);
-    foreach ($templateParams["riproposta"] as $prod) {
+    foreach ($templateParams["riproposta"] as $prod){
       $params = $dbh->checkCarrello($prod["nome"], $_SESSION["ordine"]);
       if ($params == NULL) {
-        $dbh->insertCarrello($prod["nome"], $_SESSION["ordine"]);
+        $dbh->multyInsertCarrello($prod["nome"], $_SESSION["ordine"], $prod["quantita"]);
         $costo = $dbh->getPrezzoProdotto($prod["nome"]);
+        $costo["prezzo"] = $costo["prezzo"] * $prod["quantita"];
         $dbh->setPrezzo($costo["prezzo"], $_SESSION["ordine"]);
       }else {
-        $dbh->updateCarrello($prod["nome"], $_SESSION["ordine"]);
+        $dbh->multyUpdateCarrello($prod["quantita"], $prod["nome"], $_SESSION["ordine"]);
         $costo = $dbh->getPrezzoProdotto($prod["nome"]);
+        $costo["prezzo"] = $costo["prezzo"] * $prod["quantita"];
         $dbh->setPrezzo($costo["prezzo"], $_SESSION["ordine"]);
       }
     }
