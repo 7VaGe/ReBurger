@@ -3,8 +3,7 @@
 require_once 'bootstrap.php';
 
 $templateParams["titolo"] = "ReBurger - Pagamento";
-//$address= $dbh->getEmail($_SESSION["idutente"]);
-//$msg="Ordine completato con successo";
+
 if ($_POST["pagamento"]==1) {
   $dbh->setPagamentoOrdine($_POST["pagamento"], $_SESSION["ordine"]);
   $templateParams["nome"] = "pagamento-form.php";

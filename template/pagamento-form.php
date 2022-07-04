@@ -7,39 +7,15 @@
         <div class="row">
           <div class="form-group col-sm-7">
             <label for="titolare">Titolare della carta</label>
-            <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta">
+            <input id="titolare" type="text" class="form-control" name="titolare" placeholder="Titolare della carta" aria-label="Titolare della carta" required>
           </div>
           <div class="form-group col-sm-5">
             <label>Data di scadenza</label>
-            <div class="input-group expiration-date">
-              <select class="form-control" name="mese" >
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-              <span class="date-separator"> / </span>
-              <select class="form-control" name="anno" >
-                <option>2022</option>
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-                <option>2027</option>
-              </select>
-            </div>
+            <input type="month" id="scadenza" name="scadenza" required>
           </div>
           <div class="form-group col-sm-8">
             <label for="numero">Numero carta</label>
-            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta " maxlength="16">
+            <input id="numero" type="text" class="form-control" name="numero" placeholder="Numero carta" aria-label="Numero carta " maxlength="16" required>
           </div>
           <div class="form-group col-sm-4">
             <label for="cvc">CVC</label>

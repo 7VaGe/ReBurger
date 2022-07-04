@@ -112,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `ReBurger`.`carte` (
   `titolare` VARCHAR(20) NOT NULL,
   `numero` VARCHAR(20) NOT NULL,
   `cvc` VARCHAR(3),
+  `scadenza` DATE,
   PRIMARY KEY (`idcarta`))
 ENGINE = InnoDB;
 

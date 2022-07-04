@@ -40,9 +40,10 @@ UPDATE `notizie` SET `immagine` = 'PDMGiugno.jpg' WHERE `notizie`.`idnews` = 2;
 
 
 INSERT INTO `carte` (`titolare`, `numero`, `cvc`)VALUES
-('Nicholas', '52', '000'),
-('Giovanni', '1657', '000');
-
+('prova', '52', '000'),
+('lois', '1657', '000'),
+('peter', '952', '000'),
+('peppino', '121', '000');
 
 INSERT INTO `venditore` (`utente`, `indirizzo`, `P_IVA`, `descrizione`,`descrizione1`,`descrizione2`,`descrizione3`,`nome`)VALUES('1', 'via martiri DUngheria 6', '1234567890123', ' ', ' ', ' ', ' ', 'ReBurger');
 
